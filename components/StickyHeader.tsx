@@ -4,8 +4,6 @@ import { Phone, Key, Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 export default function StickyHeader() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -49,47 +47,48 @@ export default function StickyHeader() {
     return (
         <header
             role="banner"
-            className={`fixed top-0 left-0 right-0 z-50 w-full flex items-center transition-all duration-300
+            className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 border-b border-slate-200
                 ${isScrolled
-                    ? "h-[56px] glass border-b border-[var(--color-border)] elevation-2"
-                    : "h-[64px] lg:h-[72px] bg-[var(--color-nav-bg)] backdrop-blur-[16px] backdrop-saturate-[1.2] border-b border-[var(--color-border-subtle)]"
-                } text-[var(--color-text-primary)]`}
+                    ? "h-14 bg-white/95 backdrop-blur-md shadow-sm"
+                    : "h-16 lg:h-[72px] bg-white/95 backdrop-blur-md"
+                }`}
         >
-            <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between px-[var(--space-4)] sm:px-[var(--space-6)] lg:px-[var(--space-7)]">
+            <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+                {/* Logo */}
                 <Link
                     href="/"
-                    className="flex items-center gap-[var(--space-2)] font-bold tracking-tight order-1 mr-auto"
+                    className="flex items-center gap-2 font-bold text-slate-900 tracking-tight order-1 mr-auto"
                     onClick={() => setIsMobileMenuOpen(false)}
                     aria-label="Schlüsseldienst Wetzlar – Startseite"
                 >
-                    <Key className="h-5 w-5 text-[var(--color-brand)]" aria-hidden="true" />
+                    <Key className="h-5 w-5 text-primary-600" aria-hidden="true" />
                     <span className="hidden sm:inline-block">Schlüsseldienst Wetzlar</span>
                     <span className="sm:hidden">SD Wetzlar</span>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-[var(--space-6)] font-[600] order-2 mx-auto" style={{ fontSize: 'var(--text-body)' }}>
+                <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-6 font-medium text-base order-2 mx-auto">
                     <div
                         className="relative group h-full flex items-center"
                         onMouseEnter={() => setIsLeistungenOpen(true)}
                         onMouseLeave={() => setIsLeistungenOpen(false)}
                     >
                         <button
-                            className="flex items-center gap-[var(--space-1)] transition-colors hover:text-[var(--color-brand)] py-[var(--space-2)] text-[var(--color-text-body)]"
+                            className="flex items-center gap-1 text-slate-600 transition-colors hover:text-primary-600 py-2"
                             aria-expanded={isLeistungenOpen}
                             aria-controls="desktop-leistungen-menu"
                         >
-                            Leistungen <ChevronDown className="h-5 w-5" aria-hidden="true" />
+                            Leistungen <ChevronDown className="h-4 w-4" aria-hidden="true" />
                         </button>
 
                         {isLeistungenOpen && (
-                            <ul id="desktop-leistungen-menu" role="menu" className="absolute left-0 top-[100%] w-56 rounded-xl bg-white py-[var(--space-2)] elevation-3 ring-1 ring-[var(--color-border-subtle)]">
+                            <ul id="desktop-leistungen-menu" role="menu" className="absolute left-0 top-[100%] w-56 rounded-xl bg-white py-2 shadow-lg ring-1 ring-slate-200">
                                 {leistungenLinks.map((link) => (
                                     <li key={link.name} role="none">
                                         <Link
                                             role="menuitem"
                                             href={link.href}
-                                            className={`block px-[var(--space-4)] py-[var(--space-2)] text-[16px] transition-colors hover:bg-[var(--color-brand-light)] hover:text-[var(--color-brand)] ${pathname === link.href ? "text-[var(--color-brand)] font-[700] bg-[var(--color-brand-light)]" : "text-[var(--color-text-body)] font-[600]"
+                                            className={`block px-4 py-2.5 text-sm transition-colors hover:bg-primary-50 hover:text-primary-600 ${pathname === link.href ? "text-primary-600 font-bold bg-primary-50" : "text-slate-700"
                                                 }`}
                                             onClick={() => setIsLeistungenOpen(false)}
                                         >
@@ -105,9 +104,9 @@ export default function StickyHeader() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`transition-colors hover:text-[var(--color-brand)] ${pathname === link.href
-                                    ? "text-[var(--color-brand)]"
-                                    : "text-[var(--color-text-body)]"
+                            className={`transition-colors hover:text-primary-600 ${pathname === link.href
+                                    ? "text-primary-600 font-semibold"
+                                    : "text-slate-600"
                                 }`}
                             {...(pathname === link.href ? { "aria-current": "page" as const } : {})}
                         >
@@ -116,20 +115,20 @@ export default function StickyHeader() {
                     ))}
                 </nav>
 
-                <div className="flex items-center gap-[var(--space-4)] h-full order-3 sm:order-last ml-auto">
+                {/* CTA + Mobile Toggle */}
+                <div className="flex items-center gap-3 h-full order-3 ml-auto">
                     <a
                         href="tel:+496441123456"
-                        className={cn(buttonVariants({ size: "sm" }), "absolute top-0 right-0 sm:relative w-[56px] sm:w-auto h-[56px] sm:h-[40px] rounded-none sm:rounded-full px-0 sm:px-[var(--space-4)] hover:-translate-y-0.5")}
-                        style={{ fontSize: 'var(--text-h4)', letterSpacing: 'var(--tracking-cta)' }}
+                        className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-lg px-4 py-2.5 shadow-md transition-colors text-sm"
                         aria-label="Jetzt anrufen: 06441 123 456"
                     >
-                        <Phone className="h-5 w-5 sm:h-5 sm:w-5 animate-pulse" aria-hidden="true" />
+                        <Phone className="h-4 w-4" aria-hidden="true" />
                         <span className="hidden sm:inline-block">06441 123 456</span>
                     </a>
 
                     {/* Mobile Menu Toggle */}
                     <button
-                        className="lg:hidden flex items-center justify-center min-w-[48px] text-[var(--color-text-primary)] mr-[56px] sm:mr-0"
+                        className="lg:hidden flex items-center justify-center h-11 w-11 text-slate-700 hover:text-slate-900 rounded-md transition-colors"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-expanded={isMobileMenuOpen}
                         aria-controls="mobile-nav-menu"
@@ -142,16 +141,16 @@ export default function StickyHeader() {
 
             {/* Mobile Navigation */}
             {isMobileMenuOpen && (
-                <nav id="mobile-nav-menu" aria-label="Mobile Navigation" className="lg:hidden absolute top-[56px] left-0 w-full border-t border-[var(--color-border-subtle)] bg-white max-h-[calc(100vh-56px)] overflow-y-auto elevation-3 text-[var(--color-text-primary)]">
-                    <ul className="flex flex-col px-[var(--space-4)] py-[var(--space-4)] space-y-[var(--space-4)]">
-                        <li className="space-y-[var(--space-2)]">
-                            <div className="font-[700] text-[var(--color-text-muted)] uppercase" style={{ fontSize: 'var(--text-tiny)', letterSpacing: 'var(--tracking-caps)' }}>Leistungen</div>
-                            <ul className="flex flex-col space-y-[var(--space-3)] pl-[var(--space-4)] border-l-3 border-[var(--color-brand)]">
+                <nav id="mobile-nav-menu" aria-label="Mobile Navigation" className="lg:hidden absolute top-14 left-0 w-full border-t border-slate-200 bg-white max-h-[calc(100vh-56px)] overflow-y-auto shadow-lg">
+                    <ul className="flex flex-col px-4 py-4 space-y-1">
+                        <li className="space-y-1">
+                            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 py-2">Leistungen</div>
+                            <ul className="flex flex-col space-y-0.5 pl-3 border-l-2 border-primary-600">
                                 {leistungenLinks.map((link) => (
                                     <li key={link.name}>
                                         <Link
                                             href={link.href}
-                                            className={`block font-[600] transition-colors hover:text-[var(--color-brand)] ${pathname === link.href ? "text-[var(--color-brand)]" : "text-[var(--color-text-body)]"
+                                            className={`block px-3 py-2.5 rounded-lg font-medium transition-colors hover:bg-slate-50 hover:text-primary-600 ${pathname === link.href ? "text-primary-600 bg-primary-50" : "text-slate-700"
                                                 }`}
                                             onClick={() => setIsMobileMenuOpen(false)}
                                             {...(pathname === link.href ? { "aria-current": "page" as const } : {})}
@@ -163,13 +162,13 @@ export default function StickyHeader() {
                             </ul>
                         </li>
 
-                        <li className="border-t border-[var(--color-border-subtle)] pt-[var(--space-4)]">
-                            <ul className="space-y-[var(--space-4)]">
+                        <li className="border-t border-slate-100 pt-2">
+                            <ul className="space-y-0.5">
                                 {navLinks.map((link) => (
                                     <li key={link.name}>
                                         <Link
                                             href={link.href}
-                                            className={`block text-[18px] font-[600] transition-colors hover:text-[var(--color-brand)] ${pathname === link.href ? "text-[var(--color-brand)]" : "text-[var(--color-text-body)]"
+                                            className={`block px-3 py-2.5 rounded-lg text-base font-medium transition-colors hover:bg-slate-50 hover:text-primary-600 ${pathname === link.href ? "text-primary-600 bg-primary-50" : "text-slate-700"
                                                 }`}
                                             onClick={() => setIsMobileMenuOpen(false)}
                                             {...(pathname === link.href ? { "aria-current": "page" as const } : {})}
@@ -179,6 +178,17 @@ export default function StickyHeader() {
                                     </li>
                                 ))}
                             </ul>
+                        </li>
+
+                        {/* Mobile Emergency CTA */}
+                        <li className="border-t border-slate-100 pt-3">
+                            <a
+                                href="tel:+496441123456"
+                                className="flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-xl px-6 py-4 shadow-md transition-colors text-lg w-full"
+                            >
+                                <Phone className="h-5 w-5" aria-hidden="true" />
+                                Jetzt anrufen: 06441 123 456
+                            </a>
                         </li>
                     </ul>
                 </nav>

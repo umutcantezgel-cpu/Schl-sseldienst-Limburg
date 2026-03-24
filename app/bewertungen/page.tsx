@@ -46,11 +46,11 @@ function generateReviewSchema() {
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-1 text-[var(--color-brand)]" aria-label={`${rating} von 5 Sternen`} role="img">
+    <div className="flex gap-1 text-primary-500" aria-label={`${rating} von 5 Sternen`} role="img">
       {[...Array(5)].map((_, i) => (
         <Star
           key={i}
-          className={`h-5 w-5 ${i < rating ? "fill-current" : "text-[var(--color-stone-400)]"}`}
+          className={`h-5 w-5 ${i < rating ? "fill-current" : "text-slate-300"}`}
           aria-hidden="true"
         />
       ))}
@@ -67,21 +67,21 @@ export default function BewertungenPage() {
       />
 
       {/* Hero Section */}
-      <section aria-label="Kundenbewertungen Übersicht" className="relative bg-[var(--color-surface-subtle)] px-[var(--section-px)] py-[var(--section-py)]">
+      <section aria-label="Kundenbewertungen Übersicht" className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
-            Das sagen unsere <span className="text-[var(--color-brand)]">Kunden</span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            Das sagen unsere <span className="text-primary-600">Kunden</span>
           </h1>
           <div className="mt-6 flex flex-col items-center justify-center gap-2">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-bold text-[var(--color-brand)]">4.9</span>
-              <div className="flex gap-1 text-[var(--color-brand)]" aria-label="4.9 von 5 Sternen" role="img">
+              <span className="text-4xl font-bold text-primary-600">4.9</span>
+              <div className="flex gap-1 text-primary-500" aria-label="4.9 von 5 Sternen" role="img">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-current" aria-hidden="true" />
                 ))}
               </div>
             </div>
-            <p className="text-lg text-[var(--color-text-body)]">
+            <p className="text-lg text-slate-600">
               Basierend auf über 120 echten Bewertungen.
             </p>
           </div>
@@ -89,25 +89,25 @@ export default function BewertungenPage() {
       </section>
 
       {/* Reviews Grid */}
-      <section aria-label="Einzelne Kundenbewertungen" className="px-[var(--section-px)] py-[var(--section-py)]">
+      <section aria-label="Einzelne Kundenbewertungen" className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {reviews.map((review) => (
-              <article key={review.name} className="rounded-2xl bg-[var(--color-surface-subtle)] p-8 elevation-1 ring-1 ring-[var(--color-border)]">
+              <article key={review.name} className="rounded-2xl bg-white p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                 <div className="flex justify-between items-start">
                   <StarRating rating={review.rating} />
-                  <time className="text-xs text-[var(--color-text-muted)]" dateTime={review.date}>{review.timeAgo}</time>
+                  <time className="text-xs text-slate-400" dateTime={review.date}>{review.timeAgo}</time>
                 </div>
-                <blockquote className="mt-6 text-[var(--color-text-body)] italic">
+                <blockquote className="mt-6 text-slate-600 italic leading-relaxed">
                   &quot;{review.text}&quot;
                 </blockquote>
                 <footer className="mt-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-brand-light)] font-bold text-[var(--color-brand)]" aria-hidden="true">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 font-bold text-primary-600" aria-hidden="true">
                     {review.name[0]}
                   </div>
                   <div>
-                    <div className="font-bold text-[var(--color-text-primary)]">{review.name}</div>
-                    <div className="text-xs text-[var(--color-text-muted)]">aus {review.city}</div>
+                    <div className="font-bold text-slate-900">{review.name}</div>
+                    <div className="text-xs text-slate-400">aus {review.city}</div>
                   </div>
                 </footer>
               </article>

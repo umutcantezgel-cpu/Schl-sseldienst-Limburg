@@ -1,14 +1,15 @@
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Phone, ArrowRight } from "lucide-react";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const PricingCalculator = dynamic(() => import("@/components/pricing/PricingCalculator"), {
   loading: () => (
-    <div className="w-full max-w-2xl mx-auto h-[600px] bg-white rounded-3xl elevation-1 border border-[var(--color-border)] animate-pulse flex items-center justify-center p-8 mt-12">
+    <div className="w-full max-w-2xl mx-auto h-[600px] bg-white rounded-2xl shadow-sm border border-slate-200 animate-pulse flex items-center justify-center p-8 mt-12">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-16 h-16 rounded-full bg-[var(--color-surface-divider)]"></div>
-        <div className="h-6 w-48 bg-[var(--color-surface-divider)] rounded-full"></div>
-        <div className="h-4 w-32 bg-[var(--color-surface-divider)] rounded-full mt-2"></div>
+        <div className="w-16 h-16 rounded-full bg-slate-100"></div>
+        <div className="h-6 w-48 bg-slate-100 rounded-full"></div>
+        <div className="h-4 w-32 bg-slate-100 rounded-full mt-2"></div>
       </div>
     </div>
   )
@@ -35,7 +36,7 @@ export default function PreisePage() {
   ];
 
   return (
-    <div className="bg-[var(--color-surface-subtle)] text-[var(--color-text-primary)] font-sans  pt-24">
+    <div className="bg-white text-slate-900 pt-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(mainServicesSchema) }}
@@ -48,37 +49,39 @@ export default function PreisePage() {
       <Breadcrumbs items={breadcrumbs} />
 
       {/* Hero Section */}
-      <section className="relative px-[var(--section-px)] py-[var(--section-py)] bg-white border-b border-[var(--color-border-subtle)]">
+      <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-white border-b border-slate-100">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
-            Ehrliche <span className="text-[var(--color-brand)]">Festpreise</span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            Unsere <span className="text-primary-600">Festpreise</span> – Fair und Transparent.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--color-text-body)] sm:text-xl">
-            Wir hassen versteckte Kosten genauso wie Sie. Deshalb garantieren wir volle Transparenz vor der Türöffnung.
+          <p className="mx-auto mt-6 max-w-xl text-lg text-slate-600 sm:text-xl leading-relaxed">
+            Sie zahlen genau das, was wir vorher am Telefon vereinbaren. Garantiert. Keine versteckten Kosten.
           </p>
         </div>
       </section>
 
       {/* Calculator Section */}
-      <section className="px-[var(--section-px)] py-[var(--section-py)] -mt-12 relative z-10">
+      <section className="px-4 sm:px-6 lg:px-8 py-16 -mt-8 relative z-10">
         <PricingCalculator />
       </section>
 
-      {/* Additional Guarantees / Trust */}
-      <section className="px-[var(--section-px)] py-[var(--section-py)] bg-white">
-        <div className="mx-auto max-w-3xl text-center">
-          <ShieldCheck className="mx-auto h-8 w-8 text-[var(--color-brand)] mb-6" />
-          <h2 className="text-2xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-3xl">
-            Ihre Sicherheit: Unsere Festpreisgarantie
-          </h2>
-          <p className="mt-4 text-lg text-[var(--color-text-body)]">
-            Der Preis, den Ihnen der Monteur vor Ort nach der Besichtigung der Tür nennt, ist ein verbindlicher Festpreis. Es kommen keine Fantasie-Gebühren für &quot;Spezialwerkzeuge&quot; oder &quot;Erschwerniszulagen&quot; im Nachhinein dazu.
-          </p>
+      {/* Fairness-Garantie Box */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 bg-white">
+        <div className="mx-auto max-w-4xl">
+          <div className="bg-primary-50 border border-primary-100 p-8 rounded-xl text-center">
+            <ShieldCheck className="mx-auto h-8 w-8 text-primary-600 mb-4" />
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+              Ihre Sicherheit: Unsere Festpreisgarantie
+            </h2>
+            <p className="mt-4 text-primary-900 leading-relaxed max-w-2xl mx-auto">
+              Alle Preise inkl. gesetzlicher MwSt. und Anfahrt. Keine versteckten Kosten. EC-Kartenzahlung direkt beim Monteur möglich. Der Preis, den Ihnen der Monteur vor Ort nach der Besichtigung nennt, ist verbindlich.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="px-[var(--section-px)] py-[var(--section-py)] bg-[var(--color-surface-subtle)]">
+      <section className="px-4 sm:px-6 lg:px-8 py-16 bg-slate-50">
         <PricingFAQ />
       </section>
 
