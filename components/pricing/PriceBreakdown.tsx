@@ -1,35 +1,37 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ServiceType, TimeSlot, PRICING, TIME_MODIFIERS, ADDONS } from "./pricing.constants";
+import { ServiceType, TimeSlot, getDynamicPricing, TIME_MODIFIERS, ADDONS } from "./pricing.constants";
 
 interface PriceBreakdownProps {
     serviceType: ServiceType;
     timeSlot: TimeSlot;
+    basePrice?: number;
 }
 
-export default function PriceBreakdown({ serviceType, timeSlot }: PriceBreakdownProps) {
+export default function PriceBreakdown({ serviceType, timeSlot, basePrice = 59 }: PriceBreakdownProps) {
+    const PRICING = getDynamicPricing(basePrice);
     const price = PRICING[serviceType][timeSlot];
 
     if (price === null) {
         return (
-            <div className="rounded-xl bg-[var(--color-brand-light)] p-6 ring-1 ring-[var(--color-brand-muted)] flex flex-col justify-center items-center text-center h-[260px]" aria-live="polite">
-                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-2">Preis auf Anfrage</h3>
+            <div className="rounded-2xl glass p-6 ring-1 ring-[var(--color-border-glass)] flex flex-col justify-center items-center text-center h-[260px]" aria-live="polite">
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2">Diskrete Kalkulation auf Anfrage</h3>
                 <p className="text-[var(--color-text-body)] mb-6 text-sm">
-                    Für diese Dienstleistung müssen wir die Situation vor Ort oder telefonisch bewerten, um einen seriösen Preis zu nennen.
+                    Um Ihnen unsere unerschütterliche Limburger Festpreis-Garantie geben zu können, bewerten wir die genaue Situation für diese Spezial-Öffnung kurz telefonisch oder direkt bei Ihnen vor Ort in Limburg.
                 </p>
             </div>
         );
     }
 
     return (
-        <div className="rounded-xl bg-[var(--color-surface-subtle)] p-6 ring-1 ring-[var(--color-border-subtle)] h-full flex flex-col" aria-live="polite">
-            <h3 className="text-base font-bold text-[var(--color-text-primary)] mb-4 tracking-tight">Preisaufschlüsselung</h3>
+        <div className="rounded-2xl glass p-6 ring-1 ring-[var(--color-border-glass)] h-full flex flex-col" aria-live="polite">
+            <h3 className="text-base font-bold text-[var(--color-text-main)] mb-4 tracking-tight">Transparente Preisaufschlüsselung für Limburg</h3>
 
             <dl className="space-y-3 text-sm flex-1">
-                <div className="flex justify-between border-b border-[var(--color-border)] pb-3">
+                <div className="flex justify-between border-b border-[var(--color-border-subtle)] pb-3">
                     <dt className="text-[var(--color-text-body)] text-left">Basis ({TIME_MODIFIERS[timeSlot].label})</dt>
-                    <dd className="font-semibold text-[var(--color-text-primary)] shrink-0 ml-4 relative w-[40px] text-right">
+                    <dd className="font-semibold text-[var(--color-text-main)] shrink-0 ml-4 relative w-[40px] text-right">
                         <AnimatePresence mode="wait">
                             <motion.span
                                 key={price}
@@ -45,15 +47,15 @@ export default function PriceBreakdown({ serviceType, timeSlot }: PriceBreakdown
                     </dd>
                 </div>
 
-                <div className="flex justify-between border-b border-[var(--color-border)] pb-3">
+                <div className="flex justify-between border-b border-[var(--color-border-subtle)] pb-3">
                     <dt className="text-[var(--color-text-body)] text-left">{ADDONS.anfahrt.label}</dt>
                     <dd className="font-semibold text-[var(--color-success)] shrink-0 ml-4">{ADDONS.anfahrt.price}</dd>
                 </div>
 
                 <div className="pt-2">
                     <div className="flex justify-between items-center">
-                        <dt className="text-sm font-bold text-[var(--color-text-primary)]">Garantiert ab</dt>
-                        <dd className="text-3xl font-extrabold text-[var(--color-brand)] tabular-nums relative w-[80px] h-[40px] text-right">
+                        <dt className="text-sm font-bold text-[var(--color-text-main)]">Limburger Festpreis ab</dt>
+                        <dd className="text-3xl font-extrabold text-gradient tabular-nums relative w-[80px] h-[40px] text-right">
                             <AnimatePresence mode="wait">
                                 <motion.span
                                     key={price}
@@ -71,9 +73,9 @@ export default function PriceBreakdown({ serviceType, timeSlot }: PriceBreakdown
                 </div>
             </dl>
 
-            <div className="mt-6 space-y-2 text-xs text-[var(--color-text-muted)] bg-white p-3 rounded-lg border border-[var(--color-border)] text-left">
-                <p className="font-semibold text-[var(--color-text-body)]">Optionale Zusatzkosten:</p>
-                <ul className="list-disc pl-4 space-y-1">
+            <div className="mt-6 space-y-2 text-xs text-[var(--color-text-body)] bg-blue-50/50 p-3 rounded-xl border border-blue-100 text-left">
+                <p className="font-semibold text-blue-900">Absolute Transparenz bei Zusatzleistungen:</p>
+                <ul className="list-disc pl-4 space-y-1 text-blue-800/80">
                     {serviceType === 'doorLocked' && (
                         <li>{ADDONS.zylinder.label}: {ADDONS.zylinder.price}€</li>
                     )}

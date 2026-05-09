@@ -25,94 +25,91 @@ import { aggregateRating } from "@/lib/data/testimonials";
 import { getHomepageFAQs } from "@/lib/faqData";
 import { getFAQSchema } from "@/lib/faqSchema";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { BUSINESS } from "@/lib/constants";
 
 export default function HomePage() {
   return (
     <>
-      {/* ═══ HERO SECTION — Der Rettungsanker ═══ */}
-      <section id="hero-section" aria-label="Notfall-Hilfe" className="bg-white px-4 sm:px-6 lg:px-8 pt-20 lg:pt-32 pb-12">
-        <div className="mx-auto max-w-3xl text-center flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] text-balance">
-            Ausgesperrt? Wir sind im <span className="text-primary-600">Lahn-Dill-Kreis</span> in 20-30 Minuten bei Ihnen.
+      {/* ═══ HERO SECTION — Premium Bright Glassmorphism ═══ */}
+      <section id="hero-section" aria-label="Schnelle Notfall-Hilfe" className="relative px-4 sm:px-6 lg:px-8 pt-40 lg:pt-48 pb-20 overflow-hidden bg-[var(--color-surface-base)] scroll-mt-28">
+        {/* Ambient bright glow */}
+        <div className="absolute inset-0 bg-[var(--gradient-hero)]" aria-hidden="true" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-teal-50/50 blur-[100px] pointer-events-none" />
+        
+        <div className="relative z-10 mx-auto max-w-4xl text-center flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-blue-100 bg-white/60 mb-8 md:mb-12 shadow-sm text-blue-800 text-sm font-semibold tracking-wide">
+            <span className="flex h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+            {BUSINESS.name} – {BUSINESS.ownerTitle} {BUSINESS.owner}
+          </div>
+          <h1 className="font-extrabold text-[var(--color-text-main)] tracking-tight leading-[1.15] sm:leading-tight md:leading-snug text-balance mt-4 md:mt-6 text-4xl sm:text-5xl lg:text-6xl">
+            Tür zu? Ihr regionaler <br className="hidden md:block" />
+            <span className="text-gradient-primary relative inline-block mt-2">
+              Premium-Schlüsseldienst
+              <svg className="absolute -bottom-3 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
+              </svg>
+            </span>
+            {" "}für Limburg & Umgebung.
           </h1>
-          <p className="mx-auto max-w-xl text-slate-600 text-lg md:text-xl font-medium mt-6 text-balance leading-relaxed">
-            Regionaler Fachbetrieb. Keine versteckten Kosten. Zerstörungsfreie Öffnung in 99% der Fälle.
+          <p className="mx-auto max-w-2xl text-[var(--color-text-body)] text-lg md:text-xl font-medium mt-8 md:mt-10 text-balance leading-relaxed">
+            Wir sind {BUSINESS.name} unter Leitung von {BUSINESS.owner}. Als etablierter Fachbetrieb öffnen wir Ihre Tür in 99% der Fälle absolut schadensfrei. In 15–30 Minuten sind wir vor Ort – zu 100% garantierten, transparenten Festpreisen, ohne versteckte Gebühren.
           </p>
-          <TrustBadges />
+          <div className="mt-10 mb-6">
+            <TrustBadges />
+          </div>
           <HeroCTA />
         </div>
       </section>
 
       {/* Google Reviews Badge */}
-      <aside aria-label="Google-Bewertungen" className="relative -mt-4 mb-6 flex justify-center z-10 w-full px-4">
-        <GoogleReviewsBadge rating={aggregateRating.ratingValue} count={aggregateRating.reviewCount} />
+      <aside aria-label="Kunden-Bewertungen" className="relative -mt-4 mb-12 flex justify-center z-20 w-full px-4">
+        <div className="glass px-6 py-3 rounded-full hover-lift-subtle inline-flex items-center">
+          <GoogleReviewsBadge rating={aggregateRating.ratingValue} count={aggregateRating.reviewCount} />
+        </div>
       </aside>
 
-      {/* ═══ TRUST BAR — Immediate Relief ═══ */}
+      {/* ═══ TRUST BAR ═══ */}
       <TrustBar />
 
-      {/* ═══ PRICING SECTION — Transparenz ═══ */}
-      <section id="preise" aria-label="Transparente Festpreise" className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-              Unsere transparenten <span className="text-primary-600">Festpreise</span>
-            </h2>
-            <div className="mx-auto mt-3 h-[3px] w-20 rounded bg-primary-600"></div>
-            <p className="mt-6 text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-              Garantierte Preise für Türöffnungen ohne versteckte Kosten.
-            </p>
-          </div>
-          <div className="mt-12 max-w-4xl mx-auto">
-            <PricingTable />
-          </div>
-          <div className="mt-10 text-center">
-            <Link
-              href="/preise"
-              className="inline-flex items-center gap-2 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold rounded-full px-6 py-3 transition-colors text-sm tracking-wide"
-            >
-              Interaktiven Preisrechner öffnen <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ═══ SERVICES SECTION ═══ */}
-      <section aria-label="Unsere Leistungen" className="bg-white px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-              Unsere <span className="text-primary-600">Leistungen</span>
+      <section aria-label="Exklusive Leistungen" className="relative bg-[var(--color-surface-elevated)] px-4 sm:px-6 lg:px-8 py-20 lg:py-32 noise-overlay overflow-hidden border-y border-[var(--color-border-subtle)]">
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 md:mb-6 block">Erstklassiges Service-Portfolio</span>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-[var(--color-text-main)] tracking-tight">
+              Ihre Spezialisten für <span className="text-gradient-primary">Sicherheit & Öffnungen</span>
             </h2>
-            <div className="mx-auto mt-3 h-[3px] w-20 rounded bg-primary-600"></div>
-            <p className="mt-6 text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-              Professionelle Hilfe für jedes Schloss-Problem.
+            <div className="mx-auto mt-6 md:mt-8 h-[4px] w-24 rounded-full bg-gradient-to-r from-blue-500 to-blue-300"></div>
+            <p className="mt-6 md:mt-8 text-[var(--color-text-body)] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+              Verlassen Sie sich auf modernstes Equipment und jahrelange Expertise. Vom verlorenen Haustürschlüssel bis zum komplexen Schließanlagen-Konzept – wir meistern jede Herausforderung präzise, diskret und vor allem materialschonend.
             </p>
           </div>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-20 grid gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: DoorOpen, title: "Türöffnung", desc: "Zerstörungsfreie Öffnung von Haus- und Wohnungstüren in 99% der Fälle.", href: "/leistungen/turoeffnung", linkText: "Türöffnung im Detail" },
-              { icon: Car, title: "Autoöffnung", desc: "Schonende Öffnung von Fahrzeugen aller Marken ohne Lackschäden.", href: "/leistungen/autooeffnung", linkText: "Autoöffnung im Detail" },
-              { icon: Lock, title: "Tresoröffnung", desc: "Diskrete und professionelle Öffnung von Tresoren und Wertgelassen.", href: "/leistungen/schliessanlagen", linkText: "Tresoröffnung im Detail" },
-              { icon: ShieldCheck, title: "Sicherheitstechnik", desc: "Beratung und Einbau von Schließanlagen und Einbruchschutz.", href: "/leistungen/sicherheitstechnik", linkText: "Sicherheitstechnik im Detail" },
+              { icon: DoorOpen, title: "Schonende Türöffnungen", desc: "Smarte und zu 99% zerstörungsfreie Öffnungsmethoden für Haus-, Wohnungs- und Zimmertüren. Innerhalb von Minuten sind Sie wieder drinnen.", href: "/leistungen/turoeffnung", linkText: "Türöffnung ansehen" },
+              { icon: Car, title: "KFZ-Spezialöffnungen", desc: "Fachgerechte und völlig kratzerfreie Autoöffnung aller Marken und Modelle. Vertrauen Sie unserem geschulten Personal.", href: "/leistungen/autooeffnung", linkText: "KFZ-Öffnung ansehen" },
+              { icon: Lock, title: "Tresor- & Safeknackung", desc: "Wir öffnen Ihren Tresor, Waffenschrank oder Geldkassette absolut diskret und mit höchster Präzision – auch bei defekten Schlössern.", href: "/leistungen/schliessanlagen", linkText: "Tresore ansehen" },
+              { icon: ShieldCheck, title: "Cleverer Einbruchschutz", desc: "Kostenlose Sicherheitsanalyse vor Ort. Installation von Premium-Schließzylindern, Querriegeln und modernen Smart-Home-Sicherheitssystemen.", href: "/leistungen/sicherheitstechnik", linkText: "Einbruchschutz ansehen" },
             ].map((service) => (
               <Card
                 key={service.title}
-                className="group relative flex flex-col items-start p-8 bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-primary-300 transition-all duration-300 h-full"
+                className="group relative flex flex-col items-start p-8 glass-card hover-lift h-full overflow-hidden transition-all duration-300 border-white/40"
               >
-                <div className="rounded-xl bg-primary-50 p-4 text-primary-600">
-                  <service.icon className="h-8 w-8" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10 rounded-2xl bg-blue-50 p-4 text-blue-600 shadow-sm border border-blue-100 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="h-7 w-7" aria-hidden="true" />
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-slate-900">
+                <h3 className="relative z-10 mt-8 text-xl font-bold text-[var(--color-text-main)] group-hover:text-blue-900 transition-colors">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-slate-600 text-sm leading-relaxed">
+                <p className="relative z-10 mt-3 text-[var(--color-text-body)] text-sm leading-relaxed">
                   {service.desc}
                 </p>
-                <div className="mt-auto pt-6 flex w-full">
+                <div className="relative z-10 mt-auto pt-8 flex w-full">
                   <Link
                     href={service.href}
-                    className="flex items-center gap-2 font-semibold text-primary-600 hover:text-primary-700 text-sm transition-colors group-hover:translate-x-0.5"
+                    className="flex items-center gap-2 font-bold text-blue-600 hover:text-blue-800 text-sm transition-colors group-hover:translate-x-1"
                   >
                     {service.linkText} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </Link>
@@ -124,32 +121,61 @@ export default function HomePage() {
       </section>
 
       {/* ═══ WHY US SECTION ═══ */}
-      <section aria-label="Warum Schlüsseldienst Wetzlar" className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section aria-label="Ihre Vorteile in Limburg" className="bg-[var(--color-surface-base)] px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-              Warum <span className="text-primary-600">Schlüsseldienst Wetzlar</span>?
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Ihre Nummer 1 in Limburg</span>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-[var(--color-text-main)] tracking-tight">
+              Warum Sie bei uns <span className="text-gradient-primary">in den besten Händen</span> sind
             </h2>
-            <div className="mx-auto mt-3 h-[3px] w-20 rounded bg-primary-600"></div>
+            <div className="mx-auto mt-6 md:mt-8 h-[4px] w-24 rounded-full bg-gradient-to-r from-blue-500 to-blue-300"></div>
           </div>
-          <div className="mt-12 grid gap-10 sm:grid-cols-3">
+          <div className="mt-20 grid gap-12 md:gap-16 sm:grid-cols-3">
             {[
-              { icon: Euro, title: "Transparente Festpreise", desc: "Wir nennen Ihnen den Preis vorab am Telefon. Keine bösen Überraschungen vor Ort." },
-              { icon: MapPin, title: "Lokaler Anbieter", desc: "Wir sind echte Handwerker aus Wetzlar, kein anonymes Callcenter aus dem Ausland." },
-              { icon: Key, title: "Zerstörungsfreie Öffnung", desc: "Mit Spezialwerkzeug öffnen wir zugefallene Türen in der Regel ohne jeden Schaden." },
+              { icon: Euro, title: "Knallharte Festpreisgarantie", desc: "Sie erfahren bereits am Telefon, was die Türöffnung exakt kosten wird. Garantiert keine bösen Überraschungen, keine Fantasie-Anfahrtskosten, absolute Ehrlichkeit." },
+              { icon: MapPin, title: "Echte lokale Präsenz", desc: `Als echter Limburger Betrieb (${BUSINESS.ownerTitle} ${BUSINESS.owner}) mit Sitz in der ${BUSINESS.address.street} sind wir rasend schnell bei Ihnen. Keine Callcenter, sondern direkter Kontakt zum Monteur.` },
+              { icon: Key, title: "Zerstörungsfreie Öffnung", desc: "Zugefallene Türen öffnen unsere speziell ausgebildeten Monteure in 99% der Fälle komplett ohne jegliche Beschädigungen an Zylinder, Beschlag oder der Tür selbst." },
             ].map((item) => (
-              <div key={item.title} className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200 text-primary-600 shadow-sm">
-                  <item.icon className="h-8 w-8" aria-hidden="true" />
+              <div key={item.title} className="text-center group hover:-translate-y-2 transition-transform duration-300">
+                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-3xl glass border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                  <item.icon className="h-12 w-12" aria-hidden="true" />
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-slate-900">
+                <h3 className="mt-10 text-2xl font-bold text-[var(--color-text-main)] leading-tight">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-slate-600 leading-relaxed">
+                <p className="mt-4 text-[var(--color-text-body)] leading-relaxed">
                   {item.desc}
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ PRICING SECTION ═══ */}
+      <section id="preise" aria-label="Garantierte Festpreise" className="relative bg-[var(--color-surface-elevated)] px-4 sm:px-6 lg:px-8 py-20 lg:py-32 border-y border-[var(--color-border-subtle)] scroll-mt-28">
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Absolute Kostenkontrolle</span>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-[var(--color-text-main)] tracking-tight">
+              Preise, die dem <span className="text-gradient-primary">Tageslicht standhalten</span>
+            </h2>
+            <div className="mx-auto mt-6 md:mt-8 h-[4px] w-24 rounded-full bg-gradient-to-r from-blue-500 to-blue-300"></div>
+            <p className="mt-6 md:mt-8 text-[var(--color-text-body)] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+              Keine unseriösen "Ab 15€"-Lockvogelangebote. Bei uns erhalten Sie echte, transparente Komplettpreise inklusive Anfahrt. So wissen Sie vorab genau, was Sie erwartet.
+            </p>
+          </div>
+          <div className="mt-20 max-w-5xl mx-auto px-2">
+            <PricingTable />
+          </div>
+          <div className="mt-16 text-center">
+            <Link
+              href="/preise"
+              className="inline-flex items-center gap-3 bg-white border border-blue-200 text-blue-700 font-bold rounded-full px-10 py-5 transition-all text-lg tracking-wide hover:shadow-xl hover:border-blue-300 hover:text-blue-900 group"
+            >
+              Zum interaktiven Preisrechner <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
@@ -161,7 +187,7 @@ export default function HomePage() {
       <ReviewsSection />
 
       {/* ═══ FAQ SECTION ═══ */}
-      <section aria-label="Häufig gestellte Fragen" className="bg-white px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section id="faq" aria-label="Häufig gestellte Fragen" className="bg-[var(--color-surface-base)] px-4 sm:px-6 lg:px-8 py-20 lg:py-32 scroll-mt-28">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -169,26 +195,27 @@ export default function HomePage() {
           }}
         />
         <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-              Häufig gestellte <span className="text-primary-600">Fragen</span>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Häufig Gestellte Fragen</span>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-[var(--color-text-main)] tracking-tight">
+              Wir räumen mit <span className="text-gradient-primary">Unklarheiten auf</span>
             </h2>
-            <div className="mx-auto mt-3 h-[3px] w-20 rounded bg-primary-600"></div>
-            <p className="mt-6 text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-              Schlüsseldienst Wetzlar beantwortet Ihre wichtigsten Fragen — ehrlich und transparent.
+            <div className="mx-auto mt-6 md:mt-8 h-[4px] w-24 rounded-full bg-gradient-to-r from-blue-500 to-blue-300"></div>
+            <p className="mt-6 md:mt-8 text-[var(--color-text-body)] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+              Die Welt der Schlüsseldienste ist leider oft undurchsichtig. Als seriöser Fachbetrieb aus Limburg beantworten wir Ihnen die drängendsten Fragen schon vorab.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-6">
             {getHomepageFAQs().map((faq, i) => (
               <FAQAccordion key={i} question={faq.question} answer={faq.answer} />
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-12 text-center">
             <Link
               href="/faq"
-              className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors"
+              className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-800 transition-colors link-underline pb-1"
             >
-              Alle Fragen & Antworten anzeigen
+              Zum kompletten FAQ-Bereich
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -196,7 +223,7 @@ export default function HomePage() {
       </section>
 
       {/* Emergency CTA */}
-      <aside aria-label="Notfall-Kontakt">
+      <aside aria-label="Schnelle Kontaktaufnahme">
         <EmergencyCTA />
       </aside>
     </>

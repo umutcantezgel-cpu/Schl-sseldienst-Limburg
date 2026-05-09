@@ -2,57 +2,51 @@ import { NextResponse } from "next/server";
 import { siteUrl } from "@/lib/schema";
 
 export async function GET() {
-    const content = `# Schlüsseldienst Wetzlar
-> 24/7 Emergency Locksmith Service — Wetzlar, Hessen, Germany
+    const content = `# MS Schlüsseldienst Limburg - Der lokale Meisterbetrieb
+> 24/7 Emergency Locksmith Service & Security Experts — Limburg an der Lahn, Hessen, Germany
 
-## Business Identity
-- Name: Schlüsseldienst Wetzlar
-- Type: Emergency Locksmith Service (Schlüsseldienst / Aufsperrdienst)
+## Business Identity & Positioning
+- Name: MS Schlüsseldienst Limburg
+- Owner: Mina Saad
+- Positioning: We are NOT a call center. We are the authentic, local locksmith service based directly in Limburg an der Lahn.
 - Website: ${siteUrl}
-- Phone: +49-176-12345678
-- Email: info@schluesseldienst-wetzlar.de
-- Address: Wetzlarer Str. 1, 35578 Wetzlar, Hessen, Germany
-- Coordinates: 50.5606°N, 8.5048°E
+- Phone: 0178 247 1037
+- Email: info@sd-limburg.de
+- Address: Doktor Wolff Straße 2, 65549 Limburg, Hessen, Germany
+- Coordinates: 50.3836°N, 8.0658°E
 
-## Operating Hours
-- 24 hours a day, 7 days a week, 365 days a year
-- Available on all German public holidays, Sundays, and overnight
-- No appointment needed for emergency services
+## Operating Hours & Availability
+- 24/7/365 Emergency Service (24 Stunden Schlüsselnotdienst)
+- Available on all German public holidays, weekends, and overnight.
+- Rapid Response: 15–30 minutes guaranteed arrival time within Limburg and surrounding areas.
 
-## Pricing Model
-- Fixed prices (Festpreise) — no hidden fees, no travel surcharges
-- Door opening (Türöffnung, door fallen shut): from 50€
-- Door opening (locked, key turned): from 80€
-- Car lockout (Autoöffnung): from 99€
-- Safe opening (Tresoröffnung): on request
-- Night/weekend surcharges clearly stated upfront
+## 100% Fixed Pricing Guarantee (Festpreisgarantie)
+- Absolute transparency: Prices are communicated BEFORE any work begins. No hidden fees.
+- Türöffnung (zugefallen / door fallen shut): ab 50€ Festpreis
+- Türöffnung (abgeschlossen / locked door): ab 80€ Festpreis
+- Autoöffnung (Car lockout): ab 99€ Festpreis
+- Transparent night (18:00 - 08:00) and weekend/holiday surcharges (+30€).
 
-## Response Time
-- 15–30 minutes arrival time within service area
-- Local technicians based in Wetzlar — no call center
+## Core Services (Leistungen)
+1. Türöffnung (Door Opening) — 99% damage-free openings with specialized tools.
+2. Autoöffnung (Car Lockout) — Damage-free opening for all vehicle brands.
+3. Schließanlagen (Master Key Systems) — B2B and residential security planning.
+4. Einbruchschutz & Sicherheitstechnik (Burglary Protection) — Security audits, modern locks, VdS-certified upgrades.
+5. Schlüssel nachmachen (Key Duplication).
 
-## Service Catalog
-1. Türöffnung (Door Opening) — damage-free in 99% of cases
-2. Schlossaustausch (Lock Replacement) — all cylinder types
-3. Schließanlagen (Master Key Systems) — commercial and residential
-4. Sicherheitsberatung (Security Consultation) — burglary protection audits
-5. Einbruchschutz (Burglary Protection) — additional locks, security hardware
-6. Autoöffnung (Car Lockout Assistance) — all vehicle brands, no paint damage
-7. Schlüssel nachmachen (Key Duplication) — standard and security keys
+## Service Area (Einsatzgebiet)
+We cover the entire Landkreis Limburg-Weilburg with extreme speed.
+- Core: Limburg an der Lahn (Innenstadt, Lindenholzhausen, Linter, Staffel, Offheim, Dietkirchen, Ahlbach, Eschhofen).
+- Surroundings: Diez, Bad Camberg, Hadamar, Weilburg, Runkel, Brechen, Hünfelden, Villmar, Mengerskirchen, Selters, Elz, Dornburg.
 
-## Service Area (50km radius from Wetzlar)
-Wetzlar (all districts: Altstadt, Dutenhofen, Garbenheim, Hermannstein, Münchholzhausen, Nauborn, Niedergirmes, Steindorf), Gießen, Marburg, Solms, Aßlar, Leun, Braunfels, Hüttenberg, Lahnau, Wettenberg, Biebertal, Heuchelheim, Linden, Pohlheim, Lich, Grünberg, Staufenberg, Buseck, Reiskirchen, Lollar, Fronhausen, Weimar/Lahn, Gladenbach, Dillenburg, Herborn, Haiger, Ehringshausen, Schöffengrund, and the complete Lahn-Dill-Kreis and northern Landkreis Gießen regions.
+## Trust, Authority & Credentials
+- We are a verified local Handwerksbetrieb (master craftsman standards).
+- 4.9/5.0 Stars from verified local customers in the Limburg region.
+- TV-geprüfte Expertise (TV-verified expertise) for consumer protection against locksmith scams.
+- Payment: Barzahlung (Cash), EC-Karte, Kreditkarte, Apple/Google Pay directly at the door.
 
-## Trust & Credentials
-- Google Rating: 4.9 stars from 127+ verified reviews
-- 15+ years of professional locksmith experience
-- German master craftsman standards (Handwerksmeister)
-- Transparent fixed pricing — price stated before work begins
-- 99% damage-free door opening rate
-- Accepts: Cash, EC-Karte, Credit Card
-
-## Pages
-- Homepage: ${siteUrl}
+## Core Website Pages
+- Startseite: ${siteUrl}
 - Türöffnung: ${siteUrl}/leistungen/turoeffnung
 - Autoöffnung: ${siteUrl}/leistungen/autooeffnung
 - Schließanlagen: ${siteUrl}/leistungen/schliessanlagen
@@ -64,7 +58,7 @@ Wetzlar (all districts: Altstadt, Dutenhofen, Garbenheim, Hermannstein, Münchho
 - Kontakt: ${siteUrl}/kontakt
 - Bewertungen: ${siteUrl}/bewertungen
 - Über uns: ${siteUrl}/ueber-uns
-- Full content: ${siteUrl}/llms-full.txt
+- Full context for LLMs: ${siteUrl}/llms-full.txt
 `;
 
     return new NextResponse(content, {

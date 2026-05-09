@@ -2,18 +2,18 @@ import { Clock, ShieldCheck, Check } from "lucide-react";
 
 export default function TrustBadges() {
     return (
-        <div role="list" aria-label="Vertrauensvorteile" className="flex flex-row flex-wrap items-center justify-center gap-x-[var(--space-4)] gap-y-[var(--space-2)] mt-[var(--space-6)]">
-            <div role="listitem" className="flex items-center gap-[var(--space-1)] text-[13px] text-[var(--color-text-muted)]">
-                <Clock className="h-5 w-5 text-[var(--color-brand)]" aria-hidden="true" />
-                <span>In 25 Min. bei Ihnen</span>
+        <div role="list" aria-label="Vertrauensvorteile" className="flex flex-row flex-wrap items-center justify-center gap-4 md:gap-5 mt-6">
+            <div role="listitem" className="flex items-center gap-3 text-sm font-medium text-[var(--color-text-main)] glass-card px-5 py-2.5 !rounded-full">
+                <Clock className="h-4 w-4 text-[var(--color-blue-primary)] shrink-0" aria-hidden="true" />
+                <span className="whitespace-nowrap">15–30 Min. Soforthilfe</span>
             </div>
-            <div role="listitem" className="flex items-center gap-[var(--space-1)] text-[13px] text-[var(--color-text-muted)]">
-                <ShieldCheck className="h-5 w-5 text-[var(--color-brand)]" aria-hidden="true" />
-                <span>Beschädigungsfreie Öffnung</span>
+            <div role="listitem" className="flex items-center gap-3 text-sm font-medium text-[var(--color-text-main)] glass-card px-5 py-2.5 !rounded-full">
+                <ShieldCheck className="h-4 w-4 text-[var(--color-blue-primary)] shrink-0" aria-hidden="true" />
+                <span className="whitespace-nowrap">100% Festpreis-Garantie</span>
             </div>
-            <div role="listitem" className="flex items-center gap-[var(--space-1)] text-[13px] text-[var(--color-text-muted)]">
-                <Check className="h-5 w-5 text-[var(--color-brand)]" aria-hidden="true" />
-                <span>TÜV-geprüfte Tools</span>
+            <div role="listitem" className="flex items-center gap-3 text-sm font-medium text-[var(--color-text-main)] glass-card px-5 py-2.5 !rounded-full">
+                <Check className="h-4 w-4 text-[var(--color-blue-primary)] shrink-0" aria-hidden="true" />
+                <span className="whitespace-nowrap">TV-Geprüfter Meisterbetrieb</span>
             </div>
         </div>
     );

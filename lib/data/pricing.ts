@@ -11,39 +11,39 @@ export type PricingItem = {
 export const pricingData: PricingItem[] = [
     {
         id: "tuer-zugefallen",
-        serviceName: "Tür zugefallen",
+        serviceName: "Zerstörungsfreie Notöffnung",
         priceBase: 59,
-        description: "Schlüssel steckt von innen oder Tür ist nur ins Schloss gefallen.",
+        description: "Präzisionsöffnung für zugefallene, unverschlossene Türen. Dank spezieller Diagnostik in Sekunden erledigt – absolut schadensfrei.",
         includesTravel: true,
         features: [
-            "Zerstörungsfreie Öffnung (99%)",
-            "Keine versteckten Anfahrtskosten",
-            "Transparenter Festpreis vor Ort"
+            "100% Zerstörungsfrei-Garantie bei Standardtüren",
+            "Verbindlicher Festpreis – Garantiert keine versteckten Kosten",
+            "Soforteinsatz: Unser Techniker ist umgehend bei Ihnen"
         ],
         isPopular: true
     },
     {
         id: "tuer-abgeschlossen",
-        serviceName: "Tür abgeschlossen",
+        serviceName: "Tresor-Level Sicherheitsöffnung",
         priceBase: 89,
-        description: "Schlüssel verloren oder mehrfach abgeschlossen.",
+        description: "Tiefgehende Öffnung bei verschlossenen Türen, Riegelbruch oder Schlüsselverlust. Minimalinvasive Spezialwerkzeuge im Einsatz.",
         includesTravel: true,
         features: [
-            "Profi-Werkzeug Einsatz",
-            "Ersatzzylinder auf Wunsch zubuchbar",
-            "Keine versteckten Anfahrtskosten"
+            "Zertifiziertes Spezial-Fräsverfahren zur Schonung des Beschlags",
+            "Transparente Vorab-Kalkulation vor dem ersten Handgriff",
+            "Ersatz-Sicherheitszylinder direkt vom Einsatzfahrzeug verfügbar"
         ]
     },
     {
         id: "zylinder-tausch",
-        serviceName: "Zylindertausch",
+        serviceName: "Premium Sicherheitszylinder-Tausch",
         priceBase: 49,
-        description: "Einbau eines neuen, sicheren Schließzylinders.",
+        description: "Sofortige Wiederherstellung Ihrer Sicherheit durch den Austausch kompromittierter Schließzylinder – ideal nach Einbruch oder Einzug.",
         includesTravel: false,
         features: [
-            "Inklusive 3 Schlüsseln",
-            "Sicherheitsklasse nach Wahl",
-            "Sofortiger Einbau vor Ort"
+            "VdS-konforme Hochsicherheitszylinder mit Not- & Gefahrenfunktion",
+            "Inklusive 3 codierten Wendeschlüsseln (Kopierschutz)",
+            "Fachgerechte Sofort-Montage durch unseren Sicherheitsexperten"
         ]
     }
 ];

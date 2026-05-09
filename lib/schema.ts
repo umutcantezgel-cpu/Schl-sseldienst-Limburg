@@ -1,7 +1,8 @@
 import { CONTENT_GRAPH } from "./contentGraph";
-import { PRICING } from "@/components/pricing/pricing.constants";
+import { getDynamicPricing } from "@/components/pricing/pricing.constants";
+import { BUSINESS } from "./constants";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://schluesseldienst-wetzlar-24.de";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || BUSINESS.domain;
 
 export function generateLocalBusinessSchema() {
     // Build areaServed from content graph
@@ -11,13 +12,15 @@ export function generateLocalBusinessSchema() {
             "@type": "City" as const,
             "name": n.title.replace('Schlüsseldienst ', '')
         }))
-        : [{ "@type": "City" as const, "name": "Wetzlar" }];
+        : [{ "@type": "City" as const, "name": "Limburg an der Lahn" }];
+
+    const PRICING = getDynamicPricing(50);
 
     return {
         "@context": "https://schema.org",
         "@type": "Locksmith",
-        "name": "Schlüsseldienst Wetzlar",
-        "description": "Schlüsseldienst Wetzlar ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 50 Euro, der Wetzlar, Gießen, Marburg und den gesamten Lahn-Dill-Kreis innerhalb von 15–30 Minuten erreicht. Über 127 Google-Bewertungen mit 4.9 Sternen bestätigen zuverlässigen Service, zerstörungsfreie Türöffnung in 99% der Fälle und transparente Festpreise ohne versteckte Kosten. Spezialisiert auf Türöffnung, Schlossaustausch, Autoöffnung, Schließanlagen und Sicherheitstechnik.",
+        "name": BUSINESS.name,
+        "description": `${BUSINESS.name} ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 50 Euro, der ${BUSINESS.address.cityFull}, Weilburg, Bad Camberg und den gesamten Landkreis Limburg-Weilburg innerhalb von 15–30 Minuten erreicht. Über 127 Google-Bewertungen mit 4.9 Sternen bestätigen zuverlässigen Service, zerstörungsfreie Türöffnung in 99% der Fälle und transparente Festpreise ohne versteckte Kosten. Spezialisiert auf Türöffnung, Schlossaustausch, Autoöffnung, Schließanlagen und Sicherheitstechnik.`,
         "image": `${siteUrl}/hero-bg.jpg`,
         "logo": {
             "@type": "ImageObject",
@@ -27,28 +30,28 @@ export function generateLocalBusinessSchema() {
         },
         "@id": `${siteUrl}/#localbusiness`,
         "url": siteUrl,
-        "telephone": "+49-176-12345678",
-        "email": "info@schluesseldienst-wetzlar.de",
+        "telephone": BUSINESS.phone.international,
+        "email": BUSINESS.email,
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Wetzlarer Str. 1",
-            "addressLocality": "Wetzlar",
-            "addressRegion": "Hessen",
-            "postalCode": "35578",
-            "addressCountry": "DE"
+            "streetAddress": BUSINESS.address.street,
+            "addressLocality": BUSINESS.address.cityFull,
+            "addressRegion": BUSINESS.address.state,
+            "postalCode": BUSINESS.address.zip,
+            "addressCountry": BUSINESS.address.countryCode
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 50.5606,
-            "longitude": 8.5048
+            "latitude": BUSINESS.geo.lat,
+            "longitude": BUSINESS.geo.lng
         },
         "areaServed": [
             {
                 "@type": "GeoCircle",
                 "geoMidpoint": {
                     "@type": "GeoCoordinates",
-                    "latitude": 50.5606,
-                    "longitude": 8.5048
+                    "latitude": BUSINESS.geo.lat,
+                    "longitude": BUSINESS.geo.lng
                 },
                 "geoRadius": "50000"
             },
@@ -171,9 +174,9 @@ export function generateWebSiteSchema() {
     return {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Schlüsseldienst Wetzlar",
+        "name": BUSINESS.name,
         "url": siteUrl,
-        "description": "24/7 Schlüsselnotdienst in Wetzlar, Gießen, Marburg und Lahn-Dill-Kreis. Festpreise, 15–30 Min. Anfahrt.",
+        "description": "24/7 Schlüsselnotdienst in Limburg an der Lahn, Weilburg, Bad Camberg und Landkreis Limburg-Weilburg. Festpreise, 15–30 Min. Anfahrt.",
         "inLanguage": "de-DE",
         "publisher": {
             "@type": "Locksmith",
@@ -202,7 +205,7 @@ export function generateHowToSchema(title: string, description: string) {
                 "@type": "HowToStep",
                 "position": 1,
                 "name": "Anruf",
-                "text": "Rufen Sie den Schlüsseldienst Wetzlar an unter +49-176-12345678. Der Preis wird Ihnen direkt am Telefon mitgeteilt."
+                "text": `Rufen Sie ${BUSINESS.name} an unter ${BUSINESS.phone.display}. Der Preis wird Ihnen direkt am Telefon mitgeteilt.`
             },
             {
                 "@type": "HowToStep",

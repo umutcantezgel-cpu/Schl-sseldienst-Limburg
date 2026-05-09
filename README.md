@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Schlüsseldienst Lahn-Dill-Kreis</h1>
+<h1>Schlüsseldienst Limburg</h1>
 <p><strong>Eine hochperformante, SEO-optimierte und extrem konversionsstarke Next.js-Architektur für lokale Notdienste.</strong></p>
 <br />
 
@@ -192,7 +192,7 @@ export interface Testimonial {
 </details>
 
 **Vorhandene Datendomänen:**
-- `areas.ts` – Datenbank aller Stadtteile und PLZ für den Lahn-Dill-Kreis
+- `stadtgebiete.ts` – Datenbank aller Stadtteile und PLZ für Limburg und Umgebung
 - `faqData.ts` – Strukturierte Q&A für Nutzer und Schema.org
 - `pricing.ts` – Transparente Kostenstrukturen für verschiedene Tage/Uhrzeiten
 - `testimonials.ts` – Authentische Kundenfeedbacks

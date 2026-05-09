@@ -13,73 +13,73 @@ export const reviewsData: Review[] = [
         id: "1",
         authorName: "Michael Schneider",
         rating: 5,
-        text: "Schlüssel im Schloss abgebrochen, und das am Sonntagabend! Der Monteur war nach genau 18 Minuten in Wetzlar-Naunheim vor Ort. Zylinder wurde professionell getauscht, Preis war exakt wie vorher am Telefon vereinbart. Keine Abzocke, 100% Empfehlung.",
+        text: "Herausragender Service! Mein Schlüssel brach an einem Sonntagabend im Schloss ab. Der Monteur war nach unglaublichen 18 Minuten in Lindenholzhausen vor Ort. Der Zylinder wurde hochprofessionell getauscht und der am Telefon vereinbarte Festpreis wurde auf den Cent genau eingehalten. Ein absolut seriöser Handwerksbetrieb, den ich uneingeschränkt empfehle.",
         date: "Vor 1 Woche",
         source: "Google",
-        location: "Wetzlar-Naunheim"
+        location: "Limburg-Lindenholzhausen"
     },
     {
         id: "2",
         authorName: "Sarah Müller",
         rating: 5,
-        text: "Ich stand mit Kleinkind vor verschlossener Tür im strömenden Regen (Tür nur zugefallen, Schlüssel steckte steckte drinnen). 15 Minuten später kam die Rettung. Dauerte keine 2 Minuten und die Tür war komplett unbeschädigt offen. Wirklich jeden Cent wert!",
+        text: "Absolute Rettung in der Not! Ich stand mit meinem Kleinkind im strömenden Regen vor einer zugefallenen Tür. Innerhalb von 15 Minuten war der Sicherheitsexperte in der Limburger Altstadt. Die Öffnung dauerte keine zwei Minuten und erfolgte zu 100% zerstörungsfrei. Professionalität und Empathie auf höchstem Niveau.",
         date: "Vor 2 Wochen",
         source: "Google",
-        location: "Wetzlar Altstadt"
+        location: "Limburg Altstadt"
     },
     {
         id: "3",
         authorName: "Thomas Weber",
         rating: 5,
-        text: "Habe meinen Autoschlüssel im Kofferraum eingesperrt. Der Fachmann war in Dalheim super schnell da und hat den Wagen ohne einen Kratzer schonend geöffnet. Top Ausrüstung, sehr seriöses Auftreten.",
+        text: "Ich hatte mich aus meinem Fahrzeug ausgesperrt. Der Fachmann war in Dietkirchen extrem schnell zur Stelle und hat den Wagen mithilfe von modernstem Spezialwerkzeug komplett ohne den geringsten Kratzer geöffnet. Top Ausrüstung, sehr seriöses und beruhigendes Auftreten.",
         date: "Vor 1 Monat",
         source: "Google",
-        location: "Wetzlar-Dalheim"
+        location: "Limburg-Dietkirchen"
     },
     {
         id: "4",
         authorName: "Julia Riedel",
         rating: 5,
-        text: "Sehr kompetente Beratung zum Thema Einbruchschutz für unser Einfamilienhaus in Garbenheim. Wir haben direkt ein komplett neues Schließsystem installieren lassen. Man merkt sofort, dass hier ein Meisterfachbetrieb am Werk ist.",
+        text: "Nach einer fundierten und ehrlichen Sicherheitsberatung haben wir unser Eigenheim in Offheim komplett auf ein neues Hochsicherheits-Schließsystem umrüsten lassen. Man merkt in jedem Schritt, dass hier ein zertifizierter Meisterfachbetrieb am Werk ist. Das Ergebnis übertrifft unsere Erwartungen.",
         date: "Vor 2 Monaten",
         source: "ProvenExpert",
-        location: "Wetzlar-Garbenheim"
+        location: "Limburg-Offheim"
     },
     {
         id: "5",
         authorName: "Lukas Wagner",
         rating: 5,
-        text: "Mitten in der Nacht nach der Schicht ausgesperrt. Der Kollege war in 20 Minuten da, super freundlich und ruhig, und die Tür war im Handumdrehen auf. Der vereinbarte Nacht-Festpreis wurde strikt eingehalten.",
+        text: "Mitten in der Nacht nach der Schicht ausgesperrt. Der Monteur war nach nur 20 Minuten da, agierte extrem ruhig und professionell, und die Tür war im Handumdrehen offen. Was mich besonders beeindruckt hat: Der vorher kommunizierte Nacht-Festpreis wurde ohne jegliche versteckte Aufschläge berechnet.",
         date: "Vor 3 Monaten",
         source: "Google",
-        location: "Wetzlar-Steindorf"
+        location: "Limburg-Ahlbach"
     },
     {
         id: "6",
         authorName: "Dr. Andreas Koch",
         rating: 5,
-        text: "Unser Bürotresor (Sicherheitsstufe B) ließ sich nicht mehr öffnen - Elektronikschloss defekt. Der Spezialist hat das Problem mit Endoskop und ohne Flex diskret und extrem sauber gelöst. Absoluter Fachmann auf seinem Gebiet.",
+        text: "Unser Firmentresor (Sicherheitsstufe B) ließ sich aufgrund eines Elektronikdefekts nicht mehr öffnen. Der Spezialist hat das Problem äußerst diskret, ohne laute Werkzeuge und mit höchster Präzision gelöst. Ein absoluter Fachmann, der sein Handwerk auf Premium-Niveau versteht.",
         date: "Vor 4 Monaten",
         source: "ProvenExpert",
-        location: "Wetzlar-Hermannstein"
+        location: "Limburg-Eschhofen"
     },
     {
         id: "7",
         authorName: "Marina Schmidt",
         rating: 5,
-        text: "Meine Eltern (über 80) haben sich ausgesperrt. Ich habe aus der Ferne diesen Dienstleister angerufen. Er ist extrem empathisch mit meinen Eltern umgegangen und hat alles schnell und zum extrem fairen Preis abgewickelt. Danke!",
+        text: "Meine über 80-jährigen Eltern hatten sich ausgesperrt, und ich musste aus der Ferne Hilfe organisieren. Dieser Dienstleister war ein Glücksgriff: Extrem empathischer Umgang mit den Senioren, schnelle Öffnung und eine absolut faire, transparente Abrechnung. Herzlichen Dank für diesen vorbildlichen Service!",
         date: "Vor 5 Monaten",
         source: "Google",
-        location: "Wetzlar-Niedergirmes"
+        location: "Limburg-Staffel"
     },
     {
         id: "8",
         authorName: "Familie Hoffmann",
         rating: 5,
-        text: "Nach einem Einbruchversuch war das alte Schloss komplett zerstört. Nachts um 3 Uhr kam direkt jemand, hat ein Notschloss montiert und uns am nächsten Tag ein hochwertiges ABUS-System eingebaut. Fühlen uns wieder sicher.",
+        text: "Nach einem massiven Einbruchversuch war unser Schloss komplett blockiert. Nachts um 3 Uhr war sofort ein Experte zur Stelle, der ein Not-Schloss installierte. Am nächsten Morgen wurde ein hochwertiges ABUS-Sicherheitssystem verbaut. Wir fühlen uns endlich wieder 100% sicher in unseren eigenen vier Wänden.",
         date: "Vor 6 Monaten",
         source: "Google",
-        location: "Wetzlar-Blasbach"
+        location: "Limburg-Linter"
     }
 ];
 

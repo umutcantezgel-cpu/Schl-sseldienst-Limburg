@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { siteUrl } from "./schema";
+import { BUSINESS } from "./constants";
 
 interface GenerateMetadataProps {
     title: string;
@@ -17,7 +18,7 @@ export const generateSharedMetadata = ({
     const url = `${siteUrl}${path}`;
 
     return {
-        title: `${title} | Schlüsseldienst Wetzlar`,
+        title: `${title} | ${BUSINESS.name}`,
         description,
         metadataBase: new URL(siteUrl),
         alternates: {
@@ -41,7 +42,7 @@ export const generateSharedMetadata = ({
             title,
             description,
             url,
-            siteName: "Schlüsseldienst Wetzlar",
+            siteName: BUSINESS.name,
             locale: "de_DE",
             type: "website",
             images: [
@@ -49,7 +50,7 @@ export const generateSharedMetadata = ({
                     url: `${siteUrl}/og-image.png`,
                     width: 1200,
                     height: 630,
-                    alt: "Schlüsseldienst Wetzlar – 24/7 Notdienst mit Festpreisen",
+                    alt: `${BUSINESS.name} – 24/7 Notdienst mit Festpreisen`,
                 },
             ],
         },
@@ -61,9 +62,9 @@ export const generateSharedMetadata = ({
         },
         other: {
             "geo.region": "DE-HE",
-            "geo.placename": "Wetzlar",
-            "geo.position": "50.5606;8.5048",
-            "ICBM": "50.5606, 8.5048",
+            "geo.placename": "Limburg an der Lahn",
+            "geo.position": "50.3833;8.0667",
+            "ICBM": "50.3833, 8.0667",
         },
     };
 };

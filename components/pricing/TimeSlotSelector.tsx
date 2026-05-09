@@ -18,7 +18,7 @@ export default function TimeSlotSelector({ selected, onSelect }: TimeSlotSelecto
     return (
         <div
             role="tablist"
-            aria-label="Zeitraum auswählen"
+            aria-label="Notdienst-Zeitraum für Limburg auswählen"
             className="flex flex-col sm:flex-row w-full bg-[var(--color-surface-divider)] p-1.5 rounded-2xl gap-1 relative"
         >
             {slots.map((slot) => {
@@ -30,13 +30,13 @@ export default function TimeSlotSelector({ selected, onSelect }: TimeSlotSelecto
                         aria-selected={isSelected}
                         tabIndex={isSelected ? 0 : -1}
                         onClick={() => onSelect(slot.id)}
-                        className={`relative flex-1 py-3 px-4 rounded-xl text-sm font-semibold transition-colors z-10 ${isSelected ? "text-white" : "text-[var(--color-text-body)] hover:text-[var(--color-text-primary)]"
+                        className={`relative flex-1 py-3 px-4 rounded-xl text-sm font-semibold transition-colors z-10 ${isSelected ? "text-white" : "text-[var(--color-text-body)] hover:text-[var(--color-text-main)]"
                             }`}
                     >
                         {isSelected && (
                             <motion.div
                                 layoutId="active-timeslot"
-                                className="absolute inset-0 bg-[var(--color-brand)] rounded-xl -z-10"
+                                className="absolute inset-0 bg-[var(--color-blue-primary)] rounded-xl -z-10"
                                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
                             />
                         )}

@@ -33,12 +33,12 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
             />
-            <nav aria-label="Brotkrümelnavigation" className="flex items-center text-sm text-[var(--color-text-muted)] overflow-x-auto whitespace-nowrap px-4 py-3 sm:px-6 bg-[var(--color-surface-subtle)] border-b border-[var(--color-border-subtle)]">
+            <nav aria-label="Seitennavigation" className="flex items-center text-sm text-[var(--color-text-body)] overflow-x-auto whitespace-nowrap px-4 py-3 sm:px-6 bg-[var(--color-surface-elevated)] border-b border-[var(--color-border-subtle)]">
                 <ol className="max-w-7xl mx-auto w-full flex items-center">
                     <li className="flex items-center">
-                        <Link href="/" className="hover:text-[var(--color-text-primary)] transition-colors flex items-center">
+                        <Link href="/" className="hover:text-[var(--color-text-main)] transition-colors flex items-center">
                             <Home className="h-4 w-4" aria-hidden="true" />
-                            <span className="sr-only">Startseite</span>
+                            <span className="sr-only">Startseite Schlüsseldienst Limburg</span>
                         </Link>
                     </li>
                     {items.map((item, index) => (
@@ -46,7 +46,7 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
                             <ChevronRight className="h-4 w-4 mx-2 text-[var(--color-stone-400)] flex-shrink-0" aria-hidden="true" />
                             <Link
                                 href={item.href}
-                                className={`transition-colors ${index === items.length - 1 ? 'text-[var(--color-text-primary)] font-medium pointer-events-none' : 'hover:text-[var(--color-text-primary)]'
+                                className={`transition-colors ${index === items.length - 1 ? 'text-[var(--color-text-main)] font-medium pointer-events-none' : 'hover:text-[var(--color-text-main)]'
                                     }`}
                                 aria-current={index === items.length - 1 ? 'page' : undefined}
                             >

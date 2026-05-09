@@ -1,88 +1,168 @@
-import { Key, MapPin, Phone, Mail, Clock, Shield } from "lucide-react";
+'use client';
+
+import { Key, MapPin, Phone, Mail, Clock, ShieldCheck, ChevronRight, Cookie } from "lucide-react";
 import Link from "next/link";
+import { BUSINESS } from "@/lib/constants";
+import * as CookieConsent from 'vanilla-cookieconsent';
 
 export default function Footer() {
   return (
-    <footer role="contentinfo" className="bg-slate-900 text-slate-300">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="flex items-center gap-2 font-bold text-white text-lg">
-              <Key className="h-5 w-5 text-primary-400" aria-hidden="true" />
-              Schlüsseldienst Wetzlar
+    <footer role="contentinfo" className="relative mt-24 overflow-hidden border-t border-[var(--color-border-glass)] bg-white/60 backdrop-blur-3xl">
+      {/* Absolute Background Elements for Glassmorphism */}
+      <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-[var(--color-blue-light)] blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] rounded-full bg-blue-50/80 blur-[80px] pointer-events-none -z-10" />
+
+      {/* Top Gradient Accent */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-blue-light)] via-[var(--color-blue-primary)] to-[var(--color-blue-light)]" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="grid gap-12 lg:gap-8 sm:grid-cols-2 lg:grid-cols-12">
+          
+          {/* Brand & About (Span 4) */}
+          <div className="lg:col-span-4 flex flex-col">
+            <Link href="/" className="inline-flex items-center gap-3 font-bold text-[var(--color-text-main)] text-xl lg:text-2xl tracking-tight hover-lift-subtle rounded-xl w-fit" aria-label={`${BUSINESS.name} – Startseite`}>
+              <div className="bg-gradient-to-br from-[var(--color-blue-primary)] to-blue-700 rounded-xl p-2 shadow-sm glow-primary">
+                <Key className="h-6 w-6 text-white" aria-hidden="true" />
+              </div>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-blue-dark)] to-[var(--color-blue-primary)]">
+                {BUSINESS.name}
+              </span>
             </Link>
-            <p className="mt-4 text-slate-400 text-sm leading-relaxed">
-              Ihr zuverlässiger Partner für alle Schloss- und Sicherheitsfragen
-              in Wetzlar und Umgebung. 24/7 erreichbar.
+            <p className="mt-6 text-[var(--color-text-body)] text-base leading-relaxed max-w-sm">
+              Ihr zertifizierter Fachbetrieb und verlässlicher Sicherheitspartner in Limburg und Umgebung. Wir garantieren Ihnen zu 100% zerstörungsfreie Türöffnungen zum kompromisslosen Festpreis.
             </p>
-            <div className="mt-6 flex items-center gap-4 text-xs text-slate-500">
-              <span className="flex items-center gap-1.5"><Shield className="h-3.5 w-3.5" /> IHK-geprüft</span>
-              <span className="flex items-center gap-1.5"><Shield className="h-3.5 w-3.5" /> SSL-gesichert</span>
+            <div className="mt-8 flex flex-col gap-3">
+              <div className="inline-flex items-center gap-2 glass-tinted px-4 py-2 rounded-full w-fit">
+                <ShieldCheck className="h-5 w-5 text-[var(--color-blue-primary)]" />
+                <span className="text-sm font-semibold text-[var(--color-text-main)]">TV-geprüfter Meisterbetrieb</span>
+              </div>
+              <div className="inline-flex items-center gap-2 glass-tinted px-4 py-2 rounded-full w-fit">
+                <ShieldCheck className="h-5 w-5 text-[var(--color-blue-primary)]" />
+                <span className="text-sm font-semibold text-[var(--color-text-main)]">Ohne versteckte Kosten</span>
+              </div>
             </div>
           </div>
 
-          {/* Contact */}
-          <nav aria-label="Kontakt">
-            <h3 className="font-bold uppercase text-slate-500 text-xs tracking-widest">
-              Kontakt
+          {/* Contact Information (Span 3) */}
+          <nav aria-label="Kontakt und Standort" className="lg:col-span-3">
+            <h3 className="font-bold uppercase text-[var(--color-blue-primary)] text-xs tracking-widest mb-6">
+              24/7 Zentrale & Standort
             </h3>
-            <address className="not-italic mt-4 space-y-3 text-sm">
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary-400" aria-hidden="true" />
-                <a href="tel:06441123456" className="hover:text-white transition-colors">06441 123 456</a>
+            <address className="not-italic space-y-5 text-[var(--color-text-body)]">
+              <div className="flex items-center gap-4 group">
+                <div className="glass-card p-2.5 rounded-xl group-hover:border-[var(--color-blue-primary)] transition-colors shrink-0">
+                  <Phone className="h-5 w-5 text-[var(--color-blue-primary)]" aria-hidden="true" />
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-[var(--color-text-main)] uppercase tracking-wider mb-0.5">Notruf (24/7)</div>
+                  <a href={BUSINESS.phone.href} className="hover:text-[var(--color-blue-primary)] transition-colors font-bold text-lg text-[var(--color-text-main)] block">
+                    {BUSINESS.phone.display}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-primary-400" aria-hidden="true" />
-                <a href="mailto:info@sd-wetzlar.de" className="hover:text-white transition-colors">info@sd-wetzlar.de</a>
+              
+              <div className="flex items-start gap-4 group">
+                <div className="glass-card p-2.5 rounded-xl group-hover:border-[var(--color-blue-primary)] transition-colors shrink-0 mt-1">
+                  <MapPin className="h-5 w-5 text-[var(--color-blue-primary)]" aria-hidden="true" />
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-[var(--color-text-main)] uppercase tracking-wider mb-0.5">Firmensitz</div>
+                  <div className="text-[var(--color-text-main)] font-medium">
+                    {BUSINESS.name}<br />
+                    {BUSINESS.ownerTitle}: {BUSINESS.owner}<br />
+                    {BUSINESS.address.street}<br />
+                    {BUSINESS.address.zip} {BUSINESS.address.city}
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary-400" aria-hidden="true" />
-                <span>Wetzlarer Str. 1, 35578 Wetzlar</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-primary-400" aria-hidden="true" />
-                <span>24/7 Notdienst</span>
+
+              <div className="flex items-center gap-4 group">
+                <div className="glass-card p-2.5 rounded-xl group-hover:border-[var(--color-blue-primary)] transition-colors shrink-0">
+                  <Mail className="h-5 w-5 text-[var(--color-blue-primary)]" aria-hidden="true" />
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-[var(--color-text-main)] uppercase tracking-wider mb-0.5">E-Mail</div>
+                  <a href={`mailto:${BUSINESS.email}`} className="hover:text-[var(--color-blue-primary)] transition-colors font-medium text-[var(--color-text-main)] block">
+                    {BUSINESS.email}
+                  </a>
+                </div>
               </div>
             </address>
           </nav>
 
-          {/* Service Areas */}
-          <nav aria-label="Einsatzgebiete">
-            <h3 className="font-bold uppercase text-slate-500 text-xs tracking-widest">
+          {/* Service Areas (Span 2) */}
+          <nav aria-label="Einsatzgebiete" className="lg:col-span-2">
+            <h3 className="font-bold uppercase text-[var(--color-blue-primary)] text-xs tracking-widest mb-6">
               Einsatzgebiete
             </h3>
-            <ul className="mt-4 space-y-2 text-sm">
-              {["Wetzlar", "Gießen", "Marburg", "Aßlar", "Solms"].map((city) => (
-                <li key={city}>
-                  <Link href={`/${city.toLowerCase().replace("ß", "ss")}`} className="hover:text-white transition-colors">
-                    Schlüsseldienst {city}
+            <ul className="space-y-3.5 text-[var(--color-text-body)]">
+              {[
+                { name: "Limburg", slug: "limburg" },
+                { name: "Weilburg", slug: "weilburg" },
+                { name: "Bad Camberg", slug: "bad-camberg" },
+                { name: "Hadamar", slug: "hadamar" },
+                { name: "Elz", slug: "elz" }
+              ].map((city) => (
+                <li key={city.slug}>
+                  <Link href={`/${city.slug}`} className="group flex items-center gap-2 hover:text-[var(--color-blue-primary)] transition-colors font-medium">
+                    <ChevronRight className="h-4 w-4 text-[var(--color-border-subtle)] group-hover:text-[var(--color-blue-primary)] transition-colors" />
+                    {city.name}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/servicegebiet" className="text-primary-400 hover:text-white transition-colors font-semibold">
-                  Alle Gebiete →
+              <li className="pt-3">
+                <Link href="/servicegebiet" className="inline-flex items-center gap-2 text-[var(--color-blue-primary)] hover:text-blue-700 transition-colors font-bold text-sm bg-[var(--color-blue-light)] px-3 py-1.5 rounded-lg hover-lift-subtle">
+                  Alle Gebiete <ChevronRight className="h-4 w-4" />
                 </Link>
               </li>
             </ul>
           </nav>
 
-          {/* Legal */}
-          <nav aria-label="Rechtliches">
-            <h3 className="font-bold uppercase text-slate-500 text-xs tracking-widest">
-              Rechtliches
+          {/* Legal (Span 3) */}
+          <nav aria-label="Rechtliches" className="lg:col-span-3">
+            <h3 className="font-bold uppercase text-[var(--color-blue-primary)] text-xs tracking-widest mb-6">
+              Rechtliches & Service
             </h3>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li><Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link></li>
-              <li><Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link></li>
+            <ul className="space-y-3.5 text-[var(--color-text-body)]">
+              {[
+                { name: "Impressum", slug: "impressum" },
+                { name: "Datenschutz", slug: "datenschutz" },
+                { name: "Preise", slug: "preise" },
+                { name: "Bewertungen", slug: "bewertungen" },
+                { name: "FAQ", slug: "faq" }
+              ].map((link) => (
+                <li key={link.slug}>
+                  <Link href={`/${link.slug}`} className="group flex items-center gap-2 hover:text-[var(--color-blue-primary)] transition-colors font-medium">
+                    <ChevronRight className="h-4 w-4 text-[var(--color-border-subtle)] group-hover:text-[var(--color-blue-primary)] transition-colors" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => CookieConsent.showPreferences()}
+                  className="group flex items-center gap-2 hover:text-[var(--color-blue-primary)] transition-colors font-medium w-full text-left cursor-pointer"
+                  aria-label="Cookie-Einstellungen öffnen"
+                >
+                  <Cookie className="h-4 w-4 text-[var(--color-border-subtle)] group-hover:text-[var(--color-blue-primary)] transition-colors" aria-hidden="true" />
+                  Cookie-Einstellungen
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-slate-700 pt-8 text-center text-slate-500 text-xs tracking-wide">
-          © {new Date().getFullYear()} Schlüsseldienst Wetzlar. Alle Rechte vorbehalten.
+        <div className="mt-20 pt-8 border-t border-[var(--color-border-subtle)] flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm font-medium text-[var(--color-text-body)]">
+            © {new Date().getFullYear()} <span className="font-bold text-[var(--color-text-main)]">{BUSINESS.name}</span>. Alle Rechte vorbehalten.
+          </div>
+          <div className="flex items-center gap-6 text-sm font-medium text-[var(--color-text-body)]">
+            <span>{BUSINESS.ownerTitle}: {BUSINESS.owner}</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-blue-primary)] opacity-50" />
+            <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[var(--color-blue-primary)]"/> 365 Tage 24/7 Service</span>
+          </div>
         </div>
       </div>
     </footer>

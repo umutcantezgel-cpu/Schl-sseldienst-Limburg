@@ -10,14 +10,14 @@ export interface ContentNode {
 export const CONTENT_GRAPH: ContentNode[] = [
     {
         slug: '/',
-        title: 'Schlüsseldienst Wetzlar',
+        title: 'Schlüsseldienst Limburg',
         type: 'info',
-        keywords: ['schlüsseldienst', 'wetzlar', 'notdienst'],
+        keywords: ['schlüsseldienst', 'limburg', 'notdienst'],
         relatedSlugs: ['/preise', '/leistungen/turoeffnung', '/leistungen/sicherheitstechnik']
     },
     {
         slug: '/leistungen/turoeffnung',
-        title: 'Türöffnung Wetzlar',
+        title: 'Türöffnung Limburg',
         type: 'service',
         keywords: ['türöffnung', 'ausgesperrt', 'tür öffnen'],
         relatedSlugs: ['/preise', '/leistungen/sicherheitstechnik', '/faq'],
@@ -25,7 +25,7 @@ export const CONTENT_GRAPH: ContentNode[] = [
     },
     {
         slug: '/leistungen/autooeffnung',
-        title: 'Autoöffnung Wetzlar',
+        title: 'Autoöffnung Limburg',
         type: 'service',
         keywords: ['autoöffnung', 'ausgesperrt', 'auto öffnen'],
         relatedSlugs: ['/preise', '/leistungen/turoeffnung', '/faq'],
@@ -33,7 +33,7 @@ export const CONTENT_GRAPH: ContentNode[] = [
     },
     {
         slug: '/leistungen/schliessanlagen',
-        title: 'Schließanlagen Wetzlar',
+        title: 'Schließanlagen Limburg',
         type: 'service',
         keywords: ['schließanlage', 'schließzylinder', 'sicherheitstechnik'],
         relatedSlugs: ['/leistungen/sicherheitstechnik', '/leistungen/schluessel-nachmachen'],
@@ -41,7 +41,7 @@ export const CONTENT_GRAPH: ContentNode[] = [
     },
     {
         slug: '/leistungen/schluessel-nachmachen',
-        title: 'Schlüssel nachmachen Wetzlar',
+        title: 'Schlüssel nachmachen Limburg',
         type: 'service',
         keywords: ['schlüssel nachmachen', 'ersatzschlüssel', 'schlüssel kopieren'],
         relatedSlugs: ['/leistungen/schliessanlagen', '/leistungen/turoeffnung'],
@@ -49,7 +49,7 @@ export const CONTENT_GRAPH: ContentNode[] = [
     },
     {
         slug: '/leistungen/sicherheitstechnik',
-        title: 'Sicherheitstechnik Wetzlar',
+        title: 'Sicherheitstechnik Limburg',
         type: 'service',
         keywords: ['sicherheitstechnik', 'einbruchschutz', 'alarmanlage'],
         relatedSlugs: ['/leistungen/schliessanlagen', '/faq'],
@@ -80,8 +80,8 @@ export const CONTENT_GRAPH: ContentNode[] = [
         slug: '/servicegebiet',
         title: 'Einsatzgebiete',
         type: 'info',
-        keywords: ['einsatzgebiet', 'region', 'wetzlar'],
-        relatedSlugs: ['/wetzlar-altstadt', '/giessen', '/asslar']
+        keywords: ['einsatzgebiet', 'region', 'limburg'],
+        relatedSlugs: ['/limburg', '/weilburg', '/elz']
     },
     // Dynamic areas removed: handled via lib/localData.ts
     {
@@ -111,5 +111,13 @@ export const CONTENT_GRAPH: ContentNode[] = [
         type: 'legal',
         keywords: ['impressum', 'legal', 'anbieterkennzeichnung'],
         relatedSlugs: ['/datenschutz']
+    },
+    {
+        slug: '/einbruchschutz',
+        title: 'Einbruchschutz & Sicherheitsberatung',
+        type: 'service',
+        keywords: ['einbruchschutz', 'sicherheitsberatung', 'einbrecher', 'schutz'],
+        relatedSlugs: ['/leistungen/sicherheitstechnik', '/leistungen/schliessanlagen', '/kontakt'],
+        parentSlug: '/'
     }
 ];

@@ -9,12 +9,12 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
-  email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
+  name: z.string().min(2, "Bitte geben Sie Ihren vollständigen Namen ein"),
+  email: z.string().email("Bitte prüfen Sie Ihre E-Mail-Adresse"),
   phone: z.string().optional(),
-  message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein"),
+  message: z.string().min(10, "Bitte schildern Sie kurz Ihr Anliegen (min. 10 Zeichen)"),
   privacy: z.literal(true, {
-    message: "Sie müssen der Datenschutzerklärung zustimmen",
+    message: "Die Zustimmung zum Datenschutz ist für die Kontaktaufnahme erforderlich",
   }),
 });
 
@@ -71,99 +71,99 @@ export default function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-[var(--color-success-bg)] border border-[var(--color-emerald-200)] rounded-2xl p-[var(--space-8)] text-center flex flex-col items-center">
-        <div className="h-16 w-16 bg-[var(--color-success)] rounded-full flex items-center justify-center mb-[var(--space-4)]">
+      <div className="bg-[var(--color-success-bg)] border border-[var(--color-emerald-200)] rounded-2xl p-8 text-center flex flex-col items-center">
+        <div className="h-16 w-16 bg-[var(--color-success)] rounded-full flex items-center justify-center mb-4">
           <CheckCircle2 className="h-8 w-8 text-white" />
         </div>
-        <h3 className="text-[var(--text-h4)] font-[700] text-[var(--color-emerald-800)] mb-[var(--space-2)]">
-          Vielen Dank für Ihre Anfrage!
+        <h3 className="text-[var(--text-h4)] font-[700] text-[var(--color-emerald-800)] mb-2">
+          Anfrage erfolgreich übermittelt
         </h3>
         <p className="text-[var(--color-emerald-700)]">
-          Wir haben Ihre Nachricht erhalten und melden uns in Kürze bei Ihnen.
+          Unser Limburger Meister-Team hat Ihre Nachricht erhalten. In dringenden Fällen melden wir uns umgehend bei Ihnen.
         </p>
         <button
           onClick={() => setIsSuccess(false)}
-          className="mt-[var(--space-6)] text-[var(--color-success)] font-[600] hover:underline"
+          className="mt-6 text-[var(--color-success)] font-[600] hover:underline"
         >
-          Weitere Nachricht senden
+          Neue Nachricht verfassen
         </button>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-[var(--color-border)] p-[var(--space-6)] sm:p-[var(--space-8)] shadow-sm">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-[var(--space-5)]" noValidate>
+    <div className="bg-[var(--color-blue-dark)] rounded-2xl border border-[var(--color-border-subtle)] p-6 sm:p-8 shadow-sm">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
         {isError && (
           <div className="bg-[var(--color-error-bg)] border border-[var(--color-error)]/20 text-[var(--color-error)] px-4 py-3 rounded-xl flex items-start gap-3 mb-6">
             <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
             <p className="text-sm">
-              Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es später noch einmal oder rufen Sie uns direkt an.
+              Übertragungsfehler. Bitte nutzen Sie in dringenden Fällen direkt unseren Limburger Notruf.
             </p>
           </div>
         )}
 
         <div>
-          <label htmlFor="name" className="block text-sm font-[600] text-[var(--color-text-primary)] mb-1.5">
-            Name <span className="text-[var(--color-brand)]">*</span>
+          <label htmlFor="name" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+            Ihr Name <span className="text-[var(--color-blue-primary)]">*</span>
           </label>
           <input
             id="name"
             type="text"
             {...register("name")}
             className={cn(
-              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)]/20 focus:border-[var(--color-brand)]",
-              errors.name ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-subtle)]"
+              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]",
+              errors.name ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)]"
             )}
-            placeholder="Max Mustermann"
+            placeholder="Vor- und Nachname"
           />
           {errors.name && <p className="mt-1.5 text-sm text-[var(--color-error)] font-medium">{errors.name.message}</p>}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--space-5)]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="block text-sm font-[600] text-[var(--color-text-primary)] mb-1.5">
-              E-Mail <span className="text-[var(--color-brand)]">*</span>
+            <label htmlFor="email" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+              Ihre E-Mail-Adresse <span className="text-[var(--color-blue-primary)]">*</span>
             </label>
             <input
               id="email"
               type="email"
               {...register("email")}
               className={cn(
-                "w-full rounded-xl border px-4 py-3 text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)]/20 focus:border-[var(--color-brand)]",
-                errors.email ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-subtle)]"
+                "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]",
+                errors.email ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)]"
               )}
-              placeholder="mail@beispiel.de"
+              placeholder="ihre.adresse@beispiel.de"
             />
             {errors.email && <p className="mt-1.5 text-sm text-[var(--color-error)] font-medium">{errors.email.message}</p>}
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-[600] text-[var(--color-text-primary)] mb-1.5">
-              Telefonrückruf (optional)
+            <label htmlFor="phone" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+              Rückruf-Nummer (optional, für Notfälle)
             </label>
             <input
               id="phone"
               type="tel"
               {...register("phone")}
-              className="w-full rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface-subtle)] px-4 py-3 text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)]/20 focus:border-[var(--color-brand)]"
-              placeholder="0151 1234567"
+              className="w-full rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)] px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]"
+              placeholder="Für einen schnellen Rückruf"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-[600] text-[var(--color-text-primary)] mb-1.5">
-            Ihre Nachricht <span className="text-[var(--color-brand)]">*</span>
+          <label htmlFor="message" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+            Schildern Sie Ihre Situation in Limburg <span className="text-[var(--color-blue-primary)]">*</span>
           </label>
           <textarea
             id="message"
             rows={4}
             {...register("message")}
             className={cn(
-              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)]/20 focus:border-[var(--color-brand)] resize-y",
-              errors.message ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-subtle)]"
+              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)] resize-y",
+              errors.message ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)]"
             )}
-            placeholder="Wie können wir Ihnen helfen?"
+            placeholder="Beschreiben Sie kurz Ihr Anliegen (z.B. Tür zugefallen in Limburg-Dietkirchen)..."
           />
           {errors.message && <p className="mt-1.5 text-sm text-[var(--color-error)] font-medium">{errors.message.message}</p>}
         </div>
@@ -174,15 +174,15 @@ export default function ContactForm() {
               id="privacy"
               type="checkbox"
               {...register("privacy")}
-              className="h-4 w-4 rounded border-gray-300 text-[var(--color-brand)] focus:ring-[var(--color-brand)]"
+              className="h-4 w-4 rounded border-gray-300 text-[var(--color-blue-primary)] focus:ring-[var(--color-blue-primary)]"
             />
           </div>
           <div className="text-sm text-[var(--color-text-body)]">
             <label htmlFor="privacy" className="font-medium">
-              Datenschutz
+              Sichere Datenübertragung
             </label>
             <p className="text-gray-500 mt-0.5">
-              Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden dürfen. Diese Einwilligung kann jederzeit widerrufen werden.
+              Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu. Ihre Anfrage wird verschlüsselt an unser Limburger Team übertragen.
             </p>
             {errors.privacy && <p className="mt-1 text-sm text-[var(--color-error)] font-medium">{errors.privacy.message}</p>}
           </div>
@@ -196,10 +196,10 @@ export default function ContactForm() {
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-              Wird gesendet...
+              Anfrage wird übermittelt...
             </>
           ) : (
-            "Anfrage senden"
+            "Jetzt sichere Anfrage senden"
           )}
         </button>
       </form>

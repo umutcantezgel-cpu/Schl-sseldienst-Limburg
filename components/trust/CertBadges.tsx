@@ -3,9 +3,9 @@
 import { useRef, useEffect, useState } from "react";
 
 const certifications = [
-    { name: "Handwerkskammer Wetzlar", initials: "HWK" },
-    { name: "Innung für Metalltechnik", initials: "IM" },
-    { name: "Meisterbetrieb", initials: "MB" },
+    { name: "TV-Geprüfter Meisterbetrieb", initials: "MB" },
+    { name: "Handwerkskammer Limburg", initials: "HWK" },
+    { name: "IHK Geprüfte Fachkraft", initials: "IHK" },
 ];
 
 export default function CertBadges() {
@@ -37,12 +37,12 @@ export default function CertBadges() {
                         opacity: isVisible ? 1 : 0.5,
                     }}
                 >
-                    <div className="w-16 h-16 rounded-full bg-[var(--color-surface-divider)] border-2 border-[var(--color-border)] flex items-center justify-center">
-                        <span className="text-lg font-bold text-[var(--color-text-body)]">
+                    <div className="w-16 h-16 rounded-full bg-[var(--color-blue-light)] border border-[var(--color-border-subtle)] flex items-center justify-center shadow-sm">
+                        <span className="text-lg font-bold text-[var(--color-blue-primary)]">
                             {cert.initials}
                         </span>
                     </div>
-                    <span className="text-xs font-medium text-[var(--color-text-muted)] text-center max-w-[100px]">
+                    <span className="text-xs font-medium text-[var(--color-text-body)] text-center max-w-[100px]">
                         {cert.name}
                     </span>
                 </div>

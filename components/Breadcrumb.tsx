@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTENT_GRAPH } from "@/lib/contentGraph";
+import { siteUrl } from "@/lib/schema";
 
 interface BreadcrumbProps {
     currentSlug: string;
@@ -25,7 +26,7 @@ export default function Breadcrumb({ currentSlug, currentTitle }: BreadcrumbProp
             "@type": "ListItem",
             position: i + 1,
             name: crumb.name,
-            item: `https://schluesseldienst-wetzlar-24.de${crumb.href}`,
+            item: `${siteUrl}${crumb.href}`,
         })),
     };
 
@@ -35,20 +36,20 @@ export default function Breadcrumb({ currentSlug, currentTitle }: BreadcrumbProp
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
-            <nav aria-label="Breadcrumb" className="px-4 py-3 sm:px-[var(--section-px)] bg-[var(--color-surface-subtle)] border-b border-[var(--color-border-subtle)]">
-                <ol className="mx-auto max-w-7xl flex items-center gap-2 text-sm text-[var(--color-text-muted)]">
+            <nav aria-label="Breadcrumb" className="px-4 py-3 sm:px-12 bg-[var(--color-surface-elevated)] border-b border-[var(--color-border-subtle)]">
+                <ol className="mx-auto max-w-7xl flex items-center gap-2 text-sm text-[var(--color-text-body)]">
                     {crumbs.map((crumb, i) => (
                         <li key={`${crumb.href}-${i}`} className="flex items-center gap-2">
                             {i > 0 && <span className="text-[var(--color-stone-400)]">/</span>}
                             {i < crumbs.length - 1 ? (
                                 <Link
                                     href={crumb.href}
-                                    className="hover:text-[var(--color-brand)] transition-colors"
+                                    className="hover:text-[var(--color-blue-primary)] transition-colors"
                                 >
                                     {crumb.name}
                                 </Link>
                             ) : (
-                                <span className="text-[var(--color-text-primary)] font-medium">
+                                <span className="text-[var(--color-text-main)] font-medium">
                                     {crumb.name}
                                 </span>
                             )}

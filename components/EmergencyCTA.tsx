@@ -1,49 +1,41 @@
 import { Phone } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { BUSINESS } from "@/lib/constants";
 
 export default function EmergencyCTA() {
   return (
-    <section className="bg-[var(--color-cta-bg)] px-[var(--section-px)] py-[var(--section-py)]">
-      <div className="mx-auto max-w-4xl text-center">
+    <section className="relative bg-gradient-to-br from-[var(--color-blue-light)] via-white to-[var(--color-blue-light)] px-6 md:px-12 py-20 md:py-32 overflow-hidden border-t border-[var(--color-border-subtle)]">
+      {/* Ambient blue glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(0,82,255,0.06)_0%,transparent_70%)]" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         <h2
-          className="font-[700] text-white mb-[var(--space-4)]"
+          className="font-[700] text-[var(--color-text-main)] mb-4"
           style={{
             fontSize: 'var(--text-h2)',
             lineHeight: 'var(--leading-h)',
             letterSpacing: 'var(--tracking-heading)',
           }}
         >
-          Ausgesperrt? Wir sind sofort für Sie da!
+          Ausgesperrt in Limburg? Wir sind in <span className="text-gradient">15–30 Minuten</span> vor Ort.
         </h2>
         <p
-          className="mt-[var(--space-6)] text-[var(--color-brand-light)] font-[400] mb-[var(--space-7)]"
+          className="mt-8 text-[var(--color-text-body)] font-[400] mb-8"
           style={{
             fontSize: 'var(--text-lead)',
             lineHeight: 'var(--leading-lead)',
           }}
         >
-          Rund um die Uhr erreichbar – 365 Tage im Jahr.
+          Ihr TV-geprüfter Meisterbetrieb. 24/7 erreichbar – mit kompromissloser Festpreis-Garantie.
         </p>
-        <div className="mt-[var(--space-8)] flex justify-center">
+        <div className="mt-10 flex justify-center">
           <a
-            href="tel:06441123456"
-            className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "min-h-[48px] min-w-[48px]")}
+            href={BUSINESS.phone.href}
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[var(--color-blue-primary)] to-[#3377FF] text-white font-extrabold px-8 py-4 rounded-[var(--radius-lg)] shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-glow-subtle)] hover:-translate-y-1 hover:opacity-90 transition-all duration-300 active:scale-[0.97] animate-pulse-glow"
           >
-            <Phone className="h-5 w-5 text-[var(--color-brand)]" aria-hidden="true" />
+            <Phone className="h-6 w-6" aria-hidden="true" />
             <div className="flex flex-col items-start">
-              <span
-                className="font-[700] text-[var(--color-brand)] leading-none mb-[var(--space-1)]"
-                style={{ fontSize: 'var(--text-lead)', letterSpacing: 'var(--tracking-cta)' }}
-              >
-                Jetzt anrufen
-              </span>
-              <span
-                className="font-[600] text-[var(--color-brand)] leading-none"
-                style={{ fontSize: 'var(--text-body)', letterSpacing: 'var(--tracking-cta)' }}
-              >
-                06441 123 456
-              </span>
+              <span className="text-lg leading-none mb-1">Jetzt Notruf wählen</span>
+              <span className="text-base leading-none opacity-80">{BUSINESS.phone.display}</span>
             </div>
           </a>
         </div>

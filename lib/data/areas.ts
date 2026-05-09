@@ -33,454 +33,409 @@ export interface CityData {
 }
 
 export const cities: CityData[] = [
-    // --- LAHN-DILL-KREIS ---
+    // --- LANDKREIS LIMBURG-WEILBURG ---
     {
-        id: "wetzlar",
-        name: "Wetzlar",
-        slug: "wetzlar",
-        coordinates: { latitude: 50.555, longitude: 8.502 },
+        id: "limburg",
+        name: "Limburg an der Lahn",
+        slug: "limburg",
+        coordinates: { latitude: 50.3833, longitude: 8.0667 },
         logistics: {
             distanceFromHQ: 0,
             drivingTimeMinutes: "5-10",
-            routeDescription: "Direkt im Stadtgebiet Wetzlar, schnelle Anfahrt über lokale Hauptstraßen wie Karl-Kellner-Ring oder B49.",
+            routeDescription: "Hochverfügbare Einsatzsteuerung direkt aus dem Herzen Limburgs. Durch GPS-gestütztes Routing über B417 und B8 garantieren wir konkurrenzlose Eintreffzeiten.",
         },
-        landmarks: ["Wetzlarer Dom", "Alte Lahnbrücke", "Forum Wetzlar", "Altstadt"],
-        neighborhoods: ["Altstadt", "Neustadt", "Niedergirmes", "Hermannstein", "Steindorf", "Dutenhofen", "Münchholzhausen", "Nauborn", "Garbenheim"],
-        housingProfile: "Mischung aus historischen Altbauten (Fachwerk) mit speziellen Türbeschlägen in der Altstadt und modernen Mehrfamilienhäusern in Neubaugebieten.",
+        landmarks: ["Limburger Dom", "Alte Lahnbrücke", "Werner-Senger-Haus", "Historische Altstadt"],
+        neighborhoods: ["Innenstadt", "Lindenholzhausen", "Linter", "Staffel", "Offheim", "Dietkirchen", "Ahlbach", "Eschhofen"],
+        housingProfile: "Anspruchsvolle Mischung aus historischen Fachwerkhäusern in der Altstadt und modernen, sicherheitsfokussierten Wohnanlagen in den Randbezirken.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Wie schnell sind Sie bei mir in Wetzlar?",
-                answer: "Als lokaler Schlüsseldienst in Wetzlar sind wir in der Regel innerhalb von 5 bis 10 Minuten bei Ihnen vor Ort – unabhängig davon, ob Sie in der Altstadt, Niedergirmes oder Dutenhofen wohnen.",
+                question: "Wie schnell ist der Notdienst im Limburger Stadtgebiet bei mir?",
+                answer: "Als Ihr lokaler Premium-Partner mit Zentrale direkt in Limburg garantieren wir Eintreffzeiten von 5 bis 10 Minuten. In Notfällen verliert unser GPS-geleitetes Einsatzfahrzeug keine einzige Sekunde.",
             },
             {
-                question: "Gibt es versteckte Anfahrtskosten in Wetzlar?",
-                answer: "Nein, für Türöffnungen im Stadtgebiet Wetzlar berechnen wir unseren transparenten Festpreis. Es gibt absolut keine versteckten Anfahrtskosten.",
+                question: "Muss ich mit versteckten Anfahrtskosten in Limburg rechnen?",
+                answer: "Unter keinen Umständen. Im gesamten Limburger Kerngebiet berechnen wir exakt 0€ Anfahrtskosten. Sie zahlen ausschließlich den absolut transparenten Festpreis für unsere Premium-Öffnung.",
             },
             {
-                question: "Können Sie historische Türen in der Altstadt schonend öffnen?",
-                answer: "Ja, unsere Monteure sind speziell auf den beschädigungsfreien Umgang mit historischen Türen und Schlössern geschult, wie sie häufig in der Wetzlarer Altstadt vorkommen. In über 95% der Fälle öffnen wir zugefallene Türen komplett zerstörungsfrei.",
+                question: "Sind beschädigungsfreie Öffnungen bei historischen Altstadt-Türen möglich?",
+                answer: "Definitiv. Wir nutzen mikro-invasive Spezialwerkzeuge, die selbst bei denkmalgeschützten Beschlägen in der Limburger Altstadt in über 99% der Fälle eine zu 100% schadensfreie Öffnung sicherstellen.",
             }
         ]
     },
     {
-        id: "giessen",
-        name: "Gießen",
-        slug: "giessen",
-        coordinates: { latitude: 50.587, longitude: 8.674 },
+        id: "weilburg",
+        name: "Weilburg",
+        slug: "weilburg",
+        coordinates: { latitude: 50.4833, longitude: 8.2667 },
         logistics: {
-            distanceFromHQ: 15,
+            distanceFromHQ: 22,
+            drivingTimeMinutes: "20-25",
+            routeDescription: "Direktes Express-Routing über die B49. Unsere Einsatzfahrzeuge sind für sofortige Alarmstarts nach Weilburg optimiert.",
+        },
+        landmarks: ["Schloss Weilburg", "Schifffahrtstunnel", "Kubacher Kristallhöhle", "Historische Altstadt"],
+        neighborhoods: ["Ahausen", "Bermbach", "Drommershausen", "Gaudernbach", "Hasselbach", "Hirschhausen", "Kirschhofen", "Odersbach", "Waldhausen"],
+        housingProfile: "Historische, teils anspruchsvolle Schloss-Bebauung im Zentrum sowie moderne Einfamilienhaus-Siedlungen in den Höhenlagen.",
+        pricing: { basePrice: 59, travelCost: 10 },
+        faqs: [
+            {
+                question: "Wie lange dauert die Express-Anfahrt im Notfall nach Weilburg?",
+                answer: "Durch unsere strategische Anbindung an die B49 sind wir im Ernstfall meist innerhalb von 20 bis 25 Minuten im Weilburger Stadtzentrum sowie allen angrenzenden Ortsteilen.",
+            },
+            {
+                question: "Was kostet mich eine zertifizierte Notöffnung in Weilburg?",
+                answer: "Absolute Transparenz ist unser Versprechen. Wir bieten in Weilburg verbindliche Festpreise: Die zerstörungsfreie Standard-Öffnung startet bei 59 Euro, zzgl. einer minimalen, fair kalkulierten Anfahrtspauschale.",
+            }
+        ]
+    },
+    {
+        id: "bad-camberg",
+        name: "Bad Camberg",
+        slug: "bad-camberg",
+        coordinates: { latitude: 50.3, longitude: 8.2667 },
+        logistics: {
+            distanceFromHQ: 20,
             drivingTimeMinutes: "15-20",
-            routeDescription: "Zügige Anfahrt über die B49 direkt ins Stadtgebiet Gießen.",
+            routeDescription: "Soforthilfe via Autobahn A3 mit maximaler Priorität. Direkte Abfahrt in Bad Camberg für minimale Verzögerung.",
         },
-        landmarks: ["Mathematikum", "Elefantenklo", "Ludwigsplatz", "Schiffenberger Tal"],
-        neighborhoods: ["Innenstadt", "Nordstadt", "Oststadt", "Südstadt", "Weststadt", "Wieseck", "Kleinlinden", "Rödgen", "Allendorf"],
-        housingProfile: "Starker Anteil an studentischen Wohngemeinschaften (Mehrparteienhäuser) sowie klassische Einfamilienhäuser in den Randbezirken.",
-        pricing: { basePrice: 59, travelCost: 10 }, // 69 total typically
+        landmarks: ["Kreuzkapelle", "Amthof", "Historischer Kurpark", "Hohenfeldkapelle"],
+        neighborhoods: ["Dombach", "Erbach", "Oberselters", "Schwickershausen", "Würges"],
+        housingProfile: "Klassische Kurstadt-Architektur, viele verwinkelte Fachwerkhäuser und gepflegte Premium-Wohnviertel.",
+        pricing: { basePrice: 59, travelCost: 10 },
         faqs: [
             {
-                question: "Wie lange dauert die Anfahrt nach Gießen?",
-                answer: "Über die B49 erreichen wir jeden Stadtteil von Gießen, egal ob Wieseck, Kleinlinden oder die Innenstadt, meist in 15 bis 20 Minuten.",
-            },
-            {
-                question: "Was kostet eine Türöffnung in Gießen?",
-                answer: "Wir bieten für Gießen transparente Festpreise an. Die einfache Türöffnung inklusive Anfahrt kostet Sie ab 69 Euro – ohne versteckte Extras.",
-            },
-            {
-                question: "Helfen Sie auch bei zugefallenen WG-Zimmer-Türen?",
-                answer: "Ja, wir öffnen sehr häufig Zimmertüren in studentischen Wohngemeinschaften in Gießen. Auch hier gelten unsere günstigen Festpreise und die beschädigungsfreie Öffnung.",
+                question: "Ist der 24/7 Premium-Notdienst auch in Bad Camberg garantiert?",
+                answer: "Absolut. Über die schnelle Anbindung der A3 erreichen unsere voll ausgestatteten Einsatzfahrzeuge Sie in Bad Camberg auch tief in der Nacht in etwa 15 bis 20 Minuten.",
             }
         ]
     },
     {
-        id: "marburg",
-        name: "Marburg",
-        slug: "marburg",
-        coordinates: { latitude: 50.809, longitude: 8.771 },
-        logistics: {
-            distanceFromHQ: 38,
-            drivingTimeMinutes: "25-30",
-            routeDescription: "Schnelle Verbindung über die B3 direkt nach Marburg.",
-        },
-        landmarks: ["Landgrafenschloss", "Elisabethkirche", "Oberstadt", "Spiegelslustturm"],
-        neighborhoods: ["Oberstadt", "Südbayern", "Weidenhausen", "Ockershausen", "Cappel", "Wehrda", "Marbach"],
-        housingProfile: "Dichte, historische Altstadtbebauung in Hanglage sowie Studentenwohnheime und Klinikum-nahe Wohnanlagen.",
-        pricing: { basePrice: 59, travelCost: 20 },
-        faqs: [
-            {
-                question: "Fahren Sie auch im Notdienst bis nach Marburg?",
-                answer: "Selbstverständlich. Über die Schnellstraße B3 sind wir auch nachts in etwa 25 bis 30 Minuten in Marburg bei Ihnen.",
-            },
-            {
-                question: "Gilt der Festpreis auch für die Marburger Oberstadt?",
-                answer: "Ja, unser Festpreis-Versprechen gilt für ganz Marburg, auch für die schwerer zugänglichen Straßen in der Oberstadt. Es gibt keine versteckten Zuschläge.",
-            }
-        ]
-    },
-    {
-        id: "solms",
-        name: "Solms",
-        slug: "solms",
-        coordinates: { latitude: 50.539, longitude: 8.399 },
+        id: "hadamar",
+        name: "Hadamar",
+        slug: "hadamar",
+        coordinates: { latitude: 50.45, longitude: 8.05 },
         logistics: {
             distanceFromHQ: 8,
             drivingTimeMinutes: "10-15",
-            routeDescription: "Kurzer Weg über die B49 in westlicher Richtung.",
+            routeDescription: "Bevorzugte High-Speed-Route über die B54 Richtung Norden, um Staus im Stadtgebiet zu umgehen.",
         },
-        landmarks: ["Grube Fortuna", "Kloster Altenberg"],
-        neighborhoods: ["Burgsolms", "Oberndorf", "Albshausen", "Niederbiel", "Oberbiel"],
-        housingProfile: "Überwiegend Einfamilienhäuser und ländliche Bebauung, viele Häuser mit modernen Mehrfachverriegelungen.",
+        landmarks: ["Schloss Hadamar", "Liebfrauenkirche", "Fürstlicher Rosengarten"],
+        neighborhoods: ["Niederhadamar", "Niederzeuzheim", "Oberzeuzheim", "Steinbach", "Oberweyer", "Niederweyer", "Faulbach"],
+        housingProfile: "Eine durchmischte Struktur aus hochwertigen Einfamilienhäusern und ländlicher Bebauung mit spezifischen Sicherheitsanforderungen.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Wie lange brauchen Sie im Notfall nach Solms?",
-                answer: "Durch die unmittelbare Nähe zu Wetzlar und die Anbindung über die B49 sind unsere Monteure meist in 10 bis 15 Minuten in allen Solmser Ortsteilen.",
+                question: "Wie extrem sind die Wartezeiten für Notöffnungen in Hadamar?",
+                answer: "Dank der unmittelbaren geografischen Nähe zu unserer Zentrale und der schnellen B54-Verbindung garantieren wir Eintreffzeiten von extrem schnellen 10 bis 15 Minuten in Hadamar.",
+            }
+        ]
+    },
+    {
+        id: "elz",
+        name: "Elz",
+        slug: "elz",
+        coordinates: { latitude: 50.4167, longitude: 8.0333 },
+        logistics: {
+            distanceFromHQ: 5,
+            drivingTimeMinutes: "5-10",
+            routeDescription: "Direkte Nachbarschaft zu unserer Zentrale. Blitz-Anfahrt über die B8 ohne jegliche Umwege.",
+        },
+        landmarks: ["Historisches Rathaus Elz", "Pfarrkirche St. Johannes der Täufer"],
+        neighborhoods: ["Malmeneich"],
+        housingProfile: "Sehr dichte Bebauung mit vielen Einfamilienhäusern und hohem Pendleraufkommen.",
+        pricing: { basePrice: 59, travelCost: 0 },
+        faqs: [
+            {
+                question: "Profitieren Elzer Bürger ebenfalls von der 0€-Anfahrtskosten-Garantie?",
+                answer: "Exakt. Elz zählt zu unserem engsten Einsatz-Kerngebiet. Sie erhalten unseren zertifizierten Premium-Service ohne jegliche Anfahrtskosten – 100% Festpreisgarantie.",
+            }
+        ]
+    },
+    {
+        id: "dornburg",
+        name: "Dornburg",
+        slug: "dornburg",
+        coordinates: { latitude: 50.5, longitude: 8.0333 },
+        logistics: {
+            distanceFromHQ: 15,
+            drivingTimeMinutes: "15-20",
+            routeDescription: "Sichere und schnelle Routenführung nördlich von Limburg über die B54 direkt in den Westerwald.",
+        },
+        landmarks: ["Blasiuskapelle", "Ewiges Eis"],
+        neighborhoods: ["Frickhofen", "Langendernbach", "Wilsenroth", "Dorndorf", "Thalheim"],
+        housingProfile: "Typische ländliche Westerwald-Gemeinden mit sehr hohem Eigenheim-Anteil und Bedarf an robustem Einbruchschutz.",
+        pricing: { basePrice: 59, travelCost: 10 },
+        faqs: [
+            {
+                question: "Gibt es einen vollwertigen Nachtnotdienst für Dornburg und Umgebung?",
+                answer: "Selbstverständlich. Unser Premium-Notdienst steht Ihnen in allen Ortsteilen von Dornburg an 365 Tagen im Jahr, 24/7 kompromisslos zur Verfügung.",
+            }
+        ]
+    },
+    {
+        id: "runkel",
+        name: "Runkel",
+        slug: "runkel",
+        coordinates: { latitude: 50.4, longitude: 8.15 },
+        logistics: {
+            distanceFromHQ: 10,
+            drivingTimeMinutes: "15",
+            routeDescription: "Zügige und hindernisfreie Einsatzfahrt östlich von Limburg, direkt entlang der Lahn.",
+        },
+        landmarks: ["Burg Runkel", "Schloss Schadeck", "Alte Lahnbrücke"],
+        neighborhoods: ["Steeden", "Ennerich", "Schadeck", "Hofen", "Eschenau", "Wirbelau", "Arfurt", "Dehrn"],
+        housingProfile: "Sensible historische Fachwerkhäuser im direkten Lahntal sowie moderne, neu errichtete Baugebiete auf den Höhenlagen.",
+        pricing: { basePrice: 59, travelCost: 0 },
+        faqs: [
+            {
+                question: "Wie schnell kann ein Techniker in abgelegenen Ortsteilen wie Steeden oder Dehrn sein?",
+                answer: "Wir decken das gesamte Stadtgebiet Runkels mit höchster Priorität ab. Unabhängig vom Ortsteil garantieren wir eine extrem verlässliche Eintreffzeit von rund 15 Minuten.",
+            }
+        ]
+    },
+    {
+        id: 'diez',
+        name: 'Diez',
+        slug: 'diez',
+        coordinates: { latitude: 50.3719, longitude: 8.0016 },
+        logistics: {
+            distanceFromHQ: 5,
+            drivingTimeMinutes: '10',
+            routeDescription: 'Unmittelbare Grenznähe zu Limburg. Wir nutzen die B417/B54 für eine direkte Express-Verbindung.',
+        },
+        landmarks: ['Grafenschloss Diez', 'Schloss Oranienstein', 'Historische Lahnbrücke'],
+        neighborhoods: ['Freiendiez', 'Aull', 'Gückingen', 'Birlenbach'],
+        housingProfile: 'Anspruchsvolle historische Bebauung im Stadtkern und weitläufige, neuere Wohnviertel um Diez herum.',
+        pricing: { basePrice: 59, travelCost: 0 },
+        faqs: [
+            {
+                question: 'Greift der Premium-Service auch über die Landesgrenze hinaus in Diez (RLP)?',
+                answer: 'Definitiv. Da Diez nahtlos an unser Limburger Kerngebiet anschließt, erhalten Sie auch hier unseren blitzschnellen Notdienst-Service komplett ohne Anfahrtskosten.',
+            }
+        ]
+    },
+    {
+        id: 'brechen',
+        name: 'Brechen',
+        slug: 'brechen',
+        coordinates: { latitude: 50.3583, longitude: 8.1667 },
+        logistics: {
+            distanceFromHQ: 12,
+            drivingTimeMinutes: '15',
+            routeDescription: 'Südöstlich von Limburg gelegen. Direkte und hindernisfreie Express-Route über die B8.',
+        },
+        landmarks: ['Berger Kirche', 'Altes Rathaus Niederbrechen'],
+        neighborhoods: ['Niederbrechen', 'Oberbrechen', 'Werschau'],
+        housingProfile: "Goldener Grund: Typische, gewachsene Taunus-Gemeinden mit einem Mix aus Altbau und zahlreichen Einfamilienhäusern.",
+        pricing: { basePrice: 59, travelCost: 10 },
+        faqs: [
+            {
+                question: 'Wie schnell ist professionelle Hilfe in Niederbrechen oder Oberbrechen vor Ort?',
+                answer: 'Dank der optimal angebundenen B8 garantieren unsere Sicherheitsexperten eine extrem schnelle Eintreffzeit von rund 15 Minuten in ausnahmslos allen Ortsteilen von Brechen.',
+            }
+        ]
+    },
+    // --- INDIVIDUELLE LIMBURGER STADTGEBIETE ---
+    {
+        id: "limburg-innenstadt",
+        name: "Limburg Innenstadt",
+        slug: "limburg-innenstadt",
+        coordinates: { latitude: 50.3833, longitude: 8.0667 },
+        logistics: {
+            distanceFromHQ: 1,
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Einsatzsteuerung direkt aus dem Herzen Limburgs. Kürzeste Wege für eine blitzschnelle Türöffnung in der Innenstadt.",
+        },
+        landmarks: ["Limburger Dom", "Alte Lahnbrücke", "Werner-Senger-Haus", "Historische Altstadt"],
+        neighborhoods: ["Innenstadt", "Altstadt"],
+        housingProfile: "Mischung aus historischen Fachwerkhäusern in der Altstadt, Geschäftsgebäuden und dicht besiedelten städtischen Wohnanlagen.",
+        pricing: { basePrice: 59, travelCost: 0 },
+        faqs: [
+            {
+                question: "Wie schnell sind Sie bei Notfällen in der Limburger Innenstadt vor Ort?",
+                answer: "Dank unserer zentralen Lage garantieren wir in der gesamten Limburger Innenstadt eine schnelle Eintreffzeit von 15 bis 30 Minuten.",
             },
             {
-                question: "Reparieren Sie auch defekte Mehrfachverriegelungen?",
-                answer: "Ja, speziell bei modernen Einfamilienhäusern in Solms reparieren oder tauschen wir defekte Mehrfachverriegelungen schnell und fachgerecht aus.",
+                question: "Fallen für die Innenstadt versteckte Anfahrtskosten an?",
+                answer: "Nein, im Limburger Kerngebiet berechnen wir 0€ Anfahrtskosten. Sie zahlen ausschließlich den transparenten Festpreis für die Notöffnung.",
             }
         ]
     },
     {
-        id: "asslar",
-        name: "Aßlar",
-        slug: "asslar",
-        coordinates: { latitude: 50.589, longitude: 8.461 },
+        id: "limburg-lindenholzhausen",
+        name: "Limburg Lindenholzhausen",
+        slug: "limburg-lindenholzhausen",
+        coordinates: { latitude: 50.3667, longitude: 8.1167 },
         logistics: {
             distanceFromHQ: 6,
-            drivingTimeMinutes: "10-15",
-            routeDescription: "Direkt benachbart via B277.",
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Direkte und schnelle Einsatzfahrt über die B8, um Sie in Lindenholzhausen schnellstmöglich zu erreichen.",
         },
-        landmarks: ["Laguna Aßlar", "Schloss Werdorf"],
-        neighborhoods: ["Werdorf", "Berghausen", "Kölschhausen", "Bechlingen", "Oberlemp"],
-        housingProfile: "Gemischte Bebauung aus Wohngebieten der 70er/80er Jahre und neueren Erschließungen.",
+        landmarks: ["Wendelinuskapelle", "Historischer Ortskern"],
+        neighborhoods: ["Lindenholzhausen Mitte", "Neubaugebiete"],
+        housingProfile: "Stark wachsender Ortsteil mit einem Mix aus klassischem Dorfkern und vielen neu erschlossenen Einfamilienhaus-Siedlungen.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Gilt in Aßlar der gleiche Preis wie in Wetzlar?",
-                answer: "Ja, Aßlar gehört zu unserem direkten Kerneinzugsgebiet. Wir berechnen hier die gleichen günstigen Festpreise ohne gesonderte Anfahrtskosten.",
+                question: "Ist der Notdienst für Lindenholzhausen rund um die Uhr verfügbar?",
+                answer: "Ja, wir stehen Ihnen in Lindenholzhausen 24 Stunden am Tag, 7 Tage die Woche als verlässlicher Ansprechpartner zur Verfügung.",
+            },
+            {
+                question: "Wie hoch sind die Kosten für eine Türöffnung in Lindenholzhausen?",
+                answer: "Wir bieten unsere zerstörungsfreie Standard-Türöffnung auch in Lindenholzhausen zum transparenten Festpreis ab 59€ an, ganz ohne versteckte Kosten.",
             }
         ]
     },
     {
-        id: "braunfels",
-        name: "Braunfels",
-        slug: "braunfels",
-        coordinates: { latitude: 50.518, longitude: 8.388 },
+        id: "limburg-linter",
+        name: "Limburg Linter",
+        slug: "limburg-linter",
+        coordinates: { latitude: 50.3667, longitude: 8.0833 },
         logistics: {
-            distanceFromHQ: 12,
-            drivingTimeMinutes: "15-20",
-            routeDescription: "Südwestlich von Wetzlar, schnelle Anfahrt über L3020.",
+            distanceFromHQ: 4,
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Unmittelbare Anbindung an die B417 für ein schnelles Eintreffen unserer Techniker direkt in Linter.",
         },
-        landmarks: ["Schloss Braunfels", "Kurpark", "Historischer Marktplatz"],
-        neighborhoods: ["Tiefenbach", "Altenkirchen", "Philippstein", "Neukirchen", "Bonbaden"],
-        housingProfile: "Kurstadt-Architektur, viele Fachwerkhäuser und gehobene Villenviertel.",
+        landmarks: ["Bürgerhaus Linter"],
+        neighborhoods: ["Linter Kerngebiet", "Gewerbegebiet Linter"],
+        housingProfile: "Vielfältige Bebauung mit Fokus auf große Einfamilienhäuser, moderne Mehrparteienhäuser und einem starken Gewerbeanteil.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Sind Sie auch nachts in Braunfels im Einsatz?",
-                answer: "Ja, unser 24/7 Notdienst steht Ihnen in ganz Braunfels und allen Ortsteilen wie Tiefenbach oder Bonbaden rund um die Uhr zur Verfügung.",
-            }
-        ]
-    },
-    {
-        id: "herborn",
-        name: "Herborn",
-        slug: "herborn",
-        coordinates: { latitude: 50.682, longitude: 8.305 },
-        logistics: {
-            distanceFromHQ: 22,
-            drivingTimeMinutes: "20-25",
-            routeDescription: "Zügig über die A45 nach Norden.",
-        },
-        landmarks: ["Schloss Herborn", "Historische Fachwerk-Altstadt", "Rathaus"],
-        neighborhoods: ["Seelbach", "Burg", "Uckersdorf", "Amdorf", "Guntersdorf", "Hirschberg"],
-        housingProfile: "Sehr geschlossene historische Fachwerk-Altstadt, erfordert besondere Vorsicht bei Türöffnungen.",
-        pricing: { basePrice: 59, travelCost: 10 },
-        faqs: [
+                question: "Wie schnell können Sie an Wochenenden in Linter helfen?",
+                answer: "Auch an Wochenenden und Feiertagen garantieren wir eine Eintreffzeit von 15 bis 30 Minuten in ganz Linter.",
+            },
             {
-                question: "Wie schnell sind Sie über die Autobahn in Herborn?",
-                answer: "Dank der direkten Anbindung an die A45 erreichen wir Herborn im Notfall meist innerhalb von 20 bis 25 Minuten.",
+                question: "Bieten Sie auch Einbruchschutz-Beratung in Linter an?",
+                answer: "Selbstverständlich. Neben Notöffnungen beraten wir Sie als Fachbetrieb gerne vor Ort zu moderner Sicherheitstechnik und Einbruchschutz.",
             }
         ]
     },
     {
-        id: "dillenburg",
-        name: "Dillenburg",
-        slug: "dillenburg",
-        coordinates: { latitude: 50.738, longitude: 8.283 },
+        id: "limburg-staffel",
+        name: "Limburg Staffel",
+        slug: "limburg-staffel",
+        coordinates: { latitude: 50.395, longitude: 8.033 },
         logistics: {
-            distanceFromHQ: 28,
-            drivingTimeMinutes: "25-30",
-            routeDescription: "Direkt über die A45, Ausfahrt Dillenburg.",
+            distanceFromHQ: 3,
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Schnelle Route entlang der Lahn und über die Limburger Straße direkt nach Staffel.",
         },
-        landmarks: ["Wilhelmsturm", "Kasematten", "Hessisches Landgestüt"],
-        neighborhoods: ["Nanzenbach", "Eibach", "Oberscheld", "Niederscheld", "Donsbach", "Manderbach", "Frohnhausen"],
-        housingProfile: "Klassische Fachwerkarchitektur im Zentrum, gepaart mit weitläufigen Wohngebieten in Hanglagen.",
-        pricing: { basePrice: 59, travelCost: 10 },
-        faqs: [
-            {
-                question: "Deckt Ihr Festpreis auch alle Dillenburger Ortsteile ab?",
-                answer: "Ja, unsere Festpreise gelten verbindlich für die Stadt Dillenburg sowie alle zugehörigen Ortsteile wie Donsbach oder Oberscheld.",
-            }
-        ]
-    },
-    {
-        id: "haiger",
-        name: "Haiger",
-        slug: "haiger",
-        coordinates: { latitude: 50.742, longitude: 8.204 },
-        logistics: {
-            distanceFromHQ: 34,
-            drivingTimeMinutes: "30-35",
-            routeDescription: "Nördlich über die A45, hinter Dillenburg.",
-        },
-        landmarks: ["Stadtkirche", "Leinenwebermuseum"],
-        neighborhoods: ["Sechshelden", "Langenaubach", "Flammersbach", "Allendorf", "Haigerseelbach"],
-        housingProfile: "Industriell geprägte Ränder, solides Wohnbaubild, viele Eigenheime.",
-        pricing: { basePrice: 59, travelCost: 15 },
-        faqs: [
-            {
-                question: "Fahren Sie auch im Nachtdienst bis nach Haiger?",
-                answer: "Ja, wir decken als 24/7 Notdienst den gesamten Lahn-Dill-Kreis ab, einschließlich Haiger. Die Anfahrt dauert etwa 30 bis 35 Minuten über die A45.",
-            }
-        ]
-    },
-    {
-        id: "heuchelheim",
-        name: "Heuchelheim",
-        slug: "heuchelheim",
-        coordinates: { latitude: 50.582, longitude: 8.629 },
-        logistics: {
-            distanceFromHQ: 12,
-            drivingTimeMinutes: "15",
-            routeDescription: "Direkt östlich von Wetzlar, Weg via B49.",
-        },
-        landmarks: ["Kinzensee", "Schunk Group (Gewerbe)"],
-        neighborhoods: ["Kinzenbach"],
-        housingProfile: "Gewerbegebiete und stark wachsender Speckgürtel zwischen Wetzlar und Gießen.",
+        landmarks: ["Lahnbrücke Staffel"],
+        neighborhoods: ["Staffel Zentrum", "Wohngebiet Lahnaue"],
+        housingProfile: "Ruhige, ländlich geprägte Wohngebiete nahe der Lahn mit vielen Einfamilien- und traditionellen Bauernhäusern.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Sind Anfahrten nach Heuchelheim im Festpreis inbegriffen?",
-                answer: "Ja, Heuchelheim grenzt direkt an und ist in unserem kostenfreien Anfahrtsgebiet unseres Festpreispakets enthalten.",
-            }
-        ]
-    },
-    {
-        id: "linden",
-        name: "Linden",
-        slug: "linden",
-        coordinates: { latitude: 50.530, longitude: 8.650 },
-        logistics: {
-            distanceFromHQ: 16,
-            drivingTimeMinutes: "15-20",
-            routeDescription: "Südlich von Gießen, sehr gute Anbindung über A45/A485.",
-        },
-        landmarks: ["Gewerbegebiet Linden", "Hüttenberger Heimatmuseum (Nähe)"],
-        neighborhoods: ["Großen-Linden", "Leihgestern"],
-        housingProfile: "Wohnschwerpunkt mit großer Dichte an modernen Einfamilienhäusern.",
-        pricing: { basePrice: 59, travelCost: 10 },
-        faqs: [
+                question: "Sind Türöffnungen in Staffel wirklich schadensfrei?",
+                answer: "In über 99% der Fälle öffnen wir zugefallene Türen in Staffel komplett ohne Beschädigungen an Schloss oder Zylinder.",
+            },
             {
-                question: "Bieten Sie auch am Wochenende Notöffnungen in Linden an?",
-                answer: "Unser Schlüsselnotdienst ist 365 Tage im Jahr, auch an Wochenenden und Feiertagen, in Großen-Linden und Leihgestern für Sie im Einsatz.",
+                question: "Verrechnen Sie Anfahrtskosten für Einsätze in Staffel?",
+                answer: "Nein, Staffel gehört zu unserem absoluten Kerngebiet. Deshalb berechnen wir hier exakt 0€ für die Anfahrt.",
             }
         ]
     },
     {
-        id: "wettenberg",
-        name: "Wettenberg",
-        slug: "wettenberg",
-        coordinates: { latitude: 50.613, longitude: 8.643 },
+        id: "limburg-offheim",
+        name: "Limburg Offheim",
+        slug: "limburg-offheim",
+        coordinates: { latitude: 50.408, longitude: 8.066 },
         logistics: {
-            distanceFromHQ: 18,
-            drivingTimeMinutes: "15-20",
-            routeDescription: "Über die A480 schnell aus Wetzlar erreichbar.",
+            distanceFromHQ: 5,
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Reibungslose Anfahrt über die B49 und Kapellenstraße für schnellste Hilfe in Offheim.",
         },
-        landmarks: ["Burg Gleiberg", "Burg Vetzberg"],
-        neighborhoods: ["Krofdorf-Gleiberg", "Wißmar", "Launsbach"],
-        housingProfile: "Gehobene Wohngegenden in Hanglage unterhalb der Burgen.",
-        pricing: { basePrice: 59, travelCost: 10 },
-        faqs: [
-            {
-                question: "Öffnen Sie auch Sicherheitstüren in Wettenberg?",
-                answer: "Ja, unsere Monteure sind auf allen Arten von Sicherheitstüren und modernen Schließanlagen spezialisiert, wie sie in Wettenberg häufig verbaut sind.",
-            }
-        ]
-    },
-    {
-        id: "pohlheim",
-        name: "Pohlheim",
-        slug: "pohlheim",
-        coordinates: { latitude: 50.518, longitude: 8.718 },
-        logistics: {
-            distanceFromHQ: 22,
-            drivingTimeMinutes: "20-25",
-            routeDescription: "Über die A45 und L3131 gut erreichbar.",
-        },
-        landmarks: ["Limes / Limesturm", "Pohlheimer Hallenbad"],
-        neighborhoods: ["Watzenborn-Steinberg", "Garbenteich", "Hausen", "Holzheim", "Dorf-Güll", "Grüningen"],
-        housingProfile: "Weitläufiges Gemeindegebiet mit vielen Neubaugebieten und Einfamilienhäusern.",
-        pricing: { basePrice: 59, travelCost: 10 },
-        faqs: [
-            {
-                question: "Kommen Sie auch bis nach Garbenteich oder Holzheim?",
-                answer: "Wir fahren das gesamte Stadtgebiet Pohlheims an. Egal welcher Ortsteil, wir sind verlässlich in 20-25 Minuten vor Ort.",
-            }
-        ]
-    },
-    {
-        id: "huttenberg",
-        name: "Hüttenberg",
-        slug: "huttenberg",
-        coordinates: { latitude: 50.505, longitude: 8.594 },
-        logistics: {
-            distanceFromHQ: 11,
-            drivingTimeMinutes: "15",
-            routeDescription: "Kurze Anfahrt südlich von Wetzlar.",
-        },
-        landmarks: ["Handkäse mit Musik Ursprung", "Sportzentrum"],
-        neighborhoods: ["Hochelheim", "Hörnsheim", "Volpertshausen", "Rechtenbach", "Weidenhausen", "Reiskirchen"],
-        housingProfile: "Ländlich geprägte Gemeinde mit hohem Anteil an Einfamilienhäusern.",
+        landmarks: ["Pfarrkirche St. Servatius", "Offheimer Bär"],
+        neighborhoods: ["Offheim Ortskern", "Gewerbegebiet Limburger Marktplatz (Nähe)"],
+        housingProfile: "Traditioneller Dorfkern gepaart mit starken angrenzenden Gewerbe- und Industriegebieten.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Haben Sie für Hüttenberg einen Festpreis ohne Anfahrtskosten?",
-                answer: "Ja, Hüttenberg fällt in unser direktes Kerngebiet. Die Anfahrtskosten sind hier in unserem transparenten Festpreis bereits enthalten.",
+                question: "Gibt es für das Offheimer Gewerbegebiet spezielle Schließanlagen-Services?",
+                answer: "Ja, wir betreuen sowohl Privat- als auch Geschäftskunden in Offheim und bieten maßgeschneiderte Konzepte für Firmenschließanlagen.",
+            },
+            {
+                question: "Bleibt es bei einem Festpreis auch spät nachts in Offheim?",
+                answer: "Absolut. Unsere transparenten Preisstrukturen gelten rund um die Uhr. Wir kommunizieren alle Kosten verbindlich vor Arbeitsbeginn.",
             }
         ]
     },
     {
-        id: "lahnau",
-        name: "Lahnau",
-        slug: "lahnau",
-        coordinates: { latitude: 50.573, longitude: 8.567 },
+        id: "limburg-dietkirchen",
+        name: "Limburg Dietkirchen",
+        slug: "limburg-dietkirchen",
+        coordinates: { latitude: 50.4, longitude: 8.095 },
+        logistics: {
+            distanceFromHQ: 4,
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Direkt und ohne Stau über die Lahnbrücke oder Landstraßen direkt in das Zentrum von Dietkirchen.",
+        },
+        landmarks: ["Lubentiusbasilika", "Lahnfähre", "Historischer Dorfkern"],
+        neighborhoods: ["Dietkirchen Ortsmitte", "Lahnpromenade"],
+        housingProfile: "Historisch wertvolle Bebauung rund um die Lubentiusbasilika sowie exklusive Wohnanlagen am Lahnufer.",
+        pricing: { basePrice: 59, travelCost: 0 },
+        faqs: [
+            {
+                question: "Können alte, historische Türen in Dietkirchen geöffnet werden?",
+                answer: "Unsere Monteure sind mit mikro-invasivem Spezialwerkzeug ausgestattet, um selbst anspruchsvolle oder denkmalgeschützte Türen schonend zu öffnen.",
+            },
+            {
+                question: "Wie schnell ist der Schlüsseldienst in Dietkirchen vor Ort?",
+                answer: "Dank der Nähe zur Limburger Zentrale erreichen wir Dietkirchen im Notfall innerhalb von 15 bis 30 Minuten.",
+            }
+        ]
+    },
+    {
+        id: "limburg-ahlbach",
+        name: "Limburg Ahlbach",
+        slug: "limburg-ahlbach",
+        coordinates: { latitude: 50.416, longitude: 8.083 },
         logistics: {
             distanceFromHQ: 7,
-            drivingTimeMinutes: "10-15",
-            routeDescription: "Zwischen Wetzlar und Gießen, sehr kurze Anfahrtswege.",
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Über die B49 erreichen wir Ahlbach auf dem direktesten Weg für Notfälle aller Art.",
         },
-        landmarks: ["Römerlager Waldgirmes"],
-        neighborhoods: ["Waldgirmes", "Dorlar", "Atzbach"],
-        housingProfile: "Viel Eigentumsbebauung, ruhige Wohnstraßen.",
+        landmarks: ["Pfarrkirche St. Bartholomäus"],
+        neighborhoods: ["Ahlbach Mitte"],
+        housingProfile: "Ruhiger, kleinerer Ortsteil mit starken dörflichen Strukturen und vielen gepflegten Familienhäusern.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Wie schnell erreicht Ihr Notdienst Dorlar oder Waldgirmes?",
-                answer: "Ganz Lahnau erreichen wir von Wetzlar aus erfahrungsgemäß in 10 bis maximal 15 Minuten.",
+                question: "Wird der Service in Ahlbach als Notdienst abgedeckt?",
+                answer: "Ahlbach ist ein integraler Bestandteil unseres Servicegebiets. Wir garantieren Ihnen hier denselben schnellen 24/7 Notdienst wie in der Innenstadt.",
+            },
+            {
+                question: "Welche Zahlungsmöglichkeiten habe ich vor Ort in Ahlbach?",
+                answer: "Wir bieten volle Flexibilität: Sie können nach der erfolgreichen Türöffnung bequem in bar, per EC-Karte oder über PayPal bezahlen.",
             }
         ]
     },
     {
-        id: "leun",
-        name: "Leun",
-        slug: "leun",
-        coordinates: { latitude: 50.552, longitude: 8.324 },
+        id: "limburg-eschhofen",
+        name: "Limburg Eschhofen",
+        slug: "limburg-eschhofen",
+        coordinates: { latitude: 50.383, longitude: 8.1 },
         logistics: {
-            distanceFromHQ: 14,
-            drivingTimeMinutes: "15-20",
-            routeDescription: "Über die B49 Richtung Weilburg.",
+            distanceFromHQ: 5,
+            drivingTimeMinutes: "15-30",
+            routeDescription: "Schnelle Anbindung östlich der Innenstadt direkt nach Eschhofen und Mühlen.",
         },
-        landmarks: ["Lahnbahnhof", "Leuner Biskirchen"],
-        neighborhoods: ["Biskirchen", "Bissenberg", "Lahnbahnhof", "Stockhausen"],
-        housingProfile: "Historische Kerne und landwirtschaftlich geprägte Randbezirke.",
+        landmarks: ["ICE Bahnhof Limburg Süd (Grenze)", "Lahnaue"],
+        neighborhoods: ["Eschhofen", "Mühlen"],
+        housingProfile: "Dynamischer Stadtteil mit engem Mix aus verkehrsgünstig gelegenen Wohnungen nahe ICE-Bahnhof und klassischen Wohngebieten.",
         pricing: { basePrice: 59, travelCost: 0 },
         faqs: [
             {
-                question: "Fahren Sie Einsätze auch nach Biskirchen?",
-                answer: "Wir decken das gesamte Gebiet der Stadt Leun ab, selbstverständlich auch Biskirchen. Wir sind in ca. 15-20 Minuten vor Ort.",
-            }
-        ]
-    },
-    {
-        id: "ehringshausen",
-        name: "Ehringshausen",
-        slug: "ehringshausen",
-        coordinates: { latitude: 50.601, longitude: 8.384 },
-        logistics: {
-            distanceFromHQ: 13,
-            drivingTimeMinutes: "15-20",
-            routeDescription: "Nördlich über A45 oder L3052.",
-        },
-        landmarks: ["Dillbrücke", "Alter Kirchturm"],
-        neighborhoods: ["Daubhausen", "Greifenthal", "Katzenfurt", "Kölschhausen", "Niederlemp"],
-        housingProfile: "Wachsende Industriegemeinde mit älteren Dorfkernen.",
-        pricing: { basePrice: 59, travelCost: 0 },
-        faqs: [
+                question: "Dauert die Anfahrt nach Eschhofen Mühlen länger?",
+                answer: "Wir navigieren per GPS-Einsatzsteuerung. Beide Bereiche, Eschhofen sowie Mühlen, erreichen wir verlässlich in 15 bis 30 Minuten.",
+            },
             {
-                question: "Gibt es einen Wochenendaufschlag für Einsätze in Ehringshausen?",
-                answer: "Wir haben transparente Festpreise, die sich nach der Uhrzeit (Nacht, Wochenende) richten. Alle Preise kommunizieren wir vorab am Telefon, ohne Überraschungen vor Ort.",
-            }
-        ]
-    },
-    {
-        id: "lich",
-        name: "Lich",
-        slug: "lich",
-        coordinates: { latitude: 50.521, longitude: 8.818 },
-        logistics: {
-            distanceFromHQ: 27,
-            drivingTimeMinutes: "20-25",
-            routeDescription: "Über die B488 und A5 sehr gut angebunden.",
-        },
-        landmarks: ["Licher Privatbrauerei", "Schloss Lich", "Kloster Arnsburg"],
-        neighborhoods: ["Birklar", "Bettenhausen", "Eberstadt", "Muschenheim", "Langsdorf"],
-        housingProfile: "Staatlich anerkannter Erholungsort mit historischer Altstadt und vielen Fachwerksbauten.",
-        pricing: { basePrice: 59, travelCost: 15 },
-        faqs: [
-            {
-                question: "Wie schnell erreichen Sie Lich im Notdienst?",
-                answer: "Von unserem Hauptquartier in Wetzlar aus erreichen wir Lich regulär innerhalb von 20 bis 25 Minuten.",
-            }
-        ]
-    },
-    {
-        id: "lollar",
-        name: "Lollar",
-        slug: "lollar",
-        coordinates: { latitude: 50.650, longitude: 8.705 },
-        logistics: {
-            distanceFromHQ: 24,
-            drivingTimeMinutes: "20",
-            routeDescription: "Nördlich von Gießen über die B3.",
-        },
-        landmarks: ["Buderus Werksanlagen", "Lumda-Mündung"],
-        neighborhoods: ["Odenhausen", "Ruttershausen", "Salzböden"],
-        housingProfile: "Stark industriell geprägte Struktur und ältere Zechensiedlungen, neuerbaute Wohngebiete.",
-        pricing: { basePrice: 59, travelCost: 10 },
-        faqs: [
-            {
-                question: "Öffnen Sie auch Briefkastenschlösser in Lollar?",
-                answer: "Ja, wir öffnen nicht nur Haus- und Wohnungstüren, sondern auch Briefkästen, Tresore und Autotüren zuverlässig und zu Festpreisen.",
-            }
-        ]
-    },
-    {
-        id: "buseck",
-        name: "Buseck",
-        slug: "buseck",
-        coordinates: { latitude: 50.608, longitude: 8.777 },
-        logistics: {
-            distanceFromHQ: 25,
-            drivingTimeMinutes: "20-25",
-            routeDescription: "Östlich von Gießen über Mücke/Buseck Abfahrt B49.",
-        },
-        landmarks: ["Busecker Schloss", "Kulturzentrum"],
-        neighborhoods: ["Alten-Buseck", "Großen-Buseck", "Beuern", "Oppenrod", "Trohe"],
-        housingProfile: "Ruhige Wohnbereiche mit Einfamilienhäusern.",
-        pricing: { basePrice: 59, travelCost: 15 },
-        faqs: [
-            {
-                question: "Tauschen Sie nach einem Einbruchversuch in Buseck auch komplette Schlösser?",
-                answer: "Ja, wir haben alle gängigen Sicherheitszylinder und Schutzbeschläge in unseren Servicefahrzeugen dabei und können nach einem Einbruch sofort für Sicherheit sorgen.",
+                question: "Ist die Türöffnung in Eschhofen auch an Feiertagen möglich?",
+                answer: "Unser 24-Stunden-Service steht Ihnen in ganz Eschhofen das ganze Jahr über, auch an Wochenenden und allen Feiertagen, zur Verfügung.",
             }
         ]
     }
-
-    // NOTE: This represents a comprehensive sample of 20 highly-detailed city objects.
-    // In a full production build, you can extend this array up to 45+ municipalities.
 ];
 
 // Helper to find city by slug

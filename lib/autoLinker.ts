@@ -16,7 +16,7 @@ export function autoLinkContent(text: string, currentServiceId: string): string 
         for (const anchor of anchors) {
             const regex = new RegExp(`\\b(${anchor})\\b`, 'i');
             if (regex.test(linkedText)) {
-                linkedText = linkedText.replace(regex, `<a href="${relatedNode.slug}" class="text-[var(--color-brand)] hover:text-[var(--color-brand-hover)] underline decoration-[var(--color-brand-muted)] underline-offset-4 transition-colors font-medium">$1</a>`);
+                linkedText = linkedText.replace(regex, `<a href="${relatedNode.slug}" class="text-[var(--color-blue-primary)] hover:text-[var(--color-brand-hover)] underline decoration-[var(--color-brand-muted)] underline-offset-4 transition-colors font-medium">$1</a>`);
                 break; // Link to each related service only once
             }
         }

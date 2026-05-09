@@ -1,4 +1,5 @@
 import { siteUrl } from "./schema";
+import { BUSINESS } from "./constants";
 
 export function generateServiceSchema({ title, description, url, price }: { title: string, description: string, url: string, price: number }) {
     return {
@@ -7,7 +8,7 @@ export function generateServiceSchema({ title, description, url, price }: { titl
         "serviceType": title,
         "provider": {
             "@type": "Locksmith",
-            "name": "Schlüsseldienst Wetzlar",
+            "name": BUSINESS.name,
             "@id": `${siteUrl}/#localbusiness`
         },
         "description": description,

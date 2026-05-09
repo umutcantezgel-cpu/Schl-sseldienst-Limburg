@@ -30,7 +30,7 @@ export default function ReviewCarousel({ children }: { children: React.ReactNode
             <button
                 onClick={() => scroll("left")}
                 aria-label="Vorherige Bewertungen"
-                className="absolute left-[-20px] top-[40%] -translate-y-1/2 bg-[var(--color-surface-primary)] text-[var(--color-text-body)] elevation-2 ring-1 ring-[var(--color-border)] rounded-full p-2.5 hover:text-[var(--color-brand)] hover:shadow-[var(--shadow-3)] transition-all md:flex hidden z-[var(--z-elevated)] opacity-0 group-hover:opacity-100 focus:opacity-100"
+                className="absolute left-[-20px] top-[40%] -translate-y-1/2 bg-[var(--color-surface-primary)] text-[var(--color-text-body)] elevation-2 ring-1 ring-[var(--color-border-subtle)] rounded-full p-2.5 hover:text-[var(--color-blue-primary)] hover:shadow-[var(--shadow-3)] transition-all md:flex hidden z-[var(--z-elevated)] opacity-0 group-hover:opacity-100 focus:opacity-100"
             >
                 <ChevronLeft className="h-5 w-5" />
             </button>
@@ -38,7 +38,7 @@ export default function ReviewCarousel({ children }: { children: React.ReactNode
             <button
                 onClick={() => scroll("right")}
                 aria-label="Weitere Bewertungen"
-                className="absolute right-[-20px] top-[40%] -translate-y-1/2 bg-[var(--color-surface-primary)] text-[var(--color-text-body)] elevation-2 ring-1 ring-[var(--color-border)] rounded-full p-2.5 hover:text-[var(--color-brand)] hover:shadow-[var(--shadow-3)] transition-all md:flex hidden z-[var(--z-elevated)] opacity-0 group-hover:opacity-100 focus:opacity-100"
+                className="absolute right-[-20px] top-[40%] -translate-y-1/2 bg-[var(--color-surface-primary)] text-[var(--color-text-body)] elevation-2 ring-1 ring-[var(--color-border-subtle)] rounded-full p-2.5 hover:text-[var(--color-blue-primary)] hover:shadow-[var(--shadow-3)] transition-all md:flex hidden z-[var(--z-elevated)] opacity-0 group-hover:opacity-100 focus:opacity-100"
             >
                 <ChevronRight className="h-5 w-5" />
             </button>
