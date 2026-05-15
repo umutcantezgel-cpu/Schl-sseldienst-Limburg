@@ -54,7 +54,7 @@ export const cities: CityData[] = [
         landmarks: ["Limburger Dom", "Alte Lahnbrücke", "Werner-Senger-Haus", "Historische Altstadt"],
         neighborhoods: ["Innenstadt", "Lindenholzhausen", "Linter", "Staffel", "Offheim", "Dietkirchen", "Ahlbach", "Eschhofen"],
         housingProfile: "Anspruchsvolle Mischung aus historischen Fachwerkhäusern in der Altstadt und modernen, sicherheitsfokussierten Wohnanlagen in den Randbezirken.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Wie schnell ist der Notdienst im Limburger Stadtgebiet bei mir?",
@@ -92,7 +92,7 @@ export const cities: CityData[] = [
         landmarks: ["Schloss Weilburg", "Schifffahrtstunnel", "Kubacher Kristallhöhle", "Historische Altstadt"],
         neighborhoods: ["Ahausen", "Bermbach", "Drommershausen", "Gaudernbach", "Hasselbach", "Hirschhausen", "Kirschhofen", "Odersbach", "Waldhausen"],
         housingProfile: "Historische, teils anspruchsvolle Schloss-Bebauung im Zentrum sowie moderne Einfamilienhaus-Siedlungen in den Höhenlagen.",
-        pricing: { basePrice: 59, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 10 },
         faqs: [
             {
                 question: "Wie lange dauert die Express-Anfahrt im Notfall nach Weilburg?",
@@ -100,7 +100,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Was kostet mich eine zertifizierte Notöffnung in Weilburg?",
-                answer: "Absolute Transparenz ist unser Versprechen. Wir bieten in Weilburg verbindliche Festpreise: Die zerstörungsfreie Standard-Öffnung startet bei 59 Euro, zzgl. einer minimalen, fair kalkulierten Anfahrtspauschale.",
+                answer: "Absolute Transparenz ist unser Versprechen. Wir bieten in Weilburg verbindliche Festpreise: Die zerstörungsfreie Standard-Öffnung startet bei 99 Euro, zzgl. einer minimalen, fair kalkulierten Anfahrtspauschale.",
             },
             {
                 question: "Können Sie Schließanlagen im Weilburger Schlossbereich warten?",
@@ -126,7 +126,7 @@ export const cities: CityData[] = [
         landmarks: ["Kreuzkapelle", "Amthof", "Historischer Kurpark", "Hohenfeldkapelle"],
         neighborhoods: ["Dombach", "Erbach", "Oberselters", "Schwickershausen", "Würges"],
         housingProfile: "Klassische Kurstadt-Architektur, viele verwinkelte Fachwerkhäuser und gepflegte Premium-Wohnviertel.",
-        pricing: { basePrice: 59, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 10 },
         faqs: [
             {
                 question: "Ist der 24/7 Premium-Notdienst auch in Bad Camberg garantiert?",
@@ -138,7 +138,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Wie viel kostet eine Türöffnung in Bad Camberg inklusive Anfahrt?",
-                answer: "Unsere zerstörungsfreie Standard-Öffnung beginnt bei 59€. In Bad Camberg kommt eine transparente Anfahrtspauschale von 10€ hinzu. Den exakten Endpreis nennen wir Ihnen verbindlich vor Arbeitsbeginn am Telefon.",
+                answer: "Unsere zerstörungsfreie Standard-Öffnung beginnt bei 99€. In Bad Camberg kommt eine transparente Anfahrtspauschale von 10€ hinzu. Den exakten Endpreis nennen wir Ihnen verbindlich vor Arbeitsbeginn am Telefon.",
             }
         ],
         localContent: {
@@ -160,7 +160,7 @@ export const cities: CityData[] = [
         landmarks: ["Schloss Hadamar", "Liebfrauenkirche", "Fürstlicher Rosengarten"],
         neighborhoods: ["Niederhadamar", "Niederzeuzheim", "Oberzeuzheim", "Steinbach", "Oberweyer", "Niederweyer", "Faulbach"],
         housingProfile: "Eine durchmischte Struktur aus hochwertigen Einfamilienhäusern und ländlicher Bebauung mit spezifischen Sicherheitsanforderungen.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Wie extrem sind die Wartezeiten für Notöffnungen in Hadamar?",
@@ -194,7 +194,7 @@ export const cities: CityData[] = [
         landmarks: ["Historisches Rathaus Elz", "Pfarrkirche St. Johannes der Täufer"],
         neighborhoods: ["Malmeneich"],
         housingProfile: "Sehr dichte Bebauung mit vielen Einfamilienhäusern und hohem Pendleraufkommen.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Profitieren Elzer Bürger ebenfalls von der 0€-Anfahrtskosten-Garantie?",
@@ -228,7 +228,7 @@ export const cities: CityData[] = [
         landmarks: ["Blasiuskapelle", "Ewiges Eis"],
         neighborhoods: ["Frickhofen", "Langendernbach", "Wilsenroth", "Dorndorf", "Thalheim"],
         housingProfile: "Typische ländliche Westerwald-Gemeinden mit sehr hohem Eigenheim-Anteil und Bedarf an robustem Einbruchschutz.",
-        pricing: { basePrice: 59, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 10 },
         faqs: [
             {
                 question: "Gibt es einen vollwertigen Nachtnotdienst für Dornburg und Umgebung?",
@@ -236,7 +236,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Wie hoch sind die Kosten für einen Einsatz in Dornburg?",
-                answer: "Unsere zerstörungsfreie Standard-Türöffnung beginnt bei 59€ zzgl. einer transparenten Anfahrtspauschale von 10€ für Dornburg. Der Gesamtpreis wird Ihnen vor Arbeitsbeginn verbindlich am Telefon genannt.",
+                answer: "Unsere zerstörungsfreie Standard-Türöffnung beginnt bei 99€ zzgl. einer transparenten Anfahrtspauschale von 10€ für Dornburg. Der Gesamtpreis wird Ihnen vor Arbeitsbeginn verbindlich am Telefon genannt.",
             },
             {
                 question: "Erreichen Sie auch abgelegene Ortsteile wie Wilsenroth oder Thalheim?",
@@ -262,7 +262,7 @@ export const cities: CityData[] = [
         landmarks: ["Burg Runkel", "Schloss Schadeck", "Alte Lahnbrücke"],
         neighborhoods: ["Steeden", "Ennerich", "Schadeck", "Hofen", "Eschenau", "Wirbelau", "Arfurt", "Dehrn"],
         housingProfile: "Sensible historische Fachwerkhäuser im direkten Lahntal sowie moderne, neu errichtete Baugebiete auf den Höhenlagen.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Wie schnell kann ein Techniker in abgelegenen Ortsteilen wie Steeden oder Dehrn sein?",
@@ -296,7 +296,7 @@ export const cities: CityData[] = [
         landmarks: ['Grafenschloss Diez', 'Schloss Oranienstein', 'Historische Lahnbrücke'],
         neighborhoods: ['Freiendiez', 'Aull', 'Gückingen', 'Birlenbach'],
         housingProfile: 'Anspruchsvolle historische Bebauung im Stadtkern und weitläufige, neuere Wohnviertel um Diez herum.',
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: 'Greift der Premium-Service auch über die Landesgrenze hinaus in Diez (RLP)?',
@@ -330,7 +330,7 @@ export const cities: CityData[] = [
         landmarks: ['Berger Kirche', 'Altes Rathaus Niederbrechen'],
         neighborhoods: ['Niederbrechen', 'Oberbrechen', 'Werschau'],
         housingProfile: "Goldener Grund: Typische, gewachsene Taunus-Gemeinden mit einem Mix aus Altbau und zahlreichen Einfamilienhäusern.",
-        pricing: { basePrice: 59, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 10 },
         faqs: [
             {
                 question: 'Wie schnell ist professionelle Hilfe in Niederbrechen oder Oberbrechen vor Ort?',
@@ -338,7 +338,7 @@ export const cities: CityData[] = [
             },
             {
                 question: 'Was kostet eine Notöffnung in Brechen?',
-                answer: 'Die zerstörungsfreie Standardöffnung in Brechen startet bei 59€ zzgl. einer transparenten Anfahrtspauschale von 10€. Den verbindlichen Endpreis nennen wir immer vor Arbeitsbeginn.',
+                answer: 'Die zerstörungsfreie Standardöffnung in Brechen startet bei 99€ zzgl. einer transparenten Anfahrtspauschale von 10€. Den verbindlichen Endpreis nennen wir immer vor Arbeitsbeginn.',
             },
             {
                 question: 'Bieten Sie auch Schlossaustausch in Brechen an?',
@@ -365,7 +365,7 @@ export const cities: CityData[] = [
         landmarks: ["Limburger Dom", "Alte Lahnbrücke", "Werner-Senger-Haus", "Historische Altstadt"],
         neighborhoods: ["Innenstadt", "Altstadt"],
         housingProfile: "Mischung aus historischen Fachwerkhäusern in der Altstadt, Geschäftsgebäuden und dicht besiedelten städtischen Wohnanlagen.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Wie schnell sind Sie bei Notfällen in der Limburger Innenstadt vor Ort?",
@@ -399,7 +399,7 @@ export const cities: CityData[] = [
         landmarks: ["Wendelinuskapelle", "Historischer Ortskern"],
         neighborhoods: ["Lindenholzhausen Mitte", "Neubaugebiete"],
         housingProfile: "Stark wachsender Ortsteil mit einem Mix aus klassischem Dorfkern und vielen neu erschlossenen Einfamilienhaus-Siedlungen.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Ist der Notdienst für Lindenholzhausen rund um die Uhr verfügbar?",
@@ -407,7 +407,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Wie hoch sind die Kosten für eine Türöffnung in Lindenholzhausen?",
-                answer: "Wir bieten unsere zerstörungsfreie Standard-Türöffnung auch in Lindenholzhausen zum transparenten Festpreis ab 59€ an, ganz ohne versteckte Kosten.",
+                answer: "Wir bieten unsere zerstörungsfreie Standard-Türöffnung auch in Lindenholzhausen zum transparenten Festpreis ab 99€ an, ganz ohne versteckte Kosten.",
             },
             {
                 question: "Kann ich nach der Türöffnung in Lindenholzhausen direkt den Zylinder tauschen lassen?",
@@ -433,7 +433,7 @@ export const cities: CityData[] = [
         landmarks: ["Bürgerhaus Linter"],
         neighborhoods: ["Linter Kerngebiet", "Gewerbegebiet Linter"],
         housingProfile: "Vielfältige Bebauung mit Fokus auf große Einfamilienhäuser, moderne Mehrparteienhäuser und einem starken Gewerbeanteil.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Wie schnell können Sie an Wochenenden in Linter helfen?",
@@ -467,7 +467,7 @@ export const cities: CityData[] = [
         landmarks: ["Lahnbrücke Staffel"],
         neighborhoods: ["Staffel Zentrum", "Wohngebiet Lahnaue"],
         housingProfile: "Ruhige, ländlich geprägte Wohngebiete nahe der Lahn mit vielen Einfamilien- und traditionellen Bauernhäusern.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Sind Türöffnungen in Staffel wirklich schadensfrei?",
@@ -501,7 +501,7 @@ export const cities: CityData[] = [
         landmarks: ["Pfarrkirche St. Servatius", "Offheimer Bär"],
         neighborhoods: ["Offheim Ortskern", "Gewerbegebiet Limburger Marktplatz (Nähe)"],
         housingProfile: "Traditioneller Dorfkern gepaart mit starken angrenzenden Gewerbe- und Industriegebieten.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Gibt es für das Offheimer Gewerbegebiet spezielle Schließanlagen-Services?",
@@ -535,7 +535,7 @@ export const cities: CityData[] = [
         landmarks: ["Lubentiusbasilika", "Lahnfähre", "Historischer Dorfkern"],
         neighborhoods: ["Dietkirchen Ortsmitte", "Lahnpromenade"],
         housingProfile: "Historisch wertvolle Bebauung rund um die Lubentiusbasilika sowie exklusive Wohnanlagen am Lahnufer.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Können alte, historische Türen in Dietkirchen geöffnet werden?",
@@ -569,7 +569,7 @@ export const cities: CityData[] = [
         landmarks: ["Pfarrkirche St. Bartholomäus"],
         neighborhoods: ["Ahlbach Mitte"],
         housingProfile: "Ruhiger, kleinerer Ortsteil mit starken dörflichen Strukturen und vielen gepflegten Familienhäusern.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Wird der Service in Ahlbach als Notdienst abgedeckt?",
@@ -603,7 +603,7 @@ export const cities: CityData[] = [
         landmarks: ["ICE Bahnhof Limburg Süd (Grenze)", "Lahnaue"],
         neighborhoods: ["Eschhofen", "Mühlen"],
         housingProfile: "Dynamischer Stadtteil mit engem Mix aus verkehrsgünstig gelegenen Wohnungen nahe ICE-Bahnhof und klassischen Wohngebieten.",
-        pricing: { basePrice: 59, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 0 },
         faqs: [
             {
                 question: "Dauert die Anfahrt nach Eschhofen Mühlen länger?",

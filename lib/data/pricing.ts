@@ -12,7 +12,7 @@ export const pricingData: PricingItem[] = [
     {
         id: "tuer-zugefallen",
         serviceName: "Zerstörungsfreie Notöffnung",
-        priceBase: 59,
+        priceBase: 99,
         description: "Präzisionsöffnung für zugefallene, unverschlossene Türen. Dank spezieller Diagnostik in Sekunden erledigt – absolut schadensfrei.",
         includesTravel: true,
         features: [

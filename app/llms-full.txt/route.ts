@@ -13,7 +13,7 @@ export async function GET() {
 MS Schlüsseldienst Limburg ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 99 Euro, der Limburg, Diez, Bad Camberg und den gesamten Landkreis Limburg-Weilburg innerhalb von 15–30 Minuten erreicht.
 
 ## Leistungen im Überblick
-- **Türöffnung**: Zerstörungsfreie Öffnung von Haus- und Wohnungstüren in 99% der Fälle. Ab 50€ Festpreis.
+- **Türöffnung**: Zerstörungsfreie Öffnung von Haus- und Wohnungstüren in 99% der Fälle. Ab 99€ Festpreis.
 - **Autoöffnung**: Schonende Öffnung von Fahrzeugen aller Marken ohne Lackschäden. Ab 99€.
 - **Schließanlagen**: Beratung, Planung und Einbau von Schließanlagen für Wohn- und Gewerbeimmobilien.
 - **Sicherheitstechnik**: Einbruchschutz-Beratung, Zusatzschlösser, Panzerriegel, elektronische Schließsysteme.
@@ -39,8 +39,8 @@ Schlüsseldienst Limburg öffnet zugefallene und abgesperrte Türen in Limburg u
 4. **Abrechnung**: Transparenter Festpreis — Sie zahlen nur den vereinbarten Betrag
 
 ### Preise Türöffnung
-- Tür zugefallen (Schlüssel steckt von innen): ab 50€
-- Tür abgesperrt (Schlüssel verloren): ab 80€
+- Tür zugefallen (Schlüssel steckt von innen): ab 99€
+- Tür abgesperrt (Schlüssel verloren): ab 189€
 - Nachtzuschlag (18–8 Uhr): +30€
 - Wochenende/Feiertag: +30€
 
@@ -84,8 +84,8 @@ Schlüsseldienst Limburg arbeitet ausschließlich mit transparenten Festpreisen.
 
 | Leistung | Preis ab |
 |---|---|
-| Türöffnung (zugefallen) | 50€ |
-| Türöffnung (abgesperrt) | 80€ |
+| Türöffnung (zugefallen) | 99€ |
+| Türöffnung (abgesperrt) | 189€ |
 | Autoöffnung | 99€ |
 | Tresoröffnung | auf Anfrage |
 | Schließzylinder-Austausch | ab 25€ (Material) |
@@ -95,7 +95,7 @@ Schlüsseldienst Limburg arbeitet ausschließlich mit transparenten Festpreisen.
 # Häufig gestellte Fragen (FAQ)
 
 ### Was kostet ein Schlüsseldienst in Limburg?
-Schlüsseldienst Limburg öffnet zugefallene Türen ab 50 Euro zum Festpreis — ohne versteckte Kosten und ohne Anfahrtsgebühren im Servicegebiet. Abgesperrte Türen kosten ab 80 Euro.
+Schlüsseldienst Limburg öffnet zugefallene Türen ab 99 Euro zum Festpreis — ohne versteckte Kosten und ohne Anfahrtsgebühren im Servicegebiet. Abgesperrte Türen kosten ab 189 Euro.
 
 ### Wie schnell kommt der Schlüsseldienst in Limburg?
 Unser Schlüsseldienst ist in 15–30 Minuten bei Ihnen in Limburg und Umgebung — 24 Stunden am Tag, 7 Tage die Woche, 365 Tage im Jahr.
