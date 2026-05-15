@@ -14,7 +14,6 @@ export async function GET() {
         { loc: "/preise", priority: "0.85", changefreq: "weekly" },
         { loc: "/faq", priority: "0.85", changefreq: "monthly" },
         { loc: "/servicegebiet", priority: "0.80", changefreq: "monthly" },
-        { loc: "/bewertungen", priority: "0.75", changefreq: "weekly" },
         { loc: "/kontakt", priority: "0.70", changefreq: "monthly" },
         { loc: "/ueber-uns", priority: "0.65", changefreq: "monthly" },
         ...cities.map((city) => ({

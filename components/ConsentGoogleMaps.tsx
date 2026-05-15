@@ -2,30 +2,28 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import * as CookieConsent from 'vanilla-cookieconsent';
-import { MapPin } from 'lucide-react';
+import { MapPin, ShieldCheck } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
+import CustomGoogleMap from './map/CustomGoogleMap';
 
 interface ConsentGoogleMapsProps {
-  /** Google Maps Embed URL */
-  src: string;
-  /** iframe title for accessibility */
-  title?: string;
+  /** Optional API Key. If missing, CustomGoogleMap will show a fallback. */
+  apiKey?: string;
   /** Container className */
   className?: string;
 }
 
 /**
- * Consent-gesteuerter Google Maps Wrapper.
+ * Consent-gesteuerter Google Maps Wrapper (Ultrathink Overhaul).
  * 
- * - VOR Consent: Statischer Platzhalter mit Adresse und „Karte laden"-Button
- * - NACH Consent: Dynamisches iframe-Loading
- * - NACH Widerruf: iframe entfernen, Platzhalter wiederherstellen
+ * - VOR Consent: Premium Glassmorphism Platzhalter mit Blurred Map
+ * - NACH Consent: Dynamisches Loading via @vis.gl/react-google-maps
+ * - NACH Widerruf: Map entfernen, Platzhalter wiederherstellen
  * 
  * Kategorie: external_media
  */
 export default function ConsentGoogleMaps({
-  src,
-  title = 'Google Maps',
+  apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
   className = '',
 }: ConsentGoogleMapsProps) {
   const [hasConsent, setHasConsent] = useState(false);
@@ -60,89 +58,89 @@ export default function ConsentGoogleMaps({
   if (hasConsent) {
     return (
       <div className={`relative w-full h-full ${className}`}>
-        <iframe
-          title={title}
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          src={src}
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+        <CustomGoogleMap apiKey={apiKey} className="w-full h-full" />
       </div>
     );
   }
 
-  // Consent-Platzhalter
+  // Premium Glassmorphism Consent-Platzhalter
   return (
     <div
-      className={`relative w-full h-full flex flex-col items-center justify-center bg-[var(--color-surface-elevated)] border border-[var(--color-border-subtle)] rounded-2xl overflow-hidden ${className}`}
+      className={`relative w-full h-full flex flex-col items-center justify-center bg-[#0f172a] rounded-2xl overflow-hidden shadow-lg border border-[var(--color-border-subtle)] ${className}`}
       role="region"
       aria-label="Google Maps Karte – Zustimmung erforderlich"
     >
-      {/* Dekorativer Kartenhintergrund */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
-        <svg viewBox="0 0 400 300" fill="none" className="w-full h-full">
-          <path d="M0 50 Q 100 20 200 50 T 400 50" stroke="currentColor" strokeWidth="1" />
-          <path d="M0 100 Q 100 70 200 100 T 400 100" stroke="currentColor" strokeWidth="1" />
-          <path d="M0 150 Q 100 120 200 150 T 400 150" stroke="currentColor" strokeWidth="1" />
-          <path d="M0 200 Q 100 170 200 200 T 400 200" stroke="currentColor" strokeWidth="1" />
-          <path d="M0 250 Q 100 220 200 250 T 400 250" stroke="currentColor" strokeWidth="1" />
-          <circle cx="200" cy="140" r="6" fill="currentColor" opacity="0.3" />
-          <circle cx="200" cy="140" r="20" stroke="currentColor" strokeWidth="1" opacity="0.2" />
+      {/* Abstract Blurred Map Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Simulate dark map elements */}
+        <div className="absolute top-[20%] left-[30%] w-64 h-64 bg-slate-800 rounded-full mix-blend-screen filter blur-[60px] opacity-40"></div>
+        <div className="absolute bottom-[10%] right-[20%] w-80 h-80 bg-blue-900 rounded-full mix-blend-screen filter blur-[80px] opacity-30"></div>
+        <div className="absolute top-[40%] left-[50%] w-40 h-40 bg-amber-600 rounded-full mix-blend-screen filter blur-[70px] opacity-20"></div>
+        
+        {/* Abstract Street Lines */}
+        <svg viewBox="0 0 800 600" className="absolute inset-0 w-full h-full opacity-[0.03]">
+          <path d="M0 100 Q 200 150 400 100 T 800 100" stroke="white" strokeWidth="2" fill="none" />
+          <path d="M0 300 Q 200 350 400 300 T 800 300" stroke="white" strokeWidth="4" fill="none" />
+          <path d="M0 500 Q 200 550 400 500 T 800 500" stroke="white" strokeWidth="2" fill="none" />
+          <path d="M300 0 L 350 600" stroke="white" strokeWidth="3" fill="none" />
+          <path d="M500 0 L 450 600" stroke="white" strokeWidth="2" fill="none" />
         </svg>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center gap-4 p-8 text-center max-w-sm">
+      {/* Glassmorphism Card */}
+      <div className="relative z-10 flex flex-col items-center gap-5 p-8 text-center max-w-md mx-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl">
         {/* Icon */}
-        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-blue-light)] text-[var(--color-blue-primary)] shadow-sm">
-          <MapPin className="h-8 w-8" />
+        <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/20 text-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.15)]">
+          <MapPin className="h-10 w-10 absolute" />
+          <ShieldCheck className="h-4 w-4 absolute bottom-4 right-4 text-emerald-400 bg-slate-900 rounded-full" />
         </div>
 
         {/* Info */}
         <div>
-          <h3 className="text-lg font-bold text-[var(--color-text-main)] mb-2">
-            Google Maps
+          <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+            Interaktive Standortkarte
           </h3>
-          <p className="text-sm text-[var(--color-text-body)] leading-relaxed">
-            Zum Anzeigen der Karte wird eine Verbindung zu Google-Servern aufgebaut. 
-            Dabei können personenbezogene Daten (z.B. Ihre IP-Adresse) übertragen werden.
+          <p className="text-sm text-slate-300 leading-relaxed">
+            Um Ihnen unseren genauen Standort in Limburg auf einer interaktiven Karte anzuzeigen, benötigen wir Ihre Zustimmung zum Laden von Google Maps.
           </p>
         </div>
 
         {/* Adress-Fallback */}
-        <div className="text-sm text-[var(--color-text-main)] font-medium bg-[var(--color-surface-base)] rounded-xl px-4 py-3 w-full">
-          <p>{BUSINESS.name}</p>
-          <p className="text-[var(--color-text-body)]">
+        <div className="text-sm text-white font-medium bg-white/5 border border-white/10 rounded-xl px-5 py-4 w-full flex flex-col items-center gap-1">
+          <span className="text-blue-400 font-bold">{BUSINESS.name}</span>
+          <span className="text-slate-300">
             {BUSINESS.address.street}, {BUSINESS.address.zip} {BUSINESS.address.city}
-          </p>
+          </span>
         </div>
 
         {/* CTA-Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full">
+        <div className="flex flex-col w-full gap-3 mt-2">
           <button
             onClick={handleGrantConsent}
-            className="flex-1 bg-[var(--color-blue-primary)] hover:bg-blue-700 text-white font-bold text-sm py-3 px-5 rounded-xl transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
+            className="group relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold text-sm py-3.5 px-6 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] active:scale-[0.98]"
           >
-            Karte laden
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              Karte jetzt laden
+            </span>
+            <div className="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left ease-out duration-300"></div>
           </button>
+          
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${BUSINESS.address.street}, ${BUSINESS.address.zip} ${BUSINESS.address.city}`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-[var(--color-surface-base)] hover:bg-[var(--color-surface-elevated)] text-[var(--color-text-main)] font-bold text-sm py-3 px-5 rounded-xl transition-all border border-[var(--color-border-subtle)] text-center"
+            className="w-full bg-white/5 hover:bg-white/10 text-white text-sm py-3 px-6 rounded-xl transition-all border border-white/10 text-center font-medium"
           >
-            In Google Maps öffnen
+            Extern in Google Maps öffnen
           </a>
         </div>
 
         {/* Datenschutz-Link */}
         <a
           href="/datenschutz"
-          className="text-xs text-[var(--color-text-body)] hover:text-[var(--color-blue-primary)] transition-colors underline underline-offset-2"
+          className="text-xs text-slate-400 hover:text-white transition-colors underline underline-offset-4 mt-1"
         >
-          Mehr in unserer Datenschutzerklärung
+          Details zum Datenschutz
         </a>
       </div>
     </div>

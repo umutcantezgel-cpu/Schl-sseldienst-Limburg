@@ -22,6 +22,10 @@ export const BUSINESS = {
     state: "Hessen",
     country: "Deutschland",
     countryCode: "DE",
+    coordinates: {
+      lat: 50.3845,
+      lng: 8.0645,
+    },
   },
 
   phone: {

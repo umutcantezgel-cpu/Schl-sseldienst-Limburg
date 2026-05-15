@@ -1,5 +1,7 @@
 import { Key, ShieldCheck, Car, Check, Clock } from "lucide-react";
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import RelatedServices from "@/components/RelatedServices";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -91,6 +93,29 @@ export default function SchluesselNachmachenPage() {
                   <p className="text-blue-600 font-extrabold text-xl m-0">ab 45,00 €</p>
                 </div>
               </div>
+            </div>
+
+            {/* Werkstatt- & Zylinderfotos */}
+            <div className="mt-14 grid grid-cols-3 gap-4">
+              {[
+                IMAGES.zylinderVermessung,
+                IMAGES.schliessblechDetail,
+                IMAGES.schlossMechanik,
+              ].map((img) => (
+                <div key={img.src} className="overflow-hidden rounded-2xl shadow-md group">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    title={img.title}
+                    width={img.width}
+                    height={img.height}
+                    loading="lazy"
+                    quality={75}
+                    sizes="33vw"
+                    className="object-cover w-full aspect-square group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
             </div>
 
             <div className="mt-20 rounded-3xl glass-card p-8 sm:p-10 border border-blue-200/50 shadow-lg relative overflow-hidden bg-gradient-to-br from-white to-blue-50/30 max-w-4xl mx-auto">

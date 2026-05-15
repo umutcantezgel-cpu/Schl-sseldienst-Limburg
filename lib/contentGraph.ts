@@ -7,6 +7,23 @@ export interface ContentNode {
     parentSlug?: string;
 }
 
+import { cities } from './data/areas';
+
+// Generate area nodes dynamically from the cities data source
+const cityNodes: ContentNode[] = cities.map(city => ({
+    slug: `/${city.slug}`,
+    title: `Schlüsseldienst ${city.name}`,
+    type: 'area' as const,
+    keywords: [
+        `schlüsseldienst ${city.name.toLowerCase()}`,
+        `notdienst ${city.name.toLowerCase()}`,
+        `türöffnung ${city.name.toLowerCase()}`,
+        `ausgesperrt ${city.name.toLowerCase()}`
+    ],
+    relatedSlugs: ['/preise', '/servicegebiet', '/leistungen/turoeffnung'],
+    parentSlug: '/servicegebiet'
+}));
+
 export const CONTENT_GRAPH: ContentNode[] = [
     {
         slug: '/',
@@ -83,20 +100,12 @@ export const CONTENT_GRAPH: ContentNode[] = [
         keywords: ['einsatzgebiet', 'region', 'limburg'],
         relatedSlugs: ['/limburg', '/weilburg', '/elz']
     },
-    // Dynamic areas removed: handled via lib/localData.ts
     {
         slug: '/ueber-uns',
         title: 'Über uns',
         type: 'info',
         keywords: ['über uns', 'firma', 'team'],
-        relatedSlugs: ['/kontakt', '/bewertungen']
-    },
-    {
-        slug: '/bewertungen',
-        title: 'Bewertungen',
-        type: 'info',
-        keywords: ['bewertungen', 'erfahrungen', 'google'],
-        relatedSlugs: ['/leistungen/turoeffnung', '/kontakt']
+        relatedSlugs: ['/kontakt']
     },
     {
         slug: '/datenschutz',
@@ -119,5 +128,8 @@ export const CONTENT_GRAPH: ContentNode[] = [
         keywords: ['einbruchschutz', 'sicherheitsberatung', 'einbrecher', 'schutz'],
         relatedSlugs: ['/leistungen/sicherheitstechnik', '/leistungen/schliessanlagen', '/kontakt'],
         parentSlug: '/'
-    }
+    },
+    // Dynamic city/area nodes from areas.ts
+    ...cityNodes
 ];
+

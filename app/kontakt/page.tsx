@@ -1,9 +1,11 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import ContactForm from "@/components/contact/ContactForm";
 import ConsentGoogleMaps from "@/components/ConsentGoogleMaps";
 import { generateSharedMetadata } from "@/lib/metadata";
 import { BUSINESS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 
 export const metadata = generateSharedMetadata({
   title: `Kontakt | MS Schlüsseldienst Limburg – Inh. Mina Saad`,
@@ -74,6 +76,21 @@ export default function KontaktPage() {
               <p className="text-lg text-[var(--color-text-body)] leading-relaxed">
                 Egal ob mitten in der Nacht oder an Feiertagen – MS Schlüsseldienst Limburg lässt Sie nicht vor verschlossener Tür stehen.
               </p>
+
+              {/* Inhaber Portrait */}
+              <div className="mt-8 overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src={IMAGES.inhaberPortrait.src}
+                  alt={IMAGES.inhaberPortrait.alt}
+                  title={IMAGES.inhaberPortrait.title}
+                  width={IMAGES.inhaberPortrait.width}
+                  height={IMAGES.inhaberPortrait.height}
+                  loading="lazy"
+                  quality={80}
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover w-full"
+                />
+              </div>
 
               <address className="not-italic mt-12 space-y-10">
                 <div className="flex gap-5 group">
@@ -147,10 +164,7 @@ export default function KontaktPage() {
           {/* Google Maps iFrame */}
           <div className="mt-24 w-full h-[400px] rounded-3xl overflow-hidden border border-[var(--color-border-subtle)] shadow-md relative group">
             <div className="absolute inset-0 bg-blue-900/5 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
-            <ConsentGoogleMaps
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40905.77583688219!2d8.016335123961168!3d50.38374971844288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd06ce3620f4c3%3A0x422435029b0a1d0!2sLimburg%20an%20der%20Lahn!5e0!3m2!1sde!2sde!4v1714470815124!5m2!1sde!2sde"
-              title="Google Maps Limburg an der Lahn - MS Schlüsseldienst Limburg"
-            />
+            <ConsentGoogleMaps />
           </div>
         </div>
       </section>

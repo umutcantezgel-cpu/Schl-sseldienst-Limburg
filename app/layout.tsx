@@ -9,6 +9,7 @@ import { generateLocalBusinessSchema, generateWebSiteSchema } from "@/lib/schema
 import { generateSharedMetadata } from "@/lib/metadata";
 import { BUSINESS } from "@/lib/constants";
 import CookieConsentManager from "@/components/CookieConsent";
+import { Analytics } from "@vercel/analytics/react";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Footer />
         <StickyCallButton />
         <CookieConsentManager />
+        <Analytics />
       </body>
     </html>
   );

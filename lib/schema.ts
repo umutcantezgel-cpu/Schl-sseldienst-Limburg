@@ -1,5 +1,5 @@
 import { CONTENT_GRAPH } from "./contentGraph";
-import { getDynamicPricing } from "@/components/pricing/pricing.constants";
+import { PRICING_DATA } from "@/components/pricing/pricing.constants";
 import { BUSINESS } from "./constants";
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || BUSINESS.domain;
@@ -14,19 +14,17 @@ export function generateLocalBusinessSchema() {
         }))
         : [{ "@type": "City" as const, "name": "Limburg an der Lahn" }];
 
-    const PRICING = getDynamicPricing(50);
-
     return {
         "@context": "https://schema.org",
         "@type": "Locksmith",
         "name": BUSINESS.name,
-        "description": `${BUSINESS.name} ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 50 Euro, der ${BUSINESS.address.cityFull}, Weilburg, Bad Camberg und den gesamten Landkreis Limburg-Weilburg innerhalb von 15–30 Minuten erreicht. Über 127 Google-Bewertungen mit 4.9 Sternen bestätigen zuverlässigen Service, zerstörungsfreie Türöffnung in 99% der Fälle und transparente Festpreise ohne versteckte Kosten. Spezialisiert auf Türöffnung, Schlossaustausch, Autoöffnung, Schließanlagen und Sicherheitstechnik.`,
-        "image": `${siteUrl}/hero-bg.jpg`,
+        "description": `${BUSINESS.name} ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 99 Euro, der ${BUSINESS.address.cityFull}, Weilburg, Bad Camberg und den gesamten Landkreis Limburg-Weilburg innerhalb von 15–30 Minuten erreicht. Zuverlässiger Service, zerstörungsfreie Türöffnung in 99% der Fälle und transparente Festpreise ohne versteckte Kosten. Spezialisiert auf Türöffnung, Schlossaustausch, Autoöffnung, Schließanlagen und Sicherheitstechnik.`,
+        "image": `${siteUrl}/images/logo.svg`,
         "logo": {
             "@type": "ImageObject",
-            "url": `${siteUrl}/og-image.png`,
-            "width": 1200,
-            "height": 630
+            "url": `${siteUrl}/images/logo.svg`,
+            "width": 500,
+            "height": 500
         },
         "@id": `${siteUrl}/#localbusiness`,
         "url": siteUrl,
@@ -95,7 +93,7 @@ export function generateLocalBusinessSchema() {
                     },
                     "priceSpecification": {
                         "@type": "PriceSpecification",
-                        "price": PRICING.doorFallen.day,
+                        "price": PRICING_DATA['tuer-zugefallen']['regulaer'].total,
                         "priceCurrency": "EUR",
                         "unitText": "Festpreis tagsüber"
                     }
@@ -110,7 +108,7 @@ export function generateLocalBusinessSchema() {
                     },
                     "priceSpecification": {
                         "@type": "PriceSpecification",
-                        "price": PRICING.doorLocked.day,
+                        "price": PRICING_DATA['tuer-abgesperrt']['regulaer'].total,
                         "priceCurrency": "EUR",
                         "unitText": "Festpreis tagsüber"
                     }
@@ -125,7 +123,7 @@ export function generateLocalBusinessSchema() {
                     },
                     "priceSpecification": {
                         "@type": "PriceSpecification",
-                        "price": PRICING.carOpening.day,
+                        "price": PRICING_DATA['autooeffnung']['regulaer'].total,
                         "priceCurrency": "EUR",
                         "unitText": "Festpreis tagsüber"
                     }
@@ -149,13 +147,6 @@ export function generateLocalBusinessSchema() {
                     }
                 }
             ]
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127",
-            "bestRating": "5",
-            "worstRating": "1"
         },
         "knowsAbout": [
             "Türöffnung",

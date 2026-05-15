@@ -1,7 +1,8 @@
 'use client';
 
-import { Key, MapPin, Phone, Mail, Clock, ShieldCheck, ChevronRight, Cookie } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ShieldCheck, ChevronRight, Cookie } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
 import * as CookieConsent from 'vanilla-cookieconsent';
 
@@ -20,15 +21,16 @@ export default function Footer() {
           
           {/* Brand & About (Span 4) */}
           <div className="lg:col-span-4 flex flex-col">
-            <Link href="/" className="inline-flex items-center gap-3 font-bold text-[var(--color-text-main)] text-xl lg:text-2xl tracking-tight hover-lift-subtle rounded-xl w-fit" aria-label={`${BUSINESS.name} – Startseite`}>
-              <div className="bg-gradient-to-br from-[var(--color-blue-primary)] to-blue-700 rounded-xl p-2 shadow-sm glow-primary">
-                <Key className="h-6 w-6 text-white" aria-hidden="true" />
-              </div>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-blue-dark)] to-[var(--color-blue-primary)]">
-                {BUSINESS.name}
-              </span>
+            <Link href="/" className="inline-flex items-center hover-lift-subtle rounded-xl w-fit" aria-label={`${BUSINESS.name} – Startseite`}>
+              <Image
+                src="/images/logo.svg"
+                alt={`${BUSINESS.name} Logo`}
+                width={500}
+                height={500}
+                className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+              />
             </Link>
-            <p className="mt-6 text-[var(--color-text-body)] text-base leading-relaxed max-w-sm">
+            <p className="mt-6 text-[var(--color-text-main)] font-medium text-base leading-relaxed max-w-sm">
               Ihr zertifizierter Fachbetrieb und verlässlicher Sicherheitspartner in Limburg und Umgebung. Wir garantieren Ihnen zu 100% zerstörungsfreie Türöffnungen zum kompromisslosen Festpreis.
             </p>
             <div className="mt-8 flex flex-col gap-3">
@@ -48,7 +50,7 @@ export default function Footer() {
             <h3 className="font-bold uppercase text-[var(--color-blue-primary)] text-xs tracking-widest mb-6">
               24/7 Zentrale & Standort
             </h3>
-            <address className="not-italic space-y-5 text-[var(--color-text-body)]">
+            <address className="not-italic space-y-5 text-[var(--color-text-main)] font-medium">
               <div className="flex items-center gap-4 group">
                 <div className="glass-card p-2.5 rounded-xl group-hover:border-[var(--color-blue-primary)] transition-colors shrink-0">
                   <Phone className="h-5 w-5 text-[var(--color-blue-primary)]" aria-hidden="true" />
@@ -95,7 +97,7 @@ export default function Footer() {
             <h3 className="font-bold uppercase text-[var(--color-blue-primary)] text-xs tracking-widest mb-6">
               Einsatzgebiete
             </h3>
-            <ul className="space-y-3.5 text-[var(--color-text-body)]">
+            <ul className="space-y-3.5 text-[var(--color-text-main)] font-medium">
               {[
                 { name: "Limburg", slug: "limburg" },
                 { name: "Weilburg", slug: "weilburg" },
@@ -105,7 +107,7 @@ export default function Footer() {
               ].map((city) => (
                 <li key={city.slug}>
                   <Link href={`/${city.slug}`} className="group flex items-center gap-2 hover:text-[var(--color-blue-primary)] transition-colors font-medium">
-                    <ChevronRight className="h-4 w-4 text-[var(--color-border-subtle)] group-hover:text-[var(--color-blue-primary)] transition-colors" />
+                    <ChevronRight className="h-4 w-4 text-[var(--color-text-main)] group-hover:text-[var(--color-blue-primary)] transition-colors" />
                     {city.name}
                   </Link>
                 </li>
@@ -123,17 +125,16 @@ export default function Footer() {
             <h3 className="font-bold uppercase text-[var(--color-blue-primary)] text-xs tracking-widest mb-6">
               Rechtliches & Service
             </h3>
-            <ul className="space-y-3.5 text-[var(--color-text-body)]">
+            <ul className="space-y-3.5 text-[var(--color-text-main)] font-medium">
               {[
                 { name: "Impressum", slug: "impressum" },
                 { name: "Datenschutz", slug: "datenschutz" },
                 { name: "Preise", slug: "preise" },
-                { name: "Bewertungen", slug: "bewertungen" },
                 { name: "FAQ", slug: "faq" }
               ].map((link) => (
                 <li key={link.slug}>
                   <Link href={`/${link.slug}`} className="group flex items-center gap-2 hover:text-[var(--color-blue-primary)] transition-colors font-medium">
-                    <ChevronRight className="h-4 w-4 text-[var(--color-border-subtle)] group-hover:text-[var(--color-blue-primary)] transition-colors" />
+                    <ChevronRight className="h-4 w-4 text-[var(--color-text-main)] group-hover:text-[var(--color-blue-primary)] transition-colors" />
                     {link.name}
                   </Link>
                 </li>
@@ -145,7 +146,7 @@ export default function Footer() {
                   className="group flex items-center gap-2 hover:text-[var(--color-blue-primary)] transition-colors font-medium w-full text-left cursor-pointer"
                   aria-label="Cookie-Einstellungen öffnen"
                 >
-                  <Cookie className="h-4 w-4 text-[var(--color-border-subtle)] group-hover:text-[var(--color-blue-primary)] transition-colors" aria-hidden="true" />
+                  <Cookie className="h-4 w-4 text-[var(--color-text-main)] group-hover:text-[var(--color-blue-primary)] transition-colors" aria-hidden="true" />
                   Cookie-Einstellungen
                 </button>
               </li>
@@ -155,10 +156,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-20 pt-8 border-t border-[var(--color-border-subtle)] flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm font-medium text-[var(--color-text-body)]">
+          <div className="text-sm font-medium text-[var(--color-text-main)]">
             © {new Date().getFullYear()} <span className="font-bold text-[var(--color-text-main)]">{BUSINESS.name}</span>. Alle Rechte vorbehalten.
           </div>
-          <div className="flex items-center gap-6 text-sm font-medium text-[var(--color-text-body)]">
+          <div className="flex items-center gap-6 text-sm font-medium text-[var(--color-text-main)]">
             <span>{BUSINESS.ownerTitle}: {BUSINESS.owner}</span>
             <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-blue-primary)] opacity-50" />
             <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[var(--color-blue-primary)]"/> 365 Tage 24/7 Service</span>

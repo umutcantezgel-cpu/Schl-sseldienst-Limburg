@@ -117,7 +117,7 @@ export const FAQ_DATA: FAQItem[] = [
     // ============ SICHERHEIT & VERTRAUEN ============
     {
         question: "Welcher Schlüsseldienst in Limburg ist seriös?",
-        answer: "Einen seriösen Schlüsseldienst erkennen Sie an absoluter Kostentransparenz und regionaler Verankerung. Wir garantieren Ihnen echte Festpreise am Telefon, verlangen keine versteckten Gebühren vor Ort und belegen unsere Qualität durch über 127 authentische 5-Sterne-Bewertungen auf Google. Wir sind ein echtes lokales Unternehmen aus der Region, keine anonyme Vermittlungszentrale.",
+        answer: "Einen seriösen Schlüsseldienst erkennen Sie an absoluter Kostentransparenz und regionaler Verankerung. Wir garantieren Ihnen echte Festpreise am Telefon, verlangen keine versteckten Gebühren vor Ort und sind ein echtes lokales Unternehmen aus der Region mit eigenem Firmensitz in Limburg — keine anonyme Vermittlungszentrale.",
         category: "sicherheit",
     },
     {

@@ -12,6 +12,7 @@ import {
   Clock,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import HeroCTA from "@/components/HeroCTA";
 import TrustBadges from "@/components/trust/TrustBadges";
@@ -19,13 +20,12 @@ import { Card } from "@/components/ui/card";
 import PricingTable from "@/components/pricing/PricingTable";
 import TrustBar from "@/components/trust/TrustBar";
 import ProcessSteps from "@/components/trust/ProcessSteps";
-import ReviewsSection from "@/components/reviews/ReviewsSection";
-import GoogleReviewsBadge from "@/components/reviews/GoogleReviewsBadge";
-import { aggregateRating } from "@/lib/data/testimonials";
+
 import { getHomepageFAQs } from "@/lib/faqData";
 import { getFAQSchema } from "@/lib/faqSchema";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { BUSINESS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 
 export default function HomePage() {
   return (
@@ -37,37 +37,69 @@ export default function HomePage() {
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-teal-50/50 blur-[100px] pointer-events-none" />
         
-        <div className="relative z-10 mx-auto max-w-4xl text-center flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-blue-100 bg-white/60 mb-8 md:mb-12 shadow-sm text-blue-800 text-sm font-semibold tracking-wide">
-            <span className="flex h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse"></span>
-            {BUSINESS.name} – {BUSINESS.ownerTitle} {BUSINESS.owner}
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            {/* Left: Text Content (3/5) */}
+            <div className="lg:col-span-3 text-center lg:text-left flex flex-col items-center lg:items-start">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-blue-100 bg-white/60 mb-8 md:mb-12 shadow-sm text-blue-800 text-sm font-semibold tracking-wide">
+                <span className="flex h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+                {BUSINESS.name} – {BUSINESS.ownerTitle} {BUSINESS.owner}
+              </div>
+              <h1 className="font-extrabold text-[var(--color-text-main)] tracking-tight leading-[1.15] sm:leading-tight md:leading-snug text-balance mt-4 md:mt-6 text-4xl sm:text-5xl lg:text-6xl">
+                Tür zu? Ihr regionaler <br className="hidden md:block" />
+                <span className="text-gradient-primary relative inline-block mt-2">
+                  Premium-Schlüsseldienst
+                  <svg className="absolute -bottom-3 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
+                  </svg>
+                </span>
+                {" "}für Limburg & Umgebung.
+              </h1>
+              <p className="max-w-2xl text-[var(--color-text-body)] text-lg md:text-xl font-medium mt-8 md:mt-10 text-balance leading-relaxed">
+                Wir sind {BUSINESS.name} unter Leitung von {BUSINESS.owner}. Als etablierter Fachbetrieb öffnen wir Ihre Tür in 99% der Fälle absolut schadensfrei. In 15–30 Minuten sind wir vor Ort – zu 100% garantierten, transparenten Festpreisen, ohne versteckte Gebühren.
+              </p>
+              <div className="mt-10 mb-6">
+                <TrustBadges />
+              </div>
+              <HeroCTA />
+            </div>
+
+            {/* Right: Inhaber Portrait (2/5) */}
+            <div className="lg:col-span-2 hidden lg:flex justify-center">
+              <div className="relative">
+                {/* Decorative background */}
+                <div className="absolute -inset-4 bg-blue-100/40 rounded-[2rem] transform rotate-3" aria-hidden="true" />
+                <div className="absolute -inset-4 bg-blue-50/60 rounded-[2rem] transform -rotate-2" aria-hidden="true" />
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/60">
+                  <Image
+                    src={IMAGES.inhaberPortrait.src}
+                    alt={IMAGES.inhaberPortrait.alt}
+                    title={IMAGES.inhaberPortrait.title}
+                    width={IMAGES.inhaberPortrait.width}
+                    height={IMAGES.inhaberPortrait.height}
+                    priority
+                    quality={85}
+                    sizes="(max-width: 1024px) 0px, 33vw"
+                    className="object-cover w-full max-w-[340px]"
+                  />
+                </div>
+                {/* Floating badge */}
+                <div className="absolute -bottom-3 -right-3 bg-white rounded-2xl shadow-lg px-4 py-2.5 border border-blue-100 flex items-center gap-2 z-10">
+                  <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <div className="text-sm">
+                    <div className="font-bold text-[var(--color-text-main)] leading-tight">Geprüfter</div>
+                    <div className="text-blue-600 font-semibold leading-tight">Fachbetrieb</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="font-extrabold text-[var(--color-text-main)] tracking-tight leading-[1.15] sm:leading-tight md:leading-snug text-balance mt-4 md:mt-6 text-4xl sm:text-5xl lg:text-6xl">
-            Tür zu? Ihr regionaler <br className="hidden md:block" />
-            <span className="text-gradient-primary relative inline-block mt-2">
-              Premium-Schlüsseldienst
-              <svg className="absolute -bottom-3 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
-              </svg>
-            </span>
-            {" "}für Limburg & Umgebung.
-          </h1>
-          <p className="mx-auto max-w-2xl text-[var(--color-text-body)] text-lg md:text-xl font-medium mt-8 md:mt-10 text-balance leading-relaxed">
-            Wir sind {BUSINESS.name} unter Leitung von {BUSINESS.owner}. Als etablierter Fachbetrieb öffnen wir Ihre Tür in 99% der Fälle absolut schadensfrei. In 15–30 Minuten sind wir vor Ort – zu 100% garantierten, transparenten Festpreisen, ohne versteckte Gebühren.
-          </p>
-          <div className="mt-10 mb-6">
-            <TrustBadges />
-          </div>
-          <HeroCTA />
         </div>
       </section>
 
-      {/* Google Reviews Badge */}
-      <aside aria-label="Kunden-Bewertungen" className="relative -mt-4 mb-12 flex justify-center z-20 w-full px-4">
-        <div className="glass px-6 py-3 rounded-full hover-lift-subtle inline-flex items-center">
-          <GoogleReviewsBadge rating={aggregateRating.ratingValue} count={aggregateRating.reviewCount} />
-        </div>
-      </aside>
+
 
       {/* ═══ TRUST BAR ═══ */}
       <TrustBar />
@@ -130,6 +162,31 @@ export default function HomePage() {
             </h2>
             <div className="mx-auto mt-6 md:mt-8 h-[4px] w-24 rounded-full bg-gradient-to-r from-blue-500 to-blue-300"></div>
           </div>
+
+          {/* Authentische Arbeitsbilder als Vertrauens-Element */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              IMAGES.turoeffnungErfolg,
+              IMAGES.schlossMontage,
+              IMAGES.zylinderMontage,
+              IMAGES.zylinderInstallation,
+            ].map((img, idx) => (
+              <div key={img.src} className="relative overflow-hidden rounded-2xl shadow-lg group">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  title={img.title}
+                  width={img.width}
+                  height={img.height}
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="object-cover w-full aspect-[4/3] group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+
           <div className="mt-20 grid gap-12 md:gap-16 sm:grid-cols-3">
             {[
               { icon: Euro, title: "Knallharte Festpreisgarantie", desc: "Sie erfahren bereits am Telefon, was die Türöffnung exakt kosten wird. Garantiert keine bösen Überraschungen, keine Fantasie-Anfahrtskosten, absolute Ehrlichkeit." },
@@ -183,8 +240,7 @@ export default function HomePage() {
       {/* Process Steps */}
       <ProcessSteps />
 
-      {/* Testimonials */}
-      <ReviewsSection />
+
 
       {/* ═══ FAQ SECTION ═══ */}
       <section id="faq" aria-label="Häufig gestellte Fragen" className="bg-[var(--color-surface-base)] px-4 sm:px-6 lg:px-8 py-20 lg:py-32 scroll-mt-28">

@@ -9,7 +9,7 @@ export default function HeroCTA() {
                     href={BUSINESS.phone.href}
                     role="button"
                     aria-label={`Notruf wählen für ${BUSINESS.name}`}
-                    className="flex w-full items-center justify-center gap-3 bg-gradient-to-r from-[var(--color-blue-primary)] to-[#3377FF] text-white hover:opacity-90 active:scale-[0.97] transition-all rounded-full py-4 px-6 shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-glow-subtle)] hover:-translate-y-0.5 animate-pulse-glow"
+                    className="flex w-full items-center justify-center gap-3 bg-gradient-to-r from-[var(--color-brand-red)] to-[#D62828] text-white hover:opacity-90 active:scale-[0.97] transition-all rounded-full py-4 px-6 shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-glow-subtle)] hover:-translate-y-0.5 animate-pulse-glow"
                 >
                     <Phone className="h-6 w-6 animate-phone-ring" aria-hidden="true" />
                     <div className="flex flex-col items-start">

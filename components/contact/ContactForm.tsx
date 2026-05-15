@@ -104,7 +104,7 @@ export default function ContactForm() {
         )}
 
         <div>
-          <label htmlFor="name" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+          <label htmlFor="name" className="block text-sm font-[600] text-white mb-1.5">
             Ihr Name <span className="text-[var(--color-blue-primary)]">*</span>
           </label>
           <input
@@ -112,7 +112,7 @@ export default function ContactForm() {
             type="text"
             {...register("name")}
             className={cn(
-              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]",
+              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]",
               errors.name ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)]"
             )}
             placeholder="Vor- und Nachname"
@@ -122,7 +122,7 @@ export default function ContactForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+            <label htmlFor="email" className="block text-sm font-[600] text-white mb-1.5">
               Ihre E-Mail-Adresse <span className="text-[var(--color-blue-primary)]">*</span>
             </label>
             <input
@@ -130,7 +130,7 @@ export default function ContactForm() {
               type="email"
               {...register("email")}
               className={cn(
-                "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]",
+                "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]",
                 errors.email ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)]"
               )}
               placeholder="ihre.adresse@beispiel.de"
@@ -138,21 +138,21 @@ export default function ContactForm() {
             {errors.email && <p className="mt-1.5 text-sm text-[var(--color-error)] font-medium">{errors.email.message}</p>}
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+            <label htmlFor="phone" className="block text-sm font-[600] text-white mb-1.5">
               Rückruf-Nummer (optional, für Notfälle)
             </label>
             <input
               id="phone"
               type="tel"
               {...register("phone")}
-              className="w-full rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)] px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]"
+              className="w-full rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)] px-4 py-3 text-[var(--color-text-main)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)]"
               placeholder="Für einen schnellen Rückruf"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-[600] text-[var(--color-text-main)] mb-1.5">
+          <label htmlFor="message" className="block text-sm font-[600] text-white mb-1.5">
             Schildern Sie Ihre Situation in Limburg <span className="text-[var(--color-blue-primary)]">*</span>
           </label>
           <textarea
@@ -160,7 +160,7 @@ export default function ContactForm() {
             rows={4}
             {...register("message")}
             className={cn(
-              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)] resize-y",
+              "w-full rounded-xl border px-4 py-3 text-[var(--color-text-main)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-blue-primary)]/20 focus:border-[var(--color-blue-primary)] resize-y",
               errors.message ? "border-[var(--color-error)]/40 bg-[var(--color-error-bg)] focus:border-[var(--color-error)] focus:ring-[var(--color-error)]/20" : "border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)]"
             )}
             placeholder="Beschreiben Sie kurz Ihr Anliegen (z.B. Tür zugefallen in Limburg-Dietkirchen)..."
@@ -177,11 +177,11 @@ export default function ContactForm() {
               className="h-4 w-4 rounded border-gray-300 text-[var(--color-blue-primary)] focus:ring-[var(--color-blue-primary)]"
             />
           </div>
-          <div className="text-sm text-[var(--color-text-body)]">
+          <div className="text-sm text-white">
             <label htmlFor="privacy" className="font-medium">
               Sichere Datenübertragung
             </label>
-            <p className="text-gray-500 mt-0.5">
+            <p className="text-blue-50/80 mt-0.5">
               Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu. Ihre Anfrage wird verschlüsselt an unser Limburger Team übertragen.
             </p>
             {errors.privacy && <p className="mt-1 text-sm text-[var(--color-error)] font-medium">{errors.privacy.message}</p>}

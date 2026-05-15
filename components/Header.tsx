@@ -1,7 +1,8 @@
 "use client";
 
-import { Phone, Key, Menu, X, ChevronDown, ShieldCheck, CheckCircle2, Mail, MapPin } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, ShieldCheck, CheckCircle2, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button";
@@ -24,7 +25,6 @@ export default function Header() {
   const navLinks = [
     { name: "Festpreise", href: "/preise" },
     { name: "Servicegebiet", href: "/servicegebiet" },
-    { name: "Bewertungen", href: "/bewertungen" },
     { name: "FAQ", href: "/faq" },
     { name: "Über Uns", href: "/ueber-uns" },
     { name: "Kontakt", href: "/kontakt" },
@@ -52,13 +52,14 @@ export default function Header() {
           className="flex items-center gap-2 font-bold tracking-tight text-xl text-blue-900"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          <div className="bg-blue-100 rounded-lg p-1.5 text-blue-600">
-            <Key className="h-6 w-6" />
-          </div>
-          <span className="hidden sm:inline-block">
-            {BUSINESS.name} | TV-geprüft
-          </span>
-          <span className="sm:hidden">{BUSINESS.shortName}</span>
+          <Image
+            src="/images/logo.svg"
+            alt={`${BUSINESS.name} Logo`}
+            width={500}
+            height={500}
+            className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -102,7 +103,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <a
             href={BUSINESS.phone.href}
-            className={cn(buttonVariants({ size: "sm" }), "rounded-full flex px-5 sm:px-6 py-5 bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all font-bold")}
+            className={cn(buttonVariants({ size: "sm" }), "rounded-full flex px-5 sm:px-6 py-5 bg-[var(--color-brand-red)] hover:bg-[#D62828] text-white shadow-md hover:shadow-lg transition-all font-bold")}
             aria-label={`Notruf wählen: ${BUSINESS.phone.display}`}
           >
             <Phone className="h-4 w-4 sm:h-5 sm:w-5" />

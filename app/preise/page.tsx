@@ -21,8 +21,8 @@ import { generateServiceSchema } from "@/lib/serviceSchema";
 import { getFAQSchema } from "@/lib/faqSchema";
 
 const mainServicesSchema = [
-  generateServiceSchema({ title: "Türöffnung", description: "Zerstörungsfreie Türöffnung", url: "/leistungen/turoeffnung", price: 59 }),
-  generateServiceSchema({ title: "Autoöffnung", description: "Schonende Autoöffnung", url: "/leistungen/autooeffnung", price: 80 })
+  generateServiceSchema({ title: "Türöffnung", description: "Zerstörungsfreie Türöffnung", url: "/leistungen/turoeffnung", price: 99 }),
+  generateServiceSchema({ title: "Autoöffnung", description: "Schonende Autoöffnung", url: "/leistungen/autooeffnung", price: 149 })
 ];
 export const metadata = generateSharedMetadata({
   title: "Preise & Kosten | Schlüsseldienst Limburg – Transparente Festpreise",

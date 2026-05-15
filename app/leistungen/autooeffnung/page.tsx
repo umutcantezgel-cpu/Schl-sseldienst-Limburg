@@ -1,5 +1,7 @@
 import { Car, ShieldCheck, Clock, Check, Phone } from "lucide-react";
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import RelatedServices from "@/components/RelatedServices";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -75,6 +77,28 @@ export default function AutooeffnungPage() {
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Einsatzfahrzeug & Arbeitsfoto */}
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                IMAGES.notfallAnruf,
+                IMAGES.turoeffnungWerkzeug,
+              ].map((img) => (
+                <div key={img.src} className="overflow-hidden rounded-2xl shadow-md group">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    title={img.title}
+                    width={img.width}
+                    height={img.height}
+                    loading="lazy"
+                    quality={75}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover w-full aspect-[16/10] group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
             </div>
 
             <div className="mt-20 rounded-3xl glass-card p-8 sm:p-10 border border-blue-200/50 shadow-lg relative overflow-hidden bg-gradient-to-br from-white to-blue-50/30">

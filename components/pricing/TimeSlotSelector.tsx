@@ -10,9 +10,10 @@ interface TimeSlotSelectorProps {
 
 export default function TimeSlotSelector({ selected, onSelect }: TimeSlotSelectorProps) {
     const slots: { id: TimeSlot; label: string }[] = [
-        { id: "day", label: TIME_MODIFIERS.day.label },
-        { id: "evening", label: TIME_MODIFIERS.evening.label },
-        { id: "night", label: TIME_MODIFIERS.night.label },
+        { id: "regulaer", label: "Regulär" },
+        { id: "abends", label: "Abends" },
+        { id: "nachts", label: "Nachts" },
+        { id: "wochenende", label: "Wochenende" },
     ];
 
     return (

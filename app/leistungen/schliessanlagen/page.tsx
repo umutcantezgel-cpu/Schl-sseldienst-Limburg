@@ -1,5 +1,7 @@
 import { Key, Building, ShieldCheck, Check, ClipboardCheck } from "lucide-react";
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import RelatedServices from "@/components/RelatedServices";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -75,6 +77,30 @@ export default function SchliessanlagenPage() {
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Arbeitsfotos: Schließanlagen & Zylinder */}
+            <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                IMAGES.zylinderVermessung,
+                IMAGES.zylinderInstallation,
+                IMAGES.schlossMechanik,
+                IMAGES.zylinderMontage,
+              ].map((img) => (
+                <div key={img.src} className="overflow-hidden rounded-2xl shadow-md group">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    title={img.title}
+                    width={img.width}
+                    height={img.height}
+                    loading="lazy"
+                    quality={75}
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className="object-cover w-full aspect-square group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
             </div>
 
             <div className="mt-20 rounded-3xl glass-card p-8 sm:p-10 border border-blue-200/50 shadow-lg relative overflow-hidden bg-gradient-to-br from-white to-blue-50/30">

@@ -20,7 +20,7 @@ export default function TrustStrip() {
                         <StaggerItem key={item.text} className="flex items-center gap-2" animation={entryAnimations.slideUpFade}>
                             <item.icon className={`h-[24px] w-[24px] text-[var(--color-blue-primary)] stroke-[1.5] ${item.fill ? "fill-current" : ""}`} aria-hidden="true" />
                             <span
-                                className="font-[600] text-[var(--color-text-main)]"
+                                className="font-[600] text-white"
                                 style={{ fontSize: 'var(--text-small)', letterSpacing: 'var(--tracking-cta)' }}
                             >
                                 {item.text}

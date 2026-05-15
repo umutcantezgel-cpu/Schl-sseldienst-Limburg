@@ -30,7 +30,7 @@ export default function EmergencyCTA() {
         <div className="mt-10 flex justify-center">
           <a
             href={BUSINESS.phone.href}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-[var(--color-blue-primary)] to-[#3377FF] text-white font-extrabold px-8 py-4 rounded-[var(--radius-lg)] shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-glow-subtle)] hover:-translate-y-1 hover:opacity-90 transition-all duration-300 active:scale-[0.97] animate-pulse-glow"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[var(--color-brand-red)] to-[#D62828] text-white font-extrabold px-8 py-4 rounded-[var(--radius-lg)] shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-glow-subtle)] hover:-translate-y-1 hover:opacity-90 transition-all duration-300 active:scale-[0.97] animate-pulse-glow"
           >
             <Phone className="h-6 w-6" aria-hidden="true" />
             <div className="flex flex-col items-start">

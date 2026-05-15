@@ -1,8 +1,10 @@
 import { ShieldCheck, MapPin, Heart, Clock, Star, BadgeCheck, PhoneCall, Award, Users, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CertBadges from "@/components/trust/CertBadges";
 import { BUSINESS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 import { generateSharedMetadata } from "@/lib/metadata";
 
 export const metadata = generateSharedMetadata({
@@ -92,12 +94,33 @@ export default function UeberUnsPage() {
               <div className="relative">
                 <div className="absolute inset-0 bg-blue-100 rounded-3xl opacity-50 transform translate-x-4 translate-y-4"></div>
                 <div className="glass-card rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 relative z-10">
+                  {/* Inhaber-Portrait */}
+                  <div className="mb-8 overflow-hidden rounded-2xl shadow-lg">
+                    <Image
+                      src={IMAGES.inhaberPortrait.src}
+                      alt={IMAGES.inhaberPortrait.alt}
+                      title={IMAGES.inhaberPortrait.title}
+                      width={IMAGES.inhaberPortrait.width}
+                      height={IMAGES.inhaberPortrait.height}
+                      loading="lazy"
+                      quality={80}
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover w-full"
+                    />
+                  </div>
                   <blockquote className="text-[var(--color-text-main)] text-xl md:text-2xl font-medium leading-relaxed">
                     &quot;Ein Schlüsseldienst sollte ein Retter in der Not sein, kein Grund zur Sorge. Wenn unser Team vor Ort ist, übernehmen Profis, denen Sie blind vertrauen können.&quot;
                   </blockquote>
                   <div className="mt-10 flex items-center gap-5 border-t border-blue-100 pt-6">
-                    <div className="h-16 w-16 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
-                      <Users className="h-8 w-8 text-blue-600" />
+                    <div className="h-16 w-16 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 overflow-hidden">
+                      <Image
+                        src={IMAGES.inhaberPortrait.src}
+                        alt={IMAGES.inhaberPortrait.alt}
+                        width={64}
+                        height={64}
+                        className="object-cover w-full h-full"
+                        loading="lazy"
+                      />
                     </div>
                     <div>
                       <div className="font-bold text-[var(--color-text-main)] text-xl">{BUSINESS.owner}</div>
@@ -105,6 +128,36 @@ export default function UeberUnsPage() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* ═══ ARBEITSFOTOS ═══ */}
+            <div className="mt-24">
+              <h3 className="text-2xl font-bold text-[var(--color-text-main)] mb-6">Unser Team bei der Arbeit</h3>
+              <div className="h-1 w-16 bg-blue-500 rounded-full mb-8" />
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  IMAGES.schlossMontage,
+                  IMAGES.zylinderMontage,
+                  IMAGES.turoeffnungErfolg,
+                  IMAGES.zylinderInstallation,
+                  IMAGES.sprechanlageArbeit,
+                  IMAGES.zylinderVermessung,
+                ].map((img) => (
+                  <div key={img.src} className="overflow-hidden rounded-2xl shadow-md group">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      title={img.title}
+                      width={img.width}
+                      height={img.height}
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                      className="object-cover w-full aspect-square group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
 

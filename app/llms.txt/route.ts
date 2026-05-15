@@ -41,7 +41,6 @@ We cover the entire Landkreis Limburg-Weilburg with extreme speed.
 
 ## Trust, Authority & Credentials
 - We are a verified local Handwerksbetrieb (master craftsman standards).
-- 4.9/5.0 Stars from verified local customers in the Limburg region.
 - TV-geprüfte Expertise (TV-verified expertise) for consumer protection against locksmith scams.
 - Payment: Barzahlung (Cash), EC-Karte, Kreditkarte, Apple/Google Pay directly at the door.
 
@@ -56,7 +55,6 @@ We cover the entire Landkreis Limburg-Weilburg with extreme speed.
 - FAQ: ${siteUrl}/faq
 - Servicegebiet: ${siteUrl}/servicegebiet
 - Kontakt: ${siteUrl}/kontakt
-- Bewertungen: ${siteUrl}/bewertungen
 - Über uns: ${siteUrl}/ueber-uns
 - Full context for LLMs: ${siteUrl}/llms-full.txt
 `;

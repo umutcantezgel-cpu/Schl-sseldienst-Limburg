@@ -9,9 +9,7 @@ import HeroCTA from "@/components/HeroCTA";
 import TrustBadges from "@/components/trust/TrustBadges";
 import PriceCard from "@/components/pricing/PriceCard";
 import TrustStrip from "@/components/trust/TrustStrip";
-import ReviewsSection from "@/components/reviews/ReviewsSection";
-import GoogleReviewsBadge from "@/components/reviews/GoogleReviewsBadge";
-import { aggregateRating } from "@/lib/data/testimonials";
+
 import { getFAQSchema } from "@/lib/faqSchema";
 import { MapPin, ShieldCheck, Clock, CheckCircle2, Award, Truck } from "lucide-react";
 import Link from "next/link";
@@ -52,13 +50,29 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
     // Schema.org for LocalBusiness dynamic per city
     const localBusinessSchema = {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": `Schlüsseldienst Limburg - Notdienst für ${city.name}`,
-        "description": `Ihr lokaler Schlüsseldienst für ${city.name}. Zerstörungsfreie Türöffnungen, Festpreise ab ${city.pricing.basePrice}€, Anfahrt in ${city.logistics.drivingTimeMinutes} Minuten.`,
+        "@type": "Locksmith",
+        "@id": `${siteUrl}/${city.slug}#localbusiness`,
+        "name": `${BUSINESS.name} – Notdienst ${city.name}`,
+        "description": `Ihr lokaler Schlüsseldienst für ${city.name}. Zerstörungsfreie Türöffnungen in 99% der Fälle, Festpreise ab ${city.pricing.basePrice}€, Anfahrt in ${city.logistics.drivingTimeMinutes} Minuten. 24/7 erreichbar.`,
         "url": `${siteUrl}/${city.slug}`,
         "telephone": BUSINESS.phone.international,
+        "email": BUSINESS.email,
         "priceRange": "€€",
-        "image": `${siteUrl}/logo.png`,
+        "image": `${siteUrl}/images/logo.svg`,
+        "logo": {
+            "@type": "ImageObject",
+            "url": `${siteUrl}/images/logo.svg`,
+            "width": 500,
+            "height": 500
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": BUSINESS.address.street,
+            "addressLocality": BUSINESS.address.cityFull,
+            "addressRegion": BUSINESS.address.state,
+            "postalCode": BUSINESS.address.zip,
+            "addressCountry": BUSINESS.address.countryCode
+        },
         "areaServed": {
             "@type": "City",
             "name": city.name
@@ -67,7 +81,49 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
             "@type": "GeoCoordinates",
             "latitude": city.coordinates.latitude,
             "longitude": city.coordinates.longitude
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59",
+                "description": "24/7 Notdienst – auch an Feiertagen und nachts"
+            }
+        ],
+        "paymentAccepted": ["Cash", "Credit Card", "EC-Karte"],
+        "currenciesAccepted": "EUR",
+        "knowsLanguage": ["de", "en", "tr"],
+        "parentOrganization": {
+            "@type": "Locksmith",
+            "@id": `${siteUrl}/#localbusiness`
         }
+    };
+
+    // BreadcrumbList Schema for rich snippets
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Startseite",
+                "item": siteUrl
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Einsatzgebiete",
+                "item": `${siteUrl}/servicegebiet`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": `Schlüsseldienst ${city.name}`,
+                "item": `${siteUrl}/${city.slug}`
+            }
+        ]
     };
 
     return (
@@ -76,6 +132,11 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                 id={`schema-city-${city.slug}`}
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+            />
+            <Script
+                id={`schema-breadcrumb-${city.slug}`}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
             <Breadcrumbs items={[{ name: "Einsatzgebiete", href: "/servicegebiet" }, { name: `Schlüsseldienst ${city.name}`, href: `/${city.slug}` }]} />
@@ -116,11 +177,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                 </div>
             </section>
 
-            <div className="relative -mt-6 mb-16 flex justify-center z-10 w-full px-4">
-                <div className="glass-card p-2 rounded-2xl shadow-lg border border-blue-100/50 bg-white/90">
-                    <GoogleReviewsBadge rating={aggregateRating.ratingValue} count={aggregateRating.reviewCount} />
-                </div>
-            </div>
+
 
             <TrustStrip />
 
@@ -137,8 +194,16 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                           </div>
                           Soforthilfe direkt in <span className="text-gradient-primary">{city.name}</span>
                       </h2>
-                      <p className="text-[var(--color-text-body)] text-lg leading-relaxed mb-8 max-w-3xl">
-                          Als regional verwurzelter Betrieb mit Sitz in Limburg kennen wir jede Straße in {city.name}. {city.logistics.routeDescription && ` ${city.logistics.routeDescription}`} Wir navigieren den schnellsten Weg zu Ihnen, egal ob Sie am Rande der Stadt oder mitten im Zentrum wohnen.
+
+                      {/* Unique Intro Text */}
+                      {city.localContent?.introText && (
+                        <p className="text-[var(--color-text-body)] text-lg leading-relaxed mb-8 max-w-3xl">
+                          {city.localContent.introText}
+                        </p>
+                      )}
+
+                      <p className="text-[var(--color-text-body)] text-base leading-relaxed mb-8 max-w-3xl">
+                          {city.logistics.routeDescription && ` ${city.logistics.routeDescription}`} Wir navigieren den schnellsten Weg zu Ihnen, egal ob Sie am Rande der Stadt oder mitten im Zentrum wohnen.
                       </p>
                       
                       <div className="mb-8">
@@ -177,6 +242,54 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                 </Card>
             </section>
 
+            {/* Housing Profile & Security Tip Section */}
+            <section className="bg-[var(--color-surface-elevated)] border-y border-[var(--color-border-subtle)] px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+                <div className="mx-auto max-w-5xl grid gap-8 md:grid-cols-2">
+                    {/* Housing Profile Glass Card */}
+                    <div className="relative rounded-3xl overflow-hidden p-8 border border-blue-100/30 shadow-xl" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(219,234,254,0.4) 100%)', backdropFilter: 'blur(20px)' }}>
+                        <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-blue-200/30 blur-3xl pointer-events-none" />
+                        <div className="relative z-10">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4">
+                                <MapPin className="h-3.5 w-3.5" /> Wohnstruktur
+                            </div>
+                            <h3 className="text-2xl font-extrabold text-[var(--color-text-main)] mb-4">
+                                Bebauungsprofil {city.name}
+                            </h3>
+                            <p className="text-[var(--color-text-body)] leading-relaxed text-base">
+                                {city.housingProfile}
+                            </p>
+                            {city.localContent?.neighborhoodGuide && (
+                                <p className="mt-4 text-[var(--color-text-body)] leading-relaxed text-sm border-t border-blue-100/50 pt-4">
+                                    {city.localContent.neighborhoodGuide}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Security Tip Card */}
+                    {city.localContent?.securityTip && (
+                        <div className="relative rounded-3xl overflow-hidden p-8 border border-amber-200/50 shadow-xl" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(254,249,195,0.4) 100%)', backdropFilter: 'blur(20px)' }}>
+                            <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-amber-200/30 blur-3xl pointer-events-none" />
+                            <div className="relative z-10">
+                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">
+                                    <ShieldCheck className="h-3.5 w-3.5" /> Sicherheitshinweis
+                                </div>
+                                <h3 className="text-2xl font-extrabold text-[var(--color-text-main)] mb-4">
+                                    Lokaler Sicherheitstipp
+                                </h3>
+                                <p className="text-[var(--color-text-body)] leading-relaxed text-base">
+                                    {city.localContent.securityTip}
+                                </p>
+                                <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-amber-700">
+                                    <Award className="h-4 w-4" />
+                                    Kostenlose Erstberatung vor Ort
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </section>
+
             {/* Localized Pricing Section */}
             <section id="preise" className="bg-[var(--color-surface-elevated)] border-y border-[var(--color-border-subtle)] px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
                 <div className="mx-auto max-w-7xl">
@@ -188,7 +301,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                         <h2 className="text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-4xl lg:text-5xl mb-6">
                             Transparente <span className="text-gradient-primary">Festpreise</span> für {city.name}
                         </h2>
-                        <div className="h-1 w-20 bg-blue-500 rounded-full mx-auto mb-6"></div>
+                        <div className="h-1 w-20 bg-[var(--color-brand-red)] rounded-full mx-auto mb-6"></div>
                         <p className="mt-6 text-xl text-[var(--color-text-body)] font-medium max-w-2xl mx-auto leading-relaxed">
                             {city.pricing.travelCost === 0
                                 ? "Profitieren Sie von unserer kostenfreien Anfahrt in diesem Servicegebiet."
@@ -224,8 +337,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                 </div>
             </section>
 
-            {/* Testimonials */}
-            <ReviewsSection />
+
 
             {/* City-Specific FAQ Section */}
             {city.faqs && city.faqs.length > 0 && (
@@ -242,7 +354,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                           <h2 className="text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-4xl">
                               Häufige Fragen zu Einsätzen in <span className="text-gradient-primary">{city.name}</span>
                           </h2>
-                          <div className="h-1 w-20 bg-blue-500 rounded-full mx-auto mt-6"></div>
+                          <div className="h-1 w-20 bg-[var(--color-brand-red)] rounded-full mx-auto mt-6"></div>
                       </div>
                       <div className="space-y-4 glass-card p-6 md:p-10 rounded-3xl border border-blue-100/50 shadow-sm">
                           {city.faqs.map((faq, i) => (
@@ -261,7 +373,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                     </h2>
                     <nav aria-label="Benachbarte Einsatzgebiete" className="flex flex-wrap justify-center gap-4">
                         {cities.filter(c => c.slug !== city.slug && c.logistics.distanceFromHQ <= city.logistics.distanceFromHQ + 10).slice(0, 10).map(c => (
-                            <Link key={c.id} href={`/${c.slug}`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card border border-blue-100/50 text-blue-700 font-medium hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+                            <Link key={c.id} href={`/${c.slug}`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card border border-blue-100/50 text-blue-700 font-medium hover:bg-[var(--color-brand-red)] hover:text-white hover:border-transparent transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
                                 <MapPin className="h-4 w-4" /> Schlüsseldienst {c.name}
                             </Link>
                         ))}

@@ -1,19 +1,18 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ServiceType, TimeSlot, getDynamicPricing, TIME_MODIFIERS, ADDONS } from "./pricing.constants";
+import { ServiceType, TimeSlot, PRICING_DATA, TIME_MODIFIERS, ADDONS } from "./pricing.constants";
 
 interface PriceBreakdownProps {
     serviceType: ServiceType;
     timeSlot: TimeSlot;
-    basePrice?: number;
 }
 
-export default function PriceBreakdown({ serviceType, timeSlot, basePrice = 59 }: PriceBreakdownProps) {
-    const PRICING = getDynamicPricing(basePrice);
-    const price = PRICING[serviceType][timeSlot];
+export default function PriceBreakdown({ serviceType, timeSlot }: PriceBreakdownProps) {
+    const currentPricing = PRICING_DATA[serviceType][timeSlot];
+    const isNullPrice = currentPricing.total === null;
 
-    if (price === null) {
+    if (isNullPrice) {
         return (
             <div className="rounded-2xl glass p-6 ring-1 ring-[var(--color-border-glass)] flex flex-col justify-center items-center text-center h-[260px]" aria-live="polite">
                 <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2">Diskrete Kalkulation auf Anfrage</h3>
@@ -30,22 +29,53 @@ export default function PriceBreakdown({ serviceType, timeSlot, basePrice = 59 }
 
             <dl className="space-y-3 text-sm flex-1">
                 <div className="flex justify-between border-b border-[var(--color-border-subtle)] pb-3">
-                    <dt className="text-[var(--color-text-body)] text-left">Basis ({TIME_MODIFIERS[timeSlot].label})</dt>
+                    <dt className="text-[var(--color-text-body)] text-left">Basispreis</dt>
                     <dd className="font-semibold text-[var(--color-text-main)] shrink-0 ml-4 relative w-[40px] text-right">
                         <AnimatePresence mode="wait">
                             <motion.span
-                                key={price}
+                                key={currentPricing.basePrice}
                                 initial={{ opacity: 0, y: 15 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -15 }}
                                 transition={{ type: "spring", stiffness: 120, damping: 14 }}
                                 className="absolute right-0 top-0 bottom-0 m-auto inline-flex items-center"
                             >
-                                {price}€
+                                {currentPricing.basePrice}€
                             </motion.span>
                         </AnimatePresence>
                     </dd>
                 </div>
+
+                {currentPricing.surcharge > 0 && (
+                    <div className="flex justify-between border-b border-[var(--color-border-subtle)] pb-3">
+                        <dt className="text-[var(--color-text-body)] text-left">
+                            <AnimatePresence mode="wait">
+                                <motion.span
+                                    key={currentPricing.surchargeLabel}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    {currentPricing.surchargeLabel}
+                                </motion.span>
+                            </AnimatePresence>
+                        </dt>
+                        <dd className="font-semibold text-[var(--color-brand-red)] shrink-0 ml-4 relative w-[40px] text-right">
+                            <AnimatePresence mode="wait">
+                                <motion.span
+                                    key={currentPricing.surcharge}
+                                    initial={{ opacity: 0, y: 15 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -15 }}
+                                    transition={{ type: "spring", stiffness: 120, damping: 14 }}
+                                    className="absolute right-0 top-0 bottom-0 m-auto inline-flex items-center"
+                                >
+                                    +{currentPricing.surcharge}€
+                                </motion.span>
+                            </AnimatePresence>
+                        </dd>
+                    </div>
+                )}
 
                 <div className="flex justify-between border-b border-[var(--color-border-subtle)] pb-3">
                     <dt className="text-[var(--color-text-body)] text-left">{ADDONS.anfahrt.label}</dt>
@@ -58,14 +88,14 @@ export default function PriceBreakdown({ serviceType, timeSlot, basePrice = 59 }
                         <dd className="text-3xl font-extrabold text-gradient tabular-nums relative w-[80px] h-[40px] text-right">
                             <AnimatePresence mode="wait">
                                 <motion.span
-                                    key={price}
+                                    key={currentPricing.total}
                                     initial={{ opacity: 0, y: 15 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -15 }}
                                     transition={{ type: "spring", stiffness: 120, damping: 14 }}
                                     className="absolute right-0 top-0 h-full flex items-center"
                                 >
-                                    {price}€
+                                    {currentPricing.total}€
                                 </motion.span>
                             </AnimatePresence>
                         </dd>
@@ -76,8 +106,8 @@ export default function PriceBreakdown({ serviceType, timeSlot, basePrice = 59 }
             <div className="mt-6 space-y-2 text-xs text-[var(--color-text-body)] bg-blue-50/50 p-3 rounded-xl border border-blue-100 text-left">
                 <p className="font-semibold text-blue-900">Absolute Transparenz bei Zusatzleistungen:</p>
                 <ul className="list-disc pl-4 space-y-1 text-blue-800/80">
-                    {serviceType === 'doorLocked' && (
-                        <li>{ADDONS.zylinder.label}: {ADDONS.zylinder.price}€</li>
+                    {serviceType === 'tuer-abgesperrt' && (
+                        <li>{ADDONS.zylinder.label}: {ADDONS.zylinder.price}</li>
                     )}
                     <li>{ADDONS.mehrwehraufwand.label}: {ADDONS.mehrwehraufwand.price}</li>
                 </ul>

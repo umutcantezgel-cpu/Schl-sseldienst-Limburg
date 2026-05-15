@@ -1,7 +1,8 @@
 "use client";
 
-import { Phone, Key, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -33,7 +34,6 @@ export default function StickyHeader() {
     const navLinks = [
         { name: "Festpreise", href: "/preise" },
         { name: "Einsatzgebiet", href: "/servicegebiet" },
-        { name: "Google Rezensionen", href: "/bewertungen" },
         { name: "Häufige Fragen", href: "/faq" },
         { name: "Über Uns", href: "/ueber-uns" },
         { name: "Kontakt", href: "/kontakt" },
@@ -57,18 +57,14 @@ export default function StickyHeader() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     aria-label={`${BUSINESS.name} | TV-geprüfter Meisterbetrieb – Startseite`}
                 >
-                    <div className="bg-[var(--color-blue-light)] p-1.5 lg:p-2 rounded-full group-hover:scale-110 transition-transform duration-300 shrink-0">
-                        <Key className="h-4 w-4 lg:h-5 lg:w-5 text-[var(--color-blue-primary)]" aria-hidden="true" />
-                    </div>
-                    <div className="flex flex-col justify-center min-w-0">
-                        <span className="hidden sm:inline-block whitespace-nowrap text-sm lg:text-base transition-all duration-300 truncate">
-                            {BUSINESS.name}
-                        </span>
-                        <span className={`hidden sm:inline-block whitespace-nowrap text-[var(--color-blue-primary)] text-xs font-semibold transition-all duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 h-auto'}`}>
-                            TV-geprüfter Meisterbetrieb
-                        </span>
-                        <span className="sm:hidden text-xs sm:text-sm whitespace-nowrap truncate max-w-[120px]">{BUSINESS.shortName}</span>
-                    </div>
+                    <Image
+                        src="/images/logo.svg"
+                        alt={`${BUSINESS.name} Logo`}
+                        width={500}
+                        height={500}
+                        className={`w-auto object-contain transition-all duration-500 ease-in-out ${isScrolled ? 'h-11 sm:h-12' : 'h-14 sm:h-16'}`}
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -137,7 +133,7 @@ export default function StickyHeader() {
                 <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
                     <a
                         href={BUSINESS.phone.href}
-                        className={cn(buttonVariants({ size: "default" }), "rounded-full flex px-3 sm:px-6 py-2 sm:py-5 shadow-md hover:shadow-lg transition-all duration-300 bg-[var(--color-blue-primary)] text-white hover:bg-[var(--color-blue-dark)] hover:-translate-y-0.5 border border-transparent")}
+                        className={cn(buttonVariants({ size: "default" }), "rounded-full flex px-3 sm:px-6 py-2 sm:py-5 shadow-md hover:shadow-lg transition-all duration-300 bg-[var(--color-brand-red)] text-white hover:bg-[#D62828] hover:-translate-y-0.5 border border-transparent")}
                         aria-label={`Notruf wählen: ${BUSINESS.phone.display}`}
                     >
                         <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 animate-pulse-slow shrink-0" />
@@ -223,7 +219,7 @@ export default function StickyHeader() {
                         <li className="pt-4 mt-2">
                             <a
                                 href={BUSINESS.phone.href}
-                                className="flex items-center justify-center gap-3 bg-[var(--color-blue-primary)] text-white hover:bg-[var(--color-blue-dark)] font-bold rounded-2xl px-6 py-4.5 shadow-lg shadow-[var(--color-blue-primary)]/20 transition-all hover:-translate-y-1 text-lg w-full"
+                                className="flex items-center justify-center gap-3 bg-[var(--color-brand-red)] text-white hover:bg-[#D62828] font-bold rounded-2xl px-6 py-4.5 shadow-lg shadow-[var(--color-brand-red)]/20 transition-all hover:-translate-y-1 text-lg w-full"
                             >
                                 <Phone className="h-6 w-6 animate-pulse-slow" aria-hidden="true" />
                                 24/7 Notruf Zentrale

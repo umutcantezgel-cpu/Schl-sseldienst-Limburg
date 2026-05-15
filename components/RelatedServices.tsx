@@ -18,7 +18,7 @@ export default function RelatedServices({ currentServiceId }: { currentServiceId
                         <Link
                             key={slug}
                             href={service.slug}
-                            className="group block p-6 bg-[var(--color-blue-dark)] rounded-[var(--radius-lg)] elevation-1 border border-[var(--color-border-subtle)] hover:shadow-[var(--shadow-lift)] transition-all hover:border-[var(--color-brand-muted)]"
+                            className="group block p-6 bg-white/80 backdrop-blur-md rounded-[var(--radius-lg)] elevation-1 border border-[var(--color-border-subtle)] hover:shadow-[var(--shadow-lift)] transition-all hover:border-[var(--color-blue-primary)]"
                         >
                             <h4 className="text-lg font-semibold text-[var(--color-text-main)] group-hover:text-[var(--color-blue-primary)] transition-colors">
                                 {service.title}

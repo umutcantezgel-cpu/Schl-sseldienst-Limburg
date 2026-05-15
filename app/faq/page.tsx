@@ -56,7 +56,7 @@ export default function FAQPage() {
           <div className="mx-auto max-w-4xl">
             <div className="glass-card rounded-3xl bg-blue-50/50 p-8 md:p-12 shadow-sm border border-blue-100 text-center hover-lift transition-all duration-300">
               <p className="text-lg md:text-xl text-[var(--color-text-body)] leading-relaxed font-medium text-balance">
-                {BUSINESS.name} ist Ihr lokaler 24/7-Schlüsselnotdienst. Wir garantieren Festpreise ab 50 Euro, erreichen Sie in Limburg, Diez, Bad Camberg und dem gesamten Landkreis Limburg-Weilburg meist innerhalb von 15 bis 30 Minuten. Auf diese Zusagen vertrauen unsere Kunden, was über 120 Google-Bewertungen mit 4.9 Sternen beweisen.
+                {BUSINESS.name} ist Ihr lokaler 24/7-Schlüsselnotdienst. Wir garantieren Festpreise ab 99 Euro, erreichen Sie in Limburg, Diez, Bad Camberg und dem gesamten Landkreis Limburg-Weilburg meist innerhalb von 15 bis 30 Minuten. Transparenz und Zuverlässigkeit sind unsere obersten Prinzipien.
               </p>
             </div>
           </div>

@@ -3,28 +3,23 @@
 import { useState } from "react";
 import TimeSlotSelector from "./TimeSlotSelector";
 import PriceBreakdown from "./PriceBreakdown";
-import { ServiceType, TimeSlot, getDynamicPricing } from "./pricing.constants";
+import { ServiceType, TimeSlot, PRICING_DATA } from "./pricing.constants";
 import { ShieldCheck, DoorOpen, Lock, Car, Shield } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-interface PricingCalculatorProps {
-    basePrice?: number;
-}
+export default function PricingCalculator() {
+    const [serviceType, setServiceType] = useState<ServiceType>("tuer-zugefallen");
+    const [timeSlot, setTimeSlot] = useState<TimeSlot>("regulaer");
 
-export default function PricingCalculator({ basePrice = 59 }: PricingCalculatorProps) {
-    const [serviceType, setServiceType] = useState<ServiceType>("doorFallen");
-    const [timeSlot, setTimeSlot] = useState<TimeSlot>("day");
-
-    const PRICING = getDynamicPricing(basePrice);
-    const currentPrice = PRICING[serviceType][timeSlot];
-    const isNullPrice = currentPrice === null;
+    const currentPricing = PRICING_DATA[serviceType][timeSlot];
+    const isNullPrice = currentPricing.total === null;
 
     const services = [
-        { id: "doorFallen", label: "Zugefallene Tür", desc: "(Limburg & Umgebung)", icon: DoorOpen },
-        { id: "doorLocked", label: "Abgeschlossene Tür", desc: "(Sicherheitsöffnung)", icon: Lock },
-        { id: "carOpening", label: "Autoöffnung in Limburg", desc: "(100% Schonend)", icon: Car },
-        { id: "safeOpening", label: "Tresoröffnung", desc: "(Diskreter Service)", icon: Shield },
+        { id: "tuer-zugefallen", label: "Zugefallene Tür", desc: "(Limburg & Umgebung)", icon: DoorOpen },
+        { id: "tuer-abgesperrt", label: "Abgeschlossene Tür", desc: "(Sicherheitsöffnung)", icon: Lock },
+        { id: "autooeffnung", label: "Autoöffnung in Limburg", desc: "(100% Schonend)", icon: Car },
+        { id: "tresoroeffnung", label: "Tresoröffnung", desc: "(Diskreter Service)", icon: Shield },
     ] as const;
 
     return (
@@ -39,7 +34,7 @@ export default function PricingCalculator({ basePrice = 59 }: PricingCalculatorP
                 </h2>
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm font-medium">
                     <div className="bg-white/10 text-blue-50 px-4 py-2 rounded-full ring-1 ring-white/30 backdrop-blur-sm">
-                        Lokaler Festpreis Limburg: ab {basePrice} €
+                        Lokaler Festpreis Limburg: ab 99 €
                     </div>
                     <div className="bg-red-500/10 text-red-50 px-4 py-2 rounded-full ring-1 ring-red-500/30 hidden sm:block backdrop-blur-sm">
                         Warnung: Abzock-Zentralen verlangen oft &gt; 300 €
@@ -110,7 +105,7 @@ export default function PricingCalculator({ basePrice = 59 }: PricingCalculatorP
                 {/* Column 3: The Result/Breakdown */}
                 <div className="lg:col-span-1 border-t lg:border-t-0 lg:border-l border-[var(--color-border-subtle)] pt-8 lg:pt-0 lg:pl-10 flex flex-col justify-between">
                     <div>
-                        <PriceBreakdown serviceType={serviceType} timeSlot={timeSlot} basePrice={basePrice} />
+                        <PriceBreakdown serviceType={serviceType} timeSlot={timeSlot} />
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-[var(--color-border-subtle)] pb-2">

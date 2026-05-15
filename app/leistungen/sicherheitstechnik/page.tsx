@@ -1,8 +1,10 @@
 import { ShieldCheck, Lock, Bell, Eye, Check, Fingerprint, Lightbulb, PenTool } from "lucide-react";
+import Image from "next/image";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import RelatedServices from "@/components/RelatedServices";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CertBadges from "@/components/trust/CertBadges";
+import { IMAGES } from "@/lib/images";
 import { generateHowToSchema } from "@/lib/schema";
 import { getFAQSchema } from "@/lib/faqSchema";
 import { generateSharedMetadata } from "@/lib/metadata";
@@ -146,6 +148,29 @@ export default function SicherheitstechnikPage() {
                 <li className="flex items-start gap-3"><Check className="mt-1 h-5 w-5 shrink-0 text-blue-600" /> <span className="text-[var(--color-text-main)] font-medium">Skalierbar für jede Unternehmensgröße in der Region</span></li>
               </ul>
             </div>
+          </div>
+
+          {/* Authentische Arbeitsfoto-Galerie */}
+          <div className="mt-16 grid grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              IMAGES.sprechanlageArbeit,
+              IMAGES.schliessblechDetail,
+              IMAGES.schlossMontage,
+            ].map((img) => (
+              <div key={img.src} className="overflow-hidden rounded-2xl shadow-md group">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  title={img.title}
+                  width={img.width}
+                  height={img.height}
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  className="object-cover w-full aspect-[4/3] group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
           </div>
 
           {/* Process Section */}

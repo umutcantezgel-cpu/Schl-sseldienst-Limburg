@@ -1,5 +1,7 @@
 import { DoorOpen, Check, Clock, ShieldCheck, Phone } from "lucide-react";
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import RelatedServices from "@/components/RelatedServices";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -44,20 +46,39 @@ export default function TuroeffnungPage() {
         <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-70" aria-hidden="true" />
         <div className="absolute top-[-10%] right-[10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 blur-[100px] pointer-events-none" />
         
-        <div className="mx-auto max-w-4xl text-center relative z-10">
-          <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Türöffnung in Limburg</span>
-          <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl">
-            Ausgesperrt in Limburg? <br className="hidden sm:block" />
-            <span className="text-gradient-primary relative inline-block mt-2">
-              Wir öffnen Ihre Tür.
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
-              </svg>
-            </span>
-          </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed">
-            Eine zugefallene Tür ist ein Notfall, der absolutes Vertrauen erfordert. Der zertifizierte MS Schlüsseldienst Limburg unter Leitung von Mina Saad ist 24/7 für Sie im Einsatz. Innerhalb von <strong>15–30 Minuten</strong> sind wir bei Ihnen im gesamten Stadtgebiet – mit <strong>100% Kostentransparenz</strong>.
-          </p>
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Türöffnung in Limburg</span>
+              <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl">
+                Ausgesperrt in Limburg? <br className="hidden sm:block" />
+                <span className="text-gradient-primary relative inline-block mt-2">
+                  Wir öffnen Ihre Tür.
+                  <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
+                  </svg>
+                </span>
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed">
+                Eine zugefallene Tür ist ein Notfall, der absolutes Vertrauen erfordert. Der zertifizierte MS Schlüsseldienst Limburg unter Leitung von Mina Saad ist 24/7 für Sie im Einsatz. Innerhalb von <strong>15–30 Minuten</strong> sind wir bei Ihnen im gesamten Stadtgebiet – mit <strong>100% Kostentransparenz</strong>.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src={IMAGES.turoeffnungErfolg.src}
+                  alt={IMAGES.turoeffnungErfolg.alt}
+                  title={IMAGES.turoeffnungErfolg.title}
+                  width={IMAGES.turoeffnungErfolg.width}
+                  height={IMAGES.turoeffnungErfolg.height}
+                  priority
+                  quality={85}
+                  sizes="(max-width: 1024px) 0px, 50vw"
+                  className="object-cover w-full aspect-[4/3]"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -97,6 +118,29 @@ export default function TuroeffnungPage() {
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Arbeitsfotos */}
+            <div className="mt-14 grid grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                IMAGES.turoeffnungWerkzeug,
+                IMAGES.schliessblechDetail,
+                IMAGES.schlossMechanik,
+              ].map((img) => (
+                <div key={img.src} className="overflow-hidden rounded-2xl shadow-md group">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    title={img.title}
+                    width={img.width}
+                    height={img.height}
+                    loading="lazy"
+                    quality={75}
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-cover w-full aspect-[3/4] group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
             </div>
 
             <h2 className="mt-20 text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] mb-8">
