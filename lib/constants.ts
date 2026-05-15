@@ -55,5 +55,5 @@ export const BUSINESS = {
   },
 
   /** Produktions-Domain */
-  domain: "https://schluesseldienst-limburg-24.de",
+  domain: "https://ms-limburg-schluesseldienst.de",
 } as const;
