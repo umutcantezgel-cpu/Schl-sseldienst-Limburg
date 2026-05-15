@@ -148,7 +148,7 @@ Schlüsseldienst Limburg bedient ein Einsatzgebiet im Umkreis von 50 Kilometern 
 
 - Telefon (24/7 Notdienst): 0152 0936 1743
 - E-Mail: ms.schluesseldienst.lm@gmail.com
-- Adresse: Dr.-Wolff-Straße 2, 65549 Limburg, Hessen
+- Adresse: Dr.-Wolff-Straße 2, 65549 Limburg an der Lahn, Hessen
 - Inhaber: Mina Saad
 - Servicezeiten: 24/7/365
 

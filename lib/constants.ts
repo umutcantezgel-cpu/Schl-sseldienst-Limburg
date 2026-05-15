@@ -17,7 +17,7 @@ export const BUSINESS = {
   address: {
     street: "Dr.-Wolff-Straße 2",
     zip: "65549",
-    city: "Limburg",
+    city: "Limburg an der Lahn",
     cityFull: "Limburg an der Lahn",
     state: "Hessen",
     country: "Deutschland",

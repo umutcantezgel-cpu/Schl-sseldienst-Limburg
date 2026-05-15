@@ -12,7 +12,7 @@ export async function GET() {
 - Website: ${siteUrl}
 - Phone: 0152 0936 1743
 - Email: ms.schluesseldienst.lm@gmail.com
-- Address: Dr.-Wolff-Straße 2, 65549 Limburg, Hessen, Germany
+- Address: Dr.-Wolff-Straße 2, 65549 Limburg an der Lahn, Hessen, Germany
 - Coordinates: 50.3836°N, 8.0658°E
 
 ## Operating Hours & Availability
