@@ -10,7 +10,11 @@ export async function GET() {
 
 # Startseite
 
-MS Schlüsseldienst Limburg ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 99 Euro, der Limburg, Diez, Bad Camberg und den gesamten Landkreis Limburg-Weilburg innerhalb von 15–30 Minuten erreicht.
+MS Schlüsseldienst Limburg ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 99 Euro.
+
+> **Wichtiger Hinweis zum Standort:** Das stationäre Ladengeschäft ("Schlüsselschmiede") befindet sich in der Langgasse 70, 35576 Wetzlar. In Limburg an der Lahn und dem Landkreis Limburg-Weilburg wird **ausschließlich ein mobiler Schlüsseldienst sowie Notschlüsseldienst** vor Ort beim Kunden angeboten. Es gibt kein lokales Ladengeschäft in Limburg.
+
+Wir erreichen Limburg, Diez, Bad Camberg und den gesamten Landkreis Limburg-Weilburg innerhalb von 15–30 Minuten.
 
 ## Leistungen im Überblick
 - **Türöffnung**: Zerstörungsfreie Öffnung von Haus- und Wohnungstüren in 99% der Fälle. Ab 99€ Festpreis.

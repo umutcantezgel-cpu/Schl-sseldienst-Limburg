@@ -41,6 +41,11 @@ export default function ImpressumPage() {
               {BUSINESS.address.zip} {BUSINESS.address.cityFull}<br />
               {BUSINESS.address.country}
             </p>
+            <div className="mt-4 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+              <p className="text-sm text-amber-200/80 leading-relaxed">
+                <strong className="text-amber-500">Standort-Hinweis:</strong> Unser Ladengeschäft (die "Schlüsselschmiede") befindet sich in Wetzlar. In Limburg und Umgebung unterhalten wir kein Ladengeschäft, sondern bieten unseren Kunden ausschließlich den mobilen Schlüsseldienst sowie unseren 24/7 Notschlüsseldienst direkt bei Ihnen vor Ort an.
+              </p>
+            </div>
           </LegalCard>
 
           <LegalCard title="Kontakt & Register" icon={<Mail className="w-6 h-6" />}>

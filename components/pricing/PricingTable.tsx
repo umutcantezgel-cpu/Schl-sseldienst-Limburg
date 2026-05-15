@@ -29,7 +29,7 @@ export default function PricingTable() {
                       <Info className="h-5 w-5 text-[var(--color-blue-primary)] cursor-help shrink-0" aria-label="Limburg Festpreis Details" />
                       {/* CSS-only Tooltip */}
                       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-200 w-56 p-3 glass rounded-xl shadow-lg z-10 text-center pointer-events-none text-[var(--color-text-body)] text-xs font-medium">
-                        Inkl. MwSt.{item.includesTravel ? " & Limburger Anfahrt." : ""}
+                        Inkl. MwSt.{item.includesTravel ? " zzgl. 30€ Anfahrt." : ""}
                       </div>
                     </div>
                   </div>
@@ -50,7 +50,7 @@ export default function PricingTable() {
         </table>
       </div>
       <div className="bg-[var(--color-blue-light)] p-5 text-center border-t border-[var(--color-border-subtle)] text-[var(--color-text-body)] font-medium text-sm leading-relaxed">
-        * Limburger Festpreis-Garantie: Alle Preise sind absolut verbindliche Endpreise (inkl. MwSt. & Anfahrt). Keine versteckten Gebühren. Keine Abzocke.
+        * Limburger Festpreis-Garantie: Alle Preise sind absolut verbindliche Endpreise (inkl. MwSt., zzgl. 30€ Anfahrt). Keine versteckten Gebühren. Keine Abzocke.
       </div>
     </div>
   );

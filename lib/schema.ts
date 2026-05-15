@@ -167,7 +167,7 @@ export function generateWebSiteSchema() {
         "@type": "WebSite",
         "name": BUSINESS.name,
         "url": siteUrl,
-        "description": "24/7 Schlüsselnotdienst in Limburg an der Lahn, Weilburg, Bad Camberg und Landkreis Limburg-Weilburg. Festpreise, 15–30 Min. Anfahrt.",
+        "description": "24/7 Schlüsselnotdienst in Limburg an der Lahn, Weilburg, Bad Camberg und Landkreis Limburg-Weilburg. Festpreise zzgl. 30€ Anfahrt, 15–30 Min. Anfahrt.",
         "inLanguage": "de-DE",
         "publisher": {
             "@type": "Locksmith",

@@ -16,7 +16,7 @@ export const FAQ_DATA: FAQItem[] = [
     // ============ KOSTEN & PREISE ============
     {
         question: "Was kostet ein Schlüsseldienst in Limburg?",
-        answer: "Die meisten Menschen fürchten beim Schlüsseldienst vor allem eines: versteckte Kosten. Wir setzen auf 100% Transparenz. Eine einfache Türöffnung (zugefallen) erhalten Sie bei uns ab 99 € als garantierten Festpreis – ohne Kleingedrucktes. Sie erfahren den exakten Preis inklusive aller Kosten verbindlich vorab am Telefon, bevor sich unser Techniker auf den Weg macht. Anfahrtskosten im Limburger Kerngebiet sind dabei bereits komplett inbegriffen.",
+        answer: "Die meisten Menschen fürchten beim Schlüsseldienst vor allem eines: versteckte Kosten. Wir setzen auf 100% Transparenz. Eine einfache Türöffnung (zugefallen) erhalten Sie bei uns ab 99 € als garantierten Festpreis – ohne Kleingedrucktes. Sie erfahren den exakten Preis inklusive aller Kosten verbindlich vorab am Telefon, bevor sich unser Techniker auf den Weg macht. Zuzüglich berechnen wir im Limburger Kerngebiet eine transparente Anfahrtspauschale von 30 €.",
         category: "kosten",
     },
     {
@@ -53,7 +53,7 @@ export const FAQ_DATA: FAQItem[] = [
     },
     {
         question: "Kommt der Schlüsseldienst auch nach Diez?",
-        answer: "Selbstverständlich. Diez gehört zu unserem unmittelbaren Kern-Servicegebiet. Auch hier sind wir in der Regel innerhalb von 15 bis 20 Minuten bei Ihnen – exakt zum gleichen fairen Festpreis und ohne zusätzliche Anfahrtsgebühren.",
+        answer: "Selbstverständlich. Diez gehört zu unserem unmittelbaren Kern-Servicegebiet. Auch hier sind wir in der Regel innerhalb von 15 bis 20 Minuten bei Ihnen – exakt zum gleichen fairen Festpreis und zzgl. 30€ Anfahrtsgebühr.",
         category: "anfahrt",
     },
     {
@@ -68,7 +68,7 @@ export const FAQ_DATA: FAQItem[] = [
     },
     {
         question: "Gibt es zusätzliche Anfahrtskosten für Orte außerhalb von Limburg?",
-        answer: "Transparenz endet bei uns nicht an der Stadtgrenze. Innerhalb unseres gesamten Servicegebiets (bis zu 50 km Umkreis) berechnen wir keinerlei zusätzliche oder versteckte Anfahrtskosten. Die Anfahrt ist im vereinbarten Festpreis immer bereits vollständig einkalkuliert.",
+        answer: "Transparenz endet bei uns nicht an der Stadtgrenze. Innerhalb unseres gesamten Servicegebiets (bis zu 50 km Umkreis) berechnen wir eine faire und transparente Anfahrtspauschale von 30€. Die Anfahrtspauschale von 30€ wird transparent zum Festpreis addiert.",
         category: "anfahrt",
     },
 

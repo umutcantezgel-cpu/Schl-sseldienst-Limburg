@@ -43,7 +43,7 @@ export const TIME_MODIFIERS: Record<TimeSlot, { label: string }> = {
 };
 
 export const ADDONS = {
-    anfahrt: { label: 'Anfahrt Limburg Kernstadt', price: '0€ - Kostenlos' },
+    anfahrt: { label: 'Anfahrt Limburg Kernstadt', price: '30€ Festpreis' },
     zylinder: { label: 'VdS-geprüfter Marken-Schließzylinder (sofort verfügbar)', price: 'ab 25€' },
     mehrwehraufwand: { label: 'Spezial- und Sicherheitstüren (Mehrfachverriegelung)', price: '100% faire Diagnose vor Ort' }
 };

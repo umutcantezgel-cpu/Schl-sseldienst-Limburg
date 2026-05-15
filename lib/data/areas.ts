@@ -54,7 +54,7 @@ export const cities: CityData[] = [
         landmarks: ["Limburger Dom", "Alte Lahnbrücke", "Werner-Senger-Haus", "Historische Altstadt"],
         neighborhoods: ["Innenstadt", "Lindenholzhausen", "Linter", "Staffel", "Offheim", "Dietkirchen", "Ahlbach", "Eschhofen"],
         housingProfile: "Anspruchsvolle Mischung aus historischen Fachwerkhäusern in der Altstadt und modernen, sicherheitsfokussierten Wohnanlagen in den Randbezirken.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Wie schnell ist der Notdienst im Limburger Stadtgebiet bei mir?",
@@ -62,7 +62,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Muss ich mit versteckten Anfahrtskosten in Limburg rechnen?",
-                answer: "Unter keinen Umständen. Im gesamten Limburger Kerngebiet berechnen wir exakt 0€ Anfahrtskosten. Sie zahlen ausschließlich den absolut transparenten Festpreis für unsere Premium-Öffnung.",
+                answer: "Unter keinen Umständen. Im gesamten Limburger Kerngebiet berechnen wir exakt 30€ Anfahrtskosten. Sie zahlen ausschließlich den absolut transparenten Festpreis für unsere Premium-Öffnung.",
             },
             {
                 question: "Sind beschädigungsfreie Öffnungen bei historischen Altstadt-Türen möglich?",
@@ -92,7 +92,7 @@ export const cities: CityData[] = [
         landmarks: ["Schloss Weilburg", "Schifffahrtstunnel", "Kubacher Kristallhöhle", "Historische Altstadt"],
         neighborhoods: ["Ahausen", "Bermbach", "Drommershausen", "Gaudernbach", "Hasselbach", "Hirschhausen", "Kirschhofen", "Odersbach", "Waldhausen"],
         housingProfile: "Historische, teils anspruchsvolle Schloss-Bebauung im Zentrum sowie moderne Einfamilienhaus-Siedlungen in den Höhenlagen.",
-        pricing: { basePrice: 99, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Wie lange dauert die Express-Anfahrt im Notfall nach Weilburg?",
@@ -126,7 +126,7 @@ export const cities: CityData[] = [
         landmarks: ["Kreuzkapelle", "Amthof", "Historischer Kurpark", "Hohenfeldkapelle"],
         neighborhoods: ["Dombach", "Erbach", "Oberselters", "Schwickershausen", "Würges"],
         housingProfile: "Klassische Kurstadt-Architektur, viele verwinkelte Fachwerkhäuser und gepflegte Premium-Wohnviertel.",
-        pricing: { basePrice: 99, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Ist der 24/7 Premium-Notdienst auch in Bad Camberg garantiert?",
@@ -138,7 +138,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Wie viel kostet eine Türöffnung in Bad Camberg inklusive Anfahrt?",
-                answer: "Unsere zerstörungsfreie Standard-Öffnung beginnt bei 99€. In Bad Camberg kommt eine transparente Anfahrtspauschale von 10€ hinzu. Den exakten Endpreis nennen wir Ihnen verbindlich vor Arbeitsbeginn am Telefon.",
+                answer: "Unsere zerstörungsfreie Standard-Öffnung beginnt bei 99€. In Bad Camberg kommt eine transparente Anfahrtspauschale von 30€ hinzu. Den exakten Endpreis nennen wir Ihnen verbindlich vor Arbeitsbeginn am Telefon.",
             }
         ],
         localContent: {
@@ -160,7 +160,7 @@ export const cities: CityData[] = [
         landmarks: ["Schloss Hadamar", "Liebfrauenkirche", "Fürstlicher Rosengarten"],
         neighborhoods: ["Niederhadamar", "Niederzeuzheim", "Oberzeuzheim", "Steinbach", "Oberweyer", "Niederweyer", "Faulbach"],
         housingProfile: "Eine durchmischte Struktur aus hochwertigen Einfamilienhäusern und ländlicher Bebauung mit spezifischen Sicherheitsanforderungen.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Wie extrem sind die Wartezeiten für Notöffnungen in Hadamar?",
@@ -194,11 +194,11 @@ export const cities: CityData[] = [
         landmarks: ["Historisches Rathaus Elz", "Pfarrkirche St. Johannes der Täufer"],
         neighborhoods: ["Malmeneich"],
         housingProfile: "Sehr dichte Bebauung mit vielen Einfamilienhäusern und hohem Pendleraufkommen.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Profitieren Elzer Bürger ebenfalls von der 0€-Anfahrtskosten-Garantie?",
-                answer: "Exakt. Elz zählt zu unserem engsten Einsatz-Kerngebiet. Sie erhalten unseren zertifizierten Premium-Service ohne jegliche Anfahrtskosten – 100% Festpreisgarantie.",
+                answer: "Exakt. Elz zählt zu unserem engsten Einsatz-Kerngebiet. Sie erhalten unseren zertifizierten Premium-Service zzgl. 30€ Anfahrtskosten – 100% Festpreisgarantie.",
             },
             {
                 question: "Wie funktioniert eine Autoöffnung in Elz?",
@@ -210,7 +210,7 @@ export const cities: CityData[] = [
             }
         ],
         localContent: {
-            introText: "Elz – die dynamische Gemeinde direkt vor den Toren Limburgs ist unser unmittelbarer Nachbar und Teil unseres engsten Einsatz-Kerngebiets. Mit nur 5 Kilometern Entfernung zu unserer Zentrale profitieren Elzer Bürger von den schnellsten Eintreffzeiten und garantiert 0€ Anfahrtskosten.",
+            introText: "Elz – die dynamische Gemeinde direkt vor den Toren Limburgs ist unser unmittelbarer Nachbar und Teil unseres engsten Einsatz-Kerngebiets. Mit nur 5 Kilometern Entfernung zu unserer Zentrale profitieren Elzer Bürger von den schnellsten Eintreffzeiten und garantiert 30€ Anfahrtskosten.",
             securityTip: "Tipp für Elzer Pendler: Da viele Elzer täglich nach Frankfurt oder Koblenz pendeln, stehen Häuser tagsüber oft leer. Wir empfehlen Zeitschaltuhren für die Beleuchtung und einen Briefkasten-Schutz, um Abwesenheit nicht zu signalisieren.",
             neighborhoodGuide: "Elz ist eine kompakte, aber dicht besiedelte Gemeinde mit dem Ortsteil Malmeneich. Die hohe Einfamilienhaus-Dichte und das starke Pendleraufkommen prägen das Sicherheitsprofil. Durch die direkte B8-Anbindung erreichen unsere Einsatzfahrzeuge jeden Winkel von Elz in unter 10 Minuten."
         }
@@ -228,7 +228,7 @@ export const cities: CityData[] = [
         landmarks: ["Blasiuskapelle", "Ewiges Eis"],
         neighborhoods: ["Frickhofen", "Langendernbach", "Wilsenroth", "Dorndorf", "Thalheim"],
         housingProfile: "Typische ländliche Westerwald-Gemeinden mit sehr hohem Eigenheim-Anteil und Bedarf an robustem Einbruchschutz.",
-        pricing: { basePrice: 99, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Gibt es einen vollwertigen Nachtnotdienst für Dornburg und Umgebung?",
@@ -236,7 +236,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Wie hoch sind die Kosten für einen Einsatz in Dornburg?",
-                answer: "Unsere zerstörungsfreie Standard-Türöffnung beginnt bei 99€ zzgl. einer transparenten Anfahrtspauschale von 10€ für Dornburg. Der Gesamtpreis wird Ihnen vor Arbeitsbeginn verbindlich am Telefon genannt.",
+                answer: "Unsere zerstörungsfreie Standard-Türöffnung beginnt bei 99€ zzgl. einer transparenten Anfahrtspauschale von 30€ für Dornburg. Der Gesamtpreis wird Ihnen vor Arbeitsbeginn verbindlich am Telefon genannt.",
             },
             {
                 question: "Erreichen Sie auch abgelegene Ortsteile wie Wilsenroth oder Thalheim?",
@@ -262,7 +262,7 @@ export const cities: CityData[] = [
         landmarks: ["Burg Runkel", "Schloss Schadeck", "Alte Lahnbrücke"],
         neighborhoods: ["Steeden", "Ennerich", "Schadeck", "Hofen", "Eschenau", "Wirbelau", "Arfurt", "Dehrn"],
         housingProfile: "Sensible historische Fachwerkhäuser im direkten Lahntal sowie moderne, neu errichtete Baugebiete auf den Höhenlagen.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Wie schnell kann ein Techniker in abgelegenen Ortsteilen wie Steeden oder Dehrn sein?",
@@ -296,11 +296,11 @@ export const cities: CityData[] = [
         landmarks: ['Grafenschloss Diez', 'Schloss Oranienstein', 'Historische Lahnbrücke'],
         neighborhoods: ['Freiendiez', 'Aull', 'Gückingen', 'Birlenbach'],
         housingProfile: 'Anspruchsvolle historische Bebauung im Stadtkern und weitläufige, neuere Wohnviertel um Diez herum.',
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: 'Greift der Premium-Service auch über die Landesgrenze hinaus in Diez (RLP)?',
-                answer: 'Definitiv. Da Diez nahtlos an unser Limburger Kerngebiet anschließt, erhalten Sie auch hier unseren blitzschnellen Notdienst-Service komplett ohne Anfahrtskosten.',
+                answer: 'Definitiv. Da Diez nahtlos an unser Limburger Kerngebiet anschließt, erhalten Sie auch hier unseren blitzschnellen Notdienst-Service zzgl. 30€ Anfahrtskosten.',
             },
             {
                 question: 'Welche Sicherheitssysteme empfehlen Sie für historische Gebäude in Diez?',
@@ -330,7 +330,7 @@ export const cities: CityData[] = [
         landmarks: ['Berger Kirche', 'Altes Rathaus Niederbrechen'],
         neighborhoods: ['Niederbrechen', 'Oberbrechen', 'Werschau'],
         housingProfile: "Goldener Grund: Typische, gewachsene Taunus-Gemeinden mit einem Mix aus Altbau und zahlreichen Einfamilienhäusern.",
-        pricing: { basePrice: 99, travelCost: 10 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: 'Wie schnell ist professionelle Hilfe in Niederbrechen oder Oberbrechen vor Ort?',
@@ -338,7 +338,7 @@ export const cities: CityData[] = [
             },
             {
                 question: 'Was kostet eine Notöffnung in Brechen?',
-                answer: 'Die zerstörungsfreie Standardöffnung in Brechen startet bei 99€ zzgl. einer transparenten Anfahrtspauschale von 10€. Den verbindlichen Endpreis nennen wir immer vor Arbeitsbeginn.',
+                answer: 'Die zerstörungsfreie Standardöffnung in Brechen startet bei 99€ zzgl. einer transparenten Anfahrtspauschale von 30€. Den verbindlichen Endpreis nennen wir immer vor Arbeitsbeginn.',
             },
             {
                 question: 'Bieten Sie auch Schlossaustausch in Brechen an?',
@@ -365,7 +365,7 @@ export const cities: CityData[] = [
         landmarks: ["Limburger Dom", "Alte Lahnbrücke", "Werner-Senger-Haus", "Historische Altstadt"],
         neighborhoods: ["Innenstadt", "Altstadt"],
         housingProfile: "Mischung aus historischen Fachwerkhäusern in der Altstadt, Geschäftsgebäuden und dicht besiedelten städtischen Wohnanlagen.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Wie schnell sind Sie bei Notfällen in der Limburger Innenstadt vor Ort?",
@@ -373,7 +373,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Fallen für die Innenstadt versteckte Anfahrtskosten an?",
-                answer: "Nein, im Limburger Kerngebiet berechnen wir 0€ Anfahrtskosten. Sie zahlen ausschließlich den transparenten Festpreis für die Notöffnung.",
+                answer: "Nein, im Limburger Kerngebiet berechnen wir 30€ Anfahrtskosten. Sie zahlen ausschließlich den transparenten Festpreis für die Notöffnung.",
             },
             {
                 question: "Welche Zahlungsarten akzeptieren Sie in der Innenstadt?",
@@ -399,7 +399,7 @@ export const cities: CityData[] = [
         landmarks: ["Wendelinuskapelle", "Historischer Ortskern"],
         neighborhoods: ["Lindenholzhausen Mitte", "Neubaugebiete"],
         housingProfile: "Stark wachsender Ortsteil mit einem Mix aus klassischem Dorfkern und vielen neu erschlossenen Einfamilienhaus-Siedlungen.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Ist der Notdienst für Lindenholzhausen rund um die Uhr verfügbar?",
@@ -433,7 +433,7 @@ export const cities: CityData[] = [
         landmarks: ["Bürgerhaus Linter"],
         neighborhoods: ["Linter Kerngebiet", "Gewerbegebiet Linter"],
         housingProfile: "Vielfältige Bebauung mit Fokus auf große Einfamilienhäuser, moderne Mehrparteienhäuser und einem starken Gewerbeanteil.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Wie schnell können Sie an Wochenenden in Linter helfen?",
@@ -467,7 +467,7 @@ export const cities: CityData[] = [
         landmarks: ["Lahnbrücke Staffel"],
         neighborhoods: ["Staffel Zentrum", "Wohngebiet Lahnaue"],
         housingProfile: "Ruhige, ländlich geprägte Wohngebiete nahe der Lahn mit vielen Einfamilien- und traditionellen Bauernhäusern.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Sind Türöffnungen in Staffel wirklich schadensfrei?",
@@ -475,7 +475,7 @@ export const cities: CityData[] = [
             },
             {
                 question: "Verrechnen Sie Anfahrtskosten für Einsätze in Staffel?",
-                answer: "Nein, Staffel gehört zu unserem absoluten Kerngebiet. Deshalb berechnen wir hier exakt 0€ für die Anfahrt.",
+                answer: "Nein, Staffel gehört zu unserem absoluten Kerngebiet. Deshalb berechnen wir hier exakt 30€ für die Anfahrt.",
             },
             {
                 question: "Bieten Sie in Staffel auch präventive Sicherheitsberatung an?",
@@ -501,7 +501,7 @@ export const cities: CityData[] = [
         landmarks: ["Pfarrkirche St. Servatius", "Offheimer Bär"],
         neighborhoods: ["Offheim Ortskern", "Gewerbegebiet Limburger Marktplatz (Nähe)"],
         housingProfile: "Traditioneller Dorfkern gepaart mit starken angrenzenden Gewerbe- und Industriegebieten.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Gibt es für das Offheimer Gewerbegebiet spezielle Schließanlagen-Services?",
@@ -535,7 +535,7 @@ export const cities: CityData[] = [
         landmarks: ["Lubentiusbasilika", "Lahnfähre", "Historischer Dorfkern"],
         neighborhoods: ["Dietkirchen Ortsmitte", "Lahnpromenade"],
         housingProfile: "Historisch wertvolle Bebauung rund um die Lubentiusbasilika sowie exklusive Wohnanlagen am Lahnufer.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Können alte, historische Türen in Dietkirchen geöffnet werden?",
@@ -569,7 +569,7 @@ export const cities: CityData[] = [
         landmarks: ["Pfarrkirche St. Bartholomäus"],
         neighborhoods: ["Ahlbach Mitte"],
         housingProfile: "Ruhiger, kleinerer Ortsteil mit starken dörflichen Strukturen und vielen gepflegten Familienhäusern.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Wird der Service in Ahlbach als Notdienst abgedeckt?",
@@ -585,7 +585,7 @@ export const cities: CityData[] = [
             }
         ],
         localContent: {
-            introText: "Ahlbach – der ruhige Limburger Stadtteil im Norden besticht durch seine dörfliche Idylle und die Nähe zur Natur. Als Teil unseres Kerngebiets profitieren Ahlbacher Bürger von 0€ Anfahrtskosten und unserem vollen 24/7-Notdienst.",
+            introText: "Ahlbach – der ruhige Limburger Stadtteil im Norden besticht durch seine dörfliche Idylle und die Nähe zur Natur. Als Teil unseres Kerngebiets profitieren Ahlbacher Bürger von 30€ Anfahrtskosten und unserem vollen 24/7-Notdienst.",
             securityTip: "Empfehlung für Ahlbacher Eigenheimbesitzer: In ruhigen dörflichen Lagen empfehlen wir Außenbeleuchtung mit Bewegungsmelder an allen Zugängen. Diese einfache Maßnahme schreckt Einbrecher am effektivsten ab.",
             neighborhoodGuide: "Ahlbach ist ein kompakter, dörflich geprägter Ortsteil mit starkem Gemeinschaftsgefühl. Die Bebauung besteht überwiegend aus gepflegten Familienhäusern. Über die B49 erreichen unsere Techniker Ahlbach in kürzester Zeit."
         }
@@ -603,7 +603,7 @@ export const cities: CityData[] = [
         landmarks: ["ICE Bahnhof Limburg Süd (Grenze)", "Lahnaue"],
         neighborhoods: ["Eschhofen", "Mühlen"],
         housingProfile: "Dynamischer Stadtteil mit engem Mix aus verkehrsgünstig gelegenen Wohnungen nahe ICE-Bahnhof und klassischen Wohngebieten.",
-        pricing: { basePrice: 99, travelCost: 0 },
+        pricing: { basePrice: 99, travelCost: 30 },
         faqs: [
             {
                 question: "Dauert die Anfahrt nach Eschhofen Mühlen länger?",

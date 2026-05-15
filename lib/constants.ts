@@ -15,16 +15,16 @@ export const BUSINESS = {
   ownerTitle: "Inh.",
 
   address: {
-    street: "Doktor Wolff Straße 2",
-    zip: "65549",
-    city: "Limburg",
-    cityFull: "Limburg an der Lahn",
+    street: "Langgasse 70",
+    zip: "35576",
+    city: "Wetzlar",
+    cityFull: "Wetzlar",
     state: "Hessen",
     country: "Deutschland",
     countryCode: "DE",
     coordinates: {
-      lat: 50.3845,
-      lng: 8.0645,
+      lat: 50.555,
+      lng: 8.502,
     },
   },
 
