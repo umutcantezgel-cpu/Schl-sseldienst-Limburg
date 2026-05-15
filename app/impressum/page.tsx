@@ -62,7 +62,7 @@ export default function ImpressumPage() {
             </p>
             <p>
               <span className="text-slate-400 block text-sm">Umsatzsteuer-ID:</span>
-              <span className="text-slate-300">Wird nicht erteilt (Kleinunternehmen gemäß § 19 UStG)</span>
+              <span className="text-white">{BUSINESS.vatId}</span>
             </p>
           </LegalCard>
         </div>

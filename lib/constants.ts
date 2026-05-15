@@ -43,8 +43,10 @@ export const BUSINESS = {
 
   /** Steuernummer (Finanzamt) */
   taxId: "03986300160",
+  /** Umsatzsteuer-ID */
+  vatId: "DE 282140471",
   /** Umsatzsteuer-Befreiung nach § 19 UStG */
-  vatExempt: true,
+  vatExempt: false,
 
   /** Geo-Koordinaten des Firmensitzes */
   geo: {
