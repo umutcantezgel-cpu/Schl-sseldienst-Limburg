@@ -3,6 +3,7 @@ import Image from "next/image";
 import EmergencyCTA from "@/components/EmergencyCTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CertBadges from "@/components/trust/CertBadges";
+import { RegionalPartner } from "@/components/trust/RegionalPartner";
 import { BUSINESS } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 import { generateSharedMetadata } from "@/lib/metadata";
@@ -179,6 +180,9 @@ export default function UeberUnsPage() {
                 </div>
               ))}
             </div>
+
+            {/* ═══ REGIONAL PARTNERS ═══ */}
+            <RegionalPartner />
 
             {/* ═══ PROOF SECTION ═══ */}
             <div className="mt-32 rounded-3xl bg-blue-50 p-12 text-center border border-blue-100 relative overflow-hidden shadow-sm">
