@@ -39,7 +39,7 @@ export const BUSINESS = {
     hrefInternational: "tel:+4915209361743",
   },
 
-  email: "info@sd-limburg.de",
+  email: "ms.schluesseldienst.lm@gmail.com",
 
   /** Steuernummer (Finanzamt) */
   taxId: "03986300160",
