@@ -33,7 +33,7 @@ MS Schlüsseldienst Limburg ist ein 24/7-Schlüsselnotdienst mit Festpreisen ab 
 Schlüsseldienst Limburg öffnet zugefallene und abgesperrte Türen in Limburg und Umgebung zum Festpreis — zerstörungsfrei in 99% der Fälle, innerhalb von 15–30 Minuten, 24 Stunden am Tag.
 
 ### So funktioniert eine Türöffnung
-1. **Anruf**: Sie rufen uns an unter +49 178 2471037
+1. **Anruf**: Sie rufen uns an unter +49 152 0936 1743
 2. **Anfahrt**: Unser Techniker ist in 15–30 Minuten bei Ihnen
 3. **Öffnung**: Zerstörungsfreie Öffnung mit Spezialwerkzeug
 4. **Abrechnung**: Transparenter Festpreis — Sie zahlen nur den vereinbarten Betrag
@@ -145,7 +145,7 @@ Schlüsseldienst Limburg bedient ein Einsatzgebiet im Umkreis von 50 Kilometern 
 
 # Kontakt
 
-- Telefon (24/7 Notdienst): 0178 247 1037
+- Telefon (24/7 Notdienst): 0152 0936 1743
 - E-Mail: info@sd-limburg.de
 - Adresse: Doktor Wolff Straße 2, 65549 Limburg, Hessen
 - Inhaber: Mina Saad

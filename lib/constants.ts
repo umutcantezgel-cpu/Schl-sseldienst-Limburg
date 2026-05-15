@@ -30,13 +30,13 @@ export const BUSINESS = {
 
   phone: {
     /** Formatierte Darstellung für den Nutzer */
-    display: "0178 247 1037",
+    display: "0152 0936 1743",
     /** tel:-Link für Anrufe */
-    href: "tel:01782471037",
+    href: "tel:015209361743",
     /** Internationale Darstellung für Schema.org */
-    international: "+49 178 2471037",
+    international: "+49 152 0936 1743",
     /** Internationales Format für tel:-Links (E.164) */
-    hrefInternational: "tel:+4917824710037",
+    hrefInternational: "tel:+4915209361743",
   },
 
   email: "info@sd-limburg.de",
