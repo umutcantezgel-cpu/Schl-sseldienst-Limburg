@@ -3,7 +3,7 @@ import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import StickyHeader from "@/components/StickyHeader";
 import Footer from "@/components/Footer";
-import MobileBottomBar from "@/components/MobileBottomBar";
+
 import StickyCallButton from "@/components/mobile/StickyCallButton";
 import { generateLocalBusinessSchema, generateWebSiteSchema } from "@/lib/schema";
 import { generateSharedMetadata } from "@/lib/metadata";
