@@ -36,16 +36,14 @@ export default function ConsentGoogleMaps({
     // Initial check after CookieConsent is initialized
     const timer = setTimeout(checkConsent, 100);
 
-    // Listen for consent changes via MutationObserver on cookie
-    const interval = setInterval(checkConsent, 1000);
-
-    // Also listen for the custom event from vanilla-cookieconsent
+    // Listen for consent changes via vanilla-cookieconsent events
     window.addEventListener('cc:onChange', checkConsent);
+    window.addEventListener('cc:onConsent', checkConsent);
 
     return () => {
       clearTimeout(timer);
-      clearInterval(interval);
       window.removeEventListener('cc:onChange', checkConsent);
+      window.removeEventListener('cc:onConsent', checkConsent);
     };
   }, [checkConsent]);
 

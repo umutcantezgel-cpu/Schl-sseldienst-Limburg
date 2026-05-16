@@ -38,7 +38,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className="scroll-smooth scroll-pt-28">
-      <head />
+      <head>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${dmSans.variable} ${spaceGrotesk.variable} min-h-screen bg-[var(--color-blue-dark)] text-[var(--color-text-main)] antialiased font-sans flex flex-col pb-24 sm:pb-0`}
       >

@@ -115,6 +115,17 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Mobile performance: eliminate 300ms touch delay */
+  a, button, [role="button"], input, select, textarea {
+    touch-action: manipulation;
+  }
+
+  /* Paint containment for heavy sections */
+  section {
+    contain: layout style paint;
   }
 }
 

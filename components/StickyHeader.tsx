@@ -16,10 +16,17 @@ export default function StickyHeader() {
     const pathname = usePathname();
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    setIsScrolled(window.scrollY > 20);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -58,12 +65,13 @@ export default function StickyHeader() {
                     aria-label={`${BUSINESS.name} | TV-geprüfter Meisterbetrieb – Startseite`}
                 >
                     <Image
-                        src="/images/logo.svg"
+                        src="/images/logo.png"
                         alt={`${BUSINESS.name} Logo`}
-                        width={500}
-                        height={500}
+                        width={80}
+                        height={80}
                         className={`w-auto object-contain transition-all duration-500 ease-in-out ${isScrolled ? 'h-11 sm:h-12' : 'h-14 sm:h-16'}`}
                         priority
+                        fetchPriority="high"
                     />
                 </Link>
 

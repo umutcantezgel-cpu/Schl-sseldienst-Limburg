@@ -1,10 +1,8 @@
-'use client';
-
-import { MapPin, Phone, Mail, Clock, ShieldCheck, ChevronRight, Cookie } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ShieldCheck, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
-import * as CookieConsent from 'vanilla-cookieconsent';
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 export default function Footer() {
   return (
@@ -23,11 +21,12 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col">
             <Link href="/" className="inline-flex items-center hover-lift-subtle rounded-xl w-fit" aria-label={`${BUSINESS.name} – Startseite`}>
               <Image
-                src="/images/logo.svg"
+                src="/images/logo.png"
                 alt={`${BUSINESS.name} Logo`}
-                width={500}
-                height={500}
+                width={80}
+                height={80}
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+                loading="lazy"
               />
             </Link>
             <p className="mt-6 text-[var(--color-text-main)] font-medium text-base leading-relaxed max-w-sm">
@@ -140,15 +139,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <button
-                  type="button"
-                  onClick={() => CookieConsent.showPreferences()}
-                  className="group flex items-center gap-2 hover:text-[var(--color-blue-primary)] transition-colors font-medium w-full text-left cursor-pointer"
-                  aria-label="Cookie-Einstellungen öffnen"
-                >
-                  <Cookie className="h-4 w-4 text-[var(--color-text-main)] group-hover:text-[var(--color-blue-primary)] transition-colors" aria-hidden="true" />
-                  Cookie-Einstellungen
-                </button>
+                <CookieSettingsButton />
               </li>
             </ul>
           </nav>
