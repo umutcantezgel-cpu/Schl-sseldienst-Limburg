@@ -21,10 +21,10 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col">
             <Link href="/" className="inline-flex items-center hover-lift-subtle rounded-xl w-fit" aria-label={`${BUSINESS.name} – Startseite`}>
               <Image
-                src="/images/logo.png"
+                src="/images/logo.svg"
                 alt={`${BUSINESS.name} Logo`}
-                width={80}
-                height={80}
+                width={500}
+                height={500}
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
                 loading="lazy"
               />

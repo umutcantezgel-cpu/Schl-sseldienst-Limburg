@@ -65,10 +65,10 @@ export default function StickyHeader() {
                     aria-label={`${BUSINESS.name} | TV-geprüfter Meisterbetrieb – Startseite`}
                 >
                     <Image
-                        src="/images/logo.png"
+                        src="/images/logo.svg"
                         alt={`${BUSINESS.name} Logo`}
-                        width={80}
-                        height={80}
+                        width={500}
+                        height={500}
                         className={`w-auto object-contain transition-all duration-500 ease-in-out ${isScrolled ? 'h-11 sm:h-12' : 'h-14 sm:h-16'}`}
                         priority
                         fetchPriority="high"
