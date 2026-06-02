@@ -30,13 +30,13 @@ export const BUSINESS = {
 
   phone: {
     /** Formatierte Darstellung für den Nutzer */
-    display: "0152 0936 1743",
+    display: "0163 8899440",
     /** tel:-Link für Anrufe */
-    href: "tel:015209361743",
+    href: "tel:01638899440",
     /** Internationale Darstellung für Schema.org */
-    international: "+49 152 0936 1743",
+    international: "+49 163 8899440",
     /** Internationales Format für tel:-Links (E.164) */
-    hrefInternational: "tel:+4915209361743",
+    hrefInternational: "tel:+491638899440",
   },
 
   email: "ms.schluesseldienst.lm@gmail.com",

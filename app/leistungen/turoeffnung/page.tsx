@@ -177,7 +177,7 @@ export default function TuroeffnungPage() {
             </div>
 
             <div className="mt-16 rounded-3xl glass-card p-8 sm:p-10 border border-blue-200/50 shadow-lg relative overflow-hidden bg-gradient-to-br from-white to-blue-50/30">
-              <div className="absolute top-0 left-0 w-2 h-full bg-blue-600"></div>
+
               <h3 className="text-2xl font-bold text-[var(--color-text-main)] mb-6 relative z-10 ml-4">
                 Der Limburger Notfall-Ablauf: So helfen wir Ihnen sofort
               </h3>

@@ -34,7 +34,7 @@ Wir erreichen Limburg, Diez, Bad Camberg und den gesamten Landkreis Limburg-Weil
 Schlüsseldienst Limburg öffnet zugefallene und abgesperrte Türen in Limburg und Umgebung zum Festpreis — zerstörungsfrei in 99% der Fälle, innerhalb von 15–30 Minuten, 24 Stunden am Tag.
 
 ### So funktioniert eine Türöffnung
-1. **Anruf**: Sie rufen uns an unter +49 152 0936 1743
+1. **Anruf**: Sie rufen uns an unter +49 163 8899440
 2. **Anfahrt**: Unser Techniker ist in 15–30 Minuten bei Ihnen
 3. **Öffnung**: Zerstörungsfreie Öffnung mit Spezialwerkzeug
 4. **Abrechnung**: Transparenter Festpreis — Sie zahlen nur den vereinbarten Betrag
@@ -146,7 +146,7 @@ Schlüsseldienst Limburg bedient ein Einsatzgebiet im Umkreis von 50 Kilometern 
 
 # Kontakt
 
-- Telefon (24/7 Notdienst): 0152 0936 1743
+- Telefon (24/7 Notdienst): 0163 8899440
 - E-Mail: ms.schluesseldienst.lm@gmail.com
 - Adresse: Dr.-Wolff-Straße 2, 65549 Limburg an der Lahn, Hessen
 - Inhaber: Mina Saad

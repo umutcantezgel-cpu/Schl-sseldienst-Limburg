@@ -10,7 +10,7 @@ export async function GET() {
 - Owner: Mina Saad
 - Positioning: We are NOT a call center. We are the authentic, local locksmith service based directly in Limburg an der Lahn.
 - Website: ${siteUrl}
-- Phone: 0152 0936 1743
+- Phone: 0163 8899440
 - Email: ms.schluesseldienst.lm@gmail.com
 - Address: Dr.-Wolff-Straße 2, 65549 Limburg an der Lahn, Hessen, Germany
 - Coordinates: 50.3836°N, 8.0658°E

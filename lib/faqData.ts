@@ -149,7 +149,7 @@ export const FAQ_DATA: FAQItem[] = [
     },
     {
         question: "Was mache ich, wenn ich mich ausgesperrt habe?",
-        answer: "Das Wichtigste zuerst: Bewahren Sie Ruhe. Versuchen Sie bitte auf keinen Fall, die Tür mit Gewalt, Werkzeug oder Haushaltsgegenständen aufzubrechen – das führt fast immer zu teuren Schäden an Türblatt oder Zylinder. Rufen Sie stattdessen unsere Notrufnummer +49 152 0936 1743 an. Wir sind meist in 15–30 Minuten bei Ihnen und lösen das Problem schnell, günstig und hochprofessionell.",
+        answer: "Das Wichtigste zuerst: Bewahren Sie Ruhe. Versuchen Sie bitte auf keinen Fall, die Tür mit Gewalt, Werkzeug oder Haushaltsgegenständen aufzubrechen – das führt fast immer zu teuren Schäden an Türblatt oder Zylinder. Rufen Sie stattdessen unsere Notrufnummer +49 163 8899440 an. Wir sind meist in 15–30 Minuten bei Ihnen und lösen das Problem schnell, günstig und hochprofessionell.",
         category: "notdienst",
     },
     {
@@ -159,7 +159,7 @@ export const FAQ_DATA: FAQItem[] = [
     },
     {
         question: "Wie erreiche ich den Schlüsseldienst Limburg am schnellsten?",
-        answer: "Der direkteste und schnellste Weg ist immer der telefonische Anruf unter +49 152 0936 1743. Bei uns landen Sie in keinem Callcenter und in keiner nervigen Warteschleife, sondern sprechen direkt mit dem zuständigen Einsatz-Disponenten oder dem Monteur selbst. Alternativ können Sie uns für nicht-dringende Anfragen bequem per WhatsApp oder über unser Kontaktformular erreichen.",
+        answer: "Der direkteste und schnellste Weg ist immer der telefonische Anruf unter +49 163 8899440. Bei uns landen Sie in keinem Callcenter und in keiner nervigen Warteschleife, sondern sprechen direkt mit dem zuständigen Einsatz-Disponenten oder dem Monteur selbst. Alternativ können Sie uns für nicht-dringende Anfragen bequem per WhatsApp oder über unser Kontaktformular erreichen.",
         category: "notdienst",
     },
     {
@@ -169,7 +169,7 @@ export const FAQ_DATA: FAQItem[] = [
     },
     {
         question: "Tür zugefallen in Limburg — was tun?",
-        answer: "Handeln Sie souverän: Rufen Sie die regionale Direktdurchwahl +49 152 0936 1743 an. Sie erhalten am Telefon sofort Ihren garantierten Festpreis (ab 99 €). Einer unserer Fachmonteure macht sich ohne Verzögerung auf den Weg und ist in der Regel in 15 bis 30 Minuten bei Ihnen. In 99% der Fälle öffnen wir die Tür völlig zerstörungsfrei. Sicher, absolut seriös und blitzschnell.",
+        answer: "Handeln Sie souverän: Rufen Sie die regionale Direktdurchwahl +49 163 8899440 an. Sie erhalten am Telefon sofort Ihren garantierten Festpreis (ab 99 €). Einer unserer Fachmonteure macht sich ohne Verzögerung auf den Weg und ist in der Regel in 15 bis 30 Minuten bei Ihnen. In 99% der Fälle öffnen wir die Tür völlig zerstörungsfrei. Sicher, absolut seriös und blitzschnell.",
         category: "notdienst",
     },
 ];

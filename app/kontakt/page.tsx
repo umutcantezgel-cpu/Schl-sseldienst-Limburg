@@ -41,7 +41,7 @@ export default function KontaktPage() {
       {/* ═══ EMERGENCY ALERT ═══ */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 relative z-20 -mt-16">
         <div className="glass-card rounded-3xl p-10 text-center max-w-4xl mx-auto shadow-lg border border-blue-200/50 relative overflow-hidden bg-white/80">
-          <div className="absolute top-0 left-0 w-full h-2 bg-blue-600"></div>
+
           <div className="flex justify-center mb-4">
             <span className="flex h-4 w-4 rounded-full bg-blue-600 animate-pulse-glow"></span>
           </div>
