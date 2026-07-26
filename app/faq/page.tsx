@@ -39,13 +39,7 @@ export default function FAQPage() {
               Ihre Fragen, ehrlich beantwortet
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-              FAQ: Häufige Fragen <br className="hidden md:block" />
-              <span className="text-gradient-primary relative inline-block mt-2 md:mt-4">
-                & ehrliche Antworten.
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
-                </svg>
-              </span>
+              FAQ: Häufige Fragen & ehrliche Antworten.
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-[var(--color-text-body)] md:text-xl leading-relaxed text-balance">
               Wir wissen, dass Sie in einer Notsituation schnelle und verbindliche Antworten brauchen. Unser Thema hier: FAQ: Häufige Fragen & ehrliche Antworten. In unserem <strong>FAQ Schlüsseldienst Limburg</strong> bietet {BUSINESS.name} absolute Transparenz. Hier finden Sie die wichtigsten Antworten zu Preisen, Anfahrt und unseren Notdienst-Leistungen.

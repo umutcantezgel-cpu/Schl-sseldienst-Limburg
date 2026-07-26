@@ -93,7 +93,7 @@ export default function TuroeffnungPage() {
             </h2>
             <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8"></div>
             <p className="text-[var(--color-text-body)] leading-relaxed text-lg">
-              Es passiert in Sekundenbruchteilen: Ein Windstoß, eine kurze Unachtsamkeit, und die Tür fällt ins Schloss. In dieser Stresssituation sind wir Ihr verlässlicher Anker in Limburg an der Lahn. Wir verzichten strikt auf Lockangebote und undurchsichtige Callcenter. Stattdessen bieten wir Ihnen ehrliches, regionales Handwerk auf Premium-Niveau von <strong>MS Schlüsseldienst Limburg</strong>. Unser Qualitätsversprechen: Wenn Ihre Tür lediglich zugefallen ist, öffnen wir sie in <strong>99% der Fälle absolut zerstörungsfrei</strong>.
+              Es passiert in Sekundenbruchteilen: Ein Windstoß, eine kurze Unachtsamkeit, und die Tür fällt ins Schloss. Benötigen Sie eine professionelle Türöffnung Limburg? Unser 24/7 Schlüsselnotdienst ist in dieser Stresssituation Ihr verlässlicher Anker. Wir verzichten strikt auf Lockangebote und undurchsichtige Callcenter. Stattdessen bieten wir Ihnen ehrliches, regionales Handwerk auf Premium-Niveau von <strong>MS Schlüsseldienst Limburg</strong>. Unser Qualitätsversprechen: Wenn Ihre Tür lediglich zugefallen ist, öffnen wir sie in <strong>99% der Fälle absolut zerstörungsfrei</strong>.
             </p>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-2">
