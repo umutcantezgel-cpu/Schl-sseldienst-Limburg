@@ -1,6 +1,6 @@
 import { Phone, Clock, Unlock } from "lucide-react";
 
-const steps = [
+const defaultSteps = [
     {
         id: 1,
         title: "1. Meister-Notruf wählen",
@@ -21,7 +21,29 @@ const steps = [
     },
 ];
 
-export default function ProcessSteps() {
+const alternateSteps = [
+    {
+        id: 1,
+        title: "1. Notruf kontaktieren",
+        description: "Wählen Sie unsere regionale 24/7 Servicenummer. Wir nennen Ihnen direkt am Telefon die verbindlichen Kosten für Ihren speziellen Einsatzort.",
+        icon: Phone,
+    },
+    {
+        id: 2,
+        title: "2. Schnelle Anfahrt",
+        description: "Ein erfahrener Sicherheitstechniker startet sofort nach Ihrem Anruf und ist meist in unter 30 Minuten direkt vor Ort im Einsatzgebiet.",
+        icon: Clock,
+    },
+    {
+        id: 3,
+        title: "3. Türöffnung",
+        description: "Mit bewährten Profi-Methoden sperren wir nahezu jede Tür ohne Kratzer auf. Am Ende berechnen wir nur den vorab vereinbarten Preis.",
+        icon: Unlock,
+    },
+];
+
+export default function ProcessSteps({ variant = "default" }: { variant?: "default" | "alternate" }) {
+    const steps = variant === "alternate" ? alternateSteps : defaultSteps;
     return (
         <section aria-label="Ablauf in 3 Schritten" className="relative bg-[var(--color-surface-base)] border-y border-[var(--color-border-subtle)] px-6 md:px-12 py-24 md:py-32 overflow-hidden noise-overlay">
             <div className="relative z-10 mx-auto max-w-5xl">

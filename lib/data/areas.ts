@@ -366,7 +366,7 @@ export const cities: CityData[] = [
             drivingTimeMinutes: "15-30",
             routeDescription: "Einsatzsteuerung direkt aus dem Herzen Limburgs. Kürzeste Wege für eine blitzschnelle Türöffnung in der Innenstadt.",
         },
-        landmarks: ["Limburger Dom", "Alte Lahnbrücke", "Werner-Senger-Haus", "Historische Altstadt"],
+        landmarks: ["Neumarkt", "Kornmarkt", "Rathaus", "Fußgängerzone"],
         neighborhoods: ["Innenstadt", "Altstadt"],
         housingProfile: "Mischung aus historischen Fachwerkhäusern in der Altstadt, Geschäftsgebäuden und dicht besiedelten städtischen Wohnanlagen.",
         pricing: { basePrice: 99, travelCost: 30 },

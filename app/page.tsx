@@ -233,7 +233,7 @@ export default function HomePage() {
       </section>
 
       {/* Process Steps */}
-      <ProcessSteps />
+      <ProcessSteps variant="alternate" />
 
 
 

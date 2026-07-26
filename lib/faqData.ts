@@ -205,6 +205,47 @@ export function getHomepageFAQs(): FAQItem[] {
     ];
 
     return homepageQuestions
-        .map(q => FAQ_DATA.find(faq => faq.question === q))
+        .map(q => {
+            const faq = FAQ_DATA.find(f => f.question === q);
+            if (!faq) return undefined;
+            
+            let newAnswer = faq.answer;
+            if (faq.question === "Was kostet ein Schlüsseldienst in Limburg?") {
+                newAnswer = "Viele Kunden haben Angst vor überhöhten Preisen. Deshalb arbeiten wir mit völliger Transparenz: Für eine bloß zugefallene Tür berechnen wir ab 99 € als fixen Festpreis. Sie erhalten die Kostenzusage verbindlich am Telefon. Hinzu kommt lediglich eine Pauschale von 30 € für die Anfahrt im Limburger Raum.";
+            } else if (faq.question === "Wie schnell kommt der Schlüsseldienst in Limburg?") {
+                newAnswer = "Jede Minute zählt bei einer Notsituation. Dank unserer Zentrale in Limburg garantieren wir eine Eintreffzeit von ca. 15 bis 30 Minuten. Bei extremen Wetter- oder Verkehrslagen informieren wir Sie vorab über die voraussichtliche Ankunft.";
+            } else if (faq.question === "Gibt es einen Schlüsseldienst in Limburg der nachts geöffnet hat?") {
+                newAnswer = "Definitiv! Ein seriöser Notdienst ist immer erreichbar. Wir stehen Ihnen 24 Stunden, an jedem Wochentag sowie an Sonn- und Feiertagen für Limburg und den gesamten Umkreis zur Verfügung.";
+            } else if (faq.question === "Welcher Schlüsseldienst in Limburg ist seriös?") {
+                newAnswer = "Einen verlässlichen Partner erkennen Sie an garantierten Festpreisen und regionaler Präsenz. Als lokaler Fachbetrieb verzichten wir auf Lockangebote und Callcenter-Weiterleitungen. Sie erhalten den fixen Preis direkt am Telefon.";
+            } else if (faq.question === "Wird die Tür bei der Öffnung beschädigt?") {
+                newAnswer = "Nahezu nie! Sofern die Tür nur ins Schloss gefallen ist, können unsere Spezialisten diese in 99% aller Fälle zu 100% ohne Schäden öffnen. Lediglich bei stark verriegelten oder defekten Sicherheitsschlössern muss in seltenen Fällen gebohrt werden.";
+            } else if (faq.question === "Gibt es versteckte Kosten oder Aufschläge?") {
+                newAnswer = "Nein. Unser Team vom Schlüsseldienst Limburg steht für faire Geschäftspraktiken. Der am Telefon zugesicherte Festpreis ist bindend, sodass keine unangekündigten Kosten vor Ort anfallen können.";
+            } else if (faq.question === "Wie läuft eine Türöffnung ab?") {
+                newAnswer = "Der Ablauf ist simpel: 1. Sie kontaktieren uns und beschreiben die Lage. 2. Wir nennen Ihnen sofort den garantierten Preis. 3. Unser Monteur macht sich auf den Weg. 4. Vor Arbeitsbeginn wird der Preis nochmals bestätigt und die Tür fachgerecht geöffnet. 5. Sie bezahlen bequem (Bar oder Karte).";
+            } else if (faq.question === "Muss ich meinen Ausweis vorlegen?") {
+                newAnswer = "Ja, das ist zu Ihrer eigenen Sicherheit notwendig. Wir sind dazu verpflichtet, die Berechtigung zum Zugang der Wohnung zu prüfen. Wenn Ihr Ausweis in der Wohnung liegt, ist die Vorlage nach der erfolgreichen Öffnung ausreichend.";
+            } else if (faq.question === "Kommt der Schlüsseldienst auch nach Diez?") {
+                newAnswer = "Natürlich. Diez ist ein direkter Teil unseres Haupteinsatzgebietes. Auch hier garantieren wir unsere kurzen Eintreffzeiten von etwa 15 bis 30 Minuten ohne überzogene Fahrtkosten.";
+            } else if (faq.question === "Kommt der Schlüsseldienst auch nach Bad Camberg?") {
+                newAnswer = "Selbstverständlich. Wir betreuen Bad Camberg und Umgebung sehr gerne. Bitte kalkulieren Sie hier eine Anfahrtszeit von etwa 25 bis 35 Minuten ein – die transparenten Kosten klären wir sofort beim Anruf.";
+            } else if (faq.question === "Welche Orte bedient der Schlüsseldienst Limburg?") {
+                newAnswer = "Unser Radius deckt Limburg an der Lahn und den Umkreis von ca. 50 Kilometern ab. Dazu zählen unter anderem Weilburg, Hadamar, Elz, Bad Camberg sowie das angrenzende Rheinland-Pfalz.";
+            } else if (faq.question === "Was mache ich, wenn ich mich ausgesperrt habe?") {
+                newAnswer = "Bleiben Sie besonnen. Vermeiden Sie eigene Öffnungsversuche, da diese oft teure Schäden verursachen. Wählen Sie unsere Notrufnummer und warten Sie auf unseren Techniker, der Ihnen schnell hilft.";
+            } else if (faq.question === "Gibt es Zuschläge für Einsätze nachts oder am Wochenende?") {
+                newAnswer = "Ja, wie überall üblich berechnen wir außerhalb der regulären Zeiten einen Notdienstzuschlag. Dieser beträgt bei uns fixe 30 € und gilt nachts ab 18 Uhr sowie an Wochenenden/Feiertagen. Alles wird vorab am Telefon kommuniziert.";
+            } else if (faq.question === "Wie kann ich bezahlen?") {
+                newAnswer = "Um es für Sie einfach zu halten, akzeptieren wir direkt nach Abschluss der Arbeiten Barzahlung sowie die gängigen EC-Karten, Kreditkarten (Visa/Mastercard) und Apple/Google Pay.";
+            } else if (faq.question === "Tür zugefallen in Limburg — was tun?") {
+                newAnswer = "Keine Panik! Greifen Sie zum Handy und rufen Sie unsere Limburger Nummer an. Wir schicken umgehend einen Profi, der Ihnen mit modernstem Werkzeug schadensfrei wieder Zugang verschafft.";
+            }
+
+            return {
+                ...faq,
+                answer: newAnswer
+            };
+        })
         .filter((faq): faq is FAQItem => faq !== undefined);
 }
