@@ -38,7 +38,7 @@ export default function SchluesselNachmachenPage() {
             </span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed">
-            Vom klassischen Haustürschlüssel bis zum hochkomplexen KFZ-Schlüssel mit Transponder: Unser Limburger Meisterbetrieb <strong>MS Schlüsseldienst Limburg</strong> (Inh. Mina Saad) liefert Ihnen millimetergenaue, verschleißarme Duplikate. Ohne Wartezeit, sofort zum Mitnehmen und mit absoluter Passgarantie.
+            Limburger Präzisions-Ersatzschlüssel. Gefertigt in Minuten. Vom klassischen Haustürschlüssel bis zum hochkomplexen KFZ-Schlüssel mit Transponder: Unser Limburger Meisterbetrieb <strong>MS Schlüsseldienst Limburg</strong> (Inh. Mina Saad) liefert Ihnen millimetergenaue, verschleißarme Duplikate. Ohne Wartezeit, sofort zum Mitnehmen und mit absoluter Passgarantie.
           </p>
         </div>
       </section>

@@ -52,7 +52,7 @@ export default function SchliessanlagenPage() {
             </h2>
             <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8"></div>
             <p className="text-[var(--color-text-body)] leading-relaxed text-lg">
-              Professionell geplante <strong>Schließanlagen in Limburg</strong> bieten Ihnen vollkommene Kontrolle über Ihre Wohn- oder Gewerbeimmobilie. Ein unkontrolliertes Schlüsselchaos ist ein extremes Sicherheits- und Haftungsrisiko. Eine moderne, maßgefertigte Schließanlage löst dieses Problem ein für alle Mal durch ein intelligentes Rechte-Konzept. Mit einem einzigen Hauptschlüssel haben Sie als Eigentümer die volle Kontrolle, während Angestellte, Dienstleister oder Mieter nur exakt die Räumlichkeiten betreten können, für die sie berechtigt sind. <strong>Mina Saad</strong> und das Team von <strong>MS Schlüsseldienst Limburg</strong> sorgen dafür, dass Ihr System lückenlos funktioniert.
+              Professionell geplante <strong>Schließanlagen in Limburg</strong> bieten Ihnen vollkommene Kontrolle über Ihre Wohn- oder Gewerbeimmobilie. Ein unkontrolliertes Schlüsselchaos ist ein extremes Sicherheits- und Haftungsrisiko. Eine moderne, maßgefertigte Schließanlage löst dieses Problem ein für alle Mal durch ein intelligentes Rechte-Konzept. Mit einem einzigen Hauptschlüssel haben Sie als Eigentümer die volle Kontrolle, während Angestellte, Dienstleister oder Mieter nur exakt die Räumlichkeiten betreten können, für die sie berechtigt sind. <strong>Mina Saad</strong> und unser kompetentes Team sorgen dafür, dass Ihr System lückenlos funktioniert.
             </p>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-2">
@@ -148,6 +148,43 @@ export default function SchliessanlagenPage() {
                   </div>
                 </li>
               </ul>
+            </div>
+
+            <div className="mt-20">
+              <h2 className="text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] mb-6 text-center">
+                Fragen & Antworten zu Schließanlagen in Limburg
+              </h2>
+              <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8 mx-auto"></div>
+              <p className="text-[var(--color-text-body)] leading-relaxed text-lg text-center max-w-3xl mx-auto mb-10">
+                Die Planung einer neuen Zutrittskontrolle wirft oft technische und organisatorische Fragen auf. Hier beantworten wir die häufigsten Anliegen unserer Limburger Kunden.
+              </p>
+              
+              <div className="glass-card rounded-3xl p-8 border border-blue-100/50 shadow-sm space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                    Was passiert bei einem Schlüsselverlust in einer mechanischen Schließanlage?
+                  </h3>
+                  <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                    Bei klassischen mechanischen Systemen (Zentralschlossanlagen oder Hauptschlüsselanlagen) stellt der Verlust eines übergeordneten Schlüssels (Generalhauptschlüssel) oft ein massives Sicherheitsrisiko dar, welches meist den Austausch der gesamten Anlage zur Folge hat. Wir beraten Sie in Limburg gerne über hybride oder vollelektronische Alternativen, um dieses teure Risiko komplett zu eliminieren.
+                  </p>
+                </div>
+                <div className="pt-6 border-t border-blue-100/30">
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                    Sind elektronische Schließzylinder sicher vor Hackerangriffen?
+                  </h3>
+                  <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                    Ja. Wir installieren in Limburg ausschließlich Premium-Systeme deutscher und europäischer Marktführer, die eine hochverschlüsselte Datenübertragung (AES 128/256-Bit) zwischen Transponder und Zylinder gewährleisten. Diese Sicherheitsstandards werden auch im Hochsicherheitsbereich und bei Banken eingesetzt. Ein "Hacken" der Funksignale ist praktisch ausgeschlossen.
+                  </p>
+                </div>
+                <div className="pt-6 border-t border-blue-100/30">
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                    Wie lange dauert die Installation einer neuen Schließanlage in Limburg?
+                  </h3>
+                  <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                    Nach Abschluss der präzisen Planungsphase und Anfertigung des Schließplans durch unseren Meisterbetrieb, dauert die reine Montage vor Ort in der Regel nur wenige Stunden, selbst bei größeren Firmengebäuden in Limburg. Wir arbeiten staubfrei, leise und ohne den laufenden Betriebsablauf zu stören.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

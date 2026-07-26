@@ -7,7 +7,7 @@ import { LegalCard } from "@/components/legal/LegalCard";
 export const revalidate = 86400;
 
 export const metadata = generateSharedMetadata({
-  title: "Datenschutzerklärung | MS Schlüsseldienst Limburg",
+  title: "Datenschutzerklärung MS Schlüsseldienst Limburg",
   description: "Datenschutzerklärung von MS Schlüsseldienst Limburg. Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO.",
   path: "/datenschutz",
 });
@@ -26,7 +26,7 @@ const tocItems = [
 export default function DatenschutzPage() {
   return (
     <LegalPageLayout
-      title="Datenschutzerklärung"
+      title="Datenschutzerklärung MS Schlüsseldienst Limburg"
       subtitle="Ihre Daten sind bei uns sicher. Erfahren Sie hier, wie MS Schlüsseldienst Limburg Ihre personenbezogenen Daten schützt und verarbeitet."
       lastUpdated="November 2023"
       tocItems={tocItems}

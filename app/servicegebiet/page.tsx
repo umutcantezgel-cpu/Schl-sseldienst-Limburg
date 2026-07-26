@@ -29,7 +29,7 @@ export default function ServicegebietPage() {
             {cities.length} Einsatzgebiete im Landkreis
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl">
-            Unser <span className="text-gradient-primary">Einsatzgebiet</span>
+            Unser Einsatzgebiet für den <span className="text-gradient-primary">Schlüsseldienst Limburg</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed">
             Regionale Fachkompetenz direkt aus Limburg. Im Notfall sind wir garantiert in 15–30 Minuten bei Ihnen vor Ort – im gesamten Raum Limburg-Weilburg und Umgebung.

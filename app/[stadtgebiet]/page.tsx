@@ -112,6 +112,14 @@ export async function generateMetadata({ params }: { params: Promise<{ stadtgebi
     });
 }
 
+function getVariation(slug: string, variations: string[]): string {
+    let hash = 0;
+    for (let i = 0; i < slug.length; i++) {
+        hash = slug.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return variations[Math.abs(hash) % variations.length];
+}
+
 export default async function StadtgebietPage({ params }: { params: Promise<{ stadtgebiet: string }> }) {
     const { stadtgebiet } = await params;
     const city = getCityBySlug(stadtgebiet);
@@ -226,11 +234,11 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                 
                 <div className="mx-auto max-w-4xl text-center relative z-10 flex flex-col items-center">
                     <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border border-blue-100 bg-white/70 text-blue-800 text-sm font-semibold mb-6 shadow-sm">
-                        <MapPin className="h-4 w-4 text-blue-600" />
-                        Ihr lokaler Experte für {city.name}
+                        <MapPin className="h-4 w-4 text-blue-600 shrink-0" />
+                        <span>{meta.title}</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-text-main)] leading-tight">
-                        Schlüsseldienst <span className="text-gradient-primary">{city.name}</span>
+                        Schlüsseldienst <span className="text-gradient-primary">{city.name}</span> & Notdienst
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[var(--color-text-body)] text-center leading-relaxed font-medium">
                         {city.localContent?.heroSubtitle || (
@@ -242,13 +250,13 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                     
                     <ul className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-4 text-sm sm:text-base font-bold text-[var(--color-text-main)] mb-8">
                       <li className="flex items-center justify-center gap-2 glass-card px-5 py-3 rounded-full shadow-sm border border-blue-100/50">
-                        <CheckCircle2 className="h-5 w-5 text-green-600" /> Zerstörungsfrei (99%)
+                        <CheckCircle2 className="h-5 w-5 text-green-600" /> {getVariation(city.slug, ["Schadensfreie Öffnung", "Zerstörungsfrei (99%)", "Keine Zerstörung", "Schonende Türöffnung"])}
                       </li>
                       <li className="flex items-center justify-center gap-2 glass-card px-5 py-3 rounded-full shadow-sm border border-blue-100/50">
-                        <CheckCircle2 className="h-5 w-5 text-green-600" /> Fixer Preis am Telefon
+                        <CheckCircle2 className="h-5 w-5 text-green-600" /> {getVariation(city.slug + "1", ["Fixer Preis am Telefon", "Verbindliche Preisnennung", "Garantierter Festpreis", "100% Preistransparenz"])}
                       </li>
                       <li className="flex items-center justify-center gap-2 glass-card px-5 py-3 rounded-full shadow-sm border border-blue-100/50">
-                        <CheckCircle2 className="h-5 w-5 text-green-600" /> Regionaler Fachbetrieb
+                        <CheckCircle2 className="h-5 w-5 text-green-600" /> {getVariation(city.slug + "2", ["Regionaler Fachbetrieb", "Lokaler Meisterbetrieb", "Schnell & Zuverlässig", "Aus der Region"])}
                       </li>
                     </ul>
 
@@ -393,25 +401,35 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                     </div>
                     <div className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
                         <PriceCard
-                            title="Tür zugefallen"
+                            title={getVariation(city.slug + "title1", ["Tür zugefallen", "Tür ins Schloss gefallen", "Zugefallene Tür", "Türöffnung (zugefallen)"])}
                             price={city.pricing.basePrice}
-                            description={city.pricing.doorClosedDescription || `Schlüssel steckt von innen oder Tür ist nur ins Schloss gefallen in ${city.name}. Zerstörungsfreie Öffnung.`}
+                            description={city.pricing.doorClosedDescription || getVariation(city.slug + "desc1", [
+                                `Schlüssel steckt von innen oder Tür ist nur ins Schloss gefallen in ${city.name}. Zerstörungsfreie Öffnung.`,
+                                `Ihre Haus- oder Wohnungstür in ${city.name} ist zugefallen? Wir öffnen diese zu 99% beschädigungsfrei.`,
+                                `Tür versehentlich in ${city.name} zugezogen? Keine Panik. Wir helfen schnell und ohne Schäden.`,
+                                `Einfache Türöffnung in ${city.name}, wenn die Tür nicht verschlossen ist. Absolut materialschonend.`
+                            ])}
                             features={[
-                                "Werktags 08-18 Uhr",
-                                "Zerstörungsfreie Öffnung (99%)",
-                                "Festpreis vor Beginn der Arbeit",
+                                getVariation(city.slug + "feat1", ["Werktags 08-18 Uhr", "Standard-Tarif (Mo-Fr)", "Gültig tagsüber an Werktagen", "Basispreis (08:00 - 18:00)"]),
+                                getVariation(city.slug + "feat2", ["Zerstörungsfreie Öffnung (99%)", "Keine Zylinderbeschädigung", "Tür und Rahmen bleiben heil", "Schadensfreie Spezialöffnung"]),
+                                getVariation(city.slug + "feat3", ["Festpreis vor Beginn der Arbeit", "Garantierter Endpreis", "Kostenkontrolle ab Anruf", "Keine versteckten Gebühren"]),
                                 ...(city.pricing.travelCost === 0 ? ["Inklusive Anfahrt"] : [`+ ${city.pricing.travelCost}€ Anfahrt`])
                             ]}
                             isPopular={true}
                         />
                         <PriceCard
-                            title="Tür abgeschlossen"
+                            title={getVariation(city.slug + "title2", ["Tür abgeschlossen", "Verschlossene Tür", "Schlüssel verloren", "Komplettöffnung"])}
                             price={city.pricing.basePrice + 30}
-                            description={city.pricing.doorLockedDescription || `Schlüssel verloren oder abgebrochen in ${city.name}. Professionelle Öffnung mit Spezialwerkzeug.`}
+                            description={city.pricing.doorLockedDescription || getVariation(city.slug + "desc2", [
+                                `Schlüssel verloren oder abgebrochen in ${city.name}. Professionelle Öffnung mit Spezialwerkzeug.`,
+                                `Ihre Tür in ${city.name} ist fest verschlossen? Wir fräsen den Zylinder auf und ersetzen ihn bei Bedarf sofort.`,
+                                `Sicherheitsschlösser oder abgeschlossene Türen in ${city.name} öffnen wir zügig und fachmännisch.`,
+                                `Defektes Schloss oder Riegelbruch in ${city.name}. Erfahrene Notöffnung inklusive Beratung zum neuen Zylinder.`
+                            ])}
                             features={[
-                                "Werktags 08-18 Uhr",
-                                "Einsatz von Profi-Fräsen",
-                                "Ersatzzylinder sofort verfügbar",
+                                getVariation(city.slug + "feat4", ["Werktags 08-18 Uhr", "Standard-Tarif (Mo-Fr)", "Gültig tagsüber an Werktagen", "Basispreis (08:00 - 18:00)"]),
+                                getVariation(city.slug + "feat5", ["Einsatz von Profi-Fräsen", "Präzises Aufbohren", "Zylinder-Spezialwerkzeug", "Materialschonende Frästechnik"]),
+                                getVariation(city.slug + "feat6", ["Ersatzzylinder sofort verfügbar", "Neues Schloss direkt im Auto", "Sofortiger Zylindertausch", "Premium-Schließzylinder auf Lager"]),
                                 ...(city.pricing.travelCost === 0 ? ["Inklusive Anfahrt"] : [`+ ${city.pricing.travelCost}€ Anfahrt`])
                             ]}
                         />

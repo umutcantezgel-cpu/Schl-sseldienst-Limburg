@@ -147,6 +147,43 @@ export default function AutooeffnungPage() {
                 </li>
               </ul>
             </div>
+
+            <div className="mt-20">
+              <h2 className="text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] mb-6 text-center">
+                Häufige Fragen zur Autoöffnung in Limburg
+              </h2>
+              <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8 mx-auto"></div>
+              <p className="text-[var(--color-text-body)] leading-relaxed text-lg text-center max-w-3xl mx-auto mb-10">
+                Sie haben sich aus Ihrem Fahrzeug ausgesperrt? Hier finden Sie die wichtigsten Antworten rund um die schnelle und schadensfreie KFZ-Öffnung in Limburg und Umgebung.
+              </p>
+              
+              <div className="glass-card rounded-3xl p-8 border border-blue-100/50 shadow-sm space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                    Können moderne Autos überhaupt zerstörungsfrei geöffnet werden?
+                  </h3>
+                  <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                    Ja, absolut. Unsere speziell geschulten Techniker nutzen hochmoderne Spezialwerkzeuge und fortgeschrittene Lockpicking-Techniken. Damit öffnen wir selbst modernste Schließsysteme und Premium-Marken (wie Audi, BMW oder Mercedes) zu 100% zerstörungsfrei, ohne den Lack oder die Elektronik zu beschädigen.
+                  </p>
+                </div>
+                <div className="pt-6 border-t border-blue-100/30">
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                    Wie lange muss ich in Limburg auf den Schlüsseldienst warten?
+                  </h3>
+                  <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                    Da wir ein echter lokaler Handwerksbetrieb sind und nicht über Vermittlungszentralen arbeiten, garantieren wir im Limburger Stadtgebiet (sowie in angrenzenden Regionen wie Elz oder Diez) eine Anfahrtszeit von 15 bis 30 Minuten. Bei extremen Wetterbedingungen informieren wir Sie sofort transparent über die exakte Dauer.
+                  </p>
+                </div>
+                <div className="pt-6 border-t border-blue-100/30">
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                    Mein Schlüssel liegt sichtbar auf dem Autositz. Ist das ein Problem?
+                  </h3>
+                  <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                    Nein, das ist ein klassischer Fall. Oftmals verriegelt sich die Zentralverriegelung automatisch, wenn die Tür ins Schloss fällt. Wir öffnen die Tür mithilfe eines speziellen Luftkissens (Luftkeil) und einer Teleskopstange oder greifen direkt über das Türschloss ein. Das Fahrzeug nimmt dabei keinerlei Schaden.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

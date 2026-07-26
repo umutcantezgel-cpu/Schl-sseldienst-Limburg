@@ -62,10 +62,10 @@ export default function EinbruchschutzPage() {
                        Zertifizierter Einbruchschutz für Limburg
                     </div>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--color-text-main)] leading-[1.1] tracking-tight mb-6 text-balance">
-                       Einbruchschutz & <span className="text-[var(--color-blue-primary)]">Sicherheitsberatung Limburg</span>
+                       Einbruchschutz & <span className="text-[var(--color-blue-primary)]">Sicherheitsberatung in Limburg</span>
                     </h1>
                     <p className="text-lg text-[var(--color-text-body)] font-medium mb-8 text-balance leading-relaxed">
-                       Wenn Sie zertifizierten <strong>Einbruchschutz & Sicherheitsberatung Limburg</strong> suchen, ist MS Schlüsseldienst Limburg unter der Leitung von Mina Saad Ihr erster Ansprechpartner. Ein Einbruch hinterlässt nicht nur finanzielle, sondern tiefe psychologische Spuren. Überlassen Sie den Schutz Ihrer Familie nicht dem Zufall. Als regionaler Meisterbetrieb rüsten wir Ihr Zuhause mit zertifizierter Sicherheitstechnik nach – diskret, hochwirksam und absolut verlässlich.
+                       Wenn Sie zertifizierten <strong>Einbruchschutz & Sicherheitsberatung in Limburg</strong> suchen, ist MS Schlüsseldienst Limburg unter der Leitung von Mina Saad Ihr erster Ansprechpartner. Ein Einbruch hinterlässt nicht nur finanzielle, sondern tiefe psychologische Spuren. Überlassen Sie den Schutz Ihrer Familie nicht dem Zufall. Als regionaler Meisterbetrieb rüsten wir Ihr Zuhause mit zertifizierter Sicherheitstechnik nach – diskret, hochwirksam und absolut verlässlich.
                     </p>
                     
                     <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border-subtle)] rounded-3xl p-8 mb-8 shadow-sm">
@@ -128,7 +128,7 @@ export default function EinbruchschutzPage() {
                     Effektiver Einbruchschutz für Wohnungen & Gewerbeobjekte in Limburg
                  </h2>
                  <p className="text-lg text-[var(--color-text-body)] leading-relaxed mb-6">
-                    Die Kriminalstatistik zeigt deutlich, dass gut gesicherte Türen und Fenster das Einbruchsrisiko drastisch senken. Unser Meisterbetrieb bietet umfassenden <strong>Einbruchschutz & Sicherheitsberatung Limburg</strong> für Eigentümer, Mieter und Gewerbetreibende in Limburg an der Lahn sowie im gesamten Landkreis Limburg-Weilburg.
+                    Die Kriminalstatistik zeigt deutlich, dass gut gesicherte Türen und Fenster das Einbruchsrisiko drastisch senken. Unser Meisterbetrieb bietet umfassenden Einbruchschutz & Sicherheitsberatung in Limburg für Eigentümer, Mieter und Gewerbetreibende in Limburg an der Lahn sowie im gesamten Landkreis Limburg-Weilburg.
                  </p>
 
                  <div className="grid md:grid-cols-2 gap-8 mt-8">
@@ -137,7 +137,7 @@ export default function EinbruchschutzPage() {
                           <Lock className="h-5 w-5 text-[var(--color-blue-primary)]" /> Mechanische Nachrüstung nach DIN-Norm
                        </h3>
                        <p className="text-[var(--color-text-body)] leading-relaxed text-base">
-                          Der meiste Hebelversuch scheitert an solidem mechanischen Wiederstand. Wir installieren geprüfte Panzerriegelschlosssysteme, Querriegelschlosssysteme sowie Fensterzusatzsicherungen mit Pilzkopfzapfen. Diese mechanischen Schutzmaßnahmen verhindern effektiv das Aufhebeln mit Schraubendrehern oder Brecheisen.
+                          Der meiste Hebelversuch scheitert an solidem mechanischen Widerstand. Wir installieren geprüfte Panzerriegelschlosssysteme, Querriegelschlosssysteme sowie Fensterzusatzsicherungen mit Pilzkopfzapfen. Diese mechanischen Schutzmaßnahmen verhindern effektiv das Aufhebeln mit Schraubendrehern oder Brecheisen.
                        </p>
                     </div>
                     <div>
@@ -148,6 +148,16 @@ export default function EinbruchschutzPage() {
                           Jede Immobilie hat individuelle Schwachstellen – vom Lichtschacht im Keller über die schlecht einsehbare Terrassentür bis zum veralteten Schließzylinder an der Haupteingangstür. Bei unserem kostenlosen Vor-Ort-Termin analysiert Inhaber Mina Saad Ihr Objekt systematisch und empfiehlt passgenaue Sicherheitsupgrade-Lösungen zum Festpreis.
                        </p>
                     </div>
+                 </div>
+
+                 <div className="mt-8 border-t border-[var(--color-border-subtle)] pt-8">
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">KfW-Förderung für Ihren Einbruchschutz in Limburg</h3>
+                    <p className="text-[var(--color-text-body)] leading-relaxed text-base mb-4">
+                        Wussten Sie, dass der Staat Investitionen in die Sicherheit Ihres Zuhauses fördert? Die Kreditanstalt für Wiederaufbau (KfW) bezuschusst Maßnahmen zum Einbruchschutz unter bestimmten Voraussetzungen mit bis zu 20% der investierten Summe. Dies gilt für den Einbau einbruchhemmender Haus- und Wohnungseingangstüren, die Nachrüstung von Fenstern sowie die Installation von Alarmanlagen.
+                    </p>
+                    <p className="text-[var(--color-text-body)] leading-relaxed text-base">
+                        Damit Sie von diesen Fördermitteln profitieren können, muss der Einbau zwingend durch einen qualifizierten Fachbetrieb erfolgen, der die entsprechenden technischen Mindestanforderungen (z.B. DIN EN 1627) erfüllt. Als erfahrener Fachbetrieb für Sicherheitstechnik in Limburg verbauen wir ausschließlich zertifizierte Komponenten namhafter Hersteller (wie ABUS, KESO oder BKS), die diese strengen Kriterien erfüllen. Wir beraten Sie nicht nur zur optimalen Absicherung Ihres Eigenheims, sondern unterstützen Sie auch gerne mit den notwendigen technischen Nachweisen für Ihren KfW-Antrag. Investieren Sie jetzt in Ihre Sicherheit und lassen Sie sich dabei vom Staat finanziell unter die Arme greifen.
+                    </p>
                  </div>
               </div>
            </div>

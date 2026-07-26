@@ -51,7 +51,7 @@ export default function TuroeffnungPage() {
         <div className="mx-auto max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Türöffnung in Limburg</span>
+              <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Türöffnung Limburg | 24/7 Schlüsselnotdienst</span>
               <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl">
                 Ausgesperrt in Limburg? <br className="hidden sm:block" />
                 <span className="text-gradient-primary relative inline-block mt-2">

@@ -219,6 +219,43 @@ export default function SicherheitstechnikPage() {
             </div>
           </div>
 
+          <div className="mt-24">
+            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] mb-6 text-center">
+              Häufige Fragen zur Sicherheitstechnik in Limburg
+            </h2>
+            <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8 mx-auto"></div>
+            <p className="text-[var(--color-text-body)] leading-relaxed text-lg text-center max-w-3xl mx-auto mb-10">
+              Einbruchschutz ist Vertrauenssache. Im Folgenden beantworten wir die drängendsten Fragen unserer Kunden aus Limburg und dem Landkreis rund um Alarmanlagen und mechanischen Schutz.
+            </p>
+            
+            <div className="glass-card rounded-3xl p-8 border border-blue-100/50 shadow-sm space-y-6">
+              <div>
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                  Welcher Einbruchschutz ist für mein Haus in Limburg am sinnvollsten?
+                </h3>
+                <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                  Wir empfehlen stets eine Kombination aus massivem mechanischem Grundschutz (wie ABUS Panzerriegel, Stangenschlösser oder abschließbare Fenstergriffe mit Pilzkopfverriegelung) und einer ergänzenden elektronischen Überwachung. Die Mechanik verhindert das schnelle Eindringen, die Elektronik sorgt für die unmittelbare Alarmierung.
+                </p>
+              </div>
+              <div className="pt-6 border-t border-blue-100/30">
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                  Bieten Sie kostenlose Sicherheitsberatungen an?
+                </h3>
+                <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                  Ja, für Immobilienbesitzer im Landkreis Limburg-Weilburg bieten wir ein unverbindliches Sicherheits-Audit an. Unser Meisterbetrieb begutachtet Ihr Objekt auf mögliche Schwachstellen an Fenstern, Türen und Kellerschächten und erstellt Ihnen ein transparentes Konzept zum Festpreis.
+                </p>
+              </div>
+              <div className="pt-6 border-t border-blue-100/30">
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2 flex items-center gap-2">
+                  Installieren Sie auch smarte, per App steuerbare Alarmanlagen?
+                </h3>
+                <p className="text-[var(--color-text-body)] text-base leading-relaxed">
+                  Selbstverständlich. Wir verbauen modernste Funk- und Hybrid-Alarmanlagen, die Sie weltweit bequem über Ihr Smartphone steuern können. Auf Wunsch lassen sich diese Systeme auch direkt auf eine 24/7 Notrufleitstelle aufschalten, um im Ernstfall sofort Polizei oder Wachdienst zu alarmieren.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

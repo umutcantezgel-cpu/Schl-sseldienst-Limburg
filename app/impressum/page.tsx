@@ -7,7 +7,7 @@ import { LegalCard } from "@/components/legal/LegalCard";
 export const revalidate = 86400;
 
 export const metadata = generateSharedMetadata({
-  title: "Impressum & Anbieterkennzeichnung | MS Limburg",
+  title: "Impressum MS Schlüsseldienst Limburg",
   description: "Impressum und Anbieterkennzeichnung von MS Schlüsseldienst Limburg. Kontaktdaten, Verantwortliche und rechtliche Informationen.",
   path: "/impressum",
 });
@@ -24,7 +24,7 @@ const tocItems = [
 export default function ImpressumPage() {
   return (
     <LegalPageLayout
-      title="Impressum"
+      title="Impressum MS Schlüsseldienst Limburg"
       subtitle="Transparenz und Vertrauen sind die Basis für unser Handwerk. Hier finden Sie alle rechtlichen Angaben zu MS Schlüsseldienst Limburg."
       lastUpdated="Juli 2026"
       tocItems={tocItems}

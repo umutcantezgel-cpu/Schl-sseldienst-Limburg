@@ -58,7 +58,7 @@ export default function HomePage() {
                 {" "}für Limburg & Umgebung.
               </h1>
               <p className="max-w-2xl text-[var(--color-text-body)] text-lg md:text-xl font-medium mt-8 md:mt-10 text-balance leading-relaxed">
-                Wir sind {BUSINESS.name} unter Leitung von {BUSINESS.owner}. Als etablierter Fachbetrieb öffnen wir Ihre Tür in 99% der Fälle absolut schadensfrei. In 15–30 Minuten sind wir vor Ort – zu 100% garantierten, transparenten Festpreisen, ohne versteckte Gebühren.
+                Tür zu? Ihr regionaler Premium-Schlüsseldienst für Limburg & Umgebung. Wir sind {BUSINESS.name} unter Leitung von {BUSINESS.owner}. Als etablierter Fachbetrieb öffnen wir Ihre Tür in 99% der Fälle absolut schadensfrei. In 15–30 Minuten sind wir vor Ort – zu 100% garantierten, transparenten Festpreisen, ohne versteckte Gebühren.
               </p>
               <div className="mt-10 mb-6">
                 <TrustBadges />

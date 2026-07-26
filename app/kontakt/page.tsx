@@ -42,7 +42,7 @@ export default function KontaktPage() {
             </span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed">
-            Ihre Sicherheit in Limburg ist unser Auftrag. In Notfällen ist unser Meister-Notruf unter Leitung von Mina Saad 24/7 erreichbar. Für Beratungen zur Einbruchsprävention nutzen Sie bequem unser Kontaktformular.
+            Sprechen Sie mit echten Limburger Profis. Ihre Sicherheit in Limburg ist unser Auftrag. In Notfällen ist unser Meister-Notruf unter Leitung von Mina Saad 24/7 erreichbar. Für Beratungen zur Einbruchsprävention nutzen Sie bequem unser Kontaktformular.
           </p>
         </div>
       </section>
@@ -197,7 +197,7 @@ export default function KontaktPage() {
               </div>
             </div>
             <p className="text-base text-[var(--color-text-muted)] leading-relaxed mt-6">
-              Transparenz ist unser Grundprinzip: Bereits bei Ihrem ersten Anruf über unseren <strong>Schlüsseldienst Limburg Kontakt</strong> beziffern wir die anfallenden Kosten verbindlich als Festpreis. Bei uns gibt es keine versteckten Sondergebühren oder unerwarteten Aufschläge vor Ort.
+              Transparenz ist unser Grundprinzip: Bereits bei Ihrem ersten Anruf beziffern wir die anfallenden Kosten verbindlich als Festpreis. Bei uns gibt es keine versteckten Sondergebühren oder unerwarteten Aufschläge vor Ort. Vertrauen Sie auf einen echten, regionalen Handwerksbetrieb, der seit Jahren erfolgreich im gesamten Landkreis Limburg-Weilburg tätig ist. Wir dokumentieren jeden Einsatz detailliert, erstellen ordnungsgemäße Rechnungen für Ihre Versicherung und bieten neben der klassischen Barzahlung selbstverständlich auch bequeme Kartenzahlung (EC-/Kreditkarte) direkt am Einsatzort an. 
             </p>
           </div>
 

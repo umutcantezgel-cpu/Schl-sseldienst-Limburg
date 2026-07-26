@@ -91,7 +91,7 @@ export default function PreisePage() {
               Das MS Schlüsseldienst Versprechen
             </h2>
             <p className="mt-6 md:mt-8 text-[var(--color-text-body)] leading-relaxed max-w-2xl mx-auto text-lg md:text-xl text-balance">
-              Unsere Preistabellen sind keine lockenden Platzhalter, sondern echte Endpreise. <strong>Die gesetzliche Mehrwertsteuer und alle Anfahrtskosten innerhalb unseres Einzugsgebietes sind bereits vollständig enthalten.</strong> Zahlen Sie bequem und sicher bei unserem Monteur per Karte oder in Bar – mit ordentlicher Rechnung.
+              Unsere Preistabellen sind keine lockenden Platzhalter, sondern echte Endpreise. Die gesetzliche Mehrwertsteuer und alle Anfahrtskosten innerhalb unseres Einzugsgebietes sind <strong>bereits vollständig enthalten</strong>. Zahlen Sie bequem und sicher bei unserem Monteur per Karte oder in Bar – mit ordentlicher Rechnung.
             </p>
           </div>
 
@@ -101,7 +101,7 @@ export default function PreisePage() {
               Transparente Preisgestaltung für Türöffnungen in Limburg
             </h2>
             <p className="text-lg text-[var(--color-text-body)] leading-relaxed mb-6">
-              Die Kalkulation der <strong>Schlüsseldienst Limburg Preise</strong> richtet sich nach dem tatsächlichen Aufwand und dem Zustand Ihrer Tür. In über 99% aller Fälle von lediglich zugefallenen Türen wird die Tür komplett zerstörungsfrei und ohne Beschädigung von Schloss oder Zylinder geöffnet.
+              Die Kalkulation der Preise richtet sich nach dem tatsächlichen Aufwand und dem Zustand Ihrer Tür. In über 99% aller Fälle von lediglich zugefallenen Türen wird die Tür komplett zerstörungsfrei und ohne Beschädigung von Schloss oder Zylinder geöffnet.
             </p>
             <div className="grid gap-6 md:grid-cols-2 mt-8">
               <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
