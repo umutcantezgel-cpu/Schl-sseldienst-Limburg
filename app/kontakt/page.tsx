@@ -33,13 +33,7 @@ export default function KontaktPage() {
         <div className="mx-auto max-w-4xl text-center relative z-10">
           <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Immer für Sie da</span>
           <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl">
-            Sprechen Sie mit <br className="hidden sm:block" />
-            <span className="text-gradient-primary relative inline-block mt-2">
-              echten Limburger Profis
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
-              </svg>
-            </span>
+            Sprechen Sie mit echten Limburger Profis
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed">
             Sprechen Sie mit echten Limburger Profis. Ihre Sicherheit in Limburg ist unser Auftrag. In Notfällen ist unser Meister-Notruf unter Leitung von Mina Saad 24/7 erreichbar. Für Beratungen zur Einbruchsprävention nutzen Sie bequem unser Kontaktformular.

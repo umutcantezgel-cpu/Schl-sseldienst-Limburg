@@ -13,7 +13,7 @@ export const revalidate = 86400;
 
 export const metadata = generateSharedMetadata({
   title: "Sicherheitstechnik Limburg | Einbruchschutz MS",
-  description: "Zertifizierte Sicherheitstechnik in Limburg an der Lahn durch MS Schlüsseldienst Limburg. Maßgeschneiderter Einbruchschutz, Alarmanlagen & Videoüberwachung.",
+  description: "Zertifizierte Sicherheitstechnik in Limburg durch MS Schlüsseldienst. Maßgeschneiderter Einbruchschutz & Alarmanlagen.",
   path: "/leistungen/sicherheitstechnik",
 });
 

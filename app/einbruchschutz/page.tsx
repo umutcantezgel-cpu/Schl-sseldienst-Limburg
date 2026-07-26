@@ -62,7 +62,7 @@ export default function EinbruchschutzPage() {
                        Zertifizierter Einbruchschutz für Limburg
                     </div>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--color-text-main)] leading-[1.1] tracking-tight mb-6 text-balance">
-                       Einbruchschutz & <span className="text-[var(--color-blue-primary)]">Sicherheitsberatung in Limburg</span>
+                       Einbruchschutz & Sicherheitsberatung in Limburg
                     </h1>
                     <p className="text-lg text-[var(--color-text-body)] font-medium mb-8 text-balance leading-relaxed">
                        Wenn Sie zertifizierten <strong>Einbruchschutz & Sicherheitsberatung in Limburg</strong> suchen, ist MS Schlüsseldienst Limburg unter der Leitung von Mina Saad Ihr erster Ansprechpartner. Ein Einbruch hinterlässt nicht nur finanzielle, sondern tiefe psychologische Spuren. Überlassen Sie den Schutz Ihrer Familie nicht dem Zufall. Als regionaler Meisterbetrieb rüsten wir Ihr Zuhause mit zertifizierter Sicherheitstechnik nach – diskret, hochwirksam und absolut verlässlich.

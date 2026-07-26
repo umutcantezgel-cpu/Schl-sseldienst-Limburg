@@ -130,7 +130,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
 
     const breadcrumbs = [
         { name: "Einsatzgebiete", href: "/servicegebiet" },
-        { name: `Schlüsseldienst ${city.name}`, href: `/${city.slug}` },
+        { name: city.name, href: `/${city.slug}` },
     ];
 
     // Schema.org for LocalBusiness dynamic per city
@@ -225,7 +225,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
-            <Breadcrumbs items={[{ name: "Einsatzgebiete", href: "/servicegebiet" }, { name: `Schlüsseldienst ${city.name}`, href: `/${city.slug}` }]} />
+            <Breadcrumbs items={[{ name: "Einsatzgebiete", href: "/servicegebiet" }, { name: city.name, href: `/${city.slug}` }]} />
 
             {/* Hyper-local Hero Section */}
             <section id="hero-section" aria-label={`Notfall-Hilfe ${city.name}`} className="relative px-4 sm:px-6 lg:px-8 py-20 lg:py-28 overflow-hidden bg-[var(--color-surface-elevated)] border-b border-[var(--color-border-subtle)]">
@@ -238,7 +238,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                         <span>{meta.title}</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-text-main)] leading-tight">
-                        Schlüsseldienst <span className="text-gradient-primary">{city.name}</span> & Notdienst
+                        Schlüsseldienst {city.name} & Notdienst
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[var(--color-text-body)] text-center leading-relaxed font-medium">
                         {city.localContent?.heroSubtitle || (
