@@ -128,6 +128,11 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
         notFound();
     }
 
+    const meta = CITY_METADATA[city.slug] || {
+        title: `Schlüsseldienst ${city.name} | 24/7 Notdienst`,
+        description: `Ausgesperrt in ${city.name}? Der Limburger Schlüsseldienst ist in ${city.logistics.drivingTimeMinutes} Min da. 100% Festpreisgarantie ab ${city.pricing.basePrice}€.`,
+    };
+
     const breadcrumbs = [
         { name: "Einsatzgebiete", href: "/servicegebiet" },
         { name: city.name, href: `/${city.slug}` },
