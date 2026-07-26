@@ -246,9 +246,12 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                         Schlüsseldienst {city.name} & Notdienst
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[var(--color-text-body)] text-center leading-relaxed font-medium">
-                        {city.localContent?.heroSubtitle || (
+                        Herzlich willkommen beim Fachbetrieb für <strong>{meta.title}</strong>. Als Ihr zuverlässiger <strong>Schlüsseldienst {city.name} & Notdienst</strong> helfen wir Ihnen sofort.
+                        {city.localContent?.heroSubtitle ? (
+                           <><br/>{city.localContent.heroSubtitle}</>
+                        ) : (
                           <>
-                            Ausgesperrt in {city.name}? Verfallen Sie nicht in Panik. Suchen Sie nach: <strong>{meta.title}</strong>? Dann sind Sie bei uns genau richtig. Wir sind in <strong className="text-blue-600">{city.logistics.drivingTimeMinutes} Minuten</strong> bei Ihnen. Als lokaler Limburger Betrieb (Inh. Mina Saad) garantieren wir Ihnen einen 100% Festpreis ab {city.pricing.basePrice}€ ohne versteckte Kosten.
+                            <br/>Ausgesperrt in {city.name}? Verfallen Sie nicht in Panik. Wir sind in <strong className="text-blue-600">{city.logistics.drivingTimeMinutes} Minuten</strong> bei Ihnen. Als lokaler Limburger Betrieb garantieren wir Ihnen einen 100% Festpreis ab {city.pricing.basePrice}€ ohne versteckte Kosten.
                           </>
                         )}
                     </p>

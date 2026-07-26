@@ -61,8 +61,8 @@ export default function TuroeffnungPage() {
                   </svg>
                 </span>
               </h1>
-              <p className="mt-8 max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed">
-                Eine zugefallene Tür ist ein Notfall, der absolutes Vertrauen erfordert. Der zertifizierte MS Schlüsseldienst Limburg unter Leitung von Mina Saad ist 24/7 für Sie im Einsatz. Innerhalb von <strong>15–30 Minuten</strong> sind wir bei Ihnen im gesamten Stadtgebiet – mit <strong>100% Kostentransparenz</strong>.
+              <p className="mt-6 text-lg sm:text-xl text-[var(--color-text-body)] leading-relaxed font-medium">
+                Suchen Sie nach: <strong>Türöffnung Limburg | 24/7 Schlüsselnotdienst</strong>? Dann sind Sie bei uns richtig. Als Schlüsseldienst Limburg (Inh. Mina Saad) sind wir in der ganzen Region für Sie unterwegs. Tür zugefallen? Schlüssel abgebrochen? Wir sind in <strong>15–30 Minuten</strong> bei Ihnen. Und das zum echten Festpreis.
               </p>
             </div>
             <div className="hidden lg:block">

@@ -55,12 +55,13 @@ export default function ServicegebietPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {coreCities.map((city) => (
-              <Link key={city.id} href={`/${city.slug}`} className="group">
-                <Card className="flex flex-col gap-3 p-5 hover:-translate-y-1 hover:border-[var(--color-brand-muted)] hover:shadow-[var(--shadow-lift)] transition-all duration-300 ease-out h-full">
+                <Card key={city.id} className="group flex flex-col gap-4 p-6 hover:-translate-y-1 hover:border-[var(--color-brand-muted)] hover:shadow-[var(--shadow-lift)] transition-all duration-300 ease-out h-full relative">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5 font-bold text-[var(--color-text-main)] group-hover:text-[var(--color-blue-primary)] transition-colors text-lg">
                       <MapPin className="h-5 w-5 text-[var(--color-blue-primary)] shrink-0" aria-hidden="true" />
-                      {city.name}
+                      <Link href={`/${city.slug}`} className="before:absolute before:inset-0 z-10">
+                        {city.name}
+                      </Link>
                     </div>
                     <ArrowRight className="h-4 w-4 text-[var(--color-text-muted)] group-hover:text-[var(--color-blue-primary)] group-hover:translate-x-1 transition-all" />
                   </div>
@@ -83,7 +84,6 @@ export default function ServicegebietPage() {
                     {city.logistics.routeDescription}
                   </div>
                 </Card>
-              </Link>
             ))}
           </div>
         </div>
@@ -107,11 +107,12 @@ export default function ServicegebietPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {limburgDistricts.map((city) => (
-              <Link key={city.id} href={`/${city.slug}`} className="group">
-                <Card className="flex flex-col gap-2 p-4 hover:-translate-y-1 hover:border-[var(--color-brand-muted)] hover:shadow-[var(--shadow-lift)] transition-all duration-300 ease-out h-full">
+                <Card key={city.id} className="group flex flex-col gap-2 p-4 hover:-translate-y-1 hover:border-[var(--color-brand-muted)] hover:shadow-[var(--shadow-lift)] transition-all duration-300 ease-out h-full relative">
                   <div className="flex items-center gap-2 font-bold text-[var(--color-text-main)] group-hover:text-[var(--color-blue-primary)] transition-colors">
                     <MapPin className="h-4 w-4 text-green-600 shrink-0" aria-hidden="true" />
-                    {city.name.replace("Limburg ", "")}
+                    <Link href={`/${city.slug}`} className="before:absolute before:inset-0 z-10">
+                      {city.name.replace("Limburg ", "")}
+                    </Link>
                   </div>
                   <div className="flex items-center gap-3 pl-6">
                     <span className="text-xs font-bold text-[var(--color-blue-primary)]">
@@ -122,7 +123,6 @@ export default function ServicegebietPage() {
                     </span>
                   </div>
                 </Card>
-              </Link>
             ))}
           </div>
         </div>

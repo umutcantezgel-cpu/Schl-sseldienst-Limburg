@@ -25,7 +25,7 @@ export default function ImpressumPage() {
   return (
     <LegalPageLayout
       title="Impressum MS Schlüsseldienst Limburg"
-      subtitle="Transparenz und Vertrauen sind die Basis für unser Handwerk. Hier finden Sie alle rechtlichen Angaben zu MS Schlüsseldienst Limburg."
+      subtitle="Transparenz und Vertrauen sind die Basis für unser Handwerk. Hier finden Sie alle rechtlichen Angaben für: Impressum MS Schlüsseldienst Limburg."
       lastUpdated="Juli 2026"
       tocItems={tocItems}
     >

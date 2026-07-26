@@ -155,6 +155,22 @@ export default function SchluesselNachmachenPage() {
                 </li>
               </ul>
             </div>
+
+            <div className="mt-12 max-w-4xl mx-auto prose prose-blue prose-lg">
+              <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-4">Häufig gestellte Fragen rund um Schlüsselkopien in Limburg</h3>
+              <p className="text-[var(--color-text-body)] mb-4">
+                <strong>Wie lange dauert das Fräsen eines Standard-Zylinderschlüssels?</strong><br />
+                In den allermeisten Fällen fertigen wir klassische Briefkasten-, Zimmer- oder Haustürschlüssel innerhalb von 2 bis 5 Minuten an. Sie können bei einem Kaffee in unserer Zentrale warten und den neuen Schlüssel direkt mitnehmen.
+              </p>
+              <p className="text-[var(--color-text-body)] mb-4">
+                <strong>Kann ich einen Schlüssel nachmachen lassen, wenn er durchgebrochen ist?</strong><br />
+                Oftmals ja! Bringen Sie bitte alle Bruchstücke mit in unsere Werkstatt in Limburg. Unsere Hochpräzisionsmaschinen können die Konturen häufig noch auslesen und eine intakte Kopie herstellen. Falls dies nicht möglich ist, bieten wir Ihnen gerne einen modernen und sicheren Ersatzzylinder an.
+              </p>
+              <p className="text-[var(--color-text-body)]">
+                <strong>Suchen Sie nach: Schlüssel nachmachen Limburg | Schlüsselkopie sofort?</strong><br />
+                Egal, ob Sie einen einzelnen Wohnungsschlüssel, einen komplexen Autoschlüssel oder zusätzliche Rohlinge für Ihre Familie benötigen: MS Schlüsseldienst Limburg ist Ihr erster Ansprechpartner. Zögern Sie nicht und besuchen Sie uns noch heute. Wir garantieren Ihnen hochwertige Materialien, absolute Diskretion und fachmännische Präzisionsarbeit, die ein Leben lang hält.
+              </p>
+            </div>
           </div>
         </div>
       </section>
