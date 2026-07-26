@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
 
         return {
-            url: `${siteUrl}${node.slug === '/' ? '' : node.slug}`,
+            url: `${siteUrl}${node.slug}`,
             lastModified: new Date(),
             changeFrequency,
             priority,
