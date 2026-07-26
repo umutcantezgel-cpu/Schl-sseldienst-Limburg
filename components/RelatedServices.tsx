@@ -24,7 +24,7 @@ export default function RelatedServices({ currentServiceId }: { currentServiceId
                                 {service.title}
                             </h4>
                             <span className="text-[var(--color-blue-primary)] font-medium flex items-center gap-1 mt-auto">
-                                Mehr erfahren
+                                Details zu {service.title} ansehen
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Link>

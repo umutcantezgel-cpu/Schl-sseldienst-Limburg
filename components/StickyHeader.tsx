@@ -35,6 +35,7 @@ export default function StickyHeader() {
         { name: "Schonende KFZ-Öffnung", href: "/leistungen/autooeffnung" },
         { name: "Premium Schließanlagen", href: "/leistungen/schliessanlagen" },
         { name: "VdS-Sicherheitstechnik", href: "/leistungen/sicherheitstechnik" },
+        { name: "Einbruchschutz & Sicherheitsberatung", href: "/einbruchschutz" },
         { name: "Schlüsselkopien & Fräsen", href: "/leistungen/schluessel-nachmachen" },
     ];
 

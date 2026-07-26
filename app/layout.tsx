@@ -26,8 +26,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = generateSharedMetadata({
-  title: `${BUSINESS.name} | 24/7 Notdienst & 100% Festpreis`,
-  description: "Ihr lokaler Schlüsseldienst in Limburg an der Lahn. 24/7 Schlüsselnotdienst, Türöffnung ohne Schäden, garantierte Festpreise. In 15–30 Minuten vor Ort im gesamten Landkreis Limburg-Weilburg, Diez & Bad Camberg.",
+  title: "Schlüsseldienst Limburg | 24/7 Notdienst & Festpreise",
+  description: "Ihr lokaler Schlüsseldienst in Limburg an der Lahn. 24/7 Türöffnung ohne Schäden, garantierte Festpreise & Anfahrt in 15–30 Minuten.",
   path: "/",
 });
 
@@ -39,11 +39,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth scroll-pt-28">
       <head>
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
         className={`${dmSans.variable} ${spaceGrotesk.variable} min-h-screen bg-[var(--color-blue-dark)] text-[var(--color-text-main)] antialiased font-sans flex flex-col pb-24 sm:pb-0`}

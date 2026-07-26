@@ -8,9 +8,11 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CertBadges from "@/components/trust/CertBadges";
 import { generateSharedMetadata } from "@/lib/metadata";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Schlüssel nachmachen Limburg | Ersatzschlüssel sofort | Schlüsseldienst",
-  description: "Schlüssel nachmachen in Limburg bei MS Schlüsseldienst Limburg: Haustür, Sicherheitsschlüssel (mit Sicherungskarte) oder KFZ-Transponder. Präzise Meister-Qualität sofort.",
+  title: "Schlüssel nachmachen Limburg | Ersatzschlüssel",
+  description: "Schlüssel nachmachen in Limburg: Haustür-, Sicherheits- & KFZ-Schlüssel mit Transponder. Präzise Meister-Qualität sofort vor Ort.",
   path: "/leistungen/schluessel-nachmachen",
 });
 
@@ -50,7 +52,7 @@ export default function SchluesselNachmachenPage() {
             </h2>
             <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8 mx-auto"></div>
             <p className="text-[var(--color-text-body)] leading-relaxed text-lg text-center max-w-3xl mx-auto">
-              Ein schlecht kopierter Schlüssel hakt, zerkratzt im Laufe der Zeit den Schließzylinder und kann im schlimmsten Fall abbrechen. Als regionaler Fachbetrieb in Limburg setzen wir ausschließlich auf modernste Fräsmaschinen und extrem gehärtete Premium-Rohlinge. Das Ergebnis: Ein Duplikat, das dem Original in Sicherheit und Haptik absolut in nichts nachsteht.
+              Wenn Sie präzise <strong>Schlüssel nachmachen Limburg</strong> wünschen, ist meisterliche Fachkompetenz entscheidend. Ein schlecht kopierter Schlüssel hakt, zerkratzt im Laufe der Zeit den Schließzylinder und kann im schlimmsten Fall abbrechen. Als regionaler Fachbetrieb in Limburg unter Leitung von Mina Saad setzen wir auf modernste Fräsmaschinen und extrem gehärtete Premium-Rohlinge. Das Ergebnis: Ein Duplikat, das dem Original in Sicherheit und Haptik absolut in nichts nachsteht.
             </p>
 
             <div className="mt-16 grid gap-8 sm:grid-cols-3">
@@ -129,7 +131,7 @@ export default function SchluesselNachmachenPage() {
                     <Key className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">1. Bringen Sie das Original</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">1. Bringen Sie das Original</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Besuchen Sie uns in Limburg in der {BUSINESS.address.street}. Bei Sicherheitsschlüsseln ist die Sicherungskarte zwingend erforderlich. Für KFZ-Schlüssel benötigen wir das Fahrzeug vor Ort.</p>
                   </div>
                 </li>
@@ -138,7 +140,7 @@ export default function SchluesselNachmachenPage() {
                     <Clock className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">2. Limburger Sofort-Service</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">2. Limburger Sofort-Service</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Wir schätzen Ihre Zeit. Standard-Schlüssel fräsen wir ohne Voranmeldung direkt vor Ihren Augen in wenigen Minuten.</p>
                   </div>
                 </li>
@@ -147,7 +149,7 @@ export default function SchluesselNachmachenPage() {
                     <Check className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">3. Strikte Qualitätskontrolle</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">3. Strikte Qualitätskontrolle</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Bevor der Schlüssel unsere Werkstatt verlässt, wird er maschinell entgratet und auf 100%ige Passgenauigkeit nachgemessen.</p>
                   </div>
                 </li>

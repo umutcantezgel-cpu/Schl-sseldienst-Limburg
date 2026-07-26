@@ -8,9 +8,11 @@ import { BUSINESS } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 import { generateSharedMetadata } from "@/lib/metadata";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Über MS Schlüsseldienst Limburg | Mina Saad",
-  description: "Lernen Sie den Meisterbetrieb MS Schlüsseldienst Limburg kennen. Ehrliches Handwerk, Inhaber Mina Saad und tiefe Verwurzelung in der Region Limburg-Weilburg.",
+  title: "Über Uns | MS Schlüsseldienst Limburg – Mina Saad",
+  description: "Lernen Sie den Meisterbetrieb MS Schlüsseldienst Limburg kennen. Inhaber Mina Saad steht für transparente Festpreise & Notdienst in 15–30 Min.",
   path: "/ueber-uns",
 });
 
@@ -46,16 +48,10 @@ export default function UeberUnsPage() {
               Lokal in Limburg: {BUSINESS.address.street}, {BUSINESS.address.zip} {BUSINESS.address.city}
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl mb-6">
-              Transparenz statt <br className="hidden sm:block" />
-              <span className="text-gradient-primary relative inline-block">
-                Kostenfallen.
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
-                </svg>
-              </span>
+              Über MS <span className="text-gradient-primary">Schlüsseldienst Limburg</span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl leading-relaxed mt-8">
-              Hinter dem Namen <strong>{BUSINESS.name}</strong> steht ein Team um Inhaber {BUSINESS.owner}. Wir sind ein echter Fachbetrieb aus Ihrer direkten Nachbarschaft, angetreten, um das Vertrauen in unsere Branche durch ehrliches Handwerk wiederherzustellen.
+              Wenn Sie mehr <strong>Über MS Schlüsseldienst Limburg</strong> erfahren möchten: Hinter unserem Unternehmen steht ein engagiertes Team um Inhaber {BUSINESS.owner}. Wir sind ein echter Fachbetrieb aus Ihrer direkten Nachbarschaft, angetreten, um das Vertrauen in unsere Branche durch ehrliches Handwerk und kompromisslose Verlässlichkeit wiederherzustellen.
             </p>
           </div>
         </section>
@@ -103,7 +99,7 @@ export default function UeberUnsPage() {
                       title={IMAGES.inhaberPortrait.title}
                       width={IMAGES.inhaberPortrait.width}
                       height={IMAGES.inhaberPortrait.height}
-                      loading="lazy"
+                      priority
                       quality={80}
                       sizes="(max-width: 1024px) 100vw, 40vw"
                       className="object-cover w-full"
@@ -128,6 +124,30 @@ export default function UeberUnsPage() {
                       <div className="text-blue-600 font-medium">{BUSINESS.name}</div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Expansion Section */}
+            <div className="mt-20 bg-white p-8 md:p-12 rounded-3xl border border-blue-100 shadow-sm">
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-main)] mb-6">
+                Regionale Handwerkstradition & moderne Sicherheitstechnik
+              </h2>
+              <p className="text-lg text-[var(--color-text-body)] leading-relaxed mb-6">
+                Als lokaler Meisterbetrieb verknüpfen wir klassische Schlossmacher-Präzision mit innovativer Sicherheitstechnologie. Von unserem zentralen Standort in Limburg an der Lahn bedienen wir alle 17 Ortsteile sowie benachbarte Städte wie Diez, Weilburg und Bad Camberg mit kürzesten Anfahrtszeiten.
+              </p>
+              <div className="grid gap-6 md:grid-cols-2 mt-6">
+                <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">Kontinuierliche Weiterbildung</h3>
+                  <p className="text-[var(--color-text-body)] leading-relaxed">
+                    Schließsysteme und Fahrzeug-Elektronik entwickeln sich rasant weiter. Unser Team absolviert regelmäßige Schulungen bei Herstellern wie ABUS, KESO und BKS, um selbst modernste Digitallocks beschädigungsfrei zu öffnen.
+                  </p>
+                </div>
+                <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">Soziale Verantwortung</h3>
+                  <p className="text-[var(--color-text-body)] leading-relaxed">
+                    Als Teil der Limburger Gemeinschaft engagieren wir uns regional und legen großen Wert auf faire Arbeitsbedingungen, transparente Preispolitik und Hilfsbereitschaft in Notsituationen.
+                  </p>
                 </div>
               </div>
             </div>
@@ -218,7 +238,11 @@ export default function UeberUnsPage() {
         </section>
 
         <CertBadges />
-        <EmergencyCTA />
+        <EmergencyCTA
+          title="Lernen Sie uns kennen – Ihr zuverlässiger Limburger Meisterbetrieb"
+          subtitle="In Notfällen sind wir in 15–30 Minuten vor Ort. Rufen Sie uns 24/7 direkt an."
+          locationName="Limburg"
+        />
       </div>
     </>
   );

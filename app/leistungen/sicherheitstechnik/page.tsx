@@ -9,8 +9,10 @@ import { generateHowToSchema } from "@/lib/schema";
 import { getFAQSchema } from "@/lib/faqSchema";
 import { generateSharedMetadata } from "@/lib/metadata";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Sicherheitstechnik & Einbruchschutz Limburg | Meisterbetrieb",
+  title: "Sicherheitstechnik Limburg | Einbruchschutz MS",
   description: "Zertifizierte Sicherheitstechnik in Limburg an der Lahn durch MS Schlüsseldienst Limburg. Maßgeschneiderter Einbruchschutz, Alarmanlagen & Videoüberwachung.",
   path: "/leistungen/sicherheitstechnik",
 });
@@ -61,9 +63,9 @@ export default function SicherheitstechnikPage() {
         <div className="mx-auto max-w-4xl text-center relative z-10">
           <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Zertifizierter Einbruchschutz</span>
           <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl mb-6">
-            Kompromissloser Schutz. <br className="hidden sm:block" />
+            Sicherheitstechnik & <br className="hidden sm:block" />
             <span className="text-gradient-primary relative inline-block mt-2">
-              Maximale Sicherheit.
+              Einbruchschutz Limburg
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
               </svg>
@@ -84,7 +86,7 @@ export default function SicherheitstechnikPage() {
             </h2>
             <div className="h-1 w-24 bg-blue-500 rounded-full mt-6 mb-6 mx-auto"></div>
             <p className="mt-4 text-lg text-[var(--color-text-body)] max-w-3xl mx-auto leading-relaxed">
-              Einbruchschutz ist eine absolute Vertrauenssache. <strong>MS Schlüsseldienst Limburg</strong> integriert in Limburg und Umgebung ausschließlich VdS-zertifizierte High-End-Komponenten von Premium-Herstellern wie ABUS, BKS oder KESO, die potenziellen Tätern keine Angriffsfläche bieten.
+              Zertifizierte <strong>Sicherheitstechnik Limburg</strong> ist eine absolute Vertrauenssache. <strong>MS Schlüsseldienst Limburg</strong> unter Leitung von Mina Saad integriert in Limburg und Umgebung ausschließlich VdS-zertifizierte High-End-Komponenten von Premium-Herstellern wie ABUS, BKS oder KESO, die potenziellen Tätern keine Angriffsfläche bieten.
             </p>
           </div>
 
@@ -188,7 +190,7 @@ export default function SicherheitstechnikPage() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white text-blue-600 font-bold text-2xl mb-6 shadow-md border-4 border-blue-50 group-hover:border-blue-200 transition-all duration-300 group-hover:scale-110">
                     <Lightbulb className="h-8 w-8" />
                   </div>
-                  <h4 className="text-xl font-bold text-[var(--color-text-main)] mb-3">1. Vor-Ort-Sicherheitsaudit</h4>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">1. Vor-Ort-Sicherheitsaudit</h3>
                   <p className="text-[var(--color-text-body)] leading-relaxed text-lg">Unsere Experten evaluieren direkt bei Ihnen in Limburg systematisch alle potenziellen Einstiegswege und Schwachstellen Ihrer Immobilie.</p>
                 </div>
               </div>
@@ -200,7 +202,7 @@ export default function SicherheitstechnikPage() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-white font-bold text-2xl mb-6 shadow-lg border-4 border-blue-50 group-hover:border-blue-200 transition-all duration-300 group-hover:scale-110">
                     <ShieldCheck className="h-8 w-8" />
                   </div>
-                  <h4 className="text-xl font-bold text-[var(--color-text-main)] mb-3">2. Maßgeschneidertes Konzept</h4>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">2. Maßgeschneidertes Konzept</h3>
                   <p className="text-[var(--color-text-body)] leading-relaxed text-lg">Sie erhalten einen detaillierten, herstellerunabhängigen Maßnahmenkatalog mit transparentem Festpreisangebot – ohne versteckte Kosten.</p>
                 </div>
               </div>
@@ -210,7 +212,7 @@ export default function SicherheitstechnikPage() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white text-blue-600 font-bold text-2xl mb-6 shadow-md border-4 border-blue-50 group-hover:border-blue-200 transition-all duration-300 group-hover:scale-110">
                     <PenTool className="h-8 w-8" />
                   </div>
-                  <h4 className="text-xl font-bold text-[var(--color-text-main)] mb-3">3. Fachgerechte Montage</h4>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">3. Fachgerechte Montage</h3>
                   <p className="text-[var(--color-text-body)] leading-relaxed text-lg">Saubere, termingerechte Installation durch unsere eigenen, zertifizierten Limburger Techniker inklusive ausführlicher Einweisung in das System.</p>
                 </div>
               </div>

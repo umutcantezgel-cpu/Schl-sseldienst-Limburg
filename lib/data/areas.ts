@@ -20,6 +20,8 @@ export interface LocalContent {
     introText: string;          // 2-3 unique sentences about the city
     securityTip: string;        // Local security tip specific to the area
     neighborhoodGuide: string;  // Description of the district structure
+    heroSubtitle?: string;      // Unique, location-tailored hero subtitle
+    arrivalTimeCallout?: string; // Unique, location-tailored arrival time text
 }
 
 export interface CityData {
@@ -34,6 +36,8 @@ export interface CityData {
     pricing: {
         basePrice: number;
         travelCost: number;
+        doorClosedDescription?: string;
+        doorLockedDescription?: string;
     };
     faqs: LocalFAQ[];
     localContent: LocalContent;
@@ -428,30 +432,41 @@ export const cities: CityData[] = [
         logistics: {
             distanceFromHQ: 4,
             drivingTimeMinutes: "15-30",
-            routeDescription: "Unmittelbare Anbindung an die B417 für ein schnelles Eintreffen unserer Techniker direkt in Linter.",
+            routeDescription: "Unmittelbare Anbindung an die B417 für ein ultraschnelles Eintreffen unserer Techniker direkt in allen Teilen von Linter.",
         },
-        landmarks: ["Bürgerhaus Linter"],
-        neighborhoods: ["Linter Kerngebiet", "Gewerbegebiet Linter"],
-        housingProfile: "Vielfältige Bebauung mit Fokus auf große Einfamilienhäuser, moderne Mehrparteienhäuser und einem starken Gewerbeanteil.",
-        pricing: { basePrice: 99, travelCost: 30 },
+        landmarks: ["Bürgerhaus Linter", "Sportgelände Linter", "B417 Gewerbepark Linter"],
+        neighborhoods: ["Linter Kerngebiet", "Gewerbegebiet Linter", "Wohngebiet Am Hallenbad", "Siedlung Süd"],
+        housingProfile: "Strukturreicher Limburger Stadtteil mit einem durchdachten Mix aus großzügigen Einfamilienhäusern, modernen Mehrfamilienhauskomplexen und einem etablierten Gewerbebereich.",
+        pricing: {
+            basePrice: 99,
+            travelCost: 30,
+            doorClosedDescription: "Zugefallene Tür in Limburg-Linter. 99% zerstörungsfreie Türöffnung zum vereinbarten Festpreis.",
+            doorLockedDescription: "Abgeschlossene Tür oder verklemmtes Schloss in Linter. Professionelle Notöffnung & Zylindertausch vor Ort."
+        },
         faqs: [
             {
-                question: "Wie schnell können Sie an Wochenenden in Linter helfen?",
-                answer: "Auch an Wochenenden und Feiertagen garantieren wir eine Eintreffzeit von 15 bis 30 Minuten in ganz Linter.",
+                question: "Wie schnell können Sie an Wochenenden und Feiertagen in Linter helfen?",
+                answer: "Auch an Sonn- und Feiertagen sowie mitten in der Nacht ist unser Limburger Notruf besetzt. Wir garantieren Eintreffzeiten von 15 bis 30 Minuten im gesamten Stadtgebiet Linter.",
             },
             {
-                question: "Bieten Sie auch Einbruchschutz-Beratung in Linter an?",
-                answer: "Selbstverständlich. Neben Notöffnungen beraten wir Sie als Fachbetrieb gerne vor Ort zu moderner Sicherheitstechnik und Einbruchschutz.",
+                question: "Bieten Sie auch Einbruchschutz-Beratung für Gewerbebetriebe in Linter an?",
+                answer: "Ja, wir betreuen sowohl Privat- als auch Gewerbekunden im Gewerbegebiet Linter. Wir installieren mechanische Sicherungen und elektronische Schließanlagen maßgeschneidert auf Ihre Anforderungen.",
             },
             {
-                question: "Wie verläuft eine Sicherheitsberatung in Linter?",
-                answer: "Wir analysieren vor Ort alle Schwachstellen Ihrer Türen, Fenster und Schließsysteme. Anschließend erhalten Sie eine schriftliche Empfehlung mit konkreten Maßnahmen und transparenten Preisen.",
+                question: "Was verlangen Sie für die Anfahrt nach Limburg Linter?",
+                answer: "Als Limburger Ortsteil berechnen wir für Linter eine transparente Anfahrtspauschale von exakt 30 Euro. Der Gesamtpreis wird Ihnen immer vor Arbeitsbeginn verbindlich mitgeteilt.",
+            },
+            {
+                question: "Können Sie abgebrochene Schlüssel in Linter aus dem Zylinder entfernen?",
+                answer: "Ja, mit unseren Spezial-Extraktionswerkzeugen ziehen wir abgebrochene Schlüsselstücke meist problemlos aus dem Zylinder heraus, ohne das Schloss beschädigen zu müssen.",
             }
         ],
         localContent: {
-            introText: "Linter – der vielseitige Limburger Stadtteil vereint Wohnen, Gewerbe und Industrie auf engem Raum. Die direkte Anbindung an die B417 macht Linter zu einem wichtigen Wirtschaftsstandort.",
-            securityTip: "Tipp für Linterer Gewerbetreibende: Gewerbeobjekte profitieren besonders von elektronischen Schließanlagen mit Protokollfunktion. So können Sie nachvollziehen, wer wann Zugang hatte.",
-            neighborhoodGuide: "Linter besteht aus dem Wohnkerngebiet und dem angrenzenden Gewerbegebiet. Die vielfältige Bebauung reicht von großen Einfamilienhäusern über moderne Mehrparteienhäuser bis zu Gewerbeflächen."
+            introText: "Linter ist ein lebendiger und vielseitiger Stadtteil von Limburg an der Lahn. Dank der günstigen Verkehrslage an der B417 verbindet Linter attraktiven Wohnraum mit prosperierenden Gewerbeflächen. Als lokaler Fachbetrieb MS Schlüsseldienst Limburg sind wir in wenigen Minuten bei Ihnen vor Ort, wenn Sie sich ausgesperrt haben oder ein Schloss defekt ist.",
+            securityTip: "Tipp für Linterer Gewerbetreibende und Hausbesitzer: Gewerbeobjekte und Wohngebäude nahe der Hauptverkehrsstraße B417 profitieren besonders von elektronischen Schließsystemen mit digitaler Zugangsprotokollierung und Aufbohrschutz.",
+            neighborhoodGuide: "Linter teilt sich auf in das zentrale Wohngebiet rund um das Bürgerhaus und das angrenzende Gewerbegebiet. Durch die Nähe zu unserer Zentrale gehören Einsätze in Linter zu unserer täglichen Routine.",
+            heroSubtitle: "Ausgesperrt in Limburg Linter? Wir helfen sofort. In 15–30 Minuten vor Ort im gesamten Ortsteil Linter. 100% Festpreisgarantie ab 99€ ohne böse Überraschungen.",
+            arrivalTimeCallout: "Durch die direkte B417-Anbindung garantieren wir für alle Notfälle in Limburg Linter eine Express-Reaktionszeit von 15 bis 30 Minuten."
         }
     },
     {
@@ -564,30 +579,41 @@ export const cities: CityData[] = [
         logistics: {
             distanceFromHQ: 7,
             drivingTimeMinutes: "15-30",
-            routeDescription: "Über die B49 erreichen wir Ahlbach auf dem direktesten Weg für Notfälle aller Art.",
+            routeDescription: "Über die B49 erreichen unsere Notdienst-Fahrzeuge Ahlbach auf dem direktesten Weg für schadensfreie Türöffnungen und Notfälle aller Art.",
         },
-        landmarks: ["Pfarrkirche St. Bartholomäus"],
-        neighborhoods: ["Ahlbach Mitte"],
-        housingProfile: "Ruhiger, kleinerer Ortsteil mit starken dörflichen Strukturen und vielen gepflegten Familienhäusern.",
-        pricing: { basePrice: 99, travelCost: 30 },
+        landmarks: ["Pfarrkirche St. Bartholomäus", "Ahlbacher Sportgelände", "Dorfmuseum Ahlbach"],
+        neighborhoods: ["Ahlbach Mitte", "Oberdorf", "Unterdorf", "Neubaugebiet Ahlbach Nord"],
+        housingProfile: "Ruhiger, historisch gewachsener Ortsteil im Norden Limburgs mit ausgeprägter dörflicher Gemeinschaft, gepflegten Einfamilienhäusern und restaurierten Hofreiten.",
+        pricing: {
+            basePrice: 99,
+            travelCost: 30,
+            doorClosedDescription: "Zugefallene Haustür oder Wohnungstür in Limburg-Ahlbach. Beschädigungsfreie Öffnung durch unseren Limburger Meisterbetrieb.",
+            doorLockedDescription: "Schlüssel verloren oder Schloss defekt in Ahlbach. Professionelle Zylinder-Öffnung mit Ersatzzylinder auf Wunsch."
+        },
         faqs: [
             {
-                question: "Wird der Service in Ahlbach als Notdienst abgedeckt?",
-                answer: "Ahlbach ist ein integraler Bestandteil unseres Servicegebiets. Wir garantieren Ihnen hier denselben schnellen 24/7 Notdienst wie in der Innenstadt.",
+                question: "Wird der Schlüsseldienst-Notdienst in Ahlbach rund um die Uhr angeboten?",
+                answer: "Ja, Limburg Ahlbach ist ein fester Bestandteil unseres Kern-Einsatzgebietes. Wir stehen Ihnen rund um die Uhr an 365 Tagen im Jahr innerhalb von 15 bis 30 Minuten vor Ort zur Seite.",
             },
             {
-                question: "Welche Zahlungsmöglichkeiten habe ich vor Ort in Ahlbach?",
-                answer: "Wir bieten volle Flexibilität: Sie können nach der erfolgreichen Türöffnung bequem in bar, per EC-Karte oder über PayPal bezahlen.",
+                question: "Welche Zahlungsmöglichkeiten stehen vor Ort in Ahlbach zur Verfügung?",
+                answer: "Sie können nach erfolgreicher Türöffnung ganz flexibel vor Ort beim Techniker bar, mit EC-Karte, Kreditkarte oder bequem per PayPal bezahlen.",
             },
             {
-                question: "Wie sicher ist die Schlossöffnung in Ahlbach bei älteren Türen?",
-                answer: "Unsere Techniker sind speziell für ältere Schließsysteme geschult, wie sie in der dörflichen Bebauung von Ahlbach häufig vorkommen. In über 99% der Fälle öffnen wir komplett zerstörungsfrei.",
+                question: "Wie sicher ist die Türöffnung bei älteren Gebäuden in Ahlbach?",
+                answer: "Unsere Monteure sind speziell geschult auf traditionelle Schließmechanismen und Kastenschlösser in älteren Ahlbacher Gebäuden. In über 99% der Fälle bleibt die Tür völlig unbeschädigt.",
+            },
+            {
+                question: "Bieten Sie auch Schlosswechsel nach einem Einbruch in Ahlbach an?",
+                answer: "Selbstverständlich. Wir führen auf unseren Einsatzfahrzeugen Sicherheitszylinder führender Markenhersteller mit und tauschen beschädigte Schlösser sofort vor Ort zum Festpreis aus.",
             }
         ],
         localContent: {
-            introText: "Ahlbach – der ruhige Limburger Stadtteil im Norden besticht durch seine dörfliche Idylle und die Nähe zur Natur. Als Teil unseres Kerngebiets profitieren Ahlbacher Bürger von 30€ Anfahrtskosten und unserem vollen 24/7-Notdienst.",
-            securityTip: "Empfehlung für Ahlbacher Eigenheimbesitzer: In ruhigen dörflichen Lagen empfehlen wir Außenbeleuchtung mit Bewegungsmelder an allen Zugängen. Diese einfache Maßnahme schreckt Einbrecher am effektivsten ab.",
-            neighborhoodGuide: "Ahlbach ist ein kompakter, dörflich geprägter Ortsteil mit starkem Gemeinschaftsgefühl. Die Bebauung besteht überwiegend aus gepflegten Familienhäusern. Über die B49 erreichen unsere Techniker Ahlbach in kürzester Zeit."
+            introText: "Ahlbach ist der nördlichste Stadtteil von Limburg an der Lahn und überzeugt durch seine beschauliche Atmosphäre und starke Gemeinschaft. Durch die unmittelbare Anbindung an die B49 erreichen unsere Monteure jeden Standort in Ahlbach extrem schnell. Egal ob im historischen Ortskern nahe St. Bartholomäus oder im Neubaugebiet – wir bieten Ihnen einen 24/7 Notdienst mit voller Preistransparenz.",
+            securityTip: "Empfehlung für Ahlbacher Hausbesitzer: Freistehende Einfamilienhäuser und ruhige Dorflagen bieten Einbrechern oft ungestörte Angriffspunkte an Nebeneingängen und Terrassentüren. Eine Nachrüstung mit Pilzkopfzapfen und abschließbaren Fenstergriffen erhöht den Schutz erheblich.",
+            neighborhoodGuide: "Ahlbach erstreckt sich vom traditionsreichen Ortskern um die Kirche St. Bartholomäus bis zu den neueren Wohngebieten am Ortsrand. Das Straßennetz ist übersichtlich, sodass unser Schlüsseldienst ohne Verzögerung direkt bei Ihnen eintrifft.",
+            heroSubtitle: "Ausgesperrt in Limburg Ahlbach? Keine Sorge. Unser Limburger Notdienst (Inh. Mina Saad) ist in 15–30 Minuten vor Ort. Zerstörungsfreie Türöffnung ab 99€ garantierter Festpreis.",
+            arrivalTimeCallout: "Mit unserem Einsatzstützpunkt in Limburg sind wir über die B49 im Notfall innerhalb von 15 bis maximal 30 Minuten direkt bei Ihrem Objekt in Ahlbach."
         }
     },
     {

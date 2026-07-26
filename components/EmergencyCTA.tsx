@@ -1,7 +1,16 @@
 import { Phone } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
 
-export default function EmergencyCTA() {
+interface EmergencyCTAProps {
+  title?: string;
+  subtitle?: string;
+  locationName?: string;
+}
+
+export default function EmergencyCTA({ title, subtitle, locationName }: EmergencyCTAProps = {}) {
+  const displayTitle = title || (locationName ? `Ausgesperrt in ${locationName}? Wir sind in 15–30 Minuten vor Ort.` : "Ausgesperrt in Limburg? Wir sind in 15–30 Minuten vor Ort.");
+  const displaySubtitle = subtitle || "Ihr TV-geprüfter Meisterbetrieb. 24/7 erreichbar – mit kompromissloser Festpreis-Garantie.";
+
   return (
     <section className="relative bg-gradient-to-br from-[var(--color-blue-light)] via-white to-[var(--color-blue-light)] px-6 md:px-12 py-20 md:py-32 overflow-hidden border-t border-[var(--color-border-subtle)]">
       {/* Ambient blue glow */}
@@ -16,7 +25,7 @@ export default function EmergencyCTA() {
             letterSpacing: 'var(--tracking-heading)',
           }}
         >
-          Ausgesperrt in Limburg? Wir sind in <span className="text-gradient">15–30 Minuten</span> vor Ort.
+          {displayTitle}
         </h2>
         <p
           className="mt-8 text-[var(--color-text-body)] font-[400] mb-8"
@@ -25,7 +34,7 @@ export default function EmergencyCTA() {
             lineHeight: 'var(--leading-lead)',
           }}
         >
-          Ihr TV-geprüfter Meisterbetrieb. 24/7 erreichbar – mit kompromissloser Festpreis-Garantie.
+          {displaySubtitle}
         </p>
         <div className="mt-10 flex justify-center">
           <a

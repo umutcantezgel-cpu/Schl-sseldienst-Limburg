@@ -24,8 +24,10 @@ const mainServicesSchema = [
   generateServiceSchema({ title: "Türöffnung", description: "Zerstörungsfreie Türöffnung", url: "/leistungen/turoeffnung", price: 99 }),
   generateServiceSchema({ title: "Autoöffnung", description: "Schonende Autoöffnung", url: "/leistungen/autooeffnung", price: 149 })
 ];
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Preise & Kosten | Schlüsseldienst Limburg – Transparente Festpreise",
+  title: "Preise & Festpreise | Schlüsseldienst Limburg",
   description: "Keine bösen Überraschungen. Faire, garantierte Festpreise für Türöffnungen und Notdienste in Limburg und Umgebung. Berechnen Sie Ihren Preis direkt online.",
   path: "/preise",
 });
@@ -56,16 +58,16 @@ export default function PreisePage() {
         <div className="mx-auto max-w-4xl text-center relative z-10 flex flex-col items-center">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-100 bg-white/60 mb-6 md:mb-10 shadow-sm text-blue-800 text-sm font-semibold tracking-wide uppercase">Fairness als Prinzip</span>
           <h1 className="text-4xl font-extrabold tracking-tight text-[var(--color-text-main)] sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
-            Transparenz, die man <br className="hidden md:block" />
+            Schlüsseldienst Limburg <br className="hidden md:block" />
             <span className="text-gradient-primary relative inline-block mt-2 md:mt-4">
-              rechnen kann
+              Preise & Festpreise
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
               </svg>
-            </span>.
+            </span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[var(--color-text-body)] md:text-xl leading-relaxed text-balance">
-            Als alteingesessener Betrieb unter der Leitung von Mina Saad (MS Schlüsseldienst Limburg) legen wir höchsten Wert auf Ehrlichkeit. Bei uns erfahren Sie den verbindlichen Festpreis <strong>bevor</strong> wir mit der Arbeit beginnen. Ohne wenn und aber.
+            Wenn Sie transparente <strong>Schlüsseldienst Limburg Preise</strong> suchen, legen wir als alteingesessener Fachbetrieb unter der Leitung von Mina Saad (MS Schlüsseldienst Limburg) höchsten Wert auf absolute Ehrlichkeit. Bei uns erfahren Sie den verbindlichen Festpreis <strong>bevor</strong> wir mit der Arbeit beginnen. Ohne versteckte Aufschläge, ohne böse Überraschungen.
           </p>
         </div>
       </section>
@@ -92,6 +94,33 @@ export default function PreisePage() {
               Unsere Preistabellen sind keine lockenden Platzhalter, sondern echte Endpreise. <strong>Die gesetzliche Mehrwertsteuer und alle Anfahrtskosten innerhalb unseres Einzugsgebietes sind bereits vollständig enthalten.</strong> Zahlen Sie bequem und sicher bei unserem Monteur per Karte oder in Bar – mit ordentlicher Rechnung.
             </p>
           </div>
+
+          {/* Content Expansion Block: Detailed Pricing Explanation */}
+          <div className="mt-16 bg-white p-8 md:p-12 rounded-3xl border border-blue-100 shadow-sm">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-main)] mb-6">
+              Transparente Preisgestaltung für Türöffnungen in Limburg
+            </h2>
+            <p className="text-lg text-[var(--color-text-body)] leading-relaxed mb-6">
+              Die Kalkulation der <strong>Schlüsseldienst Limburg Preise</strong> richtet sich nach dem tatsächlichen Aufwand und dem Zustand Ihrer Tür. In über 99% aller Fälle von lediglich zugefallenen Türen wird die Tür komplett zerstörungsfrei und ohne Beschädigung von Schloss oder Zylinder geöffnet.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2 mt-8">
+              <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">Zugefallene Türen (Standard-Öffnung)</h3>
+                <p className="text-[var(--color-text-body)] leading-relaxed">
+                  Steckt der Schlüssel von innen oder ist die Tür einfach ins Schloss gefallen, kommt unser Spezial-Werkzeug zum Einsatz. Bei Einsätzen im Stadtgebiet Limburg gilt unser fairer Basistarif ab 99 Euro inkl. Anfahrt.
+                </p>
+              </div>
+              <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3">Abgeschlossene oder defekte Schlösser</h3>
+                <p className="text-[var(--color-text-body)] leading-relaxed">
+                  Ist die Tür mehrfach abgeschlossen oder liegt ein Zylinder- beziehungsweise Riegelbruch vor, erfordert die Notöffnung präzises Spezialwerkzeug. Auch in diesen Fällen informieren wir Sie vorab über die Festpreise inklusive eventueller Ersatzzylinder.
+                </p>
+              </div>
+            </div>
+            <p className="text-base text-[var(--color-text-muted)] leading-relaxed mt-6">
+              Vergleichen Sie unsere Festpreise gerne mit anderen Anbietern. Bei MS Schlüsseldienst Limburg profitieren Sie von regionalem Meisterhandwerk ohne unfaire Lockvogel-Maschen.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -100,7 +129,11 @@ export default function PreisePage() {
         <PricingFAQ />
       </section>
 
-      <EmergencyCTA />
+      <EmergencyCTA
+        title="Garantierte Festpreise vor Beginn der Arbeit"
+        subtitle="Rufen Sie uns an – wir nennen Ihnen noch am Telefon den exakten Endpreis für Ihren Einsatz in Limburg."
+        locationName="Limburg"
+      />
     </div>
   );
 }

@@ -5,9 +5,11 @@ import { cities } from "@/lib/data/areas";
 import { Card } from "@/components/ui/card";
 import { generateSharedMetadata } from "@/lib/metadata";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Einsatzgebiet Limburg-Weilburg | Schlüsseldienst Limburg",
-  description: "Limburgs regionaler Meisterbetrieb. Wir sind in 15–30 Minuten in Limburg und im gesamten Landkreis Limburg-Weilburg vor Ort. 100% Festpreis-Garantie, IHK-geprüft.",
+  title: "Einsatzgebiet Limburg-Weilburg | MS Notdienst",
+  description: "Limburgs regionaler Meisterbetrieb. In 15–30 Min. im gesamten Landkreis Limburg-Weilburg vor Ort. 100% Festpreis-Garantie & 24/7 Notdienst.",
   path: "/servicegebiet",
 });
 
@@ -43,11 +45,11 @@ export default function ServicegebietPage() {
               <div className="bg-blue-100 p-2 rounded-xl">
                 <Truck className="h-6 w-6 text-blue-600" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--color-text-main)]">
                 Kernstädte & Gemeinden
               </h2>
             </div>
-            <p className="text-blue-50 text-lg max-w-2xl">
+            <p className="text-[var(--color-text-body)] text-lg max-w-2xl">
               Unsere primären Einsatzgebiete im Landkreis Limburg-Weilburg mit garantierten Express-Anfahrtszeiten.
             </p>
           </div>
@@ -129,6 +131,9 @@ export default function ServicegebietPage() {
       {/* Info Card */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="mx-auto max-w-4xl">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--color-text-main)] mb-8 text-center">
+            Regionale Notdienst-Logistik & Eintreffgarantie
+          </h2>
           <Card className="p-8 bg-[var(--color-surface-elevated)] border-none shadow-lg">
             <div className="flex items-start gap-4">
               <Clock className="mt-1 h-8 w-8 shrink-0 text-[var(--color-blue-primary)]" aria-hidden="true" />
@@ -137,17 +142,17 @@ export default function ServicegebietPage() {
                   Garantierte Ankunft in Limburg & Umgebung: 15–30 Minuten
                 </h3>
                 <p className="mt-2 text-[var(--color-text-body)] leading-relaxed">
-                  Bei einer ausgesperrten Tür zählt jede Minute. Dank unserer zentralen Stationierung direkt in Limburg erreichen wir jeden Einsatzort in unserem Kerngebiet Limburg-Weilburg zuverlässig innerhalb von <strong className="text-[var(--color-blue-primary)] font-bold">15 bis maximal 30 Minuten</strong>.
+                  Bei einer ausgesperrten Tür zählt jede Minute. Dank unserer zentralen Stationierung direkt in Limburg an der Lahn erreichen wir jeden Einsatzort in unserem Kerngebiet Limburg-Weilburg zuverlässig innerhalb von <strong className="text-[var(--color-blue-primary)] font-bold">15 bis maximal 30 Minuten</strong>. Wir nutzen moderne GPS-Flottensteuerung für optimiertes Anfahren über B49, B417, B8 und die Autobahn A3.
                 </p>
                 
-                <h4 className="mt-6 text-lg font-bold text-[var(--color-text-main)]">Wahre regionale Verankerung</h4>
+                <h3 className="mt-6 text-lg font-bold text-[var(--color-text-main)]">Echte regionale Verankerung ohne Vermittler</h3>
                 <p className="mt-2 text-[var(--color-text-body)] leading-relaxed">
-                  Viele Anbieter täuschen eine lokale Präsenz nur vor und berechnen Ihnen horrende Anfahrtskosten aus entfernten Großstädten. Wir sind echte Limburger. Durch kurze Wege garantieren wir schnelle Hilfe und faire, transparente Preise ohne böse Überraschungen.
+                  Viele Schein-Schlüsseldienste im Internet schalten unverschämte Werbeanzeigen und vermitteln Notfälle an anonyme Subunternehmer aus weiter Entfernung, was zu enormen Fahrtkosten führt. MS Schlüsseldienst Limburg unter Leitung von Mina Saad ist ein echter lokaler Fachbetrieb aus der Region. Durch kurze Wege garantieren wir schnelle Hilfe und fixe Festpreise ohne versteckte Kosten.
                 </p>
                 
-                <h4 className="mt-6 text-lg font-bold text-[var(--color-text-main)]">Angrenzende Sondergebiete</h4>
+                <h3 className="mt-6 text-lg font-bold text-[var(--color-text-main)]">Einsätze in angrenzenden Gemeinden & Sondergebieten</h3>
                 <p className="mt-2 text-[var(--color-text-body)] leading-relaxed">
-                  Sollte sich Ihr Standort minimal außerhalb unseres primären Einzugsgebietes befinden, zögern Sie nicht, unseren Limburger Meister-Notruf zu wählen. Wir prüfen sofort unsere Kapazitäten und nennen Ihnen am Telefon eine ehrliche Anfahrtszeit sowie einen garantierten Festpreis.
+                  Sollte sich Ihr Standort im weiteren Umkreis befinden, zögern Sie nicht, unseren Limburger Notruf zu kontaktieren. Wir prüfen sofort die Verfügbarkeit unserer Notdienst-Fahrzeuge und nennen Ihnen noch am Telefon eine verlässliche Eintreffzeit sowie ein verbindliches Festpreisangebot.
                 </p>
               </div>
             </div>
@@ -156,7 +161,11 @@ export default function ServicegebietPage() {
       </section>
 
       <aside aria-label="Notfall-Kontakt">
-        <EmergencyCTA />
+        <EmergencyCTA
+          title="Schnelle Hilfe in Ihrem Ortsteil im Landkreis Limburg-Weilburg"
+          subtitle="Meisternotdienst 24/7 erreichbar – garantiert in 15–30 Minuten vor Ort."
+          locationName="Limburg"
+        />
       </aside>
     </>
   );

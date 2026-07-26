@@ -18,7 +18,7 @@ export const generateSharedMetadata = ({
     const url = `${siteUrl}${path}`;
 
     return {
-        title: `${title} | ${BUSINESS.name}`,
+        title: title,
         description,
         metadataBase: new URL(siteUrl),
         alternates: {

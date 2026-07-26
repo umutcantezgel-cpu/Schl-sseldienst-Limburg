@@ -4,6 +4,8 @@ import { generateSharedMetadata } from "@/lib/metadata";
 import { LegalPageLayout } from "@/components/legal/LegalPageLayout";
 import { LegalCard } from "@/components/legal/LegalCard";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
   title: "Datenschutzerklärung | MS Schlüsseldienst Limburg",
   description: "Datenschutzerklärung von MS Schlüsseldienst Limburg. Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO.",

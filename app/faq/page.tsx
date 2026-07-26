@@ -7,8 +7,10 @@ import { generateSharedMetadata } from "@/lib/metadata";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { BUSINESS } from "@/lib/constants";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: `FAQ | Häufig gestellte Fragen | ${BUSINESS.shortName}`,
+  title: "FAQ & Häufige Fragen | Schlüsseldienst Limburg",
   description: `Antworten auf Ihre Fragen zum ${BUSINESS.name}. Transparenz bei Kosten, 15-30 Minuten Anfahrt im Landkreis Limburg-Weilburg und 100% Festpreis.`,
   path: "/faq",
 });
@@ -46,7 +48,7 @@ export default function FAQPage() {
               </span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-[var(--color-text-body)] md:text-xl leading-relaxed text-balance">
-              Wir wissen, dass Sie in einer Notsituation schnelle und verbindliche Antworten brauchen. {BUSINESS.name} steht für absolute Transparenz. Hier finden Sie die wichtigsten Antworten zu Preisen, Anfahrt und unseren Leistungen.
+              Wir wissen, dass Sie in einer Notsituation schnelle und verbindliche Antworten brauchen. In unserem <strong>FAQ Schlüsseldienst Limburg</strong> bietet {BUSINESS.name} absolute Transparenz. Hier finden Sie die wichtigsten Antworten zu Preisen, Anfahrt und unseren Notdienst-Leistungen.
             </p>
           </div>
         </section>
@@ -56,7 +58,7 @@ export default function FAQPage() {
           <div className="mx-auto max-w-4xl">
             <div className="glass-card rounded-3xl bg-blue-50/50 p-8 md:p-12 shadow-sm border border-blue-100 text-center hover-lift transition-all duration-300">
               <p className="text-lg md:text-xl text-[var(--color-text-body)] leading-relaxed font-medium text-balance">
-                {BUSINESS.name} ist Ihr lokaler 24/7-Schlüsselnotdienst. Wir garantieren Festpreise ab 99 Euro, erreichen Sie in Limburg, Diez, Bad Camberg und dem gesamten Landkreis Limburg-Weilburg meist innerhalb von 15 bis 30 Minuten. Transparenz und Zuverlässigkeit sind unsere obersten Prinzipien.
+                <strong>Häufig gestellte Fragen Schlüsseldienst Limburg:</strong> {BUSINESS.name} ist Ihr lokaler 24/7-Schlüsselnotdienst. Wir garantieren Festpreise ab 99 Euro, erreichen Sie in Limburg, Diez, Bad Camberg und dem gesamten Landkreis Limburg-Weilburg meist innerhalb von 15 bis 30 Minuten. Transparenz und Zuverlässigkeit sind unsere obersten Prinzipien.
               </p>
             </div>
           </div>

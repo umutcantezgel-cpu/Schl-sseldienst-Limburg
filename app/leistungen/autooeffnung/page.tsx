@@ -8,9 +8,11 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CertBadges from "@/components/trust/CertBadges";
 import { generateSharedMetadata } from "@/lib/metadata";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Autoöffnung Limburg | Zerstörungsfreie KFZ-Öffnung | Schlüsseldienst",
-  description: "Schlüssel im Auto? Verschlossen? Unser Limburger Spezial-Team von MS Schlüsseldienst Limburg öffnet KFZ aller Marken zerstörungsfrei. In 15–30 Minuten vor Ort. Festpreis-Garantie.",
+  title: "Autoöffnung Limburg | KFZ-Öffnung zerstörungsfrei",
+  description: "Schlüssel im Auto verschlossen? Unser Limburger Spezial-Team öffnet KFZ aller Marken zerstörungsfrei in 15–30 Min. Garantierte Festpreise.",
   path: "/leistungen/autooeffnung",
 });
 
@@ -50,7 +52,7 @@ export default function AutooeffnungPage() {
             </h2>
             <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8"></div>
             <p className="text-[var(--color-text-body)] leading-relaxed text-lg">
-              Ein Sekundenbruchteil der Unachtsamkeit genügt: Der Autoschlüssel liegt noch auf dem Sitz, steckt im Zündschloss, oder die Elektronik verriegelt den Wagen selbstständig. Stehen Sie nun bei Wind und Wetter vor verschlossener Tür, ist rasche und vor allem hochprofessionelle Hilfe unabdingbar. Als Ihr zertifizierter Fachbetrieb <strong>MS Schlüsseldienst Limburg</strong> für KFZ-Öffnungen in Limburg und dem gesamten Landkreis befreien wir Sie aus dieser Notsituation – 24/7, diskret und absolut schadensfrei.
+              Ein Sekundenbruchteil der Unachtsamkeit genügt: Der Autoschlüssel liegt noch auf dem Sitz, steckt im Zündschloss, oder die Elektronik verriegelt den Wagen selbstständig. Stehen Sie nun bei Wind und Wetter vor verschlossener Tür, ist rasche Hilfe unabdingbar. Wenn Sie eine zerstörungsfreie <strong>Autoöffnung Limburg</strong> benötigen: Als Ihr zertifizierter Fachbetrieb <strong>MS Schlüsseldienst Limburg</strong> für KFZ-Öffnungen in Limburg und dem gesamten Landkreis befreien wir Sie aus dieser Notsituation – 24/7, diskret und absolut schadensfrei.
             </p>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-2">
@@ -112,7 +114,7 @@ export default function AutooeffnungPage() {
                     <Phone className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">1. Sofort-Kontakt zum Meisterbetrieb</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">1. Sofort-Kontakt zum Meisterbetrieb</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Rufen Sie unseren lokalen Limburger Notruf an. Nennen Sie uns kurz Ihren genauen Standort, das Fahrzeugmodell und das Baujahr.</p>
                   </div>
                 </li>
@@ -121,7 +123,7 @@ export default function AutooeffnungPage() {
                     <Check className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">2. Unumstößliche Festpreis-Garantie</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">2. Unumstößliche Festpreis-Garantie</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Wir analysieren den Aufwand in Sekunden und nennen Ihnen noch am Telefon einen verbindlichen, fixen Endpreis. Es gibt keine versteckten Kosten.</p>
                   </div>
                 </li>
@@ -130,7 +132,7 @@ export default function AutooeffnungPage() {
                     <Clock className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">3. Priorisierte Limburger Anfahrt</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">3. Priorisierte Limburger Anfahrt</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Durch unsere regionale Präsenz lassen wir Sie nicht warten. In Limburg und Umgebung sind wir garantiert innerhalb von <strong>15 bis 30 Minuten</strong> an Ihrem Fahrzeug.</p>
                   </div>
                 </li>
@@ -139,7 +141,7 @@ export default function AutooeffnungPage() {
                     <ShieldCheck className="h-6 w-6 text-gray-700" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">4. Präzisions-Öffnung</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">4. Präzisions-Öffnung</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Unser Spezialist öffnet Ihr Auto mit chirurgischer Genauigkeit. Sie haben sofort wieder vollen Zugriff und setzen Ihre Fahrt nahtlos fort.</p>
                   </div>
                 </li>

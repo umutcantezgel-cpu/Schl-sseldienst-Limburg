@@ -17,9 +17,82 @@ import Script from "next/script";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { Card } from "@/components/ui/card";
 
+export const revalidate = 86400;
+
 export function generateStaticParams() {
     return getAllCitySlugs();
 }
+
+const CITY_METADATA: Record<string, { title: string; description: string }> = {
+    limburg: {
+        title: "Schlüsseldienst Limburg an der Lahn | Festpreis",
+        description: "Ausgesperrt in Limburg an der Lahn? In 5-10 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    weilburg: {
+        title: "Schlüsseldienst Weilburg | 24/7 Schlüsselnotdienst",
+        description: "Ausgesperrt in Weilburg? Schlüsselnotdienst in 20-25 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis im gesamten Stadtgebiet.",
+    },
+    "bad-camberg": {
+        title: "Schlüsseldienst Bad Camberg | 24/7 Notdienst MS",
+        description: "Ausgesperrt in Bad Camberg? Wir sind in 15-20 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis – 24/7 Notdienst.",
+    },
+    hadamar: {
+        title: "Schlüsseldienst Hadamar | 24/7 Festpreis-Service",
+        description: "Ausgesperrt in Hadamar? Ihr Notdienst ist in 10-15 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis – 24/7 erreichbar.",
+    },
+    elz: {
+        title: "Schlüsseldienst Elz | 24/7 Türöffnung & Notdienst",
+        description: "Ausgesperrt in Elz? Unser Schlüsselnotdienst ist in 5-10 Min vor Ort. 100% Festpreisgarantie ab 99€ für zerstörungsfreie Öffnung.",
+    },
+    dornburg: {
+        title: "Schlüsseldienst Dornburg | 24/7 Festpreis-Hilfe",
+        description: "Ausgesperrt in Dornburg (Frickhofen, Langendernbach)? Express-Notdienst in 15-20 Min vor Ort. 100% Festpreisgarantie ab 99€.",
+    },
+    runkel: {
+        title: "Schlüsseldienst Runkel | 24/7 Notdienst & Preise",
+        description: "Ausgesperrt in Runkel? Der Schlüsselnotdienst ist in 15 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ garantierter Festpreis.",
+    },
+    diez: {
+        title: "Schlüsseldienst Diez | 24/7 Notdienst Festpreis",
+        description: "Ausgesperrt in Diez? Unser Limburger Schlüsselnotdienst ist in 10 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis.",
+    },
+    brechen: {
+        title: "Schlüsseldienst Brechen | 24/7 Notdienst Limburg",
+        description: "Ausgesperrt in Brechen (Niederbrechen, Oberbrechen)? In 15 Min vor Ort. 100% Festpreisgarantie ab 99€ für beschädigungsfreie Öffnung.",
+    },
+    "limburg-innenstadt": {
+        title: "Schlüsseldienst Limburg Innenstadt | Notdienst",
+        description: "Ausgesperrt in Limburg Innenstadt? In 15-30 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    "limburg-lindenholzhausen": {
+        title: "Schlüsseldienst Limburg Lindenholzhausen 24/7",
+        description: "Ausgesperrt in Limburg Lindenholzhausen? In 15-30 Min da. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    "limburg-linter": {
+        title: "Schlüsseldienst Limburg Linter | 24/7 Notdienst",
+        description: "Ausgesperrt in Limburg Linter? In 15-30 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    "limburg-staffel": {
+        title: "Schlüsseldienst Limburg Staffel | 24/7 Service",
+        description: "Ausgesperrt in Limburg Staffel? In 15-30 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    "limburg-offheim": {
+        title: "Schlüsseldienst Limburg Offheim | 24/7 Notdienst",
+        description: "Ausgesperrt in Limburg Offheim? In 15-30 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    "limburg-dietkirchen": {
+        title: "Schlüsseldienst Limburg Dietkirchen | 24/7 Notruf",
+        description: "Ausgesperrt in Limburg Dietkirchen? In 15-30 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    "limburg-ahlbach": {
+        title: "Schlüsseldienst Limburg Ahlbach | 24/7 Notdienst",
+        description: "Ausgesperrt in Limburg Ahlbach? In 15-30 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+    "limburg-eschhofen": {
+        title: "Schlüsseldienst Limburg Eschhofen | Festpreis",
+        description: "Ausgesperrt in Limburg Eschhofen? In 15-30 Min vor Ort. Zerstörungsfreie Türöffnung ab 99€ Festpreis ohne versteckte Kosten.",
+    },
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ stadtgebiet: string }> }) {
     const { stadtgebiet } = await params;
@@ -27,9 +100,14 @@ export async function generateMetadata({ params }: { params: Promise<{ stadtgebi
 
     if (!city) return notFound();
 
+    const meta = CITY_METADATA[city.slug] || {
+        title: `Schlüsseldienst ${city.name} | 24/7 Notdienst`,
+        description: `Ausgesperrt in ${city.name}? Der Limburger Schlüsseldienst ist in ${city.logistics.drivingTimeMinutes} Min da. 100% Festpreisgarantie ab ${city.pricing.basePrice}€.`,
+    };
+
     return generateSharedMetadata({
-        title: `Schlüsseldienst ${city.name} | 100% Festpreis | in ${city.logistics.drivingTimeMinutes} Min vor Ort`,
-        description: `Ausgesperrt in ${city.name}? Der Limburger Schlüsseldienst ist in ${city.logistics.drivingTimeMinutes} Min da. 100% Festpreisgarantie ab ${city.pricing.basePrice}€, zerstörungsfreie Öffnung, keine versteckten Kosten.`,
+        title: meta.title,
+        description: meta.description,
         path: `/${city.slug}`,
     });
 }
@@ -155,7 +233,11 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                         Schlüsseldienst <span className="text-gradient-primary">{city.name}</span>
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[var(--color-text-body)] text-center leading-relaxed font-medium">
-                        Ausgesperrt in {city.name}? Verfallen Sie nicht in Panik. Wir sind in <strong className="text-blue-600">{city.logistics.drivingTimeMinutes} Minuten</strong> bei Ihnen. Als lokaler Limburger Betrieb (Inh. Mina Saad) garantieren wir Ihnen einen 100% Festpreis ab {city.pricing.basePrice}€ ohne versteckte Kosten.
+                        {city.localContent?.heroSubtitle || (
+                          <>
+                            Ausgesperrt in {city.name}? Verfallen Sie nicht in Panik. Wir sind in <strong className="text-blue-600">{city.logistics.drivingTimeMinutes} Minuten</strong> bei Ihnen. Als lokaler Limburger Betrieb (Inh. Mina Saad) garantieren wir Ihnen einen 100% Festpreis ab {city.pricing.basePrice}€ ohne versteckte Kosten.
+                          </>
+                        )}
                     </p>
                     
                     <ul className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-4 text-sm sm:text-base font-bold text-[var(--color-text-main)] mb-8">
@@ -171,7 +253,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                     </ul>
 
                     <div className="mb-4">
-                        <TrustBadges />
+                        <TrustBadges locationName={city.name} />
                     </div>
                     <HeroCTA />
                 </div>
@@ -179,7 +261,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
 
 
 
-            <TrustStrip />
+            <TrustStrip locationName={city.name} />
 
             {/* Local Context & Routing Section */}
             <section className="bg-[var(--color-surface-base)] px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -225,7 +307,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                           <div>
                               <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-2">Garantierte Eintreffzeit: {city.logistics.drivingTimeMinutes} Minuten</h3>
                               <p className="text-[var(--color-text-body)] leading-relaxed text-lg">
-                                  In Notsituationen zählt jede Minute. Dank unserer strategischen Lage garantieren wir für Einsätze in {city.name} eine überdurchschnittlich schnelle Reaktionszeit. Wir lassen Sie nicht im Regen stehen.
+                                  {city.localContent?.arrivalTimeCallout || `In Notsituationen zählt jede Minute. Dank unserer strategischen Lage garantieren wir für Einsätze in ${city.name} eine überdurchschnittlich schnelle Reaktionszeit. Wir lassen Sie nicht im Regen stehen.`}
                               </p>
                           </div>
                       </div>
@@ -313,7 +395,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                         <PriceCard
                             title="Tür zugefallen"
                             price={city.pricing.basePrice}
-                            description="Schlüssel steckt von innen oder Tür ist nur ins Schloss gefallen. Zerstörungsfreie Öffnung."
+                            description={city.pricing.doorClosedDescription || `Schlüssel steckt von innen oder Tür ist nur ins Schloss gefallen in ${city.name}. Zerstörungsfreie Öffnung.`}
                             features={[
                                 "Werktags 08-18 Uhr",
                                 "Zerstörungsfreie Öffnung (99%)",
@@ -325,7 +407,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
                         <PriceCard
                             title="Tür abgeschlossen"
                             price={city.pricing.basePrice + 30}
-                            description="Schlüssel verloren oder abgebrochen. Professionelle Öffnung mit Spezialwerkzeug."
+                            description={city.pricing.doorLockedDescription || `Schlüssel verloren oder abgebrochen in ${city.name}. Professionelle Öffnung mit Spezialwerkzeug.`}
                             features={[
                                 "Werktags 08-18 Uhr",
                                 "Einsatz von Profi-Fräsen",
@@ -382,7 +464,7 @@ export default async function StadtgebietPage({ params }: { params: Promise<{ st
             </section>
 
             <div className="pb-12 bg-[var(--color-surface-elevated)]">
-                <EmergencyCTA />
+                <EmergencyCTA locationName={city.name} />
             </div>
         </div>
     );

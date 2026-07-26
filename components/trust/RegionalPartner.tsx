@@ -19,7 +19,7 @@ export function RegionalPartner() {
             Regionales Partnernetzwerk
           </h3>
           <p className="text-[var(--color-text-body)] leading-relaxed text-lg mb-6">
-            Befinden Sie sich außerhalb unseres Kern-Einsatzgebietes im Raum Limburg? Für eine schnelle, seriöse und schadenfreie Türöffnung im Lahn-Dill-Kreis empfehlen wir unseren geprüften Partnerbetrieb, die <a href="https://wetzlar-schluesseldienst.de/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors">Schlüsselschmiede Wetzlar</a>. So garantieren wir, dass Sie auch in benachbarten Regionen stets in hochprofessionellen Händen sind.
+            Befinden Sie sich außerhalb unseres Kern-Einsatzgebietes im Raum Limburg? Für eine schnelle, seriöse und schadenfreie Türöffnung im Lahn-Dill-Kreis empfehlen wir unseren geprüften Partnerbetrieb, die <a href="https://wetzlar-schluesseldienst.de/" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors">Schlüsselschmiede Wetzlar</a>. So garantieren wir, dass Sie auch in benachbarten Regionen stets in hochprofessionellen Händen sind.
           </p>
         </div>
       </div>

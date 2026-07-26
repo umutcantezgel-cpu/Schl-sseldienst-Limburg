@@ -11,9 +11,11 @@ import { generateHowToSchema } from "@/lib/schema";
 import { getFAQSchema } from "@/lib/faqSchema";
 import { generateSharedMetadata } from "@/lib/metadata";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Türöffnung Limburg | 24/7 Schlüsselnotdienst | 100% Festpreis",
-  description: "Ausgesperrt in Limburg an der Lahn? Der lokale Meister-Schlüsseldienst MS Schlüsseldienst Limburg öffnet Ihre Tür in 15-30 Min. Zerstörungsfrei, fair & zum garantierten Festpreis.",
+  title: "Türöffnung Limburg | 24/7 Schlüsselnotdienst",
+  description: "Ausgesperrt in Limburg? Ihr lokaler Meister-Schlüsseldienst öffnet Türen in 15–30 Min. Zerstörungsfrei, 24/7 & zum garantierten Festpreis.",
   path: "/leistungen/turoeffnung",
 });
 
@@ -152,7 +154,7 @@ export default function TuroeffnungPage() {
                    <Check className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-[var(--color-text-main)]">Garantierter Festpreis am Telefon</h4>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)]">Garantierter Festpreis am Telefon</h3>
                   <p className="mt-2 text-[var(--color-text-body)] text-lg">Wir nennen Ihnen die genauen Kosten bereits beim Erstgespräch. Keine „ab“-Preise vor Ort, keine versteckten Anfahrtskosten, keine plötzlichen Nachtzuschläge, die nicht vorher klar kommuniziert wurden.</p>
                 </div>
               </div>
@@ -161,7 +163,7 @@ export default function TuroeffnungPage() {
                    <Clock className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-[var(--color-text-main)]">Regionale Nähe (15–30 Min)</h4>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)]">Regionale Nähe (15–30 Min)</h3>
                   <p className="mt-2 text-[var(--color-text-body)] text-lg">Ob in der Limburger Altstadt, in Lindenholzhausen, Dietkirchen, Eschhofen oder Linter – durch unsere lokale Präsenz sind wir als echter Vor-Ort-Service sofort bei Ihnen, um die Wartezeit zu minimieren.</p>
                 </div>
               </div>
@@ -170,7 +172,7 @@ export default function TuroeffnungPage() {
                    <ShieldCheck className="h-6 w-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-[var(--color-text-main)]">Zertifizierter Meister-Standard</h4>
+                  <h3 className="text-xl font-bold text-[var(--color-text-main)]">Zertifizierter Meister-Standard</h3>
                   <p className="mt-2 text-[var(--color-text-body)] text-lg">Vertrauen Sie auf seriöse Handwerksqualität. Wir sind keine dubiose Vermittlungsagentur, sondern echte, umfassend ausgebildete Sicherheitsexperten aus Ihrer Region um Mina Saad.</p>
                 </div>
               </div>
@@ -182,16 +184,16 @@ export default function TuroeffnungPage() {
                 Der Limburger Notfall-Ablauf: So helfen wir Ihnen sofort
               </h3>
               <ol className="list-decimal pl-10 space-y-5 text-[var(--color-text-body)] marker:text-blue-600 marker:font-bold relative z-10 text-lg">
-                <li className="pl-2"><strong className="text-[var(--color-text-main)]">Ruhe bewahren:</strong> Vermeiden Sie unbedingt Selbstversuche mit Plastikkarten oder ungeeignetem Werkzeug. Diese verursachen fast immer teure Schäden an Tür, Rahmen und Dichtung.</li>
-                <li className="pl-2"><strong className="text-[var(--color-text-main)]">Alternativen prüfen:</strong> Überlegen Sie kurz, ob ein Fenster erreichbar offen steht oder ein Zweitschlüssel bei Nachbarn oder Verwandten hinterlegt ist.</li>
+                <li className="pl-2"><span className="font-bold text-[var(--color-text-main)]">Ruhe bewahren:</span> Vermeiden Sie unbedingt Selbstversuche mit Plastikkarten oder ungeeignetem Werkzeug. Diese verursachen fast immer teure Schäden an Tür, Rahmen und Dichtung.</li>
+                <li className="pl-2"><span className="font-bold text-[var(--color-text-main)]">Alternativen prüfen:</span> Überlegen Sie kurz, ob ein Fenster erreichbar offen steht oder ein Zweitschlüssel bei Nachbarn oder Verwandten hinterlegt ist.</li>
                 <li className="pl-2">
-                  <strong className="text-[var(--color-text-main)]">Lokalen Notruf wählen:</strong> Rufen Sie unseren Schlüsseldienst-Notruf an:{" "}
+                  <span className="font-bold text-[var(--color-text-main)]">Lokalen Notruf wählen:</span> Rufen Sie unseren Schlüsseldienst-Notruf an:{" "}
                   <a href={BUSINESS.phone.href} className="font-bold text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center gap-1 link-underline">
                     <Phone className="h-5 w-5" /> {BUSINESS.phone.display}
                   </a>. Wir sind rund um die Uhr erreichbar.
                 </li>
-                <li className="pl-2"><strong className="text-[var(--color-text-main)]">Festpreis & Anfahrt:</strong> Wir klären die Situation kurz mit Ihnen, nennen Ihnen den absolut verbindlichen Preis und unser Techniker macht sich sofort auf den Weg zu Ihnen nach Limburg.</li>
-                <li className="pl-2"><strong className="text-[var(--color-text-main)]">Professionelle Öffnung:</strong> Unser Experte öffnet Ihre Tür souverän, routiniert und materialschonend. Sie können sofort wieder aufatmen und in Ihre Räumlichkeiten.</li>
+                <li className="pl-2"><span className="font-bold text-[var(--color-text-main)]">Festpreis & Anfahrt:</span> Wir klären die Situation kurz mit Ihnen, nennen Ihnen den absolut verbindlichen Preis und unser Techniker macht sich sofort auf den Weg zu Ihnen nach Limburg.</li>
+                <li className="pl-2"><span className="font-bold text-[var(--color-text-main)]">Professionelle Öffnung:</span> Unser Experte öffnet Ihre Tür souverän, routiniert und materialschonend. Sie können sofort wieder aufatmen und in Ihre Räumlichkeiten.</li>
               </ol>
             </div>
           </div>

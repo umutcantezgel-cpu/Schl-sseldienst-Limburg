@@ -8,9 +8,11 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CertBadges from "@/components/trust/CertBadges";
 import { generateSharedMetadata } from "@/lib/metadata";
 
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: "Schließanlagen Limburg | B2B & Privat | Schlüsseldienst Limburg",
-  description: "Planung, Installation & Wartung hochsicherer Schließanlagen für Limburg und Umgebung durch MS Schlüsseldienst Limburg. Mechanisch & elektronisch. Kostenfreie Beratung.",
+  title: "Schließanlagen Limburg | Beratung & Montage MS",
+  description: "Planung, Montage & Wartung moderner Schließanlagen in Limburg. Mechanisch & elektronisch für B2B & Privat. Unverbindliche Beratung.",
   path: "/leistungen/schliessanlagen",
 });
 
@@ -50,7 +52,7 @@ export default function SchliessanlagenPage() {
             </h2>
             <div className="h-1 w-20 bg-blue-500 rounded-full mt-2 mb-8"></div>
             <p className="text-[var(--color-text-body)] leading-relaxed text-lg">
-              Ein unkontrolliertes Schlüsselchaos in Ihrem Gebäude ist ein extremes Sicherheits- und Haftungsrisiko. Eine moderne, maßgefertigte Schließanlage löst dieses Problem ein für alle Mal durch ein intelligentes Rechte-Konzept. Mit einem einzigen Hauptschlüssel haben Sie als Eigentümer die volle Kontrolle, während Angestellte, Dienstleister oder Mieter nur exakt die Räumlichkeiten betreten können, für die sie berechtigt sind. <strong>Mina Saad</strong> und das Team aus Limburg sorgen dafür, dass Ihr System lückenlos funktioniert.
+              Professionell geplante <strong>Schließanlagen in Limburg</strong> bieten Ihnen vollkommene Kontrolle über Ihre Wohn- oder Gewerbeimmobilie. Ein unkontrolliertes Schlüsselchaos ist ein extremes Sicherheits- und Haftungsrisiko. Eine moderne, maßgefertigte Schließanlage löst dieses Problem ein für alle Mal durch ein intelligentes Rechte-Konzept. Mit einem einzigen Hauptschlüssel haben Sie als Eigentümer die volle Kontrolle, während Angestellte, Dienstleister oder Mieter nur exakt die Räumlichkeiten betreten können, für die sie berechtigt sind. <strong>Mina Saad</strong> und das Team von <strong>MS Schlüsseldienst Limburg</strong> sorgen dafür, dass Ihr System lückenlos funktioniert.
             </p>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-2">
@@ -114,7 +116,7 @@ export default function SchliessanlagenPage() {
                     <ClipboardCheck className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">1. Sicherheits-Audit direkt in Limburg</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">1. Sicherheits-Audit direkt in Limburg</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Wir besichtigen Ihr Objekt vollkommen kostenfrei und diskret. Wir analysieren Schwachstellen und definieren Ihre strengen Sicherheitsanforderungen.</p>
                   </div>
                 </li>
@@ -123,7 +125,7 @@ export default function SchliessanlagenPage() {
                     <Check className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">2. Digitales Rechtekonzept</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">2. Digitales Rechtekonzept</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Unser Meisterbetrieb entwirft einen logischen, zukunftssicheren Schließplan, der exakt auf Ihre internen Hierarchien und Raumnutzungen abgestimmt ist.</p>
                   </div>
                 </li>
@@ -132,7 +134,7 @@ export default function SchliessanlagenPage() {
                     <ShieldCheck className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">3. Kompromisslose Premium-Fertigung</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">3. Kompromisslose Premium-Fertigung</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Wir verbauen ausschließlich manipulationssichere Zylinder renommierter Weltmarktführer. Höchster Bohrschutz und patentierter Kopierschutz sind Standard.</p>
                   </div>
                 </li>
@@ -141,7 +143,7 @@ export default function SchliessanlagenPage() {
                     <Building className="h-6 w-6 text-gray-700" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[var(--color-text-main)]">4. Fachgerechte Limburger Installation</h4>
+                    <h3 className="text-xl font-bold text-[var(--color-text-main)]">4. Fachgerechte Limburger Installation</h3>
                     <p className="mt-2 text-[var(--color-text-body)] text-lg">Unser lokales Techniker-Team übernimmt die blitzsaubere Montage, die elektronische Programmierung sowie die rechtssichere Schlüsselübergabe.</p>
                   </div>
                 </li>

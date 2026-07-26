@@ -1,14 +1,23 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import EmergencyCTA from "@/components/EmergencyCTA";
-import ContactForm from "@/components/contact/ContactForm";
-import ConsentGoogleMaps from "@/components/ConsentGoogleMaps";
 import { generateSharedMetadata } from "@/lib/metadata";
 import { BUSINESS } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
+const ContactForm = dynamic(() => import("@/components/contact/ContactForm"), {
+  loading: () => <div className="h-64 flex items-center justify-center text-gray-500 font-medium">Formular wird geladen...</div>,
+});
+
+const ConsentGoogleMaps = dynamic(() => import("@/components/ConsentGoogleMaps"), {
+  loading: () => <div className="h-[400px] flex items-center justify-center bg-gray-100 text-gray-500 font-medium">Karte wird geladen...</div>,
+});
+
+export const revalidate = 86400;
+
 export const metadata = generateSharedMetadata({
-  title: `Kontakt | MS Schlüsseldienst Limburg – Inh. Mina Saad`,
+  title: "Kontakt & Notruf | MS Schlüsseldienst Limburg",
   description: "Treten Sie in Kontakt mit Ihrem Limburger Meisterbetrieb. 24/7 Notruf für garantierte 15-30 Min. Hilfe oder Kontaktformular für Beratungen.",
   path: "/kontakt",
 });
@@ -85,7 +94,7 @@ export default function KontaktPage() {
                   title={IMAGES.inhaberPortrait.title}
                   width={IMAGES.inhaberPortrait.width}
                   height={IMAGES.inhaberPortrait.height}
-                  loading="lazy"
+                  priority
                   quality={80}
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover w-full"
@@ -161,6 +170,37 @@ export default function KontaktPage() {
             </div>
           </div>
           
+          {/* Detailed Info Block for Content Expansion & Keyword Integration */}
+          <div className="mt-16 bg-[var(--color-surface-elevated)] rounded-3xl p-8 md:p-12 border border-[var(--color-border-subtle)] shadow-sm">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-main)] mb-6">
+              Ihr direkter Draht zum Schlüsseldienst Limburg Kontakt
+            </h2>
+            <p className="text-lg text-[var(--color-text-body)] leading-relaxed mb-6">
+              Wenn Sie schnelle Unterstützung bei einer zugefallenen Tür benötigen oder eine fundierte Sicherheitsberatung für Ihre Immobilie wünschen, ist unser <strong>Schlüsseldienst Limburg Kontakt</strong> der direkte Weg zu verlässlicher Hilfe. Unter der persönlichen Leitung von Inhaber Mina Saad betreut unser regional verankerter Meisterbetrieb Kunden im gesamten Landkreis Limburg-Weilburg sowie den angrenzenden Regionen.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2 mt-8">
+              <div className="bg-white p-6 rounded-2xl border border-blue-100 shadow-xs">
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3 flex items-center gap-2">
+                  <Phone className="h-5 w-5 text-blue-600" /> 24/7 Notfall-Erreichbarkeit
+                </h3>
+                <p className="text-[var(--color-text-body)] leading-relaxed">
+                  Für akute Notsituationen – wie eine ausgesperrte Person, ein verlorener Schlüsselbund oder ein Einbruchschaden – nutzen Sie bitte ausschließlich unsere Notrufhotline. So stellen wir sicher, dass ein Einsatzfahrzeug in 15 bis 30 Minuten vor Ort bei Ihnen in Limburg eintrifft.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-2xl border border-blue-100 shadow-xs">
+                <h3 className="text-xl font-bold text-[var(--color-text-main)] mb-3 flex items-center gap-2">
+                  <Mail className="h-5 w-5 text-blue-600" /> Schriftliche Beratungsanfragen
+                </h3>
+                <p className="text-[var(--color-text-body)] leading-relaxed">
+                  Für geplante Termine zur Installation von Schließanlagen, die Anfertigung von Nachschlüsseln oder die Sicherheitsüberprüfung Ihres Eigenheims steht Ihnen unser Online-Formular sowie unsere E-Mail-Adresse rund um die Uhr zur Verfügung. Wir antworten werktags innerhalb weniger Stunden.
+                </p>
+              </div>
+            </div>
+            <p className="text-base text-[var(--color-text-muted)] leading-relaxed mt-6">
+              Transparenz ist unser Grundprinzip: Bereits bei Ihrem ersten Anruf über unseren <strong>Schlüsseldienst Limburg Kontakt</strong> beziffern wir die anfallenden Kosten verbindlich als Festpreis. Bei uns gibt es keine versteckten Sondergebühren oder unerwarteten Aufschläge vor Ort.
+            </p>
+          </div>
+
           {/* Google Maps iFrame */}
           <div className="mt-24 w-full h-[400px] rounded-3xl overflow-hidden border border-[var(--color-border-subtle)] shadow-md relative group">
             <div className="absolute inset-0 bg-blue-900/5 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
@@ -170,7 +210,11 @@ export default function KontaktPage() {
       </section>
 
       <aside aria-label="Notfall-Kontakt">
-        <EmergencyCTA />
+        <EmergencyCTA
+          title="Direkter Kontakt zu Ihrem Limburger Meisterbetrieb"
+          subtitle="Ob akuter Notfall in 15–30 Min. oder geplante Sicherheitsberatung – wir sind 24/7 für Sie erreichbar."
+          locationName="Limburg"
+        />
       </aside>
     </div>
   );

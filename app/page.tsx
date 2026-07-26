@@ -27,6 +27,8 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import { BUSINESS } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
+export const revalidate = 86400;
+
 export default function HomePage() {
   return (
     <>
@@ -122,7 +124,7 @@ export default function HomePage() {
               { icon: DoorOpen, title: "Schonende Türöffnungen", desc: "Smarte und zu 99% zerstörungsfreie Öffnungsmethoden für Haus-, Wohnungs- und Zimmertüren. Innerhalb von Minuten sind Sie wieder drinnen.", href: "/leistungen/turoeffnung", linkText: "Türöffnung ansehen" },
               { icon: Car, title: "KFZ-Spezialöffnungen", desc: "Fachgerechte und völlig kratzerfreie Autoöffnung aller Marken und Modelle. Vertrauen Sie unserem geschulten Personal.", href: "/leistungen/autooeffnung", linkText: "KFZ-Öffnung ansehen" },
               { icon: Lock, title: "Tresor- & Safeknackung", desc: "Wir öffnen Ihren Tresor, Waffenschrank oder Geldkassette absolut diskret und mit höchster Präzision – auch bei defekten Schlössern.", href: "/leistungen/schliessanlagen", linkText: "Tresore ansehen" },
-              { icon: ShieldCheck, title: "Cleverer Einbruchschutz", desc: "Kostenlose Sicherheitsanalyse vor Ort. Installation von Premium-Schließzylindern, Querriegeln und modernen Smart-Home-Sicherheitssystemen.", href: "/leistungen/sicherheitstechnik", linkText: "Einbruchschutz ansehen" },
+              { icon: ShieldCheck, title: "Cleverer Einbruchschutz", desc: "Kostenlose Sicherheitsanalyse vor Ort. Installation von Premium-Schließzylindern, Querriegeln und modernen Smart-Home-Sicherheitssystemen.", href: "/einbruchschutz", linkText: "Einbruchschutz ansehen" },
             ].map((service) => (
               <Card
                 key={service.title}
@@ -271,7 +273,7 @@ export default function HomePage() {
               href="/faq"
               className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-800 transition-colors link-underline pb-1"
             >
-              Zum kompletten FAQ-Bereich
+              Häufig gestellte Fragen zu Türöffnungen & Preisen lesen
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

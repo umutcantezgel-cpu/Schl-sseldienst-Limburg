@@ -98,7 +98,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3.5 text-[var(--color-text-main)] font-medium">
               {[
-                { name: "Limburg", slug: "limburg" },
+                { name: "Limburg", slug: "" },
                 { name: "Weilburg", slug: "weilburg" },
                 { name: "Bad Camberg", slug: "bad-camberg" },
                 { name: "Hadamar", slug: "hadamar" },
@@ -113,7 +113,7 @@ export default function Footer() {
               ))}
               <li className="pt-3">
                 <Link href="/servicegebiet" className="inline-flex items-center gap-2 text-[var(--color-blue-primary)] hover:text-blue-700 transition-colors font-bold text-sm bg-[var(--color-blue-light)] px-3 py-1.5 rounded-lg hover-lift-subtle">
-                  Alle Gebiete <ChevronRight className="h-4 w-4" />
+                  Alle Einsatzgebiete im Landkreis Limburg-Weilburg <ChevronRight className="h-4 w-4" />
                 </Link>
               </li>
             </ul>
@@ -126,6 +126,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3.5 text-[var(--color-text-main)] font-medium">
               {[
+                { name: "Einbruchschutz & Sicherheitsberatung", slug: "einbruchschutz" },
                 { name: "Impressum", slug: "impressum" },
                 { name: "Datenschutz", slug: "datenschutz" },
                 { name: "Preise", slug: "preise" },
